@@ -1,0 +1,10 @@
+# IntelliJ IDEA:
+/.idea
+/lionweb-ecore.iml
+
+# NPM:
+node_modules/
+
+# TypeScript
+dist/
+

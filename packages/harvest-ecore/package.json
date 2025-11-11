@@ -1,0 +1,30 @@
+{
+    "name": "@lionweb-ecore/harvest-ecore",
+    "version": "0.0.0-dev.0",
+    "description": "Harvest Ecore as a LionWeb language",
+    "private": true,
+    "main": "dist/harvest.js",
+    "type": "module",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LionWeb-io/lionweb-ecore.git"
+    },
+    "bugs": {
+        "url": "https://github.com/LionWeb-io/lionweb-ecore/issues"
+    },
+    "scripts": {
+        "clean": "npx rimraf dist node_modules",
+        "build": "tsc",
+        "preharvest": "npm run build",
+        "harvest": "node dist/harvest.js",
+        "lint": "eslint src"
+    },
+    "dependencies": {
+        "@lionweb/core": "0.7.2-beta.2",
+        "xml2js": "0.6.2"
+    },
+    "devDependencies": {
+        "@types/node": "24.10.0"
+    }
+}
