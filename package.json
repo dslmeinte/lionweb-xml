@@ -29,6 +29,5 @@
     },
     "private": true,
     "workspaces": [
-        "./packages/harvest-ecore"
     ]
 }
