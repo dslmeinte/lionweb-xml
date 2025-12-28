@@ -1,0 +1,34 @@
+{
+    "name": "@lionweb-xml/build",
+    "version": "0.0.0-dev.0",
+    "description": "Build Ecore LionWeb language",
+    "private": true,
+    "main": "dist/run.js",
+    "type": "module",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LionWeb-io/lionweb-xml.git"
+    },
+    "bugs": {
+        "url": "https://github.com/LionWeb-io/lionweb-xml/issues"
+    },
+    "scripts": {
+        "clean": "npx rimraf dist node_modules",
+        "build": "tsc",
+        "pregenerate": "npm run build",
+        "generate": "node dist/run.js",
+        "lint": "eslint src"
+    },
+    "dependencies": {
+        "@lionweb/class-core-generator": "0.7.2",
+        "@lionweb/core": "0.7.2",
+        "@lionweb/ts-utils": "0.7.2",
+        "@lionweb/utilities": "0.7.2",
+        "xml2js": "0.6.2"
+    },
+    "devDependencies": {
+        "@types/node": "24.10.4",
+        "@types/xml2js": "0.4.14"
+    }
+}

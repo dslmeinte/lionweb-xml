@@ -1,0 +1,65 @@
+language Ecore
+    version: 1
+    entities (↓name):
+
+        concept EAnnotation extends EModelElement
+            features (↓name):
+                details: EStringToStringMapEntry[0..*]
+                source: String
+
+        concept EAttribute extends EStructuralFeature
+
+        concept EClass extends EClassifier
+            features (↓name):
+                abstract: Boolean
+                eStructuralFeatures: EStructuralFeature[0..*]
+                eSuperTypes -> EClass[0..*]
+                interface: Boolean
+
+        abstract concept EClassifier extends ENamedElement
+
+        concept EDataType extends EClassifier
+
+        concept EEnum extends EDataType
+            features (↓name):
+                eLiterals: EEnumLiteral[0..*]
+
+        concept EEnumLiteral extends ENamedElement
+            features (↓name):
+                value: String
+
+        abstract concept EModelElement extends EObject
+            features (↓name):
+                eAnnotations: EAnnotation[0..*]
+
+        abstract concept ENamedElement extends EModelElement implements INamed
+
+        concept EObject
+            features (↓name):
+                idXmi: String?
+
+        concept EPackage extends ENamedElement
+            features (↓name):
+                eClassifiers: EClassifier[0..*]
+                eSubPackages: EPackage[0..*]
+                nsPrefix: String
+                nsURI: String
+
+        concept EReference extends EStructuralFeature
+            features (↓name):
+                containmentXsi: Boolean
+
+        concept EStringToStringMapEntry
+            features (↓name):
+                key: String
+                value: String
+
+        abstract concept EStructuralFeature extends ETypedElement
+
+        abstract concept ETypedElement extends ENamedElement
+            features (↓name):
+                eType -> EClassifier?
+                lowerBound: Integer
+                upperBound: Integer?
+
+

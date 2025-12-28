@@ -1,0 +1,1275 @@
+EPackage (id: id-1)
+    nsURI = "http://www.eclipse.org/emf/2002/Ecore"
+    nsPrefix = "ecore"
+    eClassifiers:
+        EClass (id: id-2)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-5)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "iD"
+                EReference (id: id-6)
+                    containmentXsi = false
+                    lowerBound = 1
+                    upperBound = <not set>
+                    eType -> EDataType
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eAttributeType"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-3)
+                    source = "http://www.eclipse.org/emf/2002/Ecore"
+                    details:
+                        EStringToStringMapEntry (id: id-4)
+                            key = "constraints"
+                            value = "ConsistentTransient"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EAttribute"
+        EClass (id: id-7)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-10)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "source"
+                EReference (id: id-11)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EStringToStringMapEntry
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "details"
+                EReference (id: id-12)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EModelElement
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eModelElement"
+                EReference (id: id-13)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EObject
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "contents"
+                EReference (id: id-14)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EObject
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "references"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-8)
+                    source = "http://www.eclipse.org/emf/2002/Ecore"
+                    details:
+                        EStringToStringMapEntry (id: id-9)
+                            key = "constraints"
+                            value = "WellFormed WellFormedSourceURI"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EAnnotation"
+        EClass (id: id-15)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-18)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "abstract"
+                EAttribute (id: id-19)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "interface"
+                EReference (id: id-20)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EClass
+                    eAnnotations:
+                        EAnnotation (id: id-21)
+                            source = "http://www.eclipse.org/emf/2002/GenModel"
+                            details:
+                                EStringToStringMapEntry (id: id-22)
+                                    key = "suppressedIsSetVisibility"
+                                    value = "true"
+                                EStringToStringMapEntry (id: id-23)
+                                    key = "suppressedUnsetVisibility"
+                                    value = "true"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = <not set>
+                    name = "eSuperTypes"
+                EReference (id: id-24)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EOperation
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eOperations"
+                EReference (id: id-25)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EAttribute
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eAllAttributes"
+                EReference (id: id-26)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EReference
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eAllReferences"
+                EReference (id: id-27)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EReference
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eReferences"
+                EReference (id: id-28)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EAttribute
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eAttributes"
+                EReference (id: id-29)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EReference
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eAllContainments"
+                EReference (id: id-30)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EOperation
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eAllOperations"
+                EReference (id: id-31)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EStructuralFeature
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eAllStructuralFeatures"
+                EReference (id: id-32)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EClass
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eAllSuperTypes"
+                EReference (id: id-33)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EAttribute
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eIDAttribute"
+                EReference (id: id-34)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EStructuralFeature
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eStructuralFeatures"
+                EReference (id: id-35)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EGenericType
+                    eAnnotations:
+                        EAnnotation (id: id-36)
+                            source = "http://www.eclipse.org/emf/2002/GenModel"
+                            details:
+                                EStringToStringMapEntry (id: id-37)
+                                    key = "suppressedIsSetVisibility"
+                                    value = "true"
+                                EStringToStringMapEntry (id: id-38)
+                                    key = "suppressedUnsetVisibility"
+                                    value = "true"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = <not set>
+                    name = "eGenericSuperTypes"
+                EReference (id: id-39)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EGenericType
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eAllGenericSuperTypes"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-16)
+                    source = "http://www.eclipse.org/emf/2002/Ecore"
+                    details:
+                        EStringToStringMapEntry (id: id-17)
+                            key = "constraints"
+                            value = "InterfaceIsAbstract AtMostOneID UniqueFeatureNames UniqueOperationSignatures NoCircularSuperTypes WellFormedMapEntryClass ConsistentSuperTypes DisjointFeatureAndOperationSignatures"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EClass"
+        EClass (id: id-40)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-43)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations:
+                        EAnnotation (id: id-44)
+                            source = "http://www.eclipse.org/emf/2002/GenModel"
+                            details:
+                                EStringToStringMapEntry (id: id-45)
+                                    key = "suppressedIsSetVisibility"
+                                    value = "true"
+                                EStringToStringMapEntry (id: id-46)
+                                    key = "suppressedUnsetVisibility"
+                                    value = "true"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = <not set>
+                    name = "instanceClassName"
+                EAttribute (id: id-47)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> <none>
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "instanceClass"
+                EAttribute (id: id-48)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EJavaObject
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "defaultValue"
+                EAttribute (id: id-49)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations:
+                        EAnnotation (id: id-50)
+                            source = "http://www.eclipse.org/emf/2002/GenModel"
+                            details:
+                                EStringToStringMapEntry (id: id-51)
+                                    key = "suppressedIsSetVisibility"
+                                    value = "true"
+                                EStringToStringMapEntry (id: id-52)
+                                    key = "suppressedUnsetVisibility"
+                                    value = "true"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = <not set>
+                    name = "instanceTypeName"
+                EReference (id: id-53)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EPackage
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "ePackage"
+                EReference (id: id-54)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> ETypeParameter
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eTypeParameters"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-41)
+                    source = "http://www.eclipse.org/emf/2002/Ecore"
+                    details:
+                        EStringToStringMapEntry (id: id-42)
+                            key = "constraints"
+                            value = "WellFormedInstanceTypeName UniqueTypeParameterNames"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EClassifier"
+        EClass (id: id-55)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-56)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "serializable"
+            eSuperTypes -> <none>
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EDataType"
+        EClass (id: id-57)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EReference (id: id-60)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EEnumLiteral
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eLiterals"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-58)
+                    source = "http://www.eclipse.org/emf/2002/Ecore"
+                    details:
+                        EStringToStringMapEntry (id: id-59)
+                            key = "constraints"
+                            value = "UniqueEnumeratorNames UniqueEnumeratorLiterals"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EEnum"
+        EClass (id: id-61)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-62)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EInt
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "value"
+                EAttribute (id: id-63)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EEnumerator
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "instance"
+                EAttribute (id: id-64)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "literal"
+                EReference (id: id-65)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EEnum
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eEnum"
+            eSuperTypes -> <none>
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EEnumLiteral"
+        EClass (id: id-66)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EReference (id: id-67)
+                    containmentXsi = false
+                    lowerBound = 1
+                    upperBound = <not set>
+                    eType -> EPackage
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "ePackage"
+            eSuperTypes -> <none>
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EFactory"
+        EClass (id: id-68)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EReference (id: id-69)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EAnnotation
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eAnnotations"
+            eSuperTypes -> <none>
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EModelElement"
+        EClass (id: id-70)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-73)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "name"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-71)
+                    source = "http://www.eclipse.org/emf/2002/Ecore"
+                    details:
+                        EStringToStringMapEntry (id: id-72)
+                            key = "constraints"
+                            value = "WellFormedName"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "ENamedElement"
+        EClass (id: id-74)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures: <nothing>
+            eSuperTypes -> <none>
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EObject"
+        EClass (id: id-75)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EReference (id: id-78)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EClass
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eContainingClass"
+                EReference (id: id-79)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> ETypeParameter
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eTypeParameters"
+                EReference (id: id-80)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EParameter
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eParameters"
+                EReference (id: id-81)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EClassifier
+                    eAnnotations:
+                        EAnnotation (id: id-82)
+                            source = "http://www.eclipse.org/emf/2002/GenModel"
+                            details:
+                                EStringToStringMapEntry (id: id-83)
+                                    key = "suppressedIsSetVisibility"
+                                    value = "true"
+                                EStringToStringMapEntry (id: id-84)
+                                    key = "suppressedUnsetVisibility"
+                                    value = "true"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = <not set>
+                    name = "eExceptions"
+                EReference (id: id-85)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EGenericType
+                    eAnnotations:
+                        EAnnotation (id: id-86)
+                            source = "http://www.eclipse.org/emf/2002/GenModel"
+                            details:
+                                EStringToStringMapEntry (id: id-87)
+                                    key = "suppressedIsSetVisibility"
+                                    value = "true"
+                                EStringToStringMapEntry (id: id-88)
+                                    key = "suppressedUnsetVisibility"
+                                    value = "true"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = <not set>
+                    name = "eGenericExceptions"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-76)
+                    source = "http://www.eclipse.org/emf/2002/Ecore"
+                    details:
+                        EStringToStringMapEntry (id: id-77)
+                            key = "constraints"
+                            value = "UniqueParameterNames UniqueTypeParameterNames NoRepeatingVoid"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EOperation"
+        EClass (id: id-89)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-92)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "nsURI"
+                EAttribute (id: id-93)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "nsPrefix"
+                EReference (id: id-94)
+                    containmentXsi = false
+                    lowerBound = 1
+                    upperBound = <not set>
+                    eType -> EFactory
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eFactoryInstance"
+                EReference (id: id-95)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EClassifier
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eClassifiers"
+                EReference (id: id-96)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EPackage
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eSubpackages"
+                EReference (id: id-97)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EPackage
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eSuperPackage"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-90)
+                    source = "http://www.eclipse.org/emf/2002/Ecore"
+                    details:
+                        EStringToStringMapEntry (id: id-91)
+                            key = "constraints"
+                            value = "WellFormedNsURI WellFormedNsPrefix UniqueSubpackageNames UniqueClassifierNames UniqueNsURIs"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EPackage"
+        EClass (id: id-98)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EReference (id: id-99)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EOperation
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eOperation"
+            eSuperTypes -> <none>
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EParameter"
+        EClass (id: id-100)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-103)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "containment"
+                EAttribute (id: id-104)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "container"
+                EAttribute (id: id-105)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "resolveProxies"
+                EReference (id: id-106)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EReference
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eOpposite"
+                EReference (id: id-107)
+                    containmentXsi = false
+                    lowerBound = 1
+                    upperBound = <not set>
+                    eType -> EClass
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eReferenceType"
+                EReference (id: id-108)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EAttribute
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eKeys"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-101)
+                    source = "http://www.eclipse.org/emf/2002/Ecore"
+                    details:
+                        EStringToStringMapEntry (id: id-102)
+                            key = "constraints"
+                            value = "ConsistentOpposite SingleContainer ConsistentKeys ConsistentUnique ConsistentContainer"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EReference"
+        EClass (id: id-109)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-112)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "changeable"
+                EAttribute (id: id-113)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "volatile"
+                EAttribute (id: id-114)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "transient"
+                EAttribute (id: id-115)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "defaultValueLiteral"
+                EAttribute (id: id-116)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EJavaObject
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "defaultValue"
+                EAttribute (id: id-117)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "unsettable"
+                EAttribute (id: id-118)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "derived"
+                EReference (id: id-119)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EClass
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eContainingClass"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-110)
+                    source = "http://www.eclipse.org/emf/2002/Ecore"
+                    details:
+                        EStringToStringMapEntry (id: id-111)
+                            key = "constraints"
+                            value = "ValidDefaultValueLiteral"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EStructuralFeature"
+        EClass (id: id-120)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-123)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "ordered"
+                EAttribute (id: id-124)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "unique"
+                EAttribute (id: id-125)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EInt
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "lowerBound"
+                EAttribute (id: id-126)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EInt
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "upperBound"
+                EAttribute (id: id-127)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "many"
+                EAttribute (id: id-128)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EBoolean
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "required"
+                EReference (id: id-129)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EClassifier
+                    eAnnotations:
+                        EAnnotation (id: id-130)
+                            source = "http://www.eclipse.org/emf/2002/GenModel"
+                            details:
+                                EStringToStringMapEntry (id: id-131)
+                                    key = "suppressedIsSetVisibility"
+                                    value = "true"
+                                EStringToStringMapEntry (id: id-132)
+                                    key = "suppressedUnsetVisibility"
+                                    value = "true"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = <not set>
+                    name = "eType"
+                EReference (id: id-133)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EGenericType
+                    eAnnotations:
+                        EAnnotation (id: id-134)
+                            source = "http://www.eclipse.org/emf/2002/GenModel"
+                            details:
+                                EStringToStringMapEntry (id: id-135)
+                                    key = "suppressedIsSetVisibility"
+                                    value = "true"
+                                EStringToStringMapEntry (id: id-136)
+                                    key = "suppressedUnsetVisibility"
+                                    value = "true"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = <not set>
+                    name = "eGenericType"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-121)
+                    source = "http://www.eclipse.org/emf/2002/Ecore"
+                    details:
+                        EStringToStringMapEntry (id: id-122)
+                            key = "constraints"
+                            value = "ValidLowerBound ValidUpperBound ConsistentBounds ValidType"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "ETypedElement"
+        EDataType (id: id-137)
+            eAnnotations:
+                EAnnotation (id: id-138)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-139)
+                            key = "baseType"
+                            value = "http://www.w3.org/2001/XMLSchema#decimal"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EBigDecimal"
+        EDataType (id: id-140)
+            eAnnotations:
+                EAnnotation (id: id-141)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-142)
+                            key = "baseType"
+                            value = "http://www.w3.org/2001/XMLSchema#integer"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EBigInteger"
+        EDataType (id: id-143)
+            eAnnotations:
+                EAnnotation (id: id-144)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-145)
+                            key = "baseType"
+                            value = "http://www.w3.org/2001/XMLSchema#boolean"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EBoolean"
+        EDataType (id: id-146)
+            eAnnotations:
+                EAnnotation (id: id-147)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-148)
+                            key = "baseType"
+                            value = "EBoolean"
+                        EStringToStringMapEntry (id: id-149)
+                            key = "name"
+                            value = "EBoolean:Object"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EBooleanObject"
+        EDataType (id: id-150)
+            eAnnotations:
+                EAnnotation (id: id-151)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-152)
+                            key = "baseType"
+                            value = "http://www.w3.org/2001/XMLSchema#byte"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EByte"
+        EDataType (id: id-153)
+            eAnnotations:
+                EAnnotation (id: id-154)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-155)
+                            key = "baseType"
+                            value = "http://www.w3.org/2001/XMLSchema#hexBinary"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EByteArray"
+        EDataType (id: id-156)
+            eAnnotations:
+                EAnnotation (id: id-157)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-158)
+                            key = "baseType"
+                            value = "EByte"
+                        EStringToStringMapEntry (id: id-159)
+                            key = "name"
+                            value = "EByte:Object"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EByteObject"
+        EDataType (id: id-160)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EChar"
+        EDataType (id: id-161)
+            eAnnotations:
+                EAnnotation (id: id-162)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-163)
+                            key = "baseType"
+                            value = "EChar"
+                        EStringToStringMapEntry (id: id-164)
+                            key = "name"
+                            value = "EChar:Object"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "ECharacterObject"
+        EDataType (id: id-165)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EDate"
+        EDataType (id: id-166)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EDiagnosticChain"
+        EDataType (id: id-167)
+            eAnnotations:
+                EAnnotation (id: id-168)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-169)
+                            key = "baseType"
+                            value = "http://www.w3.org/2001/XMLSchema#double"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EDouble"
+        EDataType (id: id-170)
+            eAnnotations:
+                EAnnotation (id: id-171)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-172)
+                            key = "baseType"
+                            value = "EDouble"
+                        EStringToStringMapEntry (id: id-173)
+                            key = "name"
+                            value = "EDouble:Object"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EDoubleObject"
+        EDataType (id: id-174)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EEList"
+        EDataType (id: id-175)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EEnumerator"
+        EDataType (id: id-176)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EFeatureMap"
+        EDataType (id: id-177)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EFeatureMapEntry"
+        EDataType (id: id-178)
+            eAnnotations:
+                EAnnotation (id: id-179)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-180)
+                            key = "baseType"
+                            value = "http://www.w3.org/2001/XMLSchema#float"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EFloat"
+        EDataType (id: id-181)
+            eAnnotations:
+                EAnnotation (id: id-182)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-183)
+                            key = "baseType"
+                            value = "EFloat"
+                        EStringToStringMapEntry (id: id-184)
+                            key = "name"
+                            value = "EFloat:Object"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EFloatObject"
+        EDataType (id: id-185)
+            eAnnotations:
+                EAnnotation (id: id-186)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-187)
+                            key = "baseType"
+                            value = "http://www.w3.org/2001/XMLSchema#int"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EInt"
+        EDataType (id: id-188)
+            eAnnotations:
+                EAnnotation (id: id-189)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-190)
+                            key = "baseType"
+                            value = "EInt"
+                        EStringToStringMapEntry (id: id-191)
+                            key = "name"
+                            value = "EInt:Object"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EIntegerObject"
+        EDataType (id: id-192)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EJavaClass"
+        EDataType (id: id-193)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EJavaObject"
+        EDataType (id: id-194)
+            eAnnotations:
+                EAnnotation (id: id-195)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-196)
+                            key = "baseType"
+                            value = "http://www.w3.org/2001/XMLSchema#long"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "ELong"
+        EDataType (id: id-197)
+            eAnnotations:
+                EAnnotation (id: id-198)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-199)
+                            key = "baseType"
+                            value = "ELong"
+                        EStringToStringMapEntry (id: id-200)
+                            key = "name"
+                            value = "ELong:Object"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "ELongObject"
+        EDataType (id: id-201)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EMap"
+        EDataType (id: id-202)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EResource"
+        EDataType (id: id-203)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EResourceSet"
+        EDataType (id: id-204)
+            eAnnotations:
+                EAnnotation (id: id-205)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-206)
+                            key = "baseType"
+                            value = "http://www.w3.org/2001/XMLSchema#short"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EShort"
+        EDataType (id: id-207)
+            eAnnotations:
+                EAnnotation (id: id-208)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-209)
+                            key = "baseType"
+                            value = "EShort"
+                        EStringToStringMapEntry (id: id-210)
+                            key = "name"
+                            value = "EShort:Object"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EShortObject"
+        EDataType (id: id-211)
+            eAnnotations:
+                EAnnotation (id: id-212)
+                    source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+                    details:
+                        EStringToStringMapEntry (id: id-213)
+                            key = "baseType"
+                            value = "http://www.w3.org/2001/XMLSchema#string"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EString"
+        EClass (id: id-214)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-215)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "key"
+                EAttribute (id: id-216)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "value"
+            eSuperTypes -> <none>
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EStringToStringMapEntry"
+        EDataType (id: id-217)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "ETreeIterator"
+        EClass (id: id-218)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EReference (id: id-221)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EGenericType
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eUpperBound"
+                EReference (id: id-222)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EGenericType
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eTypeArguments"
+                EReference (id: id-223)
+                    containmentXsi = false
+                    lowerBound = 1
+                    upperBound = <not set>
+                    eType -> EClassifier
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eRawType"
+                EReference (id: id-224)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EGenericType
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eLowerBound"
+                EReference (id: id-225)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> ETypeParameter
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eTypeParameter"
+                EReference (id: id-226)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EClassifier
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eClassifier"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-219)
+                    source = "http://www.eclipse.org/emf/2002/Ecore"
+                    details:
+                        EStringToStringMapEntry (id: id-220)
+                            key = "constraints"
+                            value = "ConsistentType ConsistentBounds ConsistentArguments"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "EGenericType"
+        EClass (id: id-227)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EReference (id: id-228)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> EGenericType
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                    name = "eBounds"
+            eSuperTypes -> <none>
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "ETypeParameter"
+        EDataType (id: id-229)
+            eAnnotations: <nothing>
+            idXmi = <not set>
+            name = "EInvocationTargetException"
+    eSubPackages: <nothing>
+    eAnnotations: <nothing>
+    idXmi = <not set>
+    name = "ecore"

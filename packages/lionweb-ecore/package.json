@@ -1,0 +1,32 @@
+{
+    "name": "@lionweb-xml/lionweb-ecore",
+    "version": "0.0.0-dev.0",
+    "description": "LionWeb implementation of the Ecore language",
+    "private": true,
+    "main": "dist/run.js",
+    "type": "module",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LionWeb-io/lionweb-xml.git"
+    },
+    "bugs": {
+        "url": "https://github.com/LionWeb-io/lionweb-xml/issues"
+    },
+    "scripts": {
+        "clean": "npx rimraf dist node_modules",
+        "build": "tsc",
+        "prerun-dev": "npm run build",
+        "run-dev": "node dist/run-dev.js",
+        "lint": "eslint src"
+    },
+    "dependencies": {
+        "@lionweb/class-core": "0.7.2",
+        "@lionweb/core": "0.7.2",
+        "@lionweb/json": "0.7.2",
+        "xml2js": "0.6.2"
+    },
+    "devDependencies": {
+        "@types/xml2js": "0.4.14"
+    }
+}

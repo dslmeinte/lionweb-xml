@@ -1,0 +1,340 @@
+EPackage (id: id-1)
+    nsURI = "http://emf.wikipedia.org/2011/Library"
+    nsPrefix = "lib"
+    eClassifiers:
+        EClass (id: id-4)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-7)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations:
+                        EAnnotation (id: id-8)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-9)
+                                    key = "uuid"
+                                    value = "_-YzLUMSREDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfS5R9KEeeOINGRvT6ccg"
+                    name = "name"
+                EAttribute (id: id-10)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EInt
+                    eAnnotations:
+                        EAnnotation (id: id-11)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-12)
+                                    key = "uuid"
+                                    value = "_EhSzkMSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfS6R9KEeeOINGRvT6ccg"
+                    name = "age"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-5)
+                    source = "genmymodel"
+                    details:
+                        EStringToStringMapEntry (id: id-6)
+                            key = "uuid"
+                            value = "_44WagMSREDSrHKQOAiwNVw"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = "_cPfS4h9KEeeOINGRvT6ccg"
+            name = "Employee"
+        EClass (id: id-13)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-18)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations:
+                        EAnnotation (id: id-19)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-20)
+                                    key = "uuid"
+                                    value = "__hNk4MSREDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfS8B9KEeeOINGRvT6ccg"
+                    name = "name"
+                EAttribute (id: id-21)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations:
+                        EAnnotation (id: id-22)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-23)
+                                    key = "uuid"
+                                    value = "_HKdOMMSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfS9B9KEeeOINGRvT6ccg"
+                    name = "address"
+                EReference (id: id-24)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> Employee
+                    eAnnotations:
+                        EAnnotation (id: id-25)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-26)
+                                    key = "uuid"
+                                    value = "_az22sMSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfS-B9KEeeOINGRvT6ccg"
+                    name = "employees"
+                EReference (id: id-27)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> Writer
+                    eAnnotations:
+                        EAnnotation (id: id-28)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-29)
+                                    key = "uuid"
+                                    value = "_dwGlYMSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfS_B9KEeeOINGRvT6ccg"
+                    name = "writers"
+                EReference (id: id-30)
+                    containmentXsi = true
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> Book
+                    eAnnotations:
+                        EAnnotation (id: id-31)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-32)
+                                    key = "uuid"
+                                    value = "_ejBQEMSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfTAB9KEeeOINGRvT6ccg"
+                    name = "books"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-14)
+                    source = "http://www.eclipse.org/emf/2002/GenModel"
+                    details:
+                        EStringToStringMapEntry (id: id-15)
+                            key = "documentation"
+                            value = "Top-level object for library management."
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+                EAnnotation (id: id-16)
+                    source = "genmymodel"
+                    details:
+                        EStringToStringMapEntry (id: id-17)
+                            key = "uuid"
+                            value = "_5AMH4MSREDSrHKQOAiwNVw"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = "_cPfS7R9KEeeOINGRvT6ccg"
+            name = "Library"
+        EClass (id: id-33)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-36)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations:
+                        EAnnotation (id: id-37)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-38)
+                                    key = "uuid"
+                                    value = "_AclA8MSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfTBx9KEeeOINGRvT6ccg"
+                    name = "name"
+                EReference (id: id-39)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> Book
+                    eAnnotations:
+                        EAnnotation (id: id-40)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-41)
+                                    key = "uuid"
+                                    value = "_nf2BIMSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfTCx9KEeeOINGRvT6ccg"
+                    name = "books"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-34)
+                    source = "genmymodel"
+                    details:
+                        EStringToStringMapEntry (id: id-35)
+                            key = "uuid"
+                            value = "_5IlO4MSREDSrHKQOAiwNVw"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = "_cPfTBB9KEeeOINGRvT6ccg"
+            name = "Writer"
+        EClass (id: id-42)
+            abstract = <not set>
+            interface = <not set>
+            eStructuralFeatures:
+                EAttribute (id: id-45)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EString
+                    eAnnotations:
+                        EAnnotation (id: id-46)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-47)
+                                    key = "uuid"
+                                    value = "_BvbI4MSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfTEh9KEeeOINGRvT6ccg"
+                    name = "title"
+                EAttribute (id: id-48)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> EInt
+                    eAnnotations:
+                        EAnnotation (id: id-49)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-50)
+                                    key = "uuid"
+                                    value = "_L34moMSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfTFh9KEeeOINGRvT6ccg"
+                    name = "pages"
+                EAttribute (id: id-51)
+                    lowerBound = <not set>
+                    upperBound = <not set>
+                    eType -> BookCategory
+                    eAnnotations:
+                        EAnnotation (id: id-52)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-53)
+                                    key = "uuid"
+                                    value = "_NP3GMMSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfTGh9KEeeOINGRvT6ccg"
+                    name = "category"
+                EReference (id: id-54)
+                    containmentXsi = false
+                    lowerBound = <not set>
+                    upperBound = -1
+                    eType -> Writer
+                    eAnnotations:
+                        EAnnotation (id: id-55)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-56)
+                                    key = "uuid"
+                                    value = "_nIIrwMSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = "_cPfTHh9KEeeOINGRvT6ccg"
+                    name = "authors"
+            eSuperTypes -> <none>
+            eAnnotations:
+                EAnnotation (id: id-43)
+                    source = "genmymodel"
+                    details:
+                        EStringToStringMapEntry (id: id-44)
+                            key = "uuid"
+                            value = "_5P0fUMSREDSrHKQOAiwNVw"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = "_cPfTDx9KEeeOINGRvT6ccg"
+            name = "Book"
+        EEnum (id: id-57)
+            eLiterals:
+                EEnumLiteral (id: id-60)
+                    value = "EEnumLiteral"
+                    eAnnotations:
+                        EAnnotation (id: id-61)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-62)
+                                    key = "uuid"
+                                    value = "_PV6MsMSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = <not set>
+                    name = <not set>
+                EEnumLiteral (id: id-63)
+                    value = "EEnumLiteral2"
+                    eAnnotations:
+                        EAnnotation (id: id-64)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-65)
+                                    key = "uuid"
+                                    value = "_PcofwMSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = <not set>
+                    name = <not set>
+                EEnumLiteral (id: id-66)
+                    value = "EEnumLiteral3"
+                    eAnnotations:
+                        EAnnotation (id: id-67)
+                            source = "genmymodel"
+                            details:
+                                EStringToStringMapEntry (id: id-68)
+                                    key = "uuid"
+                                    value = "_PiIDwMSSEDSrHKQOAiwNVw"
+                            eAnnotations: <nothing>
+                            idXmi = <not set>
+                    idXmi = <not set>
+                    name = <not set>
+            eAnnotations:
+                EAnnotation (id: id-58)
+                    source = "genmymodel"
+                    details:
+                        EStringToStringMapEntry (id: id-59)
+                            key = "uuid"
+                            value = "_OL1mQMSSEDSrHKQOAiwNVw"
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = "_cPfTIh9KEeeOINGRvT6ccg"
+            name = "BookCategory"
+    eSubPackages: <nothing>
+    eAnnotations:
+        EAnnotation (id: id-2)
+            source = "genmymodel"
+            details:
+                EStringToStringMapEntry (id: id-3)
+                    key = "uuid"
+                    value = "_sVHYgKGcEeawbN_F_HFDxg"
+            eAnnotations: <nothing>
+            idXmi = <not set>
+    idXmi = "_cPTssB9KEeeOINGRvT6ccg"
+    name = "library"

@@ -1,6 +1,6 @@
 # IntelliJ IDEA:
 /.idea
-/lionweb-ecore.iml
+/lionweb-xml.iml
 
 # NPM:
 node_modules/
