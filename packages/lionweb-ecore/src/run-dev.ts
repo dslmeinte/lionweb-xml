@@ -14,6 +14,8 @@ const process = async (name: string) => {
     console.log(`read Ecore file: ${name}`)
 }
 
-await process("Ecore")
-await process("library")
+await process("ecore", "Ecore")
+await process("library", "library")
+await process("sysmlv2", "kerml_lionweb")
+await process("sysmlv2", "SysML_lionweb")
 

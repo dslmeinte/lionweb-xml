@@ -20,5 +20,7 @@ const runOnce = async (filePath: string) => {
 export const runDev = async () => {
     await runOnce("artifacts/ecore/Ecore.ecore")
     await runOnce("artifacts/library/library.ecore")
+    await runOnce("artifacts/sysmlv2/kerml_lionweb.ecore")
+    await runOnce("artifacts/sysmlv2/SysML_lionweb.ecore")
 }
 

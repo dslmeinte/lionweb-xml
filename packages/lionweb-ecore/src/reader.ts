@@ -70,7 +70,7 @@ const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml): EPackage => {
     const deserializeEAnnotationFromXml = (eAnnotationFromXml: EAnnotationFromXml): EAnnotation => {
         const eAnnotation = EAnnotation.create(newId())
         eAnnotation.source = eAnnotationFromXml.$.source
-        eAnnotationFromXml.details.forEach(({$}) => {
+        eAnnotationFromXml.details?.forEach(({$}) => {
             const eStringToStringMapEntry = EStringToStringMapEntry.create(newId())
             eStringToStringMapEntry.key = $.key
             eStringToStringMapEntry.value = $.value

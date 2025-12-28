@@ -19,7 +19,7 @@ export type EAnnotationFromXml = EcoreObjectFromXml & {
     $: {
         source: string
     }
-    details: EStringToStringMapEntryFromXml[]
+    details?: EStringToStringMapEntryFromXml[]
 }
 
 
