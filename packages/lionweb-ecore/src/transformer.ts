@@ -2,10 +2,15 @@ import { Concept, Interface, isRef, Language, LanguageEntity, LanguageFactory, n
 import { LionWebId } from "@lionweb/json"
 import { concatenator } from "@lionweb/ts-utils"
 
-import { EAnnotation, EClass, EClassifier, EDataType, EEnum, EPackage } from "./gen/ecore.g.js"
+import { EClass, EClassifier, EDataType, EEnum, EPackage } from "./gen/ecore.g.js"
+import { log, LogLevel } from "./logging.js"
 
 
-export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string): Language => {
+export type TransformationOptions = Partial<{
+    eDataTypesAsPrimitiveTypes: boolean
+}>
+
+export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, options?: TransformationOptions): Language => {
     const factory = new LanguageFactory(ePackage.name, languageVersion, concatenator("-"), concatenator("-"))
 
     const entitiesBySourceId: Record<LionWebId, LanguageEntity> = {}
@@ -15,20 +20,15 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string): 
         const interfaceSuperTypes = eClass.eSuperTypes.filter((eSuperType) => isRef(eSuperType) && eSuperType.interface) as EClass[]
         const nonInterfaceSuperTypes = eClass.eSuperTypes.filter((eSuperType) => isRef(eSuperType) && !eSuperType.interface) as EClass[]
         if (eClass.interface) {
-            /*
-            if (abstract) {
-                console.info(`(interface EClass "${name}" is declared as abstract as well)`)
-            }
-             */
             if (nonInterfaceSuperTypes.length > 0) {
-                console.error(`interface EClass "${name}" has super types that are not interfaces: ${nonInterfaceSuperTypes.map(nameOf).join(" ")}`)
+                log(LogLevel.warning, ` interface EClass "${name}" has super types that are not interfaces: ${nonInterfaceSuperTypes.map(nameOf).join(" ")} — didn’t add the transformed versions of those to Interface.extends`)
             }
             return factory.interface(name).extending(
                 ...(interfaceSuperTypes.map(transformEClassifierMemoised) as Interface[])
             )
         }
         if (nonInterfaceSuperTypes.length > 1) {
-            console.error(`EClass "${name}" is not an interface, but exhibits multiple inheritance`)
+            log(LogLevel.warning, ` EClass "${name}" is not an interface, but exhibits multiple inheritance — set Concept.extends to the first transformed non-interface, and ignored the others`)
         }
         const concept = factory.concept(name, abstract)
         if (nonInterfaceSuperTypes.length > 0) {
@@ -45,9 +45,6 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string): 
 
     const transformEClassifierRecursively = (eClassifier: EClassifier): LanguageEntity | undefined => {
         const {name} = eClassifier
-        if (eClassifier instanceof EAnnotation) {
-            return factory.annotation(name)
-        }
         if (eClassifier instanceof EClass) {
             const classifier = transformEClassWithoutFeatures(eClassifier)
             // TODO  features
@@ -61,10 +58,14 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string): 
             return enum_
         }
         if (eClassifier instanceof EDataType) {
-            console.warn(`EDataType "${name}" is not transformed, as there’s no canonical (and instantiable) counterpart in LionWeb`)
+            if (options?.eDataTypesAsPrimitiveTypes) {
+                log(LogLevel.info, ` transformed EDataType "${name}" to a LionWeb PrimitiveType`)
+                return factory.primitiveType(name)
+            } // else:
+            log(LogLevel.warning, ` EDataType "${name}" is not transformed, as there’s no canonical (and instantiable) counterpart in LionWeb`)
             return undefined
         }
-        console.warn(`${eClassifier.constructor.name} "${name}" is not tranformed yet`)
+        log(LogLevel.warning, ` ${eClassifier.constructor.name} "${name}" is not handled by the transformation (yet?)`)
         return undefined
     }
 
@@ -81,6 +82,7 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string): 
     }
 
     ePackage.eClassifiers.forEach(transformEClassifierMemoised)
+    // TODO  what to do with ePackage.eAnnotations?
 
     return factory.language
 }

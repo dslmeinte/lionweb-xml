@@ -1,0 +1,889 @@
+language kerml
+    version: 1
+    entities (↓name):
+
+        concept AnnotatingElement extends Element
+
+        concept AnnotatingElement extends Element
+
+        concept AnnotatingElement extends Element
+
+        concept AnnotatingElement extends Element
+
+        concept Annotation extends Relationship
+
+        concept Association extends Classifier
+
+        concept Association extends Classifier
+
+        concept Association extends Classifier
+
+        concept AssociationStructure extends Association
+
+        concept Behavior extends Class
+
+        concept Behavior extends Class
+
+        concept Behavior extends Class
+
+        concept BindingConnector extends Connector
+
+        concept BooleanExpression extends Expression
+
+        concept BooleanExpression extends Expression
+
+        concept Class extends Classifier
+
+        concept Class extends Classifier
+
+        concept Class extends Classifier
+
+        concept Class extends Classifier
+
+        concept Class extends Classifier
+
+        concept Class extends Classifier
+
+        concept Classifier extends Type
+
+        concept Classifier extends Type
+
+        concept Classifier extends Type
+
+        concept Classifier extends Type
+
+        concept Classifier extends Type
+
+        concept Classifier extends Type
+
+        concept Classifier extends Type
+
+        concept Classifier extends Type
+
+        concept Classifier extends Type
+
+        concept Classifier extends Type
+
+        concept Classifier extends Type
+
+        concept CollectExpression extends OperatorExpression
+
+        concept Comment extends AnnotatingElement
+
+        concept Comment extends AnnotatingElement
+
+        concept Conjugation extends Relationship
+
+        concept Connector extends Feature
+
+        concept Connector extends Feature
+
+        concept Connector extends Feature
+
+        concept Connector extends Feature
+
+        concept Connector extends Feature
+
+        concept ConstructorExpression extends InstantiationExpression
+
+        concept CrossSubsetting extends Subsetting
+
+        concept DataType extends Classifier
+
+        concept Dependency extends Relationship
+
+        concept Differencing extends Relationship
+
+        concept Disjoining extends Relationship
+
+        concept Documentation extends Comment
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        abstract concept Element
+
+        concept ElementFilterMembership extends OwningMembership
+
+        concept EndFeatureMembership extends FeatureMembership
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Expression extends Step
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept Feature extends Type
+
+        concept FeatureChainExpression extends OperatorExpression
+
+        concept FeatureChaining extends Relationship
+
+        enumeration FeatureDirectionKind
+            literals:
+                in
+                inout
+                out
+
+        concept FeatureInverting extends Relationship
+
+        concept FeatureMembership extends OwningMembership
+
+        concept FeatureMembership extends OwningMembership
+
+        concept FeatureMembership extends OwningMembership
+
+        concept FeatureMembership extends OwningMembership
+
+        concept FeatureMembership extends OwningMembership
+
+        concept FeatureReferenceExpression extends Expression
+
+        concept FeatureTyping extends Specialization
+
+        concept FeatureValue extends OwningMembership
+
+        concept Flow extends Connector
+
+        concept Flow extends Connector
+
+        concept FlowEnd extends Feature
+
+        concept Function extends Behavior
+
+        concept Function extends Behavior
+
+        abstract concept Import extends Relationship
+
+        abstract concept Import extends Relationship
+
+        abstract concept Import extends Relationship
+
+        concept IndexExpression extends OperatorExpression
+
+        abstract concept InstantiationExpression extends Expression
+
+        abstract concept InstantiationExpression extends Expression
+
+        abstract concept InstantiationExpression extends Expression
+
+        abstract concept InstantiationExpression extends Expression
+
+        abstract concept InstantiationExpression extends Expression
+
+        abstract concept InstantiationExpression extends Expression
+
+        abstract concept InstantiationExpression extends Expression
+
+        abstract concept InstantiationExpression extends Expression
+
+        concept Interaction extends Association
+
+        concept Intersecting extends Relationship
+
+        concept Invariant extends BooleanExpression
+
+        concept InvocationExpression extends InstantiationExpression
+
+        concept InvocationExpression extends InstantiationExpression
+
+        concept InvocationExpression extends InstantiationExpression
+
+        concept InvocationExpression extends InstantiationExpression
+
+        concept InvocationExpression extends InstantiationExpression
+
+        concept InvocationExpression extends InstantiationExpression
+
+        concept LibraryPackage extends Package
+
+        concept LiteralBoolean extends LiteralExpression
+
+        concept LiteralExpression extends Expression
+
+        concept LiteralExpression extends Expression
+
+        concept LiteralExpression extends Expression
+
+        concept LiteralExpression extends Expression
+
+        concept LiteralExpression extends Expression
+
+        concept LiteralExpression extends Expression
+
+        concept LiteralInfinity extends LiteralExpression
+
+        concept LiteralInteger extends LiteralExpression
+
+        concept LiteralRational extends LiteralExpression
+
+        concept LiteralString extends LiteralExpression
+
+        concept Membership extends Relationship
+
+        concept Membership extends Relationship
+
+        concept Membership extends Relationship
+
+        concept Membership extends Relationship
+
+        concept Membership extends Relationship
+
+        concept Membership extends Relationship
+
+        concept Membership extends Relationship
+
+        concept Membership extends Relationship
+
+        concept Membership extends Relationship
+
+        concept MembershipImport extends Import
+
+        concept Metaclass extends Structure
+
+        concept MetadataAccessExpression extends Expression
+
+        concept MetadataFeature extends Feature
+
+        concept Multiplicity extends Feature
+
+        concept Multiplicity extends Feature
+
+        concept MultiplicityRange extends Multiplicity
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept Namespace extends Element
+
+        concept NamespaceImport extends Import
+
+        concept NullExpression extends Expression
+
+        concept OperatorExpression extends InvocationExpression
+
+        concept OperatorExpression extends InvocationExpression
+
+        concept OperatorExpression extends InvocationExpression
+
+        concept OperatorExpression extends InvocationExpression
+
+        concept OperatorExpression extends InvocationExpression
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept Package extends Namespace
+
+        concept Package extends Namespace
+
+        concept ParameterMembership extends FeatureMembership
+
+        concept ParameterMembership extends FeatureMembership
+
+        concept PayloadFeature extends Feature
+
+        concept Predicate extends Function
+
+        concept Redefinition extends Subsetting
+
+        concept ReferenceSubsetting extends Subsetting
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        abstract concept Relationship extends Element
+
+        concept ResultExpressionMembership extends FeatureMembership
+
+        concept ReturnParameterMembership extends ParameterMembership
+
+        concept SelectExpression extends OperatorExpression
+
+        concept Specialization extends Relationship
+
+        concept Specialization extends Relationship
+
+        concept Specialization extends Relationship
+
+        concept Specialization extends Relationship
+
+        concept Specialization extends Relationship
+
+        concept Specialization extends Relationship
+
+        concept Specialization extends Relationship
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Step extends Feature
+
+        concept Structure extends Class
+
+        concept Structure extends Class
+
+        concept Subclassification extends Specialization
+
+        concept Subsetting extends Specialization
+
+        concept Subsetting extends Specialization
+
+        concept Subsetting extends Specialization
+
+        concept Subsetting extends Specialization
+
+        concept Succession extends Connector
+
+        concept SuccessionFlow extends Flow
+
+        concept TextualRepresentation extends AnnotatingElement
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept Type extends Namespace
+
+        concept TypeFeaturing extends Relationship
+
+        concept Unioning extends Relationship
+
+        enumeration VisibilityKind
+            literals:
+                private
+                protected
+                public
+
+

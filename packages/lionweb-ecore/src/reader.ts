@@ -33,12 +33,20 @@ import {
     EStringToStringMapEntry,
     EStructuralFeature
 } from "./gen/ecore.g.js"
-import { ESuperTypeRefToInstall } from "./eSuperType-references.js";
+import { ESuperTypeRefToInstall } from "./eSuperType-references.js"
+import { log, LogLevel } from "./logging.js"
+
+
+export type ExternalETypeResolver = (eTypeRef: string) => EClassifier | undefined
+
+export type ReaderOptions = Partial<{
+    externalETypeResolver: ExternalETypeResolver
+}>
 
 
 const ecoreBase = EcoreBase.INSTANCE
 
-const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml): EPackage => {
+const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml, options?: ReaderOptions): EPackage => {
 
     let sequentialId = 0
 
@@ -90,15 +98,29 @@ const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml): EPackage => {
             case "ecore:EAttribute": {
                 const eAttribute = createEModelElementFrom(eStructuralFeatureFromXml, ecoreBase.EAttribute) as EAttribute
                 const {eType} = eStructuralFeatureFromXml.$
-                if (eType !== undefined) {
-                    eTypeRefsToInstall.push(refFor(eAttribute, eType))
-                } else {
+                const {id} = eAttribute
+                if (eType === undefined) {
                     const {eType: eTypes} = eStructuralFeatureFromXml as EAttributeFromXml
-                    if (eTypes === undefined || eTypes.length !== 1) {
-                        console.error(`unhandled value of eType in an EAttribute — (eType will not be resolved): ${JSON.stringify(eStructuralFeatureFromXml)}`)
+                    if (eTypes === undefined || eTypes.length === 0) {
+                        log(LogLevel.error, `unhandled value of eType in an EAttribute with id "${id}" — (eType will not be resolved): ${JSON.stringify(eStructuralFeatureFromXml)}`)
                     } else {
-                        eTypeRefsToInstall.push(refFor(eAttribute, eTypes[0].$.href))
+                        const href = eTypes[0].$.href
+                        log(LogLevel.info, `will install eType on EAttribute with id "${id}" from first href in its original eTypes node: ${href}`)
+                        eTypeRefsToInstall.push(refFor(eAttribute, href))
+                        if (eTypes.length > 1) {
+                            log(LogLevel.warning, `EAttribute with id "${id}" references more than one type under its original eTypes node`)
+                        }
                     }
+                } else {
+                    if (options?.externalETypeResolver !== undefined) {
+                        const resolution = options.externalETypeResolver(eType)
+                        if (resolution !== undefined) {
+                            log(LogLevel.info, `resolved the following eType on EAttribute with id "${id}" using the provided external EType resolver: ${eType}`)
+                            eAttribute.eType = resolution
+                            return eAttribute
+                        }
+                    }
+                    eTypeRefsToInstall.push(refFor(eAttribute, eType))
                 }
                 return eAttribute
             }
@@ -186,7 +208,7 @@ const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml): EPackage => {
     eTypeRefsToInstall.forEach((eTypeRefToInstall) => {
         const target = resolveEType(eTypeRefToInstall)
         if (target === undefined) {
-            console.error(`can’t resolve ${verbalizationOf(eTypeRefToInstall)}`)
+            log(LogLevel.error, `can’t resolve ${verbalizationOf(eTypeRefToInstall)} (as target of EClass.eType)`)
         } else {
             eTypeRefToInstall.container.eType = target
         }
@@ -195,7 +217,7 @@ const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml): EPackage => {
     eSuperTypeRefsToInstall.forEach(({container, targetRef}) => {
         const target = eModelElementsByName[targetRef.substring("#//".length)]
         if (target === undefined) {
-            console.error(`can’t resolve eSuperType target "${targetRef}"`)
+            log(LogLevel.error, `can’t resolve "${targetRef}" (as target of EClass.eSuperType)`)
         } else {
             container.addESuperTypes(target as EClass)
         }
@@ -208,9 +230,9 @@ const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml): EPackage => {
 /**
  * @return a {@link EPackage} deserialized (asynchronously) from the file at the given path
  */
-export const readEcoreFile = async (path: string): Promise<EPackage> => {
+export const readEcoreFile = async (path: string, options?: ReaderOptions): Promise<EPackage> => {
     const xmlAsString = await readFile(path, { encoding: "utf8" })
     const xmlAsJson = await parseStringPromise(xmlAsString)
-    return Promise.resolve(deserializeFromEcoreXml(xmlAsJson))
+    return Promise.resolve(deserializeFromEcoreXml(xmlAsJson, options))
 }
 

@@ -17,7 +17,7 @@ npm run build
 cd ..
 
 cd examples
-npm run generate
+npm run generate > generate.out.log 2> generate.err.log
 cd ..
 
 cd .. # (/<root>)

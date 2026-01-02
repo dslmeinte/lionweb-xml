@@ -1,0 +1,87 @@
+EPackage (id: id-1)
+    nsURI = "https://www.omg.org/spec/UML/20161101/PrimitiveTypes"
+    nsPrefix = "primitives"
+    eClassifiers:
+        EDataType (id: id-7)
+            eAnnotations:
+                EAnnotation (id: id-8)
+                    source = "http://www.eclipse.org/emf/2002/GenModel"
+                    details:
+                        EStringToStringMapEntry (id: id-9)
+                            key = "documentation"
+                            value = "Integer is a primitive type representing integer values."
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "Integer"
+        EDataType (id: id-10)
+            eAnnotations:
+                EAnnotation (id: id-11)
+                    source = "http://www.eclipse.org/emf/2002/GenModel"
+                    details:
+                        EStringToStringMapEntry (id: id-12)
+                            key = "documentation"
+                            value = "Real is a primitive type representing the mathematical concept of real."
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "Real"
+        EDataType (id: id-13)
+            eAnnotations:
+                EAnnotation (id: id-14)
+                    source = "http://www.eclipse.org/emf/2002/GenModel"
+                    details:
+                        EStringToStringMapEntry (id: id-15)
+                            key = "documentation"
+                            value = "String is a sequence of characters in some suitable character set used to display information about the model. Character sets may include non-Roman alphabets and characters."
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "String"
+        EDataType (id: id-16)
+            eAnnotations:
+                EAnnotation (id: id-17)
+                    source = "http://www.eclipse.org/emf/2002/GenModel"
+                    details:
+                        EStringToStringMapEntry (id: id-18)
+                            key = "documentation"
+                            value = "UnlimitedNatural is a primitive type representing unlimited natural values."
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "UnlimitedNatural"
+        EDataType (id: id-19)
+            eAnnotations:
+                EAnnotation (id: id-20)
+                    source = "http://www.eclipse.org/emf/2002/GenModel"
+                    details:
+                        EStringToStringMapEntry (id: id-21)
+                            key = "documentation"
+                            value = "Boolean is used for logical expressions, consisting of the predefined values true and false."
+                    eAnnotations: <nothing>
+                    idXmi = <not set>
+            idXmi = <not set>
+            name = "Boolean"
+    eSubPackages: <nothing>
+    eAnnotations:
+        EAnnotation (id: id-2)
+            source = "http://www.eclipse.org/uml2/2.0.0/UML"
+            details:
+                EStringToStringMapEntry (id: id-3)
+                    key = "originalName"
+                    value = "primitiveTypes"
+            eAnnotations: <nothing>
+            idXmi = <not set>
+        EAnnotation (id: id-4)
+            source = "http://www.eclipse.org/emf/2002/Ecore"
+            details:
+                EStringToStringMapEntry (id: id-5)
+                    key = "settingDelegates"
+                    value = "http://www.omg.org/spec/SysML"
+                EStringToStringMapEntry (id: id-6)
+                    key = "invocationDelegates"
+                    value = "http://www.omg.org/spec/SysML"
+            eAnnotations: <nothing>
+            idXmi = <not set>
+    idXmi = <not set>
+    name = "types"
