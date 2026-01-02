@@ -3,8 +3,8 @@ EPackage (id: id-1)
     nsPrefix = "lib"
     eClassifiers:
         EClass (id: id-4)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-7)
                     lowerBound = <not set>
@@ -49,8 +49,8 @@ EPackage (id: id-1)
             idXmi = "_cPfS4h9KEeeOINGRvT6ccg"
             name = "Employee"
         EClass (id: id-13)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-18)
                     lowerBound = <not set>
@@ -151,8 +151,8 @@ EPackage (id: id-1)
             idXmi = "_cPfS7R9KEeeOINGRvT6ccg"
             name = "Library"
         EClass (id: id-33)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-36)
                     lowerBound = <not set>
@@ -198,8 +198,8 @@ EPackage (id: id-1)
             idXmi = "_cPfTBB9KEeeOINGRvT6ccg"
             name = "Writer"
         EClass (id: id-42)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-45)
                     lowerBound = <not set>
@@ -288,7 +288,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "ScienceFiction"
                 EEnumLiteral (id: id-63)
                     value = "EEnumLiteral2"
                     eAnnotations:
@@ -301,7 +301,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "Biographie"
                 EEnumLiteral (id: id-66)
                     value = "EEnumLiteral3"
                     eAnnotations:
@@ -314,7 +314,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "Mistery"
             eAnnotations:
                 EAnnotation (id: id-58)
                     source = "genmymodel"

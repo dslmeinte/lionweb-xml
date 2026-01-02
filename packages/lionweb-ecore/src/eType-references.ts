@@ -24,8 +24,13 @@ export const refFor = (container: ETypedElement, ref: string): ETypeRefToInstall
     if (ref.startsWith(ecoreDataTypeHrefPrefix)) {
         return { container, targetRef: ref.substring(ecoreDataTypeHrefPrefix.length), refKind: RefKind.ecoreStdlib }
     }
+    const match = ref.match(/^ecore:EDataType [A-Za-z.]+?#\/\/(\w+)$/)
+    if (match) {
+        return { container, targetRef: "E" + match[1], refKind: RefKind.ecoreStdlib }
+    }
     return { container, targetRef: ref, refKind: RefKind.internalId }
 }
+
 
 export const verbalizationOf = ({container, targetRef, refKind}: ETypeRefToInstall) =>
     `eType to install on ${container.id} -> (${RefKind[refKind]}) ${targetRef}`

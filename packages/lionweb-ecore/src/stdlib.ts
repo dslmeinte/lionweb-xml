@@ -19,7 +19,14 @@ const createEClassAsPair = (name: string): [name: string, eClass: EClass] => {
  * Eventually, an actual reading of `Ecore.ecore` should be used.
  */
 export const ecoreStdlib = {
-    ...Object.fromEntries(["EBoolean", "EInt", "EString"].map(createEDataTypeAsPair)),
+    ...Object.fromEntries([
+        "EBoolean",
+        "EInt",
+        "EString",
+        // for KerML and SysML v2:
+        "EInteger",
+        "EReal"
+    ].map(createEDataTypeAsPair)),
     ...Object.fromEntries(["EDataType", "EObject"].map(createEClassAsPair))
 } as const
 

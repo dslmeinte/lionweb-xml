@@ -1,0 +1,1099 @@
+language kerml
+    version: 1
+    entities (↓name):
+
+        concept AliasIdsContainer
+
+        concept AnnotatingElement implements IAnnotatingElement
+
+        concept Annotation implements IRelationship
+
+        concept Association implements IClassifier, IRelationship
+
+        concept Association implements IClassifier, IRelationship
+
+        concept Association implements IClassifier, IRelationship
+
+        concept AssociationStructure extends Association implements IStructure
+
+        concept Behavior implements IBehavior
+
+        concept BindingConnector implements IConnector
+
+        concept BooleanExpression extends Expression
+
+        concept BooleanExpression extends Expression
+
+        concept Class implements IClass
+
+        concept Classifier implements IClassifier
+
+        concept CollectExpression extends OperatorExpression
+
+        concept Comment implements IAnnotatingElement
+
+        concept Comment implements IAnnotatingElement
+
+        concept Conjugation implements IRelationship
+
+        concept Connector implements IConnector
+
+        concept DataType implements IClassifier
+
+        concept Dependency implements IRelationship
+
+        concept Differencing implements IRelationship
+
+        concept Disjoining implements IRelationship
+
+        concept Documentation extends Comment
+
+        concept Element implements IElement
+
+        concept ElementFilterMembership extends OwningMembership
+
+        concept EndFeatureMembership extends FeatureMembership
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Expression implements IStep
+
+        concept Feature implements IFeature
+
+        concept FeatureChainExpression extends OperatorExpression
+
+        concept FeatureChaining implements IRelationship
+
+        enumeration FeatureDirectionKind
+            literals:
+                in
+                inout
+                out
+
+        concept FeatureInverting implements IRelationship
+
+        concept FeatureMembership extends OwningMembership implements IFeaturing
+
+        concept FeatureMembership extends OwningMembership implements IFeaturing
+
+        concept FeatureMembership extends OwningMembership implements IFeaturing
+
+        concept FeatureMembership extends OwningMembership implements IFeaturing
+
+        concept FeatureMembership extends OwningMembership implements IFeaturing
+
+        concept FeatureReferenceExpression extends Expression
+
+        concept FeatureTyping extends Specialization
+
+        concept FeatureValue extends OwningMembership
+
+        concept Featuring implements IFeaturing
+
+        concept Function implements IBehavior
+
+        concept Function implements IBehavior
+
+        interface IAnnotatingElement extends IElement
+
+        interface IAnnotatingElement extends IElement
+
+        interface IAnnotatingElement extends IElement
+
+        interface IAnnotatingElement extends IElement
+
+        interface IAnnotatingElement extends IElement
+
+        interface IAnnotatingElement extends IElement
+
+        interface IBehavior extends IClass
+
+        interface IBehavior extends IClass
+
+        interface IBehavior extends IClass
+
+        interface IBehavior extends IClass
+
+        interface IBehavior extends IClass
+
+        interface IClass extends IClassifier
+
+        interface IClass extends IClassifier
+
+        interface IClass extends IClassifier
+
+        interface IClass extends IClassifier
+
+        interface IClass extends IClassifier
+
+        interface IClass extends IClassifier
+
+        interface IClass extends IClassifier
+
+        interface IClass extends IClassifier
+
+        interface IClass extends IClassifier
+
+        interface IClass extends IClassifier
+
+        interface IClass extends IClassifier
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IClassifier extends IType
+
+        interface IConnector extends IFeature, IRelationship
+
+        interface IConnector extends IFeature, IRelationship
+
+        interface IConnector extends IFeature, IRelationship
+
+        interface IConnector extends IFeature, IRelationship
+
+        interface IConnector extends IFeature, IRelationship
+
+        interface IConnector extends IFeature, IRelationship
+
+        interface IConnector extends IFeature, IRelationship
+
+        interface IConnector extends IFeature, IRelationship
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IElement
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeature extends IType
+
+        interface IFeaturing extends IRelationship
+
+        interface IFeaturing extends IRelationship
+
+        interface IFeaturing extends IRelationship
+
+        interface IFeaturing extends IRelationship
+
+        interface IFeaturing extends IRelationship
+
+        interface IFeaturing extends IRelationship
+
+        interface IFeaturing extends IRelationship
+
+        interface IFeaturing extends IRelationship
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface INamespace extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IRelationship extends IElement
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStep extends IFeature
+
+        interface IStructure extends IClass
+
+        interface IStructure extends IClass
+
+        interface IStructure extends IClass
+
+        interface IStructure extends IClass
+
+        interface ISuccession extends IConnector
+
+        interface ISuccession extends IConnector
+
+        interface ISuccession extends IConnector
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        interface IType extends INamespace
+
+        abstract concept Import implements IRelationship
+
+        abstract concept Import implements IRelationship
+
+        abstract concept Import implements IRelationship
+
+        concept Interaction extends Association implements IBehavior
+
+        concept Intersecting implements IRelationship
+
+        concept Invariant extends BooleanExpression
+
+        concept InvocationExpression extends Expression
+
+        concept InvocationExpression extends Expression
+
+        concept InvocationExpression extends Expression
+
+        concept InvocationExpression extends Expression
+
+        concept InvocationExpression extends Expression
+
+        concept ItemFeature implements IFeature
+
+        concept ItemFlow implements IConnector, IStep
+
+        concept ItemFlow implements IConnector, IStep
+
+        concept ItemFlowEnd implements IFeature
+
+        concept LibraryPackage extends Package
+
+        concept LiteralBoolean extends LiteralExpression
+
+        concept LiteralExpression extends Expression
+
+        concept LiteralExpression extends Expression
+
+        concept LiteralExpression extends Expression
+
+        concept LiteralExpression extends Expression
+
+        concept LiteralExpression extends Expression
+
+        concept LiteralExpression extends Expression
+
+        concept LiteralInfinity extends LiteralExpression
+
+        concept LiteralInteger extends LiteralExpression
+
+        concept LiteralRational extends LiteralExpression
+
+        concept LiteralString extends LiteralExpression
+
+        concept Membership implements IRelationship
+
+        concept Membership implements IRelationship
+
+        concept Membership implements IRelationship
+
+        concept Membership implements IRelationship
+
+        concept Membership implements IRelationship
+
+        concept Membership implements IRelationship
+
+        concept Membership implements IRelationship
+
+        concept Membership implements IRelationship
+
+        concept Membership implements IRelationship
+
+        concept MembershipImport extends Import
+
+        concept Metaclass implements IStructure
+
+        concept MetadataAccessExpression extends Expression
+
+        concept MetadataFeature implements IAnnotatingElement, IFeature
+
+        concept Multiplicity implements IFeature
+
+        concept Multiplicity implements IFeature
+
+        concept MultiplicityRange extends Multiplicity
+
+        concept Namespace implements INamespace
+
+        concept NamespaceImport extends Import
+
+        concept NullExpression extends Expression
+
+        concept OperatorExpression extends InvocationExpression
+
+        concept OperatorExpression extends InvocationExpression
+
+        concept OperatorExpression extends InvocationExpression
+
+        concept OperatorExpression extends InvocationExpression
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept OwningMembership extends Membership
+
+        concept Package implements INamespace
+
+        concept Package implements INamespace
+
+        concept ParameterMembership extends FeatureMembership
+
+        concept ParameterMembership extends FeatureMembership
+
+        concept Predicate extends Function
+
+        concept Redefinition extends Subsetting
+
+        concept ReferenceSubsetting extends Subsetting
+
+        concept Relationship implements IRelationship
+
+        concept ResultExpressionMembership extends FeatureMembership
+
+        concept ReturnParameterMembership extends ParameterMembership
+
+        concept SelectExpression extends OperatorExpression
+
+        concept Specialization implements IRelationship
+
+        concept Specialization implements IRelationship
+
+        concept Specialization implements IRelationship
+
+        concept Specialization implements IRelationship
+
+        concept Specialization implements IRelationship
+
+        concept Specialization implements IRelationship
+
+        concept Step implements IStep
+
+        concept Structure implements IStructure
+
+        concept Subclassification extends Specialization
+
+        concept Subsetting extends Specialization
+
+        concept Subsetting extends Specialization
+
+        concept Subsetting extends Specialization
+
+        concept Succession implements ISuccession
+
+        concept SuccessionItemFlow extends ItemFlow implements ISuccession
+
+        concept TextualRepresentation implements IAnnotatingElement
+
+        concept Type implements IType
+
+        concept TypeFeaturing implements IFeaturing
+
+        concept Unioning implements IRelationship
+
+        enumeration VisibilityKind
+            literals:
+                private
+                protected
+                public
+
+

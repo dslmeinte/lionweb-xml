@@ -2,8 +2,9 @@
     "name": "@lionweb-xml/lionweb-ecore",
     "version": "0.0.0-dev.0",
     "description": "LionWeb implementation of the Ecore language",
-    "private": true,
-    "main": "dist/run.js",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "typings": "dist/index.d.ts",
     "type": "module",
     "license": "Apache-2.0",
     "repository": {
@@ -24,9 +25,11 @@
         "@lionweb/class-core": "0.7.2",
         "@lionweb/core": "0.7.2",
         "@lionweb/json": "0.7.2",
+        "@lionweb/ts-utils": "0.7.2",
         "xml2js": "0.6.2"
     },
     "devDependencies": {
+        "@types/node": "25.0.3",
         "@types/xml2js": "0.4.14"
     }
 }

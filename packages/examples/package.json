@@ -1,7 +1,7 @@
 {
-    "name": "@lionweb-xml/build",
+    "name": "@lionweb-xml/examples",
     "version": "0.0.0-dev.0",
-    "description": "Build Ecore LionWeb language",
+    "description": "Examples of Ecore meta-models, and their transformation to LionWeb languages",
     "private": true,
     "main": "dist/run.js",
     "type": "module",
@@ -21,12 +21,14 @@
         "lint": "eslint src"
     },
     "dependencies": {
-        "@lionweb/class-core-generator": "0.7.2",
+        "@lionweb-xml/lionweb-ecore": "*",
+        "@lionweb/class-core": "0.7.2",
         "@lionweb/core": "0.7.2",
-        "@lionweb/ts-utils": "0.7.2",
-        "@lionweb/utilities": "0.7.2"
+        "@lionweb/utilities": "0.7.2",
+        "xml2js": "0.6.2"
     },
     "devDependencies": {
-        "@types/node": "25.0.3"
+        "@types/node": "25.0.3",
+        "@types/xml2js": "0.4.14"
     }
 }

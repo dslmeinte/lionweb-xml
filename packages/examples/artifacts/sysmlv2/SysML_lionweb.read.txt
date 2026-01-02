@@ -93,7 +93,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "subclassifier"
-            eSuperTypes -> <none>
+            eSuperTypes -> Specialization
             eAnnotations:
                 EAnnotation (id: id-6)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -197,7 +197,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "specific"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-26)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -360,7 +360,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "isImplied"
-            eSuperTypes -> <none>
+            eSuperTypes -> IElement
             eAnnotations:
                 EAnnotation (id: id-46)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -907,7 +907,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ownedMemberElement"
-            eSuperTypes -> <none>
+            eSuperTypes -> Membership
             eAnnotations:
                 EAnnotation (id: id-154)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -1055,7 +1055,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "visibility"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-178)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -1253,7 +1253,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ownedMembership"
-            eSuperTypes -> <none>
+            eSuperTypes -> IElement
             eAnnotations:
                 EAnnotation (id: id-206)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -1396,7 +1396,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "importOwningNamespace"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-245)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -1434,7 +1434,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "private"
                 EEnumLiteral (id: id-276)
                     value = <not set>
                     eAnnotations:
@@ -1448,7 +1448,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "protected"
                 EEnumLiteral (id: id-279)
                     value = <not set>
                     eAnnotations:
@@ -1461,7 +1461,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "public"
             eAnnotations:
                 EAnnotation (id: id-271)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -1510,7 +1510,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "documentedElement"
-            eSuperTypes -> <none>
+            eSuperTypes -> Comment
             eAnnotations:
                 EAnnotation (id: id-283)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -1558,7 +1558,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "body"
-            eSuperTypes -> <none>
+            eSuperTypes -> IAnnotatingElement
             eAnnotations:
                 EAnnotation (id: id-292)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -1679,7 +1679,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "owningAnnotatingRelationship"
-            eSuperTypes -> <none>
+            eSuperTypes -> IElement
             eAnnotations:
                 EAnnotation (id: id-301)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -1850,7 +1850,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "owningAnnotatingElement"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-326)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -1943,7 +1943,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "representedElement"
-            eSuperTypes -> <none>
+            eSuperTypes -> IAnnotatingElement
             eAnnotations:
                 EAnnotation (id: id-355)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -2683,7 +2683,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ownedSpecialization"
-            eSuperTypes -> <none>
+            eSuperTypes -> INamespace
             eAnnotations:
                 EAnnotation (id: id-370)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -2814,7 +2814,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "owningType"
-            eSuperTypes -> <none>
+            eSuperTypes -> OwningMembership, IFeaturing
             eAnnotations:
                 EAnnotation (id: id-510)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -2897,7 +2897,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "feature"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-525)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -3501,7 +3501,7 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "isNonunique"
-            eSuperTypes -> <none>
+            eSuperTypes -> IType
             eAnnotations:
                 EAnnotation (id: id-542)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -3762,7 +3762,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "redefinedFeature"
-            eSuperTypes -> <none>
+            eSuperTypes -> Subsetting
             eAnnotations:
                 EAnnotation (id: id-659)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -3889,7 +3889,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "owningFeature"
-            eSuperTypes -> <none>
+            eSuperTypes -> Specialization
             eAnnotations:
                 EAnnotation (id: id-674)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4006,7 +4006,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "owningFeature"
-            eSuperTypes -> <none>
+            eSuperTypes -> Specialization
             eAnnotations:
                 EAnnotation (id: id-695)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4107,7 +4107,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "owningFeatureOfType"
-            eSuperTypes -> <none>
+            eSuperTypes -> IFeaturing
             eAnnotations:
                 EAnnotation (id: id-716)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4208,7 +4208,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "owningFeature"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-736)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4287,7 +4287,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "featureChained"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-756)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4314,7 +4314,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "in"
                 EEnumLiteral (id: id-776)
                     value = <not set>
                     eAnnotations:
@@ -4328,7 +4328,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "inout"
                 EEnumLiteral (id: id-779)
                     value = <not set>
                     eAnnotations:
@@ -4342,7 +4342,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "out"
             eAnnotations:
                 EAnnotation (id: id-771)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4416,7 +4416,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "referencingFeature"
-            eSuperTypes -> <none>
+            eSuperTypes -> Subsetting
             eAnnotations:
                 EAnnotation (id: id-783)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4491,7 +4491,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "crossingFeature"
-            eSuperTypes -> <none>
+            eSuperTypes -> Subsetting
             eAnnotations:
                 EAnnotation (id: id-797)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4607,7 +4607,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "owningType"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-811)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4626,7 +4626,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IFeature
             eAnnotations:
                 EAnnotation (id: id-831)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4718,7 +4718,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "typeIntersected"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-834)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4797,7 +4797,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "typeUnioned"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-849)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4900,7 +4900,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "owningType"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-864)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -4979,7 +4979,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "typeDifferenced"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-884)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5023,7 +5023,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ownedSubclassification"
-            eSuperTypes -> <none>
+            eSuperTypes -> IType
             eAnnotations:
                 EAnnotation (id: id-899)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5057,7 +5057,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> FeatureMembership
             eAnnotations:
                 EAnnotation (id: id-909)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5167,7 +5167,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "isModelLevelEvaluable"
-            eSuperTypes -> <none>
+            eSuperTypes -> IStep
             eAnnotations:
                 EAnnotation (id: id-912)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5287,7 +5287,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "parameter"
-            eSuperTypes -> <none>
+            eSuperTypes -> IFeature
             eAnnotations:
                 EAnnotation (id: id-935)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5399,7 +5399,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "parameter"
-            eSuperTypes -> <none>
+            eSuperTypes -> IClass
             eAnnotations:
                 EAnnotation (id: id-954)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5427,7 +5427,7 @@ EPackage (id: id-1)
             abstract = true
             interface = true
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IClassifier
             eAnnotations:
                 EAnnotation (id: id-973)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5553,7 +5553,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "isModelLevelEvaluable"
-            eSuperTypes -> <none>
+            eSuperTypes -> IBehavior
             eAnnotations:
                 EAnnotation (id: id-978)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5631,7 +5631,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ownedResultExpression"
-            eSuperTypes -> <none>
+            eSuperTypes -> FeatureMembership
             eAnnotations:
                 EAnnotation (id: id-1001)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5665,7 +5665,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "isNegated"
-            eSuperTypes -> <none>
+            eSuperTypes -> IBooleanExpression
             eAnnotations:
                 EAnnotation (id: id-1011)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5731,7 +5731,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "predicate"
-            eSuperTypes -> <none>
+            eSuperTypes -> IExpression
             eAnnotations:
                 EAnnotation (id: id-1019)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5757,7 +5757,7 @@ EPackage (id: id-1)
             abstract = true
             interface = true
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IFunction
             eAnnotations:
                 EAnnotation (id: id-1031)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5783,7 +5783,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> ParameterMembership
             eAnnotations:
                 EAnnotation (id: id-1036)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5836,7 +5836,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ownedMemberParameter"
-            eSuperTypes -> <none>
+            eSuperTypes -> FeatureMembership
             eAnnotations:
                 EAnnotation (id: id-1039)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -5957,7 +5957,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "bound"
-            eSuperTypes -> <none>
+            eSuperTypes -> Multiplicity
             eAnnotations:
                 EAnnotation (id: id-1049)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -6006,7 +6006,7 @@ EPackage (id: id-1)
             abstract = true
             interface = true
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IClass
             eAnnotations:
                 EAnnotation (id: id-1073)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -6135,7 +6135,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "isDefault"
-            eSuperTypes -> <none>
+            eSuperTypes -> OwningMembership
             eAnnotations:
                 EAnnotation (id: id-1078)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -6178,7 +6178,7 @@ EPackage (id: id-1)
             abstract = true
             interface = true
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IStructure
             eAnnotations:
                 EAnnotation (id: id-1101)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -6237,7 +6237,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "metaclass"
-            eSuperTypes -> <none>
+            eSuperTypes -> IFeature, IAnnotatingElement
             eAnnotations:
                 EAnnotation (id: id-1106)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -6481,7 +6481,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "interaction"
-            eSuperTypes -> <none>
+            eSuperTypes -> IConnector, IStep
             eAnnotations:
                 EAnnotation (id: id-1118)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -6725,7 +6725,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "targetFeature"
-            eSuperTypes -> <none>
+            eSuperTypes -> IFeature, IRelationship
             eAnnotations:
                 EAnnotation (id: id-1158)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -6936,7 +6936,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "associationEnd"
-            eSuperTypes -> <none>
+            eSuperTypes -> IClassifier, IRelationship
             eAnnotations:
                 EAnnotation (id: id-1202)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -6988,7 +6988,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IFeature
             eAnnotations:
                 EAnnotation (id: id-1239)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7007,7 +7007,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IFeature
             eAnnotations:
                 EAnnotation (id: id-1242)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7025,7 +7025,7 @@ EPackage (id: id-1)
             abstract = true
             interface = true
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IAssociation, IBehavior
             eAnnotations:
                 EAnnotation (id: id-1245)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7058,7 +7058,7 @@ EPackage (id: id-1)
             abstract = true
             interface = true
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IItemFlow, ISuccession
             eAnnotations:
                 EAnnotation (id: id-1252)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7211,7 +7211,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "guardExpression"
-            eSuperTypes -> <none>
+            eSuperTypes -> IConnector
             eAnnotations:
                 EAnnotation (id: id-1259)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7300,7 +7300,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "condition"
-            eSuperTypes -> <none>
+            eSuperTypes -> OwningMembership
             eAnnotations:
                 EAnnotation (id: id-1288)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7354,7 +7354,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "filterCondition"
-            eSuperTypes -> <none>
+            eSuperTypes -> INamespace
             eAnnotations:
                 EAnnotation (id: id-1298)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7387,7 +7387,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "isStandard"
-            eSuperTypes -> <none>
+            eSuperTypes -> Package
             eAnnotations:
                 EAnnotation (id: id-1308)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7404,7 +7404,7 @@ EPackage (id: id-1)
             abstract = true
             interface = true
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IClassifier
             eAnnotations:
                 EAnnotation (id: id-1314)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7472,7 +7472,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "referent"
-            eSuperTypes -> <none>
+            eSuperTypes -> IExpression
             eAnnotations:
                 EAnnotation (id: id-1319)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7528,7 +7528,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "referencedElement"
-            eSuperTypes -> <none>
+            eSuperTypes -> IExpression
             eAnnotations:
                 EAnnotation (id: id-1329)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7545,7 +7545,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IExpression
             eAnnotations:
                 EAnnotation (id: id-1337)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7563,7 +7563,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> OperatorExpression
             eAnnotations:
                 EAnnotation (id: id-1340)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7598,7 +7598,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "operator"
-            eSuperTypes -> <none>
+            eSuperTypes -> InvocationExpression
             eAnnotations:
                 EAnnotation (id: id-1343)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7663,7 +7663,7 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "operand"
-            eSuperTypes -> <none>
+            eSuperTypes -> IExpression
             eAnnotations:
                 EAnnotation (id: id-1349)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7701,7 +7701,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> OperatorExpression
             eAnnotations:
                 EAnnotation (id: id-1360)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7718,7 +7718,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> LiteralExpression
             eAnnotations:
                 EAnnotation (id: id-1363)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7736,7 +7736,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IExpression
             eAnnotations:
                 EAnnotation (id: id-1366)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7772,7 +7772,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "value"
-            eSuperTypes -> <none>
+            eSuperTypes -> LiteralExpression
             eAnnotations:
                 EAnnotation (id: id-1369)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7790,7 +7790,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> OperatorExpression
             eAnnotations:
                 EAnnotation (id: id-1375)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7826,7 +7826,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "value"
-            eSuperTypes -> <none>
+            eSuperTypes -> LiteralExpression
             eAnnotations:
                 EAnnotation (id: id-1378)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7861,7 +7861,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "value"
-            eSuperTypes -> <none>
+            eSuperTypes -> LiteralExpression
             eAnnotations:
                 EAnnotation (id: id-1384)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7896,7 +7896,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "value"
-            eSuperTypes -> <none>
+            eSuperTypes -> LiteralExpression
             eAnnotations:
                 EAnnotation (id: id-1390)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7948,7 +7948,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "targetFeature"
-            eSuperTypes -> <none>
+            eSuperTypes -> OperatorExpression
             eAnnotations:
                 EAnnotation (id: id-1396)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -7989,7 +7989,7 @@ EPackage (id: id-1)
             abstract = true
             interface = true
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IConnector
             eAnnotations:
                 EAnnotation (id: id-1406)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -8016,7 +8016,7 @@ EPackage (id: id-1)
             abstract = true
             interface = true
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IAssociation, IStructure
             eAnnotations:
                 EAnnotation (id: id-1411)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -8109,7 +8109,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "supplier"
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-1418)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -8157,7 +8157,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "importedNamespace"
-            eSuperTypes -> <none>
+            eSuperTypes -> IImport
             eAnnotations:
                 EAnnotation (id: id-1433)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -8205,7 +8205,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "importedMembership"
-            eSuperTypes -> <none>
+            eSuperTypes -> IImport
             eAnnotations:
                 EAnnotation (id: id-1442)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -8257,7 +8257,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "interfaceDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> ConnectionUsage
             eAnnotations:
                 EAnnotation (id: id-1451)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -8315,7 +8315,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "connectionDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> ConnectorAsUsage, IPartUsage
             eAnnotations:
                 EAnnotation (id: id-1461)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -8342,7 +8342,7 @@ EPackage (id: id-1)
             abstract = true
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IUsage, IConnector
             eAnnotations:
                 EAnnotation (id: id-1474)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -9550,7 +9550,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "nestedMetadata"
-            eSuperTypes -> <none>
+            eSuperTypes -> IFeature
             eAnnotations:
                 EAnnotation (id: id-1479)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -9658,7 +9658,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ownedVariantUsage"
-            eSuperTypes -> <none>
+            eSuperTypes -> OwningMembership
             eAnnotations:
                 EAnnotation (id: id-1723)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -10742,7 +10742,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ownedUsage"
-            eSuperTypes -> <none>
+            eSuperTypes -> IClassifier
             eAnnotations:
                 EAnnotation (id: id-1733)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -10800,7 +10800,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IUsage
             eAnnotations:
                 EAnnotation (id: id-1954)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -10851,7 +10851,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "attributeDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> IUsage
             eAnnotations:
                 EAnnotation (id: id-1957)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -10906,7 +10906,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "enumerationDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> AttributeUsage
             eAnnotations:
                 EAnnotation (id: id-1967)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -10956,7 +10956,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "enumeratedValue"
-            eSuperTypes -> <none>
+            eSuperTypes -> AttributeDefinition
             eAnnotations:
                 EAnnotation (id: id-1977)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -10973,7 +10973,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> Definition, IDataType
             eAnnotations:
                 EAnnotation (id: id-1987)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11098,7 +11098,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "portionKind"
-            eSuperTypes -> <none>
+            eSuperTypes -> IUsage
             eAnnotations:
                 EAnnotation (id: id-1992)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11195,7 +11195,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "isIndividual"
-            eSuperTypes -> <none>
+            eSuperTypes -> Definition, IClass
             eAnnotations:
                 EAnnotation (id: id-2017)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11232,7 +11232,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IClass
             eAnnotations:
                 EAnnotation (id: id-2032)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11264,7 +11264,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "timeslice"
                 EEnumLiteral (id: id-2040)
                     value = <not set>
                     eAnnotations:
@@ -11277,7 +11277,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "snapshot"
             eAnnotations:
                 EAnnotation (id: id-2035)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11327,7 +11327,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "itemDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> IOccurrenceUsage
             eAnnotations:
                 EAnnotation (id: id-2044)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11391,7 +11391,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "partDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> IItemUsage
             eAnnotations:
                 EAnnotation (id: id-2056)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11433,7 +11433,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> ItemDefinition
             eAnnotations:
                 EAnnotation (id: id-2068)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11451,7 +11451,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> OccurrenceDefinition, IStructure
             eAnnotations:
                 EAnnotation (id: id-2071)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11511,7 +11511,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "portDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> IOccurrenceUsage
             eAnnotations:
                 EAnnotation (id: id-2076)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11565,7 +11565,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "conjugatedPortDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> OccurrenceDefinition, IStructure
             eAnnotations:
                 EAnnotation (id: id-2086)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11658,7 +11658,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "originalPortDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> PortDefinition
             eAnnotations:
                 EAnnotation (id: id-2096)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11731,7 +11731,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "conjugatedPortDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> Conjugation
             eAnnotations:
                 EAnnotation (id: id-2109)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11782,7 +11782,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "flowConnectionDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> ConnectorAsUsage, IActionUsage, IItemFlow
             eAnnotations:
                 EAnnotation (id: id-2123)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11844,7 +11844,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "actionDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> IOccurrenceUsage, IStep
             eAnnotations:
                 EAnnotation (id: id-2135)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11921,7 +11921,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "allocationDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> ConnectionUsage
             eAnnotations:
                 EAnnotation (id: id-2147)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -11972,7 +11972,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "allocation"
-            eSuperTypes -> <none>
+            eSuperTypes -> ConnectionDefinition
             eAnnotations:
                 EAnnotation (id: id-2157)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -12024,7 +12024,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "connectionEnd"
-            eSuperTypes -> <none>
+            eSuperTypes -> PartDefinition, IAssociationStructure
             eAnnotations:
                 EAnnotation (id: id-2167)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -12189,7 +12189,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "isParallel"
-            eSuperTypes -> <none>
+            eSuperTypes -> IActionUsage
             eAnnotations:
                 EAnnotation (id: id-2179)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -12437,7 +12437,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "succession"
-            eSuperTypes -> <none>
+            eSuperTypes -> IActionUsage
             eAnnotations:
                 EAnnotation (id: id-2210)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -12613,7 +12613,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "payloadArgument"
-            eSuperTypes -> <none>
+            eSuperTypes -> IActionUsage
             eAnnotations:
                 EAnnotation (id: id-2253)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -12685,7 +12685,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "calculationDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> IActionUsage, IExpression
             eAnnotations:
                 EAnnotation (id: id-2275)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -12748,7 +12748,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "constraintDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> IOccurrenceUsage, IBooleanExpression
             eAnnotations:
                 EAnnotation (id: id-2287)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -13067,7 +13067,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "textContainer"
-            eSuperTypes -> <none>
+            eSuperTypes -> IConstraintUsage
             eAnnotations:
                 EAnnotation (id: id-2301)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -13366,7 +13366,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "textContainer"
-            eSuperTypes -> <none>
+            eSuperTypes -> ConstraintDefinition
             eAnnotations:
                 EAnnotation (id: id-2360)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -13411,7 +13411,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> OccurrenceDefinition, IPredicate
             eAnnotations:
                 EAnnotation (id: id-2412)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -13472,7 +13472,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "concernDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> RequirementUsage
             eAnnotations:
                 EAnnotation (id: id-2417)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -13495,7 +13495,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> RequirementDefinition
             eAnnotations:
                 EAnnotation (id: id-2427)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -13651,7 +13651,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "actorParameter"
-            eSuperTypes -> <none>
+            eSuperTypes -> CalculationUsage
             eAnnotations:
                 EAnnotation (id: id-2430)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -13799,7 +13799,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "actorParameter"
-            eSuperTypes -> <none>
+            eSuperTypes -> CalculationDefinition
             eAnnotations:
                 EAnnotation (id: id-2461)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -13872,7 +13872,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "calculation"
-            eSuperTypes -> <none>
+            eSuperTypes -> ActionDefinition, IFunction
             eAnnotations:
                 EAnnotation (id: id-2485)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -13933,7 +13933,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "action"
-            eSuperTypes -> <none>
+            eSuperTypes -> OccurrenceDefinition, IBehavior
             eAnnotations:
                 EAnnotation (id: id-2497)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -14027,7 +14027,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "resultExpression"
-            eSuperTypes -> <none>
+            eSuperTypes -> CaseUsage
             eAnnotations:
                 EAnnotation (id: id-2509)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -14090,7 +14090,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "resultExpression"
-            eSuperTypes -> <none>
+            eSuperTypes -> CaseDefinition
             eAnnotations:
                 EAnnotation (id: id-2526)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -14177,7 +14177,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "verifiedRequirement"
-            eSuperTypes -> <none>
+            eSuperTypes -> CaseUsage
             eAnnotations:
                 EAnnotation (id: id-2536)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -14234,7 +14234,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "verifiedRequirement"
-            eSuperTypes -> <none>
+            eSuperTypes -> CaseDefinition
             eAnnotations:
                 EAnnotation (id: id-2552)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -14321,7 +14321,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "includedUseCase"
-            eSuperTypes -> <none>
+            eSuperTypes -> CaseUsage
             eAnnotations:
                 EAnnotation (id: id-2561)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -14374,7 +14374,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "includedUseCase"
-            eSuperTypes -> <none>
+            eSuperTypes -> CaseDefinition
             eAnnotations:
                 EAnnotation (id: id-2577)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -14560,7 +14560,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "viewCondition"
-            eSuperTypes -> <none>
+            eSuperTypes -> IPartUsage
             eAnnotations:
                 EAnnotation (id: id-2586)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -14731,7 +14731,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "viewCondition"
-            eSuperTypes -> <none>
+            eSuperTypes -> PartDefinition
             eAnnotations:
                 EAnnotation (id: id-2623)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -14827,7 +14827,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "viewpointStakeholder"
-            eSuperTypes -> <none>
+            eSuperTypes -> RequirementUsage
             eAnnotations:
                 EAnnotation (id: id-2653)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -14882,7 +14882,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "viewpointStakeholder"
-            eSuperTypes -> <none>
+            eSuperTypes -> RequirementDefinition
             eAnnotations:
                 EAnnotation (id: id-2669)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -14936,7 +14936,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "renderingDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> IPartUsage
             eAnnotations:
                 EAnnotation (id: id-2678)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -14996,7 +14996,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "rendering"
-            eSuperTypes -> <none>
+            eSuperTypes -> PartDefinition
             eAnnotations:
                 EAnnotation (id: id-2688)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15048,7 +15048,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "metadataDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> IItemUsage, MetadataFeature
             eAnnotations:
                 EAnnotation (id: id-2698)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15109,7 +15109,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "interfaceEnd"
-            eSuperTypes -> <none>
+            eSuperTypes -> ConnectionDefinition
             eAnnotations:
                 EAnnotation (id: id-2710)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15187,7 +15187,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "conjugatedPortDefinition"
-            eSuperTypes -> <none>
+            eSuperTypes -> FeatureTyping
             eAnnotations:
                 EAnnotation (id: id-2720)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15253,7 +15253,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "transitionFeature"
-            eSuperTypes -> <none>
+            eSuperTypes -> FeatureMembership
             eAnnotations:
                 EAnnotation (id: id-2735)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15290,7 +15290,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "trigger"
                 EEnumLiteral (id: id-2753)
                     value = <not set>
                     eAnnotations:
@@ -15303,7 +15303,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "guard"
                 EEnumLiteral (id: id-2756)
                     value = <not set>
                     eAnnotations:
@@ -15316,7 +15316,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "effect"
             eAnnotations:
                 EAnnotation (id: id-2748)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15366,7 +15366,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "exhibitedState"
-            eSuperTypes -> <none>
+            eSuperTypes -> StateUsage, IPerformActionUsage
             eAnnotations:
                 EAnnotation (id: id-2760)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15432,7 +15432,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "performedAction"
-            eSuperTypes -> <none>
+            eSuperTypes -> IActionUsage, IEventOccurrenceUsage
             eAnnotations:
                 EAnnotation (id: id-2772)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15491,7 +15491,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "eventOccurrence"
-            eSuperTypes -> <none>
+            eSuperTypes -> IOccurrenceUsage
             eAnnotations:
                 EAnnotation (id: id-2784)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15540,7 +15540,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "entry"
                 EEnumLiteral (id: id-2800)
                     value = <not set>
                     eAnnotations:
@@ -15553,7 +15553,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "do"
                 EEnumLiteral (id: id-2803)
                     value = <not set>
                     eAnnotations:
@@ -15566,7 +15566,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "exit"
             eAnnotations:
                 EAnnotation (id: id-2795)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15631,7 +15631,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "action"
-            eSuperTypes -> <none>
+            eSuperTypes -> FeatureMembership
             eAnnotations:
                 EAnnotation (id: id-2807)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15786,7 +15786,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "isParallel"
-            eSuperTypes -> <none>
+            eSuperTypes -> ActionDefinition
             eAnnotations:
                 EAnnotation (id: id-2820)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15836,7 +15836,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> FlowConnectionUsage, ISuccessionItemFlow
             eAnnotations:
                 EAnnotation (id: id-2851)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15895,7 +15895,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "flowConnectionEnd"
-            eSuperTypes -> <none>
+            eSuperTypes -> ActionDefinition, IInteraction
             eAnnotations:
                 EAnnotation (id: id-2856)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -15991,7 +15991,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "verifiedRequirement"
-            eSuperTypes -> <none>
+            eSuperTypes -> RequirementConstraintMembership
             eAnnotations:
                 EAnnotation (id: id-2868)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16089,7 +16089,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "referencedConstraint"
-            eSuperTypes -> <none>
+            eSuperTypes -> FeatureMembership
             eAnnotations:
                 EAnnotation (id: id-2885)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16125,7 +16125,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "assumption"
                 EEnumLiteral (id: id-2909)
                     value = <not set>
                     eAnnotations:
@@ -16138,7 +16138,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "requirement"
             eAnnotations:
                 EAnnotation (id: id-2904)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16189,7 +16189,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "useCaseIncluded"
-            eSuperTypes -> <none>
+            eSuperTypes -> UseCaseUsage, IPerformActionUsage
             eAnnotations:
                 EAnnotation (id: id-2913)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16255,7 +16255,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ownedObjectiveRequirement"
-            eSuperTypes -> <none>
+            eSuperTypes -> FeatureMembership
             eAnnotations:
                 EAnnotation (id: id-2925)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16338,7 +16338,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "satisfyingFeature"
-            eSuperTypes -> <none>
+            eSuperTypes -> RequirementUsage, IAssertConstraintUsage
             eAnnotations:
                 EAnnotation (id: id-2935)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16407,7 +16407,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "assertedConstraint"
-            eSuperTypes -> <none>
+            eSuperTypes -> IConstraintUsage, IInvariant
             eAnnotations:
                 EAnnotation (id: id-2953)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16476,7 +16476,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ownedSubjectParameter"
-            eSuperTypes -> <none>
+            eSuperTypes -> ParameterMembership
             eAnnotations:
                 EAnnotation (id: id-2964)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16531,7 +16531,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ownedStakeholderParameter"
-            eSuperTypes -> <none>
+            eSuperTypes -> ParameterMembership
             eAnnotations:
                 EAnnotation (id: id-2974)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16617,7 +16617,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "referencedConcern"
-            eSuperTypes -> <none>
+            eSuperTypes -> RequirementConstraintMembership
             eAnnotations:
                 EAnnotation (id: id-2984)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16668,7 +16668,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ownedActorParameter"
-            eSuperTypes -> <none>
+            eSuperTypes -> ParameterMembership
             eAnnotations:
                 EAnnotation (id: id-3001)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16752,7 +16752,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "referencedRendering"
-            eSuperTypes -> <none>
+            eSuperTypes -> FeatureMembership
             eAnnotations:
                 EAnnotation (id: id-3011)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16777,7 +16777,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> NamespaceImport, IExpose
             eAnnotations:
                 EAnnotation (id: id-3027)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16801,7 +16801,7 @@ EPackage (id: id-1)
             abstract = true
             interface = true
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IImport
             eAnnotations:
                 EAnnotation (id: id-3032)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16828,7 +16828,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> MembershipImport, IExpose
             eAnnotations:
                 EAnnotation (id: id-3037)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16852,7 +16852,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> ConnectorAsUsage, IBindingConnector
             eAnnotations:
                 EAnnotation (id: id-3042)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16876,7 +16876,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> ConnectorAsUsage, ISuccession
             eAnnotations:
                 EAnnotation (id: id-3047)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16900,7 +16900,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> ControlNode
             eAnnotations:
                 EAnnotation (id: id-3052)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16918,7 +16918,7 @@ EPackage (id: id-1)
             abstract = true
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IActionUsage
             eAnnotations:
                 EAnnotation (id: id-3055)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -16947,7 +16947,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> ControlNode
             eAnnotations:
                 EAnnotation (id: id-3058)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17055,7 +17055,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "senderArgument"
-            eSuperTypes -> <none>
+            eSuperTypes -> IActionUsage
             eAnnotations:
                 EAnnotation (id: id-3061)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17079,7 +17079,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> ControlNode
             eAnnotations:
                 EAnnotation (id: id-3082)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17104,7 +17104,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> ControlNode
             eAnnotations:
                 EAnnotation (id: id-3085)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17159,7 +17159,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "bodyAction"
-            eSuperTypes -> <none>
+            eSuperTypes -> IActionUsage
             eAnnotations:
                 EAnnotation (id: id-3088)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17198,7 +17198,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "kind"
-            eSuperTypes -> <none>
+            eSuperTypes -> InvocationExpression
             eAnnotations:
                 EAnnotation (id: id-3097)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17253,7 +17253,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "when"
                 EEnumLiteral (id: id-3108)
                     value = <not set>
                     eAnnotations:
@@ -17266,7 +17266,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "at"
                 EEnumLiteral (id: id-3111)
                     value = <not set>
                     eAnnotations:
@@ -17279,7 +17279,7 @@ EPackage (id: id-1)
                             eAnnotations: <nothing>
                             idXmi = <not set>
                     idXmi = <not set>
-                    name = <not set>
+                    name = "after"
             eAnnotations:
                 EAnnotation (id: id-3103)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17387,7 +17387,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "referent"
-            eSuperTypes -> <none>
+            eSuperTypes -> IActionUsage
             eAnnotations:
                 EAnnotation (id: id-3115)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17494,7 +17494,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "loopVariable"
-            eSuperTypes -> <none>
+            eSuperTypes -> LoopActionUsage
             eAnnotations:
                 EAnnotation (id: id-3137)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17618,7 +17618,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "ifArgument"
-            eSuperTypes -> <none>
+            eSuperTypes -> IActionUsage
             eAnnotations:
                 EAnnotation (id: id-3152)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17723,7 +17723,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "untilArgument"
-            eSuperTypes -> <none>
+            eSuperTypes -> LoopActionUsage
             eAnnotations:
                 EAnnotation (id: id-3173)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17788,7 +17788,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "terminatedOccurrenceArgument"
-            eSuperTypes -> <none>
+            eSuperTypes -> IActionUsage
             eAnnotations:
                 EAnnotation (id: id-3188)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17808,7 +17808,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> ItemDefinition, IMetaclass
             eAnnotations:
                 EAnnotation (id: id-3197)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17900,7 +17900,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IFeaturing
             eAnnotations:
                 EAnnotation (id: id-3215)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17926,7 +17926,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IRelationship
             eAnnotations:
                 EAnnotation (id: id-3220)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -17956,7 +17956,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IElement
             eAnnotations:
                 EAnnotation (id: id-3225)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18004,7 +18004,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IAnnotatingElement
             eAnnotations:
                 EAnnotation (id: id-3230)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18039,7 +18039,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IStep
             eAnnotations:
                 EAnnotation (id: id-3235)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18081,7 +18081,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IFeature
             eAnnotations:
                 EAnnotation (id: id-3240)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18282,7 +18282,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IType
             eAnnotations:
                 EAnnotation (id: id-3245)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18359,7 +18359,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> INamespace
             eAnnotations:
                 EAnnotation (id: id-3250)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18394,7 +18394,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IBehavior
             eAnnotations:
                 EAnnotation (id: id-3255)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18422,7 +18422,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IClass
             eAnnotations:
                 EAnnotation (id: id-3260)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18453,7 +18453,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IClassifier
             eAnnotations:
                 EAnnotation (id: id-3265)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18487,7 +18487,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> ISuccession
             eAnnotations:
                 EAnnotation (id: id-3270)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18541,7 +18541,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IConnector
             eAnnotations:
                 EAnnotation (id: id-3275)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18602,7 +18602,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IStructure
             eAnnotations:
                 EAnnotation (id: id-3282)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18629,7 +18629,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IPartUsage
             eAnnotations:
                 EAnnotation (id: id-3287)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18671,7 +18671,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IItemUsage
             eAnnotations:
                 EAnnotation (id: id-3292)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18701,7 +18701,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IOccurrenceUsage
             eAnnotations:
                 EAnnotation (id: id-3297)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18749,7 +18749,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IUsage
             eAnnotations:
                 EAnnotation (id: id-3302)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18823,7 +18823,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IDataType
             eAnnotations:
                 EAnnotation (id: id-3307)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18857,7 +18857,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IActionUsage
             eAnnotations:
                 EAnnotation (id: id-3312)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18900,7 +18900,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IItemFlow
             eAnnotations:
                 EAnnotation (id: id-3317)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18962,7 +18962,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IAssociationStructure
             eAnnotations:
                 EAnnotation (id: id-3324)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -18997,7 +18997,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IAssociation
             eAnnotations:
                 EAnnotation (id: id-3331)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19049,7 +19049,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IPredicate
             eAnnotations:
                 EAnnotation (id: id-3338)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19075,7 +19075,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IFunction
             eAnnotations:
                 EAnnotation (id: id-3343)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19118,7 +19118,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IPerformActionUsage
             eAnnotations:
                 EAnnotation (id: id-3348)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19148,7 +19148,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IEventOccurrenceUsage
             eAnnotations:
                 EAnnotation (id: id-3353)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19187,7 +19187,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> ISuccessionItemFlow
             eAnnotations:
                 EAnnotation (id: id-3358)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19220,7 +19220,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IInteraction
             eAnnotations:
                 EAnnotation (id: id-3365)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19253,7 +19253,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IAssertConstraintUsage
             eAnnotations:
                 EAnnotation (id: id-3372)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19288,7 +19288,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IConstraintUsage
             eAnnotations:
                 EAnnotation (id: id-3377)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19333,7 +19333,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IBooleanExpression
             eAnnotations:
                 EAnnotation (id: id-3384)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19359,7 +19359,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IExpression
             eAnnotations:
                 EAnnotation (id: id-3389)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19409,7 +19409,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IInvariant
             eAnnotations:
                 EAnnotation (id: id-3394)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19439,7 +19439,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IExpose
             eAnnotations:
                 EAnnotation (id: id-3399)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19466,7 +19466,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IImport
             eAnnotations:
                 EAnnotation (id: id-3404)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19494,7 +19494,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IBindingConnector
             eAnnotations:
                 EAnnotation (id: id-3409)
                     source = "http://www.eclipse.org/emf/2002/GenModel"
@@ -19521,7 +19521,7 @@ EPackage (id: id-1)
             abstract = false
             interface = false
             eStructuralFeatures: <nothing>
-            eSuperTypes -> <none>
+            eSuperTypes -> IMetaclass
             eAnnotations:
                 EAnnotation (id: id-3414)
                     source = "http://www.eclipse.org/emf/2002/GenModel"

@@ -15,7 +15,7 @@ import {
     EReferenceFromXml,
     EStructuralFeatureFromXml
 } from "./xmi-types.js"
-import { ETypeRefToInstall, refFor, RefKind, verbalizationOf } from "./references.js"
+import { ETypeRefToInstall, refFor, RefKind, verbalizationOf } from "./eType-references.js"
 import { ecoreStdlib } from "./stdlib.js"
 import {
     EAnnotation,
@@ -33,6 +33,7 @@ import {
     EStringToStringMapEntry,
     EStructuralFeature
 } from "./gen/ecore.g.js"
+import { ESuperTypeRefToInstall } from "./eSuperType-references.js";
 
 
 const ecoreBase = EcoreBase.INSTANCE
@@ -113,8 +114,16 @@ const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml): EPackage => {
         }
     }
 
+    const eSuperTypeRefsToInstall: ESuperTypeRefToInstall[] = []
+
     const deserializeEClassFromXml = (eClassFromXml: EClassFromXml): EClass => {
         const eClass = createEModelElementFrom(eClassFromXml, ecoreBase.EClass) as EClass
+        const {abstract, interface: intface} = eClassFromXml.$
+        eClass.abstract = abstract !== undefined && abstract === "true"
+        eClass.interface = intface !== undefined && intface === "true"
+        eClassFromXml.$.eSuperTypes?.split(" ").forEach((targetRef) => {
+            eSuperTypeRefsToInstall.push({ container: eClass, targetRef })
+        })
         eClassFromXml.eStructuralFeatures?.forEach((eStructuralFeatureFromXml) => {
             const eStructuralFeature = deserializeEStructuralFeatureFromXml(eStructuralFeatureFromXml)
             const {lowerBound, upperBound} = eStructuralFeatureFromXml.$
@@ -136,6 +145,7 @@ const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml): EPackage => {
         const eEnum = createEModelElementFrom(eEnumFromXml, ecoreBase.EEnum) as EEnum
         eEnumFromXml.eLiterals?.forEach((eEnumLiteralFromXml) => {
             const eEnumLiteral = EEnumLiteral.create(newId())
+            eEnumLiteral.name = eEnumLiteralFromXml.$.name
             eEnumLiteral.value = eEnumLiteralFromXml.$.literal
             eEnumLiteralFromXml.eAnnotations?.forEach((eAnnotationFromXml) => {
                 eEnumLiteral.addEAnnotations(deserializeEAnnotationFromXml(eAnnotationFromXml))
@@ -179,6 +189,15 @@ const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml): EPackage => {
             console.error(`can’t resolve ${verbalizationOf(eTypeRefToInstall)}`)
         } else {
             eTypeRefToInstall.container.eType = target
+        }
+    })
+
+    eSuperTypeRefsToInstall.forEach(({container, targetRef}) => {
+        const target = eModelElementsByName[targetRef.substring("#//".length)]
+        if (target === undefined) {
+            console.error(`can’t resolve eSuperType target "${targetRef}"`)
+        } else {
+            container.addESuperTypes(target as EClass)
         }
     })
 

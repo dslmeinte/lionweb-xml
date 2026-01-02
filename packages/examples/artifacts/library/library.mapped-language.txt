@@ -1,0 +1,19 @@
+language library
+    version: 1
+    entities (↓name):
+
+        concept Book
+
+        enumeration BookCategory
+            literals:
+                ScienceFiction
+                Biographie
+                Mistery
+
+        concept Employee
+
+        concept Library
+
+        concept Writer
+
+

@@ -1,7 +1,7 @@
 import { generateLanguage } from "@lionweb/class-core-generator"
-import { builtinClassifiers, builtinPrimitives, LanguageFactory, serializeLanguages } from "@lionweb/core"
+import { builtinClassifiers, builtinPrimitives, LanguageFactory } from "@lionweb/core"
 import { concatenator } from "@lionweb/ts-utils"
-import { generatePlantUmlForLanguage, languageAsText, writeJsonAsFile } from "@lionweb/utilities"
+import { generatePlantUmlForLanguage, languageAsText } from "@lionweb/utilities"
 import { writeFileSync } from "fs"
 import { join } from "path"
 
@@ -9,7 +9,7 @@ const factory = new LanguageFactory("Ecore", "1", concatenator("-"), concatenato
 const { language } = factory
 
 const { inamed } = builtinClassifiers
-const { booleanDataType, integerDataType, stringDataType} = builtinPrimitives
+const { booleanDataType, integerDataType, stringDataType } = builtinPrimitives
 
 
 // build up hierarchy in order of EcoreHierarchy.gif:
@@ -53,12 +53,12 @@ factory.property(ETypedElement, "upperBound").ofType(integerDataType).isOptional
 factory.property(EPackage, "nsURI").ofType(stringDataType)
 factory.property(EPackage, "nsPrefix").ofType(stringDataType)
 
-factory.property(EClass, "abstract").ofType(booleanDataType)
-factory.property(EClass, "interface").ofType(booleanDataType)
+factory.property(EClass, "abstract").ofType(booleanDataType)    // default = false
+factory.property(EClass, "interface").ofType(booleanDataType)   // default = false
 
 factory.property(EEnumLiteral, "value").ofType(stringDataType)
 
-factory.property(EReference, "containmentXsi").ofType(booleanDataType)
+factory.property(EReference, "containmentXsi").ofType(booleanDataType)  // default = false
 
 
 // add links in order of EcoreRelations.gif:
@@ -80,7 +80,6 @@ factory.containment(EEnum, "eLiterals").ofType(EEnumLiteral).isOptional().isMult
 
 export const generateEcoreArtifacts = () => {
     const ecorePath = join("artifacts", "ecore")
-    writeJsonAsFile(join(ecorePath, "Ecore.language.json"), serializeLanguages(language))
     writeFileSync(join(ecorePath, "Ecore.language.txt"), languageAsText(language))
     writeFileSync(join(ecorePath, "Ecore.language.puml"), generatePlantUmlForLanguage(language))
     generateLanguage(language, "../lionweb-ecore/src/gen")

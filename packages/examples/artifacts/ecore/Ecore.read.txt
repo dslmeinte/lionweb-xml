@@ -3,8 +3,8 @@ EPackage (id: id-1)
     nsPrefix = "ecore"
     eClassifiers:
         EClass (id: id-2)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-5)
                     lowerBound = <not set>
@@ -21,7 +21,7 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "eAttributeType"
-            eSuperTypes -> <none>
+            eSuperTypes -> EStructuralFeature
             eAnnotations:
                 EAnnotation (id: id-3)
                     source = "http://www.eclipse.org/emf/2002/Ecore"
@@ -34,8 +34,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "EAttribute"
         EClass (id: id-7)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-10)
                     lowerBound = <not set>
@@ -76,7 +76,7 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "references"
-            eSuperTypes -> <none>
+            eSuperTypes -> EModelElement
             eAnnotations:
                 EAnnotation (id: id-8)
                     source = "http://www.eclipse.org/emf/2002/Ecore"
@@ -89,8 +89,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "EAnnotation"
         EClass (id: id-15)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-18)
                     lowerBound = <not set>
@@ -240,7 +240,7 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "eAllGenericSuperTypes"
-            eSuperTypes -> <none>
+            eSuperTypes -> EClassifier
             eAnnotations:
                 EAnnotation (id: id-16)
                     source = "http://www.eclipse.org/emf/2002/Ecore"
@@ -253,8 +253,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "EClass"
         EClass (id: id-40)
-            abstract = <not set>
-            interface = <not set>
+            abstract = true
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-43)
                     lowerBound = <not set>
@@ -322,7 +322,7 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "eTypeParameters"
-            eSuperTypes -> <none>
+            eSuperTypes -> ENamedElement
             eAnnotations:
                 EAnnotation (id: id-41)
                     source = "http://www.eclipse.org/emf/2002/Ecore"
@@ -335,8 +335,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "EClassifier"
         EClass (id: id-55)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-56)
                     lowerBound = <not set>
@@ -345,13 +345,13 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "serializable"
-            eSuperTypes -> <none>
+            eSuperTypes -> EClassifier
             eAnnotations: <nothing>
             idXmi = <not set>
             name = "EDataType"
         EClass (id: id-57)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EReference (id: id-60)
                     containmentXsi = true
@@ -361,7 +361,7 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "eLiterals"
-            eSuperTypes -> <none>
+            eSuperTypes -> EDataType
             eAnnotations:
                 EAnnotation (id: id-58)
                     source = "http://www.eclipse.org/emf/2002/Ecore"
@@ -374,8 +374,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "EEnum"
         EClass (id: id-61)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-62)
                     lowerBound = <not set>
@@ -406,13 +406,13 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "eEnum"
-            eSuperTypes -> <none>
+            eSuperTypes -> ENamedElement
             eAnnotations: <nothing>
             idXmi = <not set>
             name = "EEnumLiteral"
         EClass (id: id-66)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EReference (id: id-67)
                     containmentXsi = false
@@ -422,13 +422,13 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "ePackage"
-            eSuperTypes -> <none>
+            eSuperTypes -> EModelElement
             eAnnotations: <nothing>
             idXmi = <not set>
             name = "EFactory"
         EClass (id: id-68)
-            abstract = <not set>
-            interface = <not set>
+            abstract = true
+            interface = false
             eStructuralFeatures:
                 EReference (id: id-69)
                     containmentXsi = true
@@ -443,8 +443,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "EModelElement"
         EClass (id: id-70)
-            abstract = <not set>
-            interface = <not set>
+            abstract = true
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-73)
                     lowerBound = <not set>
@@ -453,7 +453,7 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "name"
-            eSuperTypes -> <none>
+            eSuperTypes -> EModelElement
             eAnnotations:
                 EAnnotation (id: id-71)
                     source = "http://www.eclipse.org/emf/2002/Ecore"
@@ -466,16 +466,16 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "ENamedElement"
         EClass (id: id-74)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures: <nothing>
             eSuperTypes -> <none>
             eAnnotations: <nothing>
             idXmi = <not set>
             name = "EObject"
         EClass (id: id-75)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EReference (id: id-78)
                     containmentXsi = false
@@ -539,7 +539,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "eGenericExceptions"
-            eSuperTypes -> <none>
+            eSuperTypes -> ETypedElement
             eAnnotations:
                 EAnnotation (id: id-76)
                     source = "http://www.eclipse.org/emf/2002/Ecore"
@@ -552,8 +552,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "EOperation"
         EClass (id: id-89)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-92)
                     lowerBound = <not set>
@@ -601,7 +601,7 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "eSuperPackage"
-            eSuperTypes -> <none>
+            eSuperTypes -> ENamedElement
             eAnnotations:
                 EAnnotation (id: id-90)
                     source = "http://www.eclipse.org/emf/2002/Ecore"
@@ -614,8 +614,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "EPackage"
         EClass (id: id-98)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EReference (id: id-99)
                     containmentXsi = false
@@ -625,13 +625,13 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "eOperation"
-            eSuperTypes -> <none>
+            eSuperTypes -> ETypedElement
             eAnnotations: <nothing>
             idXmi = <not set>
             name = "EParameter"
         EClass (id: id-100)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-103)
                     lowerBound = <not set>
@@ -678,7 +678,7 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "eKeys"
-            eSuperTypes -> <none>
+            eSuperTypes -> EStructuralFeature
             eAnnotations:
                 EAnnotation (id: id-101)
                     source = "http://www.eclipse.org/emf/2002/Ecore"
@@ -691,8 +691,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "EReference"
         EClass (id: id-109)
-            abstract = <not set>
-            interface = <not set>
+            abstract = true
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-112)
                     lowerBound = <not set>
@@ -751,7 +751,7 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "eContainingClass"
-            eSuperTypes -> <none>
+            eSuperTypes -> ETypedElement
             eAnnotations:
                 EAnnotation (id: id-110)
                     source = "http://www.eclipse.org/emf/2002/Ecore"
@@ -764,8 +764,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "EStructuralFeature"
         EClass (id: id-120)
-            abstract = <not set>
-            interface = <not set>
+            abstract = true
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-123)
                     lowerBound = <not set>
@@ -847,7 +847,7 @@ EPackage (id: id-1)
                             idXmi = <not set>
                     idXmi = <not set>
                     name = "eGenericType"
-            eSuperTypes -> <none>
+            eSuperTypes -> ENamedElement
             eAnnotations:
                 EAnnotation (id: id-121)
                     source = "http://www.eclipse.org/emf/2002/Ecore"
@@ -1160,8 +1160,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "EString"
         EClass (id: id-214)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EAttribute (id: id-215)
                     lowerBound = <not set>
@@ -1186,8 +1186,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "ETreeIterator"
         EClass (id: id-218)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EReference (id: id-221)
                     containmentXsi = true
@@ -1250,8 +1250,8 @@ EPackage (id: id-1)
             idXmi = <not set>
             name = "EGenericType"
         EClass (id: id-227)
-            abstract = <not set>
-            interface = <not set>
+            abstract = false
+            interface = false
             eStructuralFeatures:
                 EReference (id: id-228)
                     containmentXsi = true
@@ -1261,7 +1261,7 @@ EPackage (id: id-1)
                     eAnnotations: <nothing>
                     idXmi = <not set>
                     name = "eBounds"
-            eSuperTypes -> <none>
+            eSuperTypes -> ENamedElement
             eAnnotations: <nothing>
             idXmi = <not set>
             name = "ETypeParameter"

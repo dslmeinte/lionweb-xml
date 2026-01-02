@@ -30,6 +30,9 @@ export type HasName = {
 export type EClassFromXml = EcoreObjectFromXml & {
     $: {
         "xsi:type": "ecore:EClass"
+        "abstract"?: string
+        "interface"?: string
+        eSuperTypes?: string    // space-separated list of references to EClass-es
     } & HasName
     eStructuralFeatures?: EStructuralFeatureFromXml[]
 }
