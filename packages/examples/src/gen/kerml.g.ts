@@ -44,6 +44,48 @@ export class kermlBase implements ILanguageBase {
         return this._language;
     }
 
+    public readonly _FeatureDirectionKind = new Enumeration(this._language, "FeatureDirectionKind", "kerml-FeatureDirectionKind", "kerml-FeatureDirectionKind");
+    get FeatureDirectionKind(): Enumeration {
+        this.ensureWiredUp();
+        return this._FeatureDirectionKind;
+    }
+    private readonly _FeatureDirectionKind_in = new EnumerationLiteral(this._FeatureDirectionKind, "in", "kerml-FeatureDirectionKind-in", "kerml-FeatureDirectionKind-in");
+    get FeatureDirectionKind_in(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._FeatureDirectionKind_in;
+    }
+    private readonly _FeatureDirectionKind_inout = new EnumerationLiteral(this._FeatureDirectionKind, "inout", "kerml-FeatureDirectionKind-inout", "kerml-FeatureDirectionKind-inout");
+    get FeatureDirectionKind_inout(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._FeatureDirectionKind_inout;
+    }
+    private readonly _FeatureDirectionKind_out = new EnumerationLiteral(this._FeatureDirectionKind, "out", "kerml-FeatureDirectionKind-out", "kerml-FeatureDirectionKind-out");
+    get FeatureDirectionKind_out(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._FeatureDirectionKind_out;
+    }
+
+    public readonly _VisibilityKind = new Enumeration(this._language, "VisibilityKind", "kerml-VisibilityKind", "kerml-VisibilityKind");
+    get VisibilityKind(): Enumeration {
+        this.ensureWiredUp();
+        return this._VisibilityKind;
+    }
+    private readonly _VisibilityKind_private = new EnumerationLiteral(this._VisibilityKind, "private", "kerml-VisibilityKind-private", "kerml-VisibilityKind-private");
+    get VisibilityKind_private(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._VisibilityKind_private;
+    }
+    private readonly _VisibilityKind_protected = new EnumerationLiteral(this._VisibilityKind, "protected", "kerml-VisibilityKind-protected", "kerml-VisibilityKind-protected");
+    get VisibilityKind_protected(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._VisibilityKind_protected;
+    }
+    private readonly _VisibilityKind_public = new EnumerationLiteral(this._VisibilityKind, "public", "kerml-VisibilityKind-public", "kerml-VisibilityKind-public");
+    get VisibilityKind_public(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._VisibilityKind_public;
+    }
+
     public readonly _AnnotatingElement = new Concept(this._language, "AnnotatingElement", "kerml-AnnotatingElement", "kerml-AnnotatingElement", false);
     get AnnotatingElement(): Concept {
         this.ensureWiredUp();
@@ -644,27 +686,6 @@ export class kermlBase implements ILanguageBase {
     get FeatureChaining_featureChained(): Containment {
         this.ensureWiredUp();
         return this._FeatureChaining_featureChained;
-    }
-
-    public readonly _FeatureDirectionKind = new Enumeration(this._language, "FeatureDirectionKind", "kerml-FeatureDirectionKind", "kerml-FeatureDirectionKind");
-    get FeatureDirectionKind(): Enumeration {
-        this.ensureWiredUp();
-        return this._FeatureDirectionKind;
-    }
-    private readonly _FeatureDirectionKind_in = new EnumerationLiteral(this._FeatureDirectionKind, "in", "kerml-FeatureDirectionKind-in", "kerml-FeatureDirectionKind-in");
-    get FeatureDirectionKind_in(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._FeatureDirectionKind_in;
-    }
-    private readonly _FeatureDirectionKind_inout = new EnumerationLiteral(this._FeatureDirectionKind, "inout", "kerml-FeatureDirectionKind-inout", "kerml-FeatureDirectionKind-inout");
-    get FeatureDirectionKind_inout(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._FeatureDirectionKind_inout;
-    }
-    private readonly _FeatureDirectionKind_out = new EnumerationLiteral(this._FeatureDirectionKind, "out", "kerml-FeatureDirectionKind-out", "kerml-FeatureDirectionKind-out");
-    get FeatureDirectionKind_out(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._FeatureDirectionKind_out;
     }
 
     public readonly _FeatureInverting = new Concept(this._language, "FeatureInverting", "kerml-FeatureInverting", "kerml-FeatureInverting", false);
@@ -1582,33 +1603,14 @@ export class kermlBase implements ILanguageBase {
         return this._Unioning_typeUnioned;
     }
 
-    public readonly _VisibilityKind = new Enumeration(this._language, "VisibilityKind", "kerml-VisibilityKind", "kerml-VisibilityKind");
-    get VisibilityKind(): Enumeration {
-        this.ensureWiredUp();
-        return this._VisibilityKind;
-    }
-    private readonly _VisibilityKind_private = new EnumerationLiteral(this._VisibilityKind, "private", "kerml-VisibilityKind-private", "kerml-VisibilityKind-private");
-    get VisibilityKind_private(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._VisibilityKind_private;
-    }
-    private readonly _VisibilityKind_protected = new EnumerationLiteral(this._VisibilityKind, "protected", "kerml-VisibilityKind-protected", "kerml-VisibilityKind-protected");
-    get VisibilityKind_protected(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._VisibilityKind_protected;
-    }
-    private readonly _VisibilityKind_public = new EnumerationLiteral(this._VisibilityKind, "public", "kerml-VisibilityKind-public", "kerml-VisibilityKind-public");
-    get VisibilityKind_public(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._VisibilityKind_public;
-    }
-
     private _wiredUp: boolean = false;
     private ensureWiredUp() {
         if (this._wiredUp) {
             return;
         }
-        this._language.havingEntities(this._AnnotatingElement, this._Annotation, this._Association, this._AssociationStructure, this._Behavior, this._BindingConnector, this._BooleanExpression, this._Class, this._kermlClassifier, this._CollectExpression, this._Comment, this._Conjugation, this._Connector, this._ConstructorExpression, this._CrossSubsetting, this._DataType, this._Dependency, this._Differencing, this._Disjoining, this._Documentation, this._Element, this._ElementFilterMembership, this._EndFeatureMembership, this._Expression, this._Feature, this._FeatureChainExpression, this._FeatureChaining, this._FeatureDirectionKind, this._FeatureInverting, this._FeatureMembership, this._FeatureReferenceExpression, this._FeatureTyping, this._FeatureValue, this._Flow, this._FlowEnd, this._Function, this._Import, this._IndexExpression, this._InstantiationExpression, this._Interaction, this._Intersecting, this._Invariant, this._InvocationExpression, this._LibraryPackage, this._LiteralBoolean, this._LiteralExpression, this._LiteralInfinity, this._LiteralInteger, this._LiteralRational, this._LiteralString, this._Membership, this._MembershipImport, this._Metaclass, this._MetadataAccessExpression, this._MetadataFeature, this._Multiplicity, this._MultiplicityRange, this._Namespace, this._NamespaceImport, this._NullExpression, this._OperatorExpression, this._OwningMembership, this._Package, this._ParameterMembership, this._PayloadFeature, this._Predicate, this._Redefinition, this._ReferenceSubsetting, this._Relationship, this._ResultExpressionMembership, this._ReturnParameterMembership, this._SelectExpression, this._Specialization, this._Step, this._Structure, this._Subclassification, this._Subsetting, this._Succession, this._SuccessionFlow, this._TextualRepresentation, this._Type, this._TypeFeaturing, this._Unioning, this._VisibilityKind);
+        this._language.havingEntities(this._FeatureDirectionKind, this._VisibilityKind, this._AnnotatingElement, this._Annotation, this._Association, this._AssociationStructure, this._Behavior, this._BindingConnector, this._BooleanExpression, this._Class, this._kermlClassifier, this._CollectExpression, this._Comment, this._Conjugation, this._Connector, this._ConstructorExpression, this._CrossSubsetting, this._DataType, this._Dependency, this._Differencing, this._Disjoining, this._Documentation, this._Element, this._ElementFilterMembership, this._EndFeatureMembership, this._Expression, this._Feature, this._FeatureChainExpression, this._FeatureChaining, this._FeatureInverting, this._FeatureMembership, this._FeatureReferenceExpression, this._FeatureTyping, this._FeatureValue, this._Flow, this._FlowEnd, this._Function, this._Import, this._IndexExpression, this._InstantiationExpression, this._Interaction, this._Intersecting, this._Invariant, this._InvocationExpression, this._LibraryPackage, this._LiteralBoolean, this._LiteralExpression, this._LiteralInfinity, this._LiteralInteger, this._LiteralRational, this._LiteralString, this._Membership, this._MembershipImport, this._Metaclass, this._MetadataAccessExpression, this._MetadataFeature, this._Multiplicity, this._MultiplicityRange, this._Namespace, this._NamespaceImport, this._NullExpression, this._OperatorExpression, this._OwningMembership, this._Package, this._ParameterMembership, this._PayloadFeature, this._Predicate, this._Redefinition, this._ReferenceSubsetting, this._Relationship, this._ResultExpressionMembership, this._ReturnParameterMembership, this._SelectExpression, this._Specialization, this._Step, this._Structure, this._Subclassification, this._Subsetting, this._Succession, this._SuccessionFlow, this._TextualRepresentation, this._Type, this._TypeFeaturing, this._Unioning);
+        this._FeatureDirectionKind.havingLiterals(this._FeatureDirectionKind_in, this._FeatureDirectionKind_inout, this._FeatureDirectionKind_out);
+        this._VisibilityKind.havingLiterals(this._VisibilityKind_private, this._VisibilityKind_protected, this._VisibilityKind_public);
         this._AnnotatingElement.extends = this._Element;
         this._AnnotatingElement.havingFeatures(this._AnnotatingElement_annotation, this._AnnotatingElement_ownedAnnotatingRelationship, this._AnnotatingElement_owningAnnotatingRelationship, this._AnnotatingElement_annotatedElement);
         this._AnnotatingElement_annotation.ofType(this._Annotation);
@@ -1743,7 +1745,6 @@ export class kermlBase implements ILanguageBase {
         this._FeatureChaining.havingFeatures(this._FeatureChaining_chainingFeature, this._FeatureChaining_featureChained);
         this._FeatureChaining_chainingFeature.ofType(this._Feature);
         this._FeatureChaining_featureChained.ofType(this._Feature);
-        this._FeatureDirectionKind.havingLiterals(this._FeatureDirectionKind_in, this._FeatureDirectionKind_inout, this._FeatureDirectionKind_out);
         this._FeatureInverting.extends = this._Relationship;
         this._FeatureInverting.havingFeatures(this._FeatureInverting_featureInverted, this._FeatureInverting_invertingFeature, this._FeatureInverting_owningFeature);
         this._FeatureInverting_featureInverted.ofType(this._Feature);
@@ -1955,7 +1956,6 @@ export class kermlBase implements ILanguageBase {
         this._Unioning.havingFeatures(this._Unioning_unioningType, this._Unioning_typeUnioned);
         this._Unioning_unioningType.ofType(this._Type);
         this._Unioning_typeUnioned.ofType(this._Type);
-        this._VisibilityKind.havingLiterals(this._VisibilityKind_private, this._VisibilityKind_protected, this._VisibilityKind_public);
         this._wiredUp = true;
     }
 
@@ -2063,6 +2063,18 @@ export class kermlBase implements ILanguageBase {
     public static readonly INSTANCE = new kermlBase();
 }
 
+
+export enum FeatureDirectionKind {
+    in = "kerml-FeatureDirectionKind-in",
+    inout = "kerml-FeatureDirectionKind-inout",
+    out = "kerml-FeatureDirectionKind-out"
+}
+
+export enum VisibilityKind {
+    private = "kerml-VisibilityKind-private",
+    protected = "kerml-VisibilityKind-protected",
+    public = "kerml-VisibilityKind-public"
+}
 
 export abstract class Element extends NodeBase {
 
@@ -5479,12 +5491,6 @@ export class FeatureChaining extends Relationship {
     }
 }
 
-export enum FeatureDirectionKind {
-    in = "kerml-FeatureDirectionKind-in",
-    inout = "kerml-FeatureDirectionKind-inout",
-    out = "kerml-FeatureDirectionKind-out"
-}
-
 export class FeatureInverting extends Relationship {
     static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): FeatureInverting {
         return new FeatureInverting(kermlBase.INSTANCE.FeatureInverting, id, receiveDelta, parentInfo);
@@ -7150,11 +7156,5 @@ export class Unioning extends Relationship {
             default: return super.getContainmentValueManager(containment);
         }
     }
-}
-
-export enum VisibilityKind {
-    private = "kerml-VisibilityKind-private",
-    protected = "kerml-VisibilityKind-protected",
-    public = "kerml-VisibilityKind-public"
 }
 

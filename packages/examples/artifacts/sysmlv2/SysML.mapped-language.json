@@ -52,6 +52,13 @@
                         "key": "Language-entities"
                     },
                     "children": [
+                        "sysml-FeatureDirectionKind",
+                        "sysml-PortionKind",
+                        "sysml-RequirementConstraintKind",
+                        "sysml-StateSubactionKind",
+                        "sysml-TransitionFeatureKind",
+                        "sysml-TriggerKind",
+                        "sysml-VisibilityKind",
                         "sysml-AcceptActionUsage",
                         "sysml-ActionDefinition",
                         "sysml-ActionUsage",
@@ -113,7 +120,6 @@
                         "sysml-Feature",
                         "sysml-FeatureChainExpression",
                         "sysml-FeatureChaining",
-                        "sysml-FeatureDirectionKind",
                         "sysml-FeatureInverting",
                         "sysml-FeatureMembership",
                         "sysml-FeatureReferenceExpression",
@@ -178,7 +184,6 @@
                         "sysml-PortConjugation",
                         "sysml-PortDefinition",
                         "sysml-PortUsage",
-                        "sysml-PortionKind",
                         "sysml-Predicate",
                         "sysml-Redefinition",
                         "sysml-ReferenceSubsetting",
@@ -186,7 +191,6 @@
                         "sysml-Relationship",
                         "sysml-RenderingDefinition",
                         "sysml-RenderingUsage",
-                        "sysml-RequirementConstraintKind",
                         "sysml-RequirementConstraintMembership",
                         "sysml-RequirementDefinition",
                         "sysml-RequirementUsage",
@@ -199,7 +203,6 @@
                         "sysml-Specialization",
                         "sysml-StakeholderMembership",
                         "sysml-StateDefinition",
-                        "sysml-StateSubactionKind",
                         "sysml-StateSubactionMembership",
                         "sysml-StateUsage",
                         "sysml-Step",
@@ -213,11 +216,9 @@
                         "sysml-SuccessionFlowUsage",
                         "sysml-TerminateActionUsage",
                         "sysml-TextualRepresentation",
-                        "sysml-TransitionFeatureKind",
                         "sysml-TransitionFeatureMembership",
                         "sysml-TransitionUsage",
                         "sysml-TriggerInvocationExpression",
-                        "sysml-TriggerKind",
                         "sysml-Type",
                         "sysml-TypeFeaturing",
                         "sysml-Unioning",
@@ -232,7 +233,6 @@
                         "sysml-ViewUsage",
                         "sysml-ViewpointDefinition",
                         "sysml-ViewpointUsage",
-                        "sysml-VisibilityKind",
                         "sysml-WhileLoopActionUsage"
                     ]
                 }
@@ -249,6 +249,875 @@
             ],
             "annotations": [],
             "parent": null
+        },
+        {
+            "id": "sysml-FeatureDirectionKind",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Enumeration"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-FeatureDirectionKind"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "FeatureDirectionKind"
+                }
+            ],
+            "containments": [
+                {
+                    "containment": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Enumeration-literals"
+                    },
+                    "children": [
+                        "sysml-FeatureDirectionKind-in",
+                        "sysml-FeatureDirectionKind-inout",
+                        "sysml-FeatureDirectionKind-out"
+                    ]
+                }
+            ],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml"
+        },
+        {
+            "id": "sysml-FeatureDirectionKind-in",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-FeatureDirectionKind-in"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "in"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-FeatureDirectionKind"
+        },
+        {
+            "id": "sysml-FeatureDirectionKind-inout",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-FeatureDirectionKind-inout"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "inout"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-FeatureDirectionKind"
+        },
+        {
+            "id": "sysml-FeatureDirectionKind-out",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-FeatureDirectionKind-out"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "out"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-FeatureDirectionKind"
+        },
+        {
+            "id": "sysml-PortionKind",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Enumeration"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-PortionKind"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "PortionKind"
+                }
+            ],
+            "containments": [
+                {
+                    "containment": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Enumeration-literals"
+                    },
+                    "children": [
+                        "sysml-PortionKind-timeslice",
+                        "sysml-PortionKind-snapshot"
+                    ]
+                }
+            ],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml"
+        },
+        {
+            "id": "sysml-PortionKind-timeslice",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-PortionKind-timeslice"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "timeslice"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-PortionKind"
+        },
+        {
+            "id": "sysml-PortionKind-snapshot",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-PortionKind-snapshot"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "snapshot"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-PortionKind"
+        },
+        {
+            "id": "sysml-RequirementConstraintKind",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Enumeration"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-RequirementConstraintKind"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "RequirementConstraintKind"
+                }
+            ],
+            "containments": [
+                {
+                    "containment": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Enumeration-literals"
+                    },
+                    "children": [
+                        "sysml-RequirementConstraintKind-assumption",
+                        "sysml-RequirementConstraintKind-requirement"
+                    ]
+                }
+            ],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml"
+        },
+        {
+            "id": "sysml-RequirementConstraintKind-assumption",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-RequirementConstraintKind-assumption"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "assumption"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-RequirementConstraintKind"
+        },
+        {
+            "id": "sysml-RequirementConstraintKind-requirement",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-RequirementConstraintKind-requirement"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "requirement"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-RequirementConstraintKind"
+        },
+        {
+            "id": "sysml-StateSubactionKind",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Enumeration"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-StateSubactionKind"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "StateSubactionKind"
+                }
+            ],
+            "containments": [
+                {
+                    "containment": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Enumeration-literals"
+                    },
+                    "children": [
+                        "sysml-StateSubactionKind-entry",
+                        "sysml-StateSubactionKind-do",
+                        "sysml-StateSubactionKind-exit"
+                    ]
+                }
+            ],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml"
+        },
+        {
+            "id": "sysml-StateSubactionKind-entry",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-StateSubactionKind-entry"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "entry"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-StateSubactionKind"
+        },
+        {
+            "id": "sysml-StateSubactionKind-do",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-StateSubactionKind-do"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "do"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-StateSubactionKind"
+        },
+        {
+            "id": "sysml-StateSubactionKind-exit",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-StateSubactionKind-exit"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "exit"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-StateSubactionKind"
+        },
+        {
+            "id": "sysml-TransitionFeatureKind",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Enumeration"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-TransitionFeatureKind"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "TransitionFeatureKind"
+                }
+            ],
+            "containments": [
+                {
+                    "containment": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Enumeration-literals"
+                    },
+                    "children": [
+                        "sysml-TransitionFeatureKind-trigger",
+                        "sysml-TransitionFeatureKind-guard",
+                        "sysml-TransitionFeatureKind-effect"
+                    ]
+                }
+            ],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml"
+        },
+        {
+            "id": "sysml-TransitionFeatureKind-trigger",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-TransitionFeatureKind-trigger"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "trigger"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-TransitionFeatureKind"
+        },
+        {
+            "id": "sysml-TransitionFeatureKind-guard",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-TransitionFeatureKind-guard"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "guard"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-TransitionFeatureKind"
+        },
+        {
+            "id": "sysml-TransitionFeatureKind-effect",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-TransitionFeatureKind-effect"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "effect"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-TransitionFeatureKind"
+        },
+        {
+            "id": "sysml-TriggerKind",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Enumeration"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-TriggerKind"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "TriggerKind"
+                }
+            ],
+            "containments": [
+                {
+                    "containment": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Enumeration-literals"
+                    },
+                    "children": [
+                        "sysml-TriggerKind-when",
+                        "sysml-TriggerKind-at",
+                        "sysml-TriggerKind-after"
+                    ]
+                }
+            ],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml"
+        },
+        {
+            "id": "sysml-TriggerKind-when",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-TriggerKind-when"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "when"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-TriggerKind"
+        },
+        {
+            "id": "sysml-TriggerKind-at",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-TriggerKind-at"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "at"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-TriggerKind"
+        },
+        {
+            "id": "sysml-TriggerKind-after",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-TriggerKind-after"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "after"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-TriggerKind"
+        },
+        {
+            "id": "sysml-VisibilityKind",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Enumeration"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-VisibilityKind"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "VisibilityKind"
+                }
+            ],
+            "containments": [
+                {
+                    "containment": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Enumeration-literals"
+                    },
+                    "children": [
+                        "sysml-VisibilityKind-private",
+                        "sysml-VisibilityKind-protected",
+                        "sysml-VisibilityKind-public"
+                    ]
+                }
+            ],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml"
+        },
+        {
+            "id": "sysml-VisibilityKind-private",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-VisibilityKind-private"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "private"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-VisibilityKind"
+        },
+        {
+            "id": "sysml-VisibilityKind-protected",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-VisibilityKind-protected"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "protected"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-VisibilityKind"
+        },
+        {
+            "id": "sysml-VisibilityKind-public",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "sysml-VisibilityKind-public"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "public"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "sysml-VisibilityKind"
         },
         {
             "id": "sysml-AcceptActionUsage",
@@ -14443,139 +15312,6 @@
             "parent": "sysml-FeatureChaining"
         },
         {
-            "id": "sysml-FeatureDirectionKind",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "Enumeration"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-FeatureDirectionKind"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "FeatureDirectionKind"
-                }
-            ],
-            "containments": [
-                {
-                    "containment": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Enumeration-literals"
-                    },
-                    "children": [
-                        "sysml-FeatureDirectionKind-in",
-                        "sysml-FeatureDirectionKind-inout",
-                        "sysml-FeatureDirectionKind-out"
-                    ]
-                }
-            ],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml"
-        },
-        {
-            "id": "sysml-FeatureDirectionKind-in",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-FeatureDirectionKind-in"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "in"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-FeatureDirectionKind"
-        },
-        {
-            "id": "sysml-FeatureDirectionKind-inout",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-FeatureDirectionKind-inout"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "inout"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-FeatureDirectionKind"
-        },
-        {
-            "id": "sysml-FeatureDirectionKind-out",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-FeatureDirectionKind-out"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "out"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-FeatureDirectionKind"
-        },
-        {
             "id": "sysml-FeatureInverting",
             "classifier": {
                 "language": "LionCore-M3",
@@ -24918,108 +25654,6 @@
             "parent": "sysml-PortUsage"
         },
         {
-            "id": "sysml-PortionKind",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "Enumeration"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-PortionKind"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "PortionKind"
-                }
-            ],
-            "containments": [
-                {
-                    "containment": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Enumeration-literals"
-                    },
-                    "children": [
-                        "sysml-PortionKind-timeslice",
-                        "sysml-PortionKind-snapshot"
-                    ]
-                }
-            ],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml"
-        },
-        {
-            "id": "sysml-PortionKind-timeslice",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-PortionKind-timeslice"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "timeslice"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-PortionKind"
-        },
-        {
-            "id": "sysml-PortionKind-snapshot",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-PortionKind-snapshot"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "snapshot"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-PortionKind"
-        },
-        {
             "id": "sysml-Predicate",
             "classifier": {
                 "language": "LionCore-M3",
@@ -26286,108 +26920,6 @@
             ],
             "annotations": [],
             "parent": "sysml-RenderingUsage"
-        },
-        {
-            "id": "sysml-RequirementConstraintKind",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "Enumeration"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-RequirementConstraintKind"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "RequirementConstraintKind"
-                }
-            ],
-            "containments": [
-                {
-                    "containment": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Enumeration-literals"
-                    },
-                    "children": [
-                        "sysml-RequirementConstraintKind-assumption",
-                        "sysml-RequirementConstraintKind-requirement"
-                    ]
-                }
-            ],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml"
-        },
-        {
-            "id": "sysml-RequirementConstraintKind-assumption",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-RequirementConstraintKind-assumption"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "assumption"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-RequirementConstraintKind"
-        },
-        {
-            "id": "sysml-RequirementConstraintKind-requirement",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-RequirementConstraintKind-requirement"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "requirement"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-RequirementConstraintKind"
         },
         {
             "id": "sysml-RequirementConstraintMembership",
@@ -29533,139 +30065,6 @@
             "parent": "sysml-StateDefinition"
         },
         {
-            "id": "sysml-StateSubactionKind",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "Enumeration"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-StateSubactionKind"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "StateSubactionKind"
-                }
-            ],
-            "containments": [
-                {
-                    "containment": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Enumeration-literals"
-                    },
-                    "children": [
-                        "sysml-StateSubactionKind-entry",
-                        "sysml-StateSubactionKind-do",
-                        "sysml-StateSubactionKind-exit"
-                    ]
-                }
-            ],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml"
-        },
-        {
-            "id": "sysml-StateSubactionKind-entry",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-StateSubactionKind-entry"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "entry"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-StateSubactionKind"
-        },
-        {
-            "id": "sysml-StateSubactionKind-do",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-StateSubactionKind-do"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "do"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-StateSubactionKind"
-        },
-        {
-            "id": "sysml-StateSubactionKind-exit",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-StateSubactionKind-exit"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "exit"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-StateSubactionKind"
-        },
-        {
             "id": "sysml-StateSubactionMembership",
             "classifier": {
                 "language": "LionCore-M3",
@@ -31863,139 +32262,6 @@
             "parent": "sysml-TextualRepresentation"
         },
         {
-            "id": "sysml-TransitionFeatureKind",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "Enumeration"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-TransitionFeatureKind"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "TransitionFeatureKind"
-                }
-            ],
-            "containments": [
-                {
-                    "containment": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Enumeration-literals"
-                    },
-                    "children": [
-                        "sysml-TransitionFeatureKind-trigger",
-                        "sysml-TransitionFeatureKind-guard",
-                        "sysml-TransitionFeatureKind-effect"
-                    ]
-                }
-            ],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml"
-        },
-        {
-            "id": "sysml-TransitionFeatureKind-trigger",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-TransitionFeatureKind-trigger"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "trigger"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-TransitionFeatureKind"
-        },
-        {
-            "id": "sysml-TransitionFeatureKind-guard",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-TransitionFeatureKind-guard"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "guard"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-TransitionFeatureKind"
-        },
-        {
-            "id": "sysml-TransitionFeatureKind-effect",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-TransitionFeatureKind-effect"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "effect"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-TransitionFeatureKind"
-        },
-        {
             "id": "sysml-TransitionFeatureMembership",
             "classifier": {
                 "language": "LionCore-M3",
@@ -32761,139 +33027,6 @@
             ],
             "annotations": [],
             "parent": "sysml-TriggerInvocationExpression"
-        },
-        {
-            "id": "sysml-TriggerKind",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "Enumeration"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-TriggerKind"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "TriggerKind"
-                }
-            ],
-            "containments": [
-                {
-                    "containment": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Enumeration-literals"
-                    },
-                    "children": [
-                        "sysml-TriggerKind-when",
-                        "sysml-TriggerKind-at",
-                        "sysml-TriggerKind-after"
-                    ]
-                }
-            ],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml"
-        },
-        {
-            "id": "sysml-TriggerKind-when",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-TriggerKind-when"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "when"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-TriggerKind"
-        },
-        {
-            "id": "sysml-TriggerKind-at",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-TriggerKind-at"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "at"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-TriggerKind"
-        },
-        {
-            "id": "sysml-TriggerKind-after",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-TriggerKind-after"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "after"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-TriggerKind"
         },
         {
             "id": "sysml-Type",
@@ -39245,139 +39378,6 @@
             ],
             "annotations": [],
             "parent": "sysml-ViewpointUsage"
-        },
-        {
-            "id": "sysml-VisibilityKind",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "Enumeration"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-VisibilityKind"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "VisibilityKind"
-                }
-            ],
-            "containments": [
-                {
-                    "containment": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Enumeration-literals"
-                    },
-                    "children": [
-                        "sysml-VisibilityKind-private",
-                        "sysml-VisibilityKind-protected",
-                        "sysml-VisibilityKind-public"
-                    ]
-                }
-            ],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml"
-        },
-        {
-            "id": "sysml-VisibilityKind-private",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-VisibilityKind-private"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "private"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-VisibilityKind"
-        },
-        {
-            "id": "sysml-VisibilityKind-protected",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-VisibilityKind-protected"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "protected"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-VisibilityKind"
-        },
-        {
-            "id": "sysml-VisibilityKind-public",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "sysml-VisibilityKind-public"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "public"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "sysml-VisibilityKind"
         },
         {
             "id": "sysml-WhileLoopActionUsage",

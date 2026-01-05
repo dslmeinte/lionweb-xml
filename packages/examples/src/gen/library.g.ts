@@ -44,6 +44,27 @@ export class libraryBase implements ILanguageBase {
         return this._language;
     }
 
+    public readonly _BookCategory = new Enumeration(this._language, "BookCategory", "library-BookCategory", "library-BookCategory");
+    get BookCategory(): Enumeration {
+        this.ensureWiredUp();
+        return this._BookCategory;
+    }
+    private readonly _BookCategory_ScienceFiction = new EnumerationLiteral(this._BookCategory, "ScienceFiction", "library-BookCategory-ScienceFiction", "library-BookCategory-ScienceFiction");
+    get BookCategory_ScienceFiction(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._BookCategory_ScienceFiction;
+    }
+    private readonly _BookCategory_Biographie = new EnumerationLiteral(this._BookCategory, "Biographie", "library-BookCategory-Biographie", "library-BookCategory-Biographie");
+    get BookCategory_Biographie(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._BookCategory_Biographie;
+    }
+    private readonly _BookCategory_Mistery = new EnumerationLiteral(this._BookCategory, "Mistery", "library-BookCategory-Mistery", "library-BookCategory-Mistery");
+    get BookCategory_Mistery(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._BookCategory_Mistery;
+    }
+
     public readonly _Book = new Concept(this._language, "Book", "library-Book", "library-Book", false);
     get Book(): Concept {
         this.ensureWiredUp();
@@ -68,27 +89,6 @@ export class libraryBase implements ILanguageBase {
     get Book_authors(): Containment {
         this.ensureWiredUp();
         return this._Book_authors;
-    }
-
-    public readonly _BookCategory = new Enumeration(this._language, "BookCategory", "library-BookCategory", "library-BookCategory");
-    get BookCategory(): Enumeration {
-        this.ensureWiredUp();
-        return this._BookCategory;
-    }
-    private readonly _BookCategory_ScienceFiction = new EnumerationLiteral(this._BookCategory, "ScienceFiction", "library-BookCategory-ScienceFiction", "library-BookCategory-ScienceFiction");
-    get BookCategory_ScienceFiction(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._BookCategory_ScienceFiction;
-    }
-    private readonly _BookCategory_Biographie = new EnumerationLiteral(this._BookCategory, "Biographie", "library-BookCategory-Biographie", "library-BookCategory-Biographie");
-    get BookCategory_Biographie(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._BookCategory_Biographie;
-    }
-    private readonly _BookCategory_Mistery = new EnumerationLiteral(this._BookCategory, "Mistery", "library-BookCategory-Mistery", "library-BookCategory-Mistery");
-    get BookCategory_Mistery(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._BookCategory_Mistery;
     }
 
     public readonly _Employee = new Concept(this._language, "Employee", "library-Employee", "library-Employee", false);
@@ -159,13 +159,13 @@ export class libraryBase implements ILanguageBase {
         if (this._wiredUp) {
             return;
         }
-        this._language.havingEntities(this._Book, this._BookCategory, this._Employee, this._Library, this._Writer);
+        this._language.havingEntities(this._BookCategory, this._Book, this._Employee, this._Library, this._Writer);
+        this._BookCategory.havingLiterals(this._BookCategory_ScienceFiction, this._BookCategory_Biographie, this._BookCategory_Mistery);
         this._Book.havingFeatures(this._Book_title, this._Book_pages, this._Book_category, this._Book_authors);
         this._Book_title.ofType(LionCore_builtinsBase.INSTANCE._String);
         this._Book_pages.ofType(LionCore_builtinsBase.INSTANCE._Integer);
         this._Book_category.ofType(this._BookCategory);
         this._Book_authors.ofType(this._Writer);
-        this._BookCategory.havingLiterals(this._BookCategory_ScienceFiction, this._BookCategory_Biographie, this._BookCategory_Mistery);
         this._Employee.havingFeatures(this._Employee_name, this._Employee_age);
         this._Employee_name.ofType(LionCore_builtinsBase.INSTANCE._String);
         this._Employee_age.ofType(LionCore_builtinsBase.INSTANCE._Integer);
@@ -208,6 +208,12 @@ export class libraryBase implements ILanguageBase {
     public static readonly INSTANCE = new libraryBase();
 }
 
+
+export enum BookCategory {
+    ScienceFiction = "library-BookCategory-ScienceFiction",
+    Biographie = "library-BookCategory-Biographie",
+    Mistery = "library-BookCategory-Mistery"
+}
 
 export class Book extends NodeBase {
     static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): Book {
@@ -281,12 +287,6 @@ export class Book extends NodeBase {
         }
         return super.getContainmentValueManager(containment);
     }
-}
-
-export enum BookCategory {
-    ScienceFiction = "library-BookCategory-ScienceFiction",
-    Biographie = "library-BookCategory-Biographie",
-    Mistery = "library-BookCategory-Mistery"
 }
 
 export class Employee extends NodeBase {

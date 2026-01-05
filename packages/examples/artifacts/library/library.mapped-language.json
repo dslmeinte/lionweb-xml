@@ -52,8 +52,8 @@
                         "key": "Language-entities"
                     },
                     "children": [
-                        "library-Book",
                         "library-BookCategory",
+                        "library-Book",
                         "library-Employee",
                         "library-Library",
                         "library-Writer"
@@ -72,6 +72,139 @@
             ],
             "annotations": [],
             "parent": null
+        },
+        {
+            "id": "library-BookCategory",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Enumeration"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "library-BookCategory"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "BookCategory"
+                }
+            ],
+            "containments": [
+                {
+                    "containment": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Enumeration-literals"
+                    },
+                    "children": [
+                        "library-BookCategory-ScienceFiction",
+                        "library-BookCategory-Biographie",
+                        "library-BookCategory-Mistery"
+                    ]
+                }
+            ],
+            "references": [],
+            "annotations": [],
+            "parent": "library"
+        },
+        {
+            "id": "library-BookCategory-ScienceFiction",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "library-BookCategory-ScienceFiction"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "ScienceFiction"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "library-BookCategory"
+        },
+        {
+            "id": "library-BookCategory-Biographie",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "library-BookCategory-Biographie"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "Biographie"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "library-BookCategory"
+        },
+        {
+            "id": "library-BookCategory-Mistery",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "library-BookCategory-Mistery"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "Mistery"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "library-BookCategory"
         },
         {
             "id": "library-Book",
@@ -365,139 +498,6 @@
             ],
             "annotations": [],
             "parent": "library-Book"
-        },
-        {
-            "id": "library-BookCategory",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "Enumeration"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "library-BookCategory"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "BookCategory"
-                }
-            ],
-            "containments": [
-                {
-                    "containment": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Enumeration-literals"
-                    },
-                    "children": [
-                        "library-BookCategory-ScienceFiction",
-                        "library-BookCategory-Biographie",
-                        "library-BookCategory-Mistery"
-                    ]
-                }
-            ],
-            "references": [],
-            "annotations": [],
-            "parent": "library"
-        },
-        {
-            "id": "library-BookCategory-ScienceFiction",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "library-BookCategory-ScienceFiction"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "ScienceFiction"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "library-BookCategory"
-        },
-        {
-            "id": "library-BookCategory-Biographie",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "library-BookCategory-Biographie"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "Biographie"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "library-BookCategory"
-        },
-        {
-            "id": "library-BookCategory-Mistery",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "library-BookCategory-Mistery"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "Mistery"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "library-BookCategory"
         },
         {
             "id": "library-Employee",

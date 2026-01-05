@@ -44,6 +44,143 @@ export class sysmlBase implements ILanguageBase {
         return this._language;
     }
 
+    public readonly _FeatureDirectionKind = new Enumeration(this._language, "FeatureDirectionKind", "sysml-FeatureDirectionKind", "sysml-FeatureDirectionKind");
+    get FeatureDirectionKind(): Enumeration {
+        this.ensureWiredUp();
+        return this._FeatureDirectionKind;
+    }
+    private readonly _FeatureDirectionKind_in = new EnumerationLiteral(this._FeatureDirectionKind, "in", "sysml-FeatureDirectionKind-in", "sysml-FeatureDirectionKind-in");
+    get FeatureDirectionKind_in(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._FeatureDirectionKind_in;
+    }
+    private readonly _FeatureDirectionKind_inout = new EnumerationLiteral(this._FeatureDirectionKind, "inout", "sysml-FeatureDirectionKind-inout", "sysml-FeatureDirectionKind-inout");
+    get FeatureDirectionKind_inout(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._FeatureDirectionKind_inout;
+    }
+    private readonly _FeatureDirectionKind_out = new EnumerationLiteral(this._FeatureDirectionKind, "out", "sysml-FeatureDirectionKind-out", "sysml-FeatureDirectionKind-out");
+    get FeatureDirectionKind_out(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._FeatureDirectionKind_out;
+    }
+
+    public readonly _PortionKind = new Enumeration(this._language, "PortionKind", "sysml-PortionKind", "sysml-PortionKind");
+    get PortionKind(): Enumeration {
+        this.ensureWiredUp();
+        return this._PortionKind;
+    }
+    private readonly _PortionKind_timeslice = new EnumerationLiteral(this._PortionKind, "timeslice", "sysml-PortionKind-timeslice", "sysml-PortionKind-timeslice");
+    get PortionKind_timeslice(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._PortionKind_timeslice;
+    }
+    private readonly _PortionKind_snapshot = new EnumerationLiteral(this._PortionKind, "snapshot", "sysml-PortionKind-snapshot", "sysml-PortionKind-snapshot");
+    get PortionKind_snapshot(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._PortionKind_snapshot;
+    }
+
+    public readonly _RequirementConstraintKind = new Enumeration(this._language, "RequirementConstraintKind", "sysml-RequirementConstraintKind", "sysml-RequirementConstraintKind");
+    get RequirementConstraintKind(): Enumeration {
+        this.ensureWiredUp();
+        return this._RequirementConstraintKind;
+    }
+    private readonly _RequirementConstraintKind_assumption = new EnumerationLiteral(this._RequirementConstraintKind, "assumption", "sysml-RequirementConstraintKind-assumption", "sysml-RequirementConstraintKind-assumption");
+    get RequirementConstraintKind_assumption(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._RequirementConstraintKind_assumption;
+    }
+    private readonly _RequirementConstraintKind_requirement = new EnumerationLiteral(this._RequirementConstraintKind, "requirement", "sysml-RequirementConstraintKind-requirement", "sysml-RequirementConstraintKind-requirement");
+    get RequirementConstraintKind_requirement(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._RequirementConstraintKind_requirement;
+    }
+
+    public readonly _StateSubactionKind = new Enumeration(this._language, "StateSubactionKind", "sysml-StateSubactionKind", "sysml-StateSubactionKind");
+    get StateSubactionKind(): Enumeration {
+        this.ensureWiredUp();
+        return this._StateSubactionKind;
+    }
+    private readonly _StateSubactionKind_entry = new EnumerationLiteral(this._StateSubactionKind, "entry", "sysml-StateSubactionKind-entry", "sysml-StateSubactionKind-entry");
+    get StateSubactionKind_entry(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._StateSubactionKind_entry;
+    }
+    private readonly _StateSubactionKind_do = new EnumerationLiteral(this._StateSubactionKind, "do", "sysml-StateSubactionKind-do", "sysml-StateSubactionKind-do");
+    get StateSubactionKind_do(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._StateSubactionKind_do;
+    }
+    private readonly _StateSubactionKind_exit = new EnumerationLiteral(this._StateSubactionKind, "exit", "sysml-StateSubactionKind-exit", "sysml-StateSubactionKind-exit");
+    get StateSubactionKind_exit(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._StateSubactionKind_exit;
+    }
+
+    public readonly _TransitionFeatureKind = new Enumeration(this._language, "TransitionFeatureKind", "sysml-TransitionFeatureKind", "sysml-TransitionFeatureKind");
+    get TransitionFeatureKind(): Enumeration {
+        this.ensureWiredUp();
+        return this._TransitionFeatureKind;
+    }
+    private readonly _TransitionFeatureKind_trigger = new EnumerationLiteral(this._TransitionFeatureKind, "trigger", "sysml-TransitionFeatureKind-trigger", "sysml-TransitionFeatureKind-trigger");
+    get TransitionFeatureKind_trigger(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._TransitionFeatureKind_trigger;
+    }
+    private readonly _TransitionFeatureKind_guard = new EnumerationLiteral(this._TransitionFeatureKind, "guard", "sysml-TransitionFeatureKind-guard", "sysml-TransitionFeatureKind-guard");
+    get TransitionFeatureKind_guard(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._TransitionFeatureKind_guard;
+    }
+    private readonly _TransitionFeatureKind_effect = new EnumerationLiteral(this._TransitionFeatureKind, "effect", "sysml-TransitionFeatureKind-effect", "sysml-TransitionFeatureKind-effect");
+    get TransitionFeatureKind_effect(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._TransitionFeatureKind_effect;
+    }
+
+    public readonly _TriggerKind = new Enumeration(this._language, "TriggerKind", "sysml-TriggerKind", "sysml-TriggerKind");
+    get TriggerKind(): Enumeration {
+        this.ensureWiredUp();
+        return this._TriggerKind;
+    }
+    private readonly _TriggerKind_when = new EnumerationLiteral(this._TriggerKind, "when", "sysml-TriggerKind-when", "sysml-TriggerKind-when");
+    get TriggerKind_when(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._TriggerKind_when;
+    }
+    private readonly _TriggerKind_at = new EnumerationLiteral(this._TriggerKind, "at", "sysml-TriggerKind-at", "sysml-TriggerKind-at");
+    get TriggerKind_at(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._TriggerKind_at;
+    }
+    private readonly _TriggerKind_after = new EnumerationLiteral(this._TriggerKind, "after", "sysml-TriggerKind-after", "sysml-TriggerKind-after");
+    get TriggerKind_after(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._TriggerKind_after;
+    }
+
+    public readonly _VisibilityKind = new Enumeration(this._language, "VisibilityKind", "sysml-VisibilityKind", "sysml-VisibilityKind");
+    get VisibilityKind(): Enumeration {
+        this.ensureWiredUp();
+        return this._VisibilityKind;
+    }
+    private readonly _VisibilityKind_private = new EnumerationLiteral(this._VisibilityKind, "private", "sysml-VisibilityKind-private", "sysml-VisibilityKind-private");
+    get VisibilityKind_private(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._VisibilityKind_private;
+    }
+    private readonly _VisibilityKind_protected = new EnumerationLiteral(this._VisibilityKind, "protected", "sysml-VisibilityKind-protected", "sysml-VisibilityKind-protected");
+    get VisibilityKind_protected(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._VisibilityKind_protected;
+    }
+    private readonly _VisibilityKind_public = new EnumerationLiteral(this._VisibilityKind, "public", "sysml-VisibilityKind-public", "sysml-VisibilityKind-public");
+    get VisibilityKind_public(): EnumerationLiteral {
+        this.ensureWiredUp();
+        return this._VisibilityKind_public;
+    }
+
     public readonly _AcceptActionUsage = new Concept(this._language, "AcceptActionUsage", "sysml-AcceptActionUsage", "sysml-AcceptActionUsage", false);
     get AcceptActionUsage(): Concept {
         this.ensureWiredUp();
@@ -1200,27 +1337,6 @@ export class sysmlBase implements ILanguageBase {
         return this._FeatureChaining_featureChained;
     }
 
-    public readonly _FeatureDirectionKind = new Enumeration(this._language, "FeatureDirectionKind", "sysml-FeatureDirectionKind", "sysml-FeatureDirectionKind");
-    get FeatureDirectionKind(): Enumeration {
-        this.ensureWiredUp();
-        return this._FeatureDirectionKind;
-    }
-    private readonly _FeatureDirectionKind_in = new EnumerationLiteral(this._FeatureDirectionKind, "in", "sysml-FeatureDirectionKind-in", "sysml-FeatureDirectionKind-in");
-    get FeatureDirectionKind_in(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._FeatureDirectionKind_in;
-    }
-    private readonly _FeatureDirectionKind_inout = new EnumerationLiteral(this._FeatureDirectionKind, "inout", "sysml-FeatureDirectionKind-inout", "sysml-FeatureDirectionKind-inout");
-    get FeatureDirectionKind_inout(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._FeatureDirectionKind_inout;
-    }
-    private readonly _FeatureDirectionKind_out = new EnumerationLiteral(this._FeatureDirectionKind, "out", "sysml-FeatureDirectionKind-out", "sysml-FeatureDirectionKind-out");
-    get FeatureDirectionKind_out(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._FeatureDirectionKind_out;
-    }
-
     public readonly _FeatureInverting = new Concept(this._language, "FeatureInverting", "sysml-FeatureInverting", "sysml-FeatureInverting", false);
     get FeatureInverting(): Concept {
         this.ensureWiredUp();
@@ -2060,22 +2176,6 @@ export class sysmlBase implements ILanguageBase {
         return this._PortUsage_portDefinition;
     }
 
-    public readonly _PortionKind = new Enumeration(this._language, "PortionKind", "sysml-PortionKind", "sysml-PortionKind");
-    get PortionKind(): Enumeration {
-        this.ensureWiredUp();
-        return this._PortionKind;
-    }
-    private readonly _PortionKind_timeslice = new EnumerationLiteral(this._PortionKind, "timeslice", "sysml-PortionKind-timeslice", "sysml-PortionKind-timeslice");
-    get PortionKind_timeslice(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._PortionKind_timeslice;
-    }
-    private readonly _PortionKind_snapshot = new EnumerationLiteral(this._PortionKind, "snapshot", "sysml-PortionKind-snapshot", "sysml-PortionKind-snapshot");
-    get PortionKind_snapshot(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._PortionKind_snapshot;
-    }
-
     public readonly _Predicate = new Concept(this._language, "Predicate", "sysml-Predicate", "sysml-Predicate", false);
     get Predicate(): Concept {
         this.ensureWiredUp();
@@ -2176,22 +2276,6 @@ export class sysmlBase implements ILanguageBase {
     get RenderingUsage_renderingDefinition(): Containment {
         this.ensureWiredUp();
         return this._RenderingUsage_renderingDefinition;
-    }
-
-    public readonly _RequirementConstraintKind = new Enumeration(this._language, "RequirementConstraintKind", "sysml-RequirementConstraintKind", "sysml-RequirementConstraintKind");
-    get RequirementConstraintKind(): Enumeration {
-        this.ensureWiredUp();
-        return this._RequirementConstraintKind;
-    }
-    private readonly _RequirementConstraintKind_assumption = new EnumerationLiteral(this._RequirementConstraintKind, "assumption", "sysml-RequirementConstraintKind-assumption", "sysml-RequirementConstraintKind-assumption");
-    get RequirementConstraintKind_assumption(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._RequirementConstraintKind_assumption;
-    }
-    private readonly _RequirementConstraintKind_requirement = new EnumerationLiteral(this._RequirementConstraintKind, "requirement", "sysml-RequirementConstraintKind-requirement", "sysml-RequirementConstraintKind-requirement");
-    get RequirementConstraintKind_requirement(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._RequirementConstraintKind_requirement;
     }
 
     public readonly _RequirementConstraintMembership = new Concept(this._language, "RequirementConstraintMembership", "sysml-RequirementConstraintMembership", "sysml-RequirementConstraintMembership", false);
@@ -2451,27 +2535,6 @@ export class sysmlBase implements ILanguageBase {
         return this._StateDefinition_isParallel;
     }
 
-    public readonly _StateSubactionKind = new Enumeration(this._language, "StateSubactionKind", "sysml-StateSubactionKind", "sysml-StateSubactionKind");
-    get StateSubactionKind(): Enumeration {
-        this.ensureWiredUp();
-        return this._StateSubactionKind;
-    }
-    private readonly _StateSubactionKind_entry = new EnumerationLiteral(this._StateSubactionKind, "entry", "sysml-StateSubactionKind-entry", "sysml-StateSubactionKind-entry");
-    get StateSubactionKind_entry(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._StateSubactionKind_entry;
-    }
-    private readonly _StateSubactionKind_do = new EnumerationLiteral(this._StateSubactionKind, "do", "sysml-StateSubactionKind-do", "sysml-StateSubactionKind-do");
-    get StateSubactionKind_do(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._StateSubactionKind_do;
-    }
-    private readonly _StateSubactionKind_exit = new EnumerationLiteral(this._StateSubactionKind, "exit", "sysml-StateSubactionKind-exit", "sysml-StateSubactionKind-exit");
-    get StateSubactionKind_exit(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._StateSubactionKind_exit;
-    }
-
     public readonly _StateSubactionMembership = new Concept(this._language, "StateSubactionMembership", "sysml-StateSubactionMembership", "sysml-StateSubactionMembership", false);
     get StateSubactionMembership(): Concept {
         this.ensureWiredUp();
@@ -2650,27 +2713,6 @@ export class sysmlBase implements ILanguageBase {
         return this._TextualRepresentation_representedElement;
     }
 
-    public readonly _TransitionFeatureKind = new Enumeration(this._language, "TransitionFeatureKind", "sysml-TransitionFeatureKind", "sysml-TransitionFeatureKind");
-    get TransitionFeatureKind(): Enumeration {
-        this.ensureWiredUp();
-        return this._TransitionFeatureKind;
-    }
-    private readonly _TransitionFeatureKind_trigger = new EnumerationLiteral(this._TransitionFeatureKind, "trigger", "sysml-TransitionFeatureKind-trigger", "sysml-TransitionFeatureKind-trigger");
-    get TransitionFeatureKind_trigger(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._TransitionFeatureKind_trigger;
-    }
-    private readonly _TransitionFeatureKind_guard = new EnumerationLiteral(this._TransitionFeatureKind, "guard", "sysml-TransitionFeatureKind-guard", "sysml-TransitionFeatureKind-guard");
-    get TransitionFeatureKind_guard(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._TransitionFeatureKind_guard;
-    }
-    private readonly _TransitionFeatureKind_effect = new EnumerationLiteral(this._TransitionFeatureKind, "effect", "sysml-TransitionFeatureKind-effect", "sysml-TransitionFeatureKind-effect");
-    get TransitionFeatureKind_effect(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._TransitionFeatureKind_effect;
-    }
-
     public readonly _TransitionFeatureMembership = new Concept(this._language, "TransitionFeatureMembership", "sysml-TransitionFeatureMembership", "sysml-TransitionFeatureMembership", false);
     get TransitionFeatureMembership(): Concept {
         this.ensureWiredUp();
@@ -2732,27 +2774,6 @@ export class sysmlBase implements ILanguageBase {
     get TriggerInvocationExpression_kind(): Property {
         this.ensureWiredUp();
         return this._TriggerInvocationExpression_kind;
-    }
-
-    public readonly _TriggerKind = new Enumeration(this._language, "TriggerKind", "sysml-TriggerKind", "sysml-TriggerKind");
-    get TriggerKind(): Enumeration {
-        this.ensureWiredUp();
-        return this._TriggerKind;
-    }
-    private readonly _TriggerKind_when = new EnumerationLiteral(this._TriggerKind, "when", "sysml-TriggerKind-when", "sysml-TriggerKind-when");
-    get TriggerKind_when(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._TriggerKind_when;
-    }
-    private readonly _TriggerKind_at = new EnumerationLiteral(this._TriggerKind, "at", "sysml-TriggerKind-at", "sysml-TriggerKind-at");
-    get TriggerKind_at(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._TriggerKind_at;
-    }
-    private readonly _TriggerKind_after = new EnumerationLiteral(this._TriggerKind, "after", "sysml-TriggerKind-after", "sysml-TriggerKind-after");
-    get TriggerKind_after(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._TriggerKind_after;
     }
 
     public readonly _Type = new Concept(this._language, "Type", "sysml-Type", "sysml-Type", false);
@@ -3274,27 +3295,6 @@ export class sysmlBase implements ILanguageBase {
         return this._ViewpointUsage_viewpointStakeholder;
     }
 
-    public readonly _VisibilityKind = new Enumeration(this._language, "VisibilityKind", "sysml-VisibilityKind", "sysml-VisibilityKind");
-    get VisibilityKind(): Enumeration {
-        this.ensureWiredUp();
-        return this._VisibilityKind;
-    }
-    private readonly _VisibilityKind_private = new EnumerationLiteral(this._VisibilityKind, "private", "sysml-VisibilityKind-private", "sysml-VisibilityKind-private");
-    get VisibilityKind_private(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._VisibilityKind_private;
-    }
-    private readonly _VisibilityKind_protected = new EnumerationLiteral(this._VisibilityKind, "protected", "sysml-VisibilityKind-protected", "sysml-VisibilityKind-protected");
-    get VisibilityKind_protected(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._VisibilityKind_protected;
-    }
-    private readonly _VisibilityKind_public = new EnumerationLiteral(this._VisibilityKind, "public", "sysml-VisibilityKind-public", "sysml-VisibilityKind-public");
-    get VisibilityKind_public(): EnumerationLiteral {
-        this.ensureWiredUp();
-        return this._VisibilityKind_public;
-    }
-
     public readonly _WhileLoopActionUsage = new Concept(this._language, "WhileLoopActionUsage", "sysml-WhileLoopActionUsage", "sysml-WhileLoopActionUsage", false);
     get WhileLoopActionUsage(): Concept {
         this.ensureWiredUp();
@@ -3316,7 +3316,14 @@ export class sysmlBase implements ILanguageBase {
         if (this._wiredUp) {
             return;
         }
-        this._language.havingEntities(this._AcceptActionUsage, this._ActionDefinition, this._ActionUsage, this._ActorMembership, this._AllocationDefinition, this._AllocationUsage, this._AnalysisCaseDefinition, this._AnalysisCaseUsage, this._AnnotatingElement, this._Annotation, this._AssertConstraintUsage, this._AssignmentActionUsage, this._Association, this._AssociationStructure, this._AttributeDefinition, this._AttributeUsage, this._Behavior, this._BindingConnector, this._BindingConnectorAsUsage, this._BooleanExpression, this._CalculationDefinition, this._CalculationUsage, this._CaseDefinition, this._CaseUsage, this._Class, this._sysmlClassifier, this._CollectExpression, this._Comment, this._ConcernDefinition, this._ConcernUsage, this._ConjugatedPortDefinition, this._ConjugatedPortTyping, this._Conjugation, this._ConnectionDefinition, this._ConnectionUsage, this._Connector, this._ConnectorAsUsage, this._ConstraintDefinition, this._ConstraintUsage, this._ConstructorExpression, this._ControlNode, this._CrossSubsetting, this._DataType, this._DecisionNode, this._Definition, this._Dependency, this._Differencing, this._Disjoining, this._Documentation, this._Element, this._ElementFilterMembership, this._EndFeatureMembership, this._EnumerationDefinition, this._EnumerationUsage, this._EventOccurrenceUsage, this._ExhibitStateUsage, this._Expose, this._Expression, this._Feature, this._FeatureChainExpression, this._FeatureChaining, this._FeatureDirectionKind, this._FeatureInverting, this._FeatureMembership, this._FeatureReferenceExpression, this._FeatureTyping, this._FeatureValue, this._Flow, this._FlowDefinition, this._FlowEnd, this._FlowUsage, this._ForLoopActionUsage, this._ForkNode, this._FramedConcernMembership, this._Function, this._IfActionUsage, this._Import, this._IncludeUseCaseUsage, this._IndexExpression, this._InstantiationExpression, this._Interaction, this._InterfaceDefinition, this._InterfaceUsage, this._Intersecting, this._Invariant, this._InvocationExpression, this._ItemDefinition, this._ItemUsage, this._JoinNode, this._LibraryPackage, this._LiteralBoolean, this._LiteralExpression, this._LiteralInfinity, this._LiteralInteger, this._LiteralRational, this._LiteralString, this._LoopActionUsage, this._Membership, this._MembershipExpose, this._MembershipImport, this._MergeNode, this._Metaclass, this._MetadataAccessExpression, this._MetadataDefinition, this._MetadataFeature, this._MetadataUsage, this._Multiplicity, this._MultiplicityRange, this._Namespace, this._NamespaceExpose, this._NamespaceImport, this._NullExpression, this._ObjectiveMembership, this._OccurrenceDefinition, this._OccurrenceUsage, this._OperatorExpression, this._OwningMembership, this._Package, this._ParameterMembership, this._PartDefinition, this._PartUsage, this._PayloadFeature, this._PerformActionUsage, this._PortConjugation, this._PortDefinition, this._PortUsage, this._PortionKind, this._Predicate, this._Redefinition, this._ReferenceSubsetting, this._ReferenceUsage, this._Relationship, this._RenderingDefinition, this._RenderingUsage, this._RequirementConstraintKind, this._RequirementConstraintMembership, this._RequirementDefinition, this._RequirementUsage, this._RequirementVerificationMembership, this._ResultExpressionMembership, this._ReturnParameterMembership, this._SatisfyRequirementUsage, this._SelectExpression, this._SendActionUsage, this._Specialization, this._StakeholderMembership, this._StateDefinition, this._StateSubactionKind, this._StateSubactionMembership, this._StateUsage, this._Step, this._Structure, this._Subclassification, this._SubjectMembership, this._Subsetting, this._Succession, this._SuccessionAsUsage, this._SuccessionFlow, this._SuccessionFlowUsage, this._TerminateActionUsage, this._TextualRepresentation, this._TransitionFeatureKind, this._TransitionFeatureMembership, this._TransitionUsage, this._TriggerInvocationExpression, this._TriggerKind, this._Type, this._TypeFeaturing, this._Unioning, this._Usage, this._UseCaseDefinition, this._UseCaseUsage, this._VariantMembership, this._VerificationCaseDefinition, this._VerificationCaseUsage, this._ViewDefinition, this._ViewRenderingMembership, this._ViewUsage, this._ViewpointDefinition, this._ViewpointUsage, this._VisibilityKind, this._WhileLoopActionUsage);
+        this._language.havingEntities(this._FeatureDirectionKind, this._PortionKind, this._RequirementConstraintKind, this._StateSubactionKind, this._TransitionFeatureKind, this._TriggerKind, this._VisibilityKind, this._AcceptActionUsage, this._ActionDefinition, this._ActionUsage, this._ActorMembership, this._AllocationDefinition, this._AllocationUsage, this._AnalysisCaseDefinition, this._AnalysisCaseUsage, this._AnnotatingElement, this._Annotation, this._AssertConstraintUsage, this._AssignmentActionUsage, this._Association, this._AssociationStructure, this._AttributeDefinition, this._AttributeUsage, this._Behavior, this._BindingConnector, this._BindingConnectorAsUsage, this._BooleanExpression, this._CalculationDefinition, this._CalculationUsage, this._CaseDefinition, this._CaseUsage, this._Class, this._sysmlClassifier, this._CollectExpression, this._Comment, this._ConcernDefinition, this._ConcernUsage, this._ConjugatedPortDefinition, this._ConjugatedPortTyping, this._Conjugation, this._ConnectionDefinition, this._ConnectionUsage, this._Connector, this._ConnectorAsUsage, this._ConstraintDefinition, this._ConstraintUsage, this._ConstructorExpression, this._ControlNode, this._CrossSubsetting, this._DataType, this._DecisionNode, this._Definition, this._Dependency, this._Differencing, this._Disjoining, this._Documentation, this._Element, this._ElementFilterMembership, this._EndFeatureMembership, this._EnumerationDefinition, this._EnumerationUsage, this._EventOccurrenceUsage, this._ExhibitStateUsage, this._Expose, this._Expression, this._Feature, this._FeatureChainExpression, this._FeatureChaining, this._FeatureInverting, this._FeatureMembership, this._FeatureReferenceExpression, this._FeatureTyping, this._FeatureValue, this._Flow, this._FlowDefinition, this._FlowEnd, this._FlowUsage, this._ForLoopActionUsage, this._ForkNode, this._FramedConcernMembership, this._Function, this._IfActionUsage, this._Import, this._IncludeUseCaseUsage, this._IndexExpression, this._InstantiationExpression, this._Interaction, this._InterfaceDefinition, this._InterfaceUsage, this._Intersecting, this._Invariant, this._InvocationExpression, this._ItemDefinition, this._ItemUsage, this._JoinNode, this._LibraryPackage, this._LiteralBoolean, this._LiteralExpression, this._LiteralInfinity, this._LiteralInteger, this._LiteralRational, this._LiteralString, this._LoopActionUsage, this._Membership, this._MembershipExpose, this._MembershipImport, this._MergeNode, this._Metaclass, this._MetadataAccessExpression, this._MetadataDefinition, this._MetadataFeature, this._MetadataUsage, this._Multiplicity, this._MultiplicityRange, this._Namespace, this._NamespaceExpose, this._NamespaceImport, this._NullExpression, this._ObjectiveMembership, this._OccurrenceDefinition, this._OccurrenceUsage, this._OperatorExpression, this._OwningMembership, this._Package, this._ParameterMembership, this._PartDefinition, this._PartUsage, this._PayloadFeature, this._PerformActionUsage, this._PortConjugation, this._PortDefinition, this._PortUsage, this._Predicate, this._Redefinition, this._ReferenceSubsetting, this._ReferenceUsage, this._Relationship, this._RenderingDefinition, this._RenderingUsage, this._RequirementConstraintMembership, this._RequirementDefinition, this._RequirementUsage, this._RequirementVerificationMembership, this._ResultExpressionMembership, this._ReturnParameterMembership, this._SatisfyRequirementUsage, this._SelectExpression, this._SendActionUsage, this._Specialization, this._StakeholderMembership, this._StateDefinition, this._StateSubactionMembership, this._StateUsage, this._Step, this._Structure, this._Subclassification, this._SubjectMembership, this._Subsetting, this._Succession, this._SuccessionAsUsage, this._SuccessionFlow, this._SuccessionFlowUsage, this._TerminateActionUsage, this._TextualRepresentation, this._TransitionFeatureMembership, this._TransitionUsage, this._TriggerInvocationExpression, this._Type, this._TypeFeaturing, this._Unioning, this._Usage, this._UseCaseDefinition, this._UseCaseUsage, this._VariantMembership, this._VerificationCaseDefinition, this._VerificationCaseUsage, this._ViewDefinition, this._ViewRenderingMembership, this._ViewUsage, this._ViewpointDefinition, this._ViewpointUsage, this._WhileLoopActionUsage);
+        this._FeatureDirectionKind.havingLiterals(this._FeatureDirectionKind_in, this._FeatureDirectionKind_inout, this._FeatureDirectionKind_out);
+        this._PortionKind.havingLiterals(this._PortionKind_timeslice, this._PortionKind_snapshot);
+        this._RequirementConstraintKind.havingLiterals(this._RequirementConstraintKind_assumption, this._RequirementConstraintKind_requirement);
+        this._StateSubactionKind.havingLiterals(this._StateSubactionKind_entry, this._StateSubactionKind_do, this._StateSubactionKind_exit);
+        this._TransitionFeatureKind.havingLiterals(this._TransitionFeatureKind_trigger, this._TransitionFeatureKind_guard, this._TransitionFeatureKind_effect);
+        this._TriggerKind.havingLiterals(this._TriggerKind_when, this._TriggerKind_at, this._TriggerKind_after);
+        this._VisibilityKind.havingLiterals(this._VisibilityKind_private, this._VisibilityKind_protected, this._VisibilityKind_public);
         this._AcceptActionUsage.extends = this._ActionUsage;
         this._AcceptActionUsage.havingFeatures(this._AcceptActionUsage_receiverArgument, this._AcceptActionUsage_payloadParameter, this._AcceptActionUsage_payloadArgument);
         this._AcceptActionUsage_receiverArgument.ofType(this._Expression);
@@ -3581,7 +3588,6 @@ export class sysmlBase implements ILanguageBase {
         this._FeatureChaining.havingFeatures(this._FeatureChaining_chainingFeature, this._FeatureChaining_featureChained);
         this._FeatureChaining_chainingFeature.ofType(this._Feature);
         this._FeatureChaining_featureChained.ofType(this._Feature);
-        this._FeatureDirectionKind.havingLiterals(this._FeatureDirectionKind_in, this._FeatureDirectionKind_inout, this._FeatureDirectionKind_out);
         this._FeatureInverting.extends = this._Relationship;
         this._FeatureInverting.havingFeatures(this._FeatureInverting_featureInverted, this._FeatureInverting_invertingFeature, this._FeatureInverting_owningFeature);
         this._FeatureInverting_featureInverted.ofType(this._Feature);
@@ -3784,7 +3790,6 @@ export class sysmlBase implements ILanguageBase {
         this._PortUsage.extends = this._OccurrenceUsage;
         this._PortUsage.havingFeatures(this._PortUsage_portDefinition);
         this._PortUsage_portDefinition.ofType(this._PortDefinition);
-        this._PortionKind.havingLiterals(this._PortionKind_timeslice, this._PortionKind_snapshot);
         this._Predicate.extends = this._Function;
         this._Redefinition.extends = this._Subsetting;
         this._Redefinition.havingFeatures(this._Redefinition_redefiningFeature, this._Redefinition_redefinedFeature);
@@ -3809,7 +3814,6 @@ export class sysmlBase implements ILanguageBase {
         this._RenderingUsage.extends = this._PartUsage;
         this._RenderingUsage.havingFeatures(this._RenderingUsage_renderingDefinition);
         this._RenderingUsage_renderingDefinition.ofType(this._RenderingDefinition);
-        this._RequirementConstraintKind.havingLiterals(this._RequirementConstraintKind_assumption, this._RequirementConstraintKind_requirement);
         this._RequirementConstraintMembership.extends = this._FeatureMembership;
         this._RequirementConstraintMembership.havingFeatures(this._RequirementConstraintMembership_kind, this._RequirementConstraintMembership_ownedConstraint, this._RequirementConstraintMembership_referencedConstraint);
         this._RequirementConstraintMembership_kind.ofType(this._RequirementConstraintKind);
@@ -3869,7 +3873,6 @@ export class sysmlBase implements ILanguageBase {
         this._StateDefinition_doAction.ofType(this._ActionUsage);
         this._StateDefinition_exitAction.ofType(this._ActionUsage);
         this._StateDefinition_isParallel.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
-        this._StateSubactionKind.havingLiterals(this._StateSubactionKind_entry, this._StateSubactionKind_do, this._StateSubactionKind_exit);
         this._StateSubactionMembership.extends = this._FeatureMembership;
         this._StateSubactionMembership.havingFeatures(this._StateSubactionMembership_kind, this._StateSubactionMembership_action);
         this._StateSubactionMembership_kind.ofType(this._StateSubactionKind);
@@ -3911,7 +3914,6 @@ export class sysmlBase implements ILanguageBase {
         this._TextualRepresentation_language.ofType(LionCore_builtinsBase.INSTANCE._String);
         this._TextualRepresentation_body.ofType(LionCore_builtinsBase.INSTANCE._String);
         this._TextualRepresentation_representedElement.ofType(this._Element);
-        this._TransitionFeatureKind.havingLiterals(this._TransitionFeatureKind_trigger, this._TransitionFeatureKind_guard, this._TransitionFeatureKind_effect);
         this._TransitionFeatureMembership.extends = this._FeatureMembership;
         this._TransitionFeatureMembership.havingFeatures(this._TransitionFeatureMembership_kind, this._TransitionFeatureMembership_transitionFeature);
         this._TransitionFeatureMembership_kind.ofType(this._TransitionFeatureKind);
@@ -3927,7 +3929,6 @@ export class sysmlBase implements ILanguageBase {
         this._TriggerInvocationExpression.extends = this._InvocationExpression;
         this._TriggerInvocationExpression.havingFeatures(this._TriggerInvocationExpression_kind);
         this._TriggerInvocationExpression_kind.ofType(this._TriggerKind);
-        this._TriggerKind.havingLiterals(this._TriggerKind_when, this._TriggerKind_at, this._TriggerKind_after);
         this._Type.extends = this._Namespace;
         this._Type.havingFeatures(this._Type_ownedSpecialization, this._Type_ownedFeatureMembership, this._Type_feature, this._Type_ownedFeature, this._Type_input, this._Type_output, this._Type_isAbstract, this._Type_inheritedMembership, this._Type_endFeature, this._Type_ownedEndFeature, this._Type_isSufficient, this._Type_ownedConjugator, this._Type_isConjugated, this._Type_inheritedFeature, this._Type_multiplicity, this._Type_unioningType, this._Type_ownedIntersecting, this._Type_intersectingType, this._Type_ownedUnioning, this._Type_ownedDisjoining, this._Type_featureMembership, this._Type_differencingType, this._Type_ownedDifferencing, this._Type_directedFeature);
         this._Type_ownedSpecialization.ofType(this._Specialization);
@@ -4043,7 +4044,6 @@ export class sysmlBase implements ILanguageBase {
         this._ViewpointUsage.havingFeatures(this._ViewpointUsage_viewpointDefinition, this._ViewpointUsage_viewpointStakeholder);
         this._ViewpointUsage_viewpointDefinition.ofType(this._ViewpointDefinition);
         this._ViewpointUsage_viewpointStakeholder.ofType(this._PartUsage);
-        this._VisibilityKind.havingLiterals(this._VisibilityKind_private, this._VisibilityKind_protected, this._VisibilityKind_public);
         this._WhileLoopActionUsage.extends = this._LoopActionUsage;
         this._WhileLoopActionUsage.havingFeatures(this._WhileLoopActionUsage_whileArgument, this._WhileLoopActionUsage_untilArgument);
         this._WhileLoopActionUsage_whileArgument.ofType(this._Expression);
@@ -4249,6 +4249,46 @@ export class sysmlBase implements ILanguageBase {
     public static readonly INSTANCE = new sysmlBase();
 }
 
+
+export enum FeatureDirectionKind {
+    in = "sysml-FeatureDirectionKind-in",
+    inout = "sysml-FeatureDirectionKind-inout",
+    out = "sysml-FeatureDirectionKind-out"
+}
+
+export enum PortionKind {
+    timeslice = "sysml-PortionKind-timeslice",
+    snapshot = "sysml-PortionKind-snapshot"
+}
+
+export enum RequirementConstraintKind {
+    assumption = "sysml-RequirementConstraintKind-assumption",
+    requirement = "sysml-RequirementConstraintKind-requirement"
+}
+
+export enum StateSubactionKind {
+    entry = "sysml-StateSubactionKind-entry",
+    do = "sysml-StateSubactionKind-do",
+    exit = "sysml-StateSubactionKind-exit"
+}
+
+export enum TransitionFeatureKind {
+    trigger = "sysml-TransitionFeatureKind-trigger",
+    guard = "sysml-TransitionFeatureKind-guard",
+    effect = "sysml-TransitionFeatureKind-effect"
+}
+
+export enum TriggerKind {
+    when = "sysml-TriggerKind-when",
+    at = "sysml-TriggerKind-at",
+    after = "sysml-TriggerKind-after"
+}
+
+export enum VisibilityKind {
+    private = "sysml-VisibilityKind-private",
+    protected = "sysml-VisibilityKind-protected",
+    public = "sysml-VisibilityKind-public"
+}
 
 export abstract class Element extends NodeBase {
 
@@ -11339,12 +11379,6 @@ export class FeatureChaining extends Relationship {
     }
 }
 
-export enum FeatureDirectionKind {
-    in = "sysml-FeatureDirectionKind-in",
-    inout = "sysml-FeatureDirectionKind-inout",
-    out = "sysml-FeatureDirectionKind-out"
-}
-
 export class FeatureInverting extends Relationship {
     static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): FeatureInverting {
         return new FeatureInverting(sysmlBase.INSTANCE.FeatureInverting, id, receiveDelta, parentInfo);
@@ -13210,11 +13244,6 @@ export class PortUsage extends OccurrenceUsage {
     }
 }
 
-export enum PortionKind {
-    timeslice = "sysml-PortionKind-timeslice",
-    snapshot = "sysml-PortionKind-snapshot"
-}
-
 export class Predicate extends Function {
     static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): Predicate {
         return new Predicate(sysmlBase.INSTANCE.Predicate, id, receiveDelta, parentInfo);
@@ -13421,11 +13450,6 @@ export class RenderingUsage extends PartUsage {
         }
         return super.getContainmentValueManager(containment);
     }
-}
-
-export enum RequirementConstraintKind {
-    assumption = "sysml-RequirementConstraintKind-assumption",
-    requirement = "sysml-RequirementConstraintKind-requirement"
 }
 
 export class RequirementVerificationMembership extends RequirementConstraintMembership {
@@ -13838,12 +13862,6 @@ export class StateDefinition extends ActionDefinition {
     }
 }
 
-export enum StateSubactionKind {
-    entry = "sysml-StateSubactionKind-entry",
-    do = "sysml-StateSubactionKind-do",
-    exit = "sysml-StateSubactionKind-exit"
-}
-
 export class StateSubactionMembership extends FeatureMembership {
     static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): StateSubactionMembership {
         return new StateSubactionMembership(sysmlBase.INSTANCE.StateSubactionMembership, id, receiveDelta, parentInfo);
@@ -14144,12 +14162,6 @@ export class TextualRepresentation extends AnnotatingElement {
     }
 }
 
-export enum TransitionFeatureKind {
-    trigger = "sysml-TransitionFeatureKind-trigger",
-    guard = "sysml-TransitionFeatureKind-guard",
-    effect = "sysml-TransitionFeatureKind-effect"
-}
-
 export class TransitionFeatureMembership extends FeatureMembership {
     static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): TransitionFeatureMembership {
         return new TransitionFeatureMembership(sysmlBase.INSTANCE.TransitionFeatureMembership, id, receiveDelta, parentInfo);
@@ -14376,12 +14388,6 @@ export class TriggerInvocationExpression extends InvocationExpression {
         }
         return super.getPropertyValueManager(property);
     }
-}
-
-export enum TriggerKind {
-    when = "sysml-TriggerKind-when",
-    at = "sysml-TriggerKind-at",
-    after = "sysml-TriggerKind-after"
 }
 
 export class TypeFeaturing extends Relationship {
@@ -15086,12 +15092,6 @@ export class ViewpointUsage extends RequirementUsage {
             default: return super.getContainmentValueManager(containment);
         }
     }
-}
-
-export enum VisibilityKind {
-    private = "sysml-VisibilityKind-private",
-    protected = "sysml-VisibilityKind-protected",
-    public = "sysml-VisibilityKind-public"
 }
 
 export class WhileLoopActionUsage extends LoopActionUsage {

@@ -52,6 +52,8 @@
                         "key": "Language-entities"
                     },
                     "children": [
+                        "kerml-FeatureDirectionKind",
+                        "kerml-VisibilityKind",
                         "kerml-AnnotatingElement",
                         "kerml-Annotation",
                         "kerml-Association",
@@ -79,7 +81,6 @@
                         "kerml-Feature",
                         "kerml-FeatureChainExpression",
                         "kerml-FeatureChaining",
-                        "kerml-FeatureDirectionKind",
                         "kerml-FeatureInverting",
                         "kerml-FeatureMembership",
                         "kerml-FeatureReferenceExpression",
@@ -134,8 +135,7 @@
                         "kerml-TextualRepresentation",
                         "kerml-Type",
                         "kerml-TypeFeaturing",
-                        "kerml-Unioning",
-                        "kerml-VisibilityKind"
+                        "kerml-Unioning"
                     ]
                 }
             ],
@@ -151,6 +151,272 @@
             ],
             "annotations": [],
             "parent": null
+        },
+        {
+            "id": "kerml-FeatureDirectionKind",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Enumeration"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "kerml-FeatureDirectionKind"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "FeatureDirectionKind"
+                }
+            ],
+            "containments": [
+                {
+                    "containment": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Enumeration-literals"
+                    },
+                    "children": [
+                        "kerml-FeatureDirectionKind-in",
+                        "kerml-FeatureDirectionKind-inout",
+                        "kerml-FeatureDirectionKind-out"
+                    ]
+                }
+            ],
+            "references": [],
+            "annotations": [],
+            "parent": "kerml"
+        },
+        {
+            "id": "kerml-FeatureDirectionKind-in",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "kerml-FeatureDirectionKind-in"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "in"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "kerml-FeatureDirectionKind"
+        },
+        {
+            "id": "kerml-FeatureDirectionKind-inout",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "kerml-FeatureDirectionKind-inout"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "inout"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "kerml-FeatureDirectionKind"
+        },
+        {
+            "id": "kerml-FeatureDirectionKind-out",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "kerml-FeatureDirectionKind-out"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "out"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "kerml-FeatureDirectionKind"
+        },
+        {
+            "id": "kerml-VisibilityKind",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Enumeration"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "kerml-VisibilityKind"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "VisibilityKind"
+                }
+            ],
+            "containments": [
+                {
+                    "containment": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Enumeration-literals"
+                    },
+                    "children": [
+                        "kerml-VisibilityKind-private",
+                        "kerml-VisibilityKind-protected",
+                        "kerml-VisibilityKind-public"
+                    ]
+                }
+            ],
+            "references": [],
+            "annotations": [],
+            "parent": "kerml"
+        },
+        {
+            "id": "kerml-VisibilityKind-private",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "kerml-VisibilityKind-private"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "private"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "kerml-VisibilityKind"
+        },
+        {
+            "id": "kerml-VisibilityKind-protected",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "kerml-VisibilityKind-protected"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "protected"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "kerml-VisibilityKind"
+        },
+        {
+            "id": "kerml-VisibilityKind-public",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "kerml-VisibilityKind-public"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "public"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "kerml-VisibilityKind"
         },
         {
             "id": "kerml-AnnotatingElement",
@@ -7445,139 +7711,6 @@
             ],
             "annotations": [],
             "parent": "kerml-FeatureChaining"
-        },
-        {
-            "id": "kerml-FeatureDirectionKind",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "Enumeration"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "kerml-FeatureDirectionKind"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "FeatureDirectionKind"
-                }
-            ],
-            "containments": [
-                {
-                    "containment": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Enumeration-literals"
-                    },
-                    "children": [
-                        "kerml-FeatureDirectionKind-in",
-                        "kerml-FeatureDirectionKind-inout",
-                        "kerml-FeatureDirectionKind-out"
-                    ]
-                }
-            ],
-            "references": [],
-            "annotations": [],
-            "parent": "kerml"
-        },
-        {
-            "id": "kerml-FeatureDirectionKind-in",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "kerml-FeatureDirectionKind-in"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "in"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "kerml-FeatureDirectionKind"
-        },
-        {
-            "id": "kerml-FeatureDirectionKind-inout",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "kerml-FeatureDirectionKind-inout"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "inout"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "kerml-FeatureDirectionKind"
-        },
-        {
-            "id": "kerml-FeatureDirectionKind-out",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "kerml-FeatureDirectionKind-out"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "out"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "kerml-FeatureDirectionKind"
         },
         {
             "id": "kerml-FeatureInverting",
@@ -18781,139 +18914,6 @@
             ],
             "annotations": [],
             "parent": "kerml-Unioning"
-        },
-        {
-            "id": "kerml-VisibilityKind",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "Enumeration"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "kerml-VisibilityKind"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "VisibilityKind"
-                }
-            ],
-            "containments": [
-                {
-                    "containment": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Enumeration-literals"
-                    },
-                    "children": [
-                        "kerml-VisibilityKind-private",
-                        "kerml-VisibilityKind-protected",
-                        "kerml-VisibilityKind-public"
-                    ]
-                }
-            ],
-            "references": [],
-            "annotations": [],
-            "parent": "kerml"
-        },
-        {
-            "id": "kerml-VisibilityKind-private",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "kerml-VisibilityKind-private"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "private"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "kerml-VisibilityKind"
-        },
-        {
-            "id": "kerml-VisibilityKind-protected",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "kerml-VisibilityKind-protected"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "protected"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "kerml-VisibilityKind"
-        },
-        {
-            "id": "kerml-VisibilityKind-public",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "kerml-VisibilityKind-public"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "public"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "kerml-VisibilityKind"
         }
     ]
 }

@@ -69,7 +69,7 @@ await runOnce("artifacts/sysmlv2/kerml.ecore", {
                 : undefined
     },
     transformer: {
-        eDataTypeToLionWebPrimitiveType: ({name}) => {
+        customEDataTypeToLionWebPrimitiveType: ({name}) => {
             switch (name) {
                 case "Boolean": return builtinPrimitives.booleanDataType
                 case "Integer": return builtinPrimitives.integerDataType
