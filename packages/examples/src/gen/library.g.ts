@@ -36,24 +36,6 @@ export class libraryBase implements ILanguageBase {
         return this._language;
     }
 
-    public readonly _Employee = new Concept(this._language, "Employee", "library-Employee", "library-Employee", false);
-    get Employee(): Concept {
-        this.ensureWiredUp();
-        return this._Employee;
-    }
-
-    public readonly _Library = new Concept(this._language, "Library", "library-Library", "library-Library", false);
-    get Library(): Concept {
-        this.ensureWiredUp();
-        return this._Library;
-    }
-
-    public readonly _Writer = new Concept(this._language, "Writer", "library-Writer", "library-Writer", false);
-    get Writer(): Concept {
-        this.ensureWiredUp();
-        return this._Writer;
-    }
-
     public readonly _Book = new Concept(this._language, "Book", "library-Book", "library-Book", false);
     get Book(): Concept {
         this.ensureWiredUp();
@@ -81,12 +63,30 @@ export class libraryBase implements ILanguageBase {
         return this._BookCategory_Mistery;
     }
 
+    public readonly _Employee = new Concept(this._language, "Employee", "library-Employee", "library-Employee", false);
+    get Employee(): Concept {
+        this.ensureWiredUp();
+        return this._Employee;
+    }
+
+    public readonly _Library = new Concept(this._language, "Library", "library-Library", "library-Library", false);
+    get Library(): Concept {
+        this.ensureWiredUp();
+        return this._Library;
+    }
+
+    public readonly _Writer = new Concept(this._language, "Writer", "library-Writer", "library-Writer", false);
+    get Writer(): Concept {
+        this.ensureWiredUp();
+        return this._Writer;
+    }
+
     private _wiredUp: boolean = false;
     private ensureWiredUp() {
         if (this._wiredUp) {
             return;
         }
-        this._language.havingEntities(this._Employee, this._Library, this._Writer, this._Book, this._BookCategory);
+        this._language.havingEntities(this._Book, this._BookCategory, this._Employee, this._Library, this._Writer);
         this._BookCategory.havingLiterals(this._BookCategory_ScienceFiction, this._BookCategory_Biographie, this._BookCategory_Mistery);
         this._wiredUp = true;
     }
@@ -94,10 +94,10 @@ export class libraryBase implements ILanguageBase {
     factory(receiveDelta?: DeltaReceiver): NodeBaseFactory {
         return (classifier: Classifier, id: LionWebId) => {
             switch (classifier.key) {
+                case this._Book.key: return Book.create(id, receiveDelta);
                 case this._Employee.key: return Employee.create(id, receiveDelta);
                 case this._Library.key: return Library.create(id, receiveDelta);
                 case this._Writer.key: return Writer.create(id, receiveDelta);
-                case this._Book.key: return Book.create(id, receiveDelta);
                 default: {
                     const {language} = classifier;
                     throw new Error(`can't instantiate ${classifier.name} (key=${classifier.key}): classifier is not known in language ${language.name} (key=${language.key}, version=${language.version})`);
@@ -119,6 +119,18 @@ export class libraryBase implements ILanguageBase {
 }
 
 
+export class Book extends NodeBase {
+    static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): Book {
+        return new Book(libraryBase.INSTANCE.Book, id, receiveDelta, parentInfo);
+    }
+}
+
+export enum BookCategory {
+    ScienceFiction = "library-BookCategory-ScienceFiction",
+    Biographie = "library-BookCategory-Biographie",
+    Mistery = "library-BookCategory-Mistery"
+}
+
 export class Employee extends NodeBase {
     static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): Employee {
         return new Employee(libraryBase.INSTANCE.Employee, id, receiveDelta, parentInfo);
@@ -135,17 +147,5 @@ export class Writer extends NodeBase {
     static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): Writer {
         return new Writer(libraryBase.INSTANCE.Writer, id, receiveDelta, parentInfo);
     }
-}
-
-export class Book extends NodeBase {
-    static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): Book {
-        return new Book(libraryBase.INSTANCE.Book, id, receiveDelta, parentInfo);
-    }
-}
-
-export enum BookCategory {
-    ScienceFiction = "library-BookCategory-ScienceFiction",
-    Biographie = "library-BookCategory-Biographie",
-    Mistery = "library-BookCategory-Mistery"
 }
 

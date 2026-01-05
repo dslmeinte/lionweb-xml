@@ -1,4 +1,14 @@
-import { Concept, Interface, isRef, Language, LanguageEntity, LanguageFactory, nameOf } from "@lionweb/core"
+import {
+    Classifier,
+    Concept,
+    Interface,
+    isRef,
+    Language,
+    LanguageEntity,
+    LanguageFactory,
+    nameOf,
+    nameSorted
+} from "@lionweb/core"
 import { LionWebId } from "@lionweb/json"
 import { concatenator } from "@lionweb/ts-utils"
 
@@ -35,40 +45,24 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
 
     const entitiesBySourceId: Record<LionWebId, LanguageEntity> = {}
 
-    const transformEClassWithoutFeatures = (eClass: EClass) => {
-        const {name, abstract} = eClass
-        const interfaceSuperTypes = eClass.eSuperTypes.filter((eSuperType) => isRef(eSuperType) && eSuperType.interface) as EClass[]
-        const nonInterfaceSuperTypes = eClass.eSuperTypes.filter((eSuperType) => isRef(eSuperType) && !eSuperType.interface) as EClass[]
-        if (eClass.interface) {
-            if (nonInterfaceSuperTypes.length > 0) {
-                log(LogLevel.warning, ` interface EClass "${name}" has super types that are not interfaces: ${nonInterfaceSuperTypes.map(nameOf).join(" ")} — didn’t add the transformed versions of those to Interface.extends`)
-            }
-            return factory.interface(name).extending(
-                ...(interfaceSuperTypes.map(transformEClassifierMemoised) as Interface[])
-            )
+    const entityBySourceId = (sourceId: LionWebId): LanguageEntity => {
+        const entity = entitiesBySourceId[sourceId]
+        if (entity === undefined) {
+            throw new Error(`no entity with source id "${sourceId}" exists`)
         }
-        if (nonInterfaceSuperTypes.length > 1) {
-            log(LogLevel.warning, ` EClass "${name}" is not an interface, but exhibits multiple inheritance — set Concept.extends to the first transformed non-interface, and ignored the others`)
-        }
-        const concept = factory.concept(name, abstract)
-        if (nonInterfaceSuperTypes.length > 0) {
-            const extendSuperType = transformEClassifierMemoised(nonInterfaceSuperTypes[0])
-            if (extendSuperType !== undefined) {
-                concept.extends = extendSuperType as Concept
-            }
-        }
-        concept.implementing(
-            ...(interfaceSuperTypes.map(transformEClassifierMemoised) as Interface[])
-        )
-        return concept
+        return entity
     }
 
-    const transformEClassifierRecursively = (eClassifier: EClassifier): LanguageEntity | undefined => {
+    const entityFor = (eClassifier: EClassifier): LanguageEntity =>
+        entityBySourceId(eClassifier.id)
+
+    const transformedEClassifier = (eClassifier: EClassifier): LanguageEntity | undefined => {
         const {name} = eClassifier
         if (eClassifier instanceof EClass) {
-            const classifier = transformEClassWithoutFeatures(eClassifier)
-            // TODO  features
-            return classifier
+            const {name, abstract} = eClassifier
+            return eClassifier.interface
+                ? factory.interface(name)
+                : factory.concept(name, abstract)
         }
         if (eClassifier instanceof EEnum) {
             const enum_ = factory.enumeration(name)
@@ -89,19 +83,48 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
         return undefined
     }
 
-    const transformEClassifierMemoised = (eClassifier: EClassifier): LanguageEntity | undefined => {
-        const {id: sourceId} = eClassifier
-        if (sourceId in entitiesBySourceId) {
-            return entitiesBySourceId[sourceId]
-        }
-        const entity = transformEClassifierRecursively(eClassifier)
+    // 1. instantiate LW language entities
+    nameSorted(ePackage.eClassifiers).forEach((eClassifier) => {
+        const entity = transformedEClassifier(eClassifier)
         if (entity !== undefined) {
-            entitiesBySourceId[sourceId] = entity
+            entitiesBySourceId[eClassifier.id] = entity
         }
-        return entity
-    }
+    })
 
-    ePackage.eClassifiers.forEach(transformEClassifierMemoised)
+
+    ePackage.eClassifiers
+        .filter((eClassifier) => eClassifier instanceof EClass)
+        .forEach((eClass) => {
+            const {name} = eClass
+            const classifier = entityFor(eClass) as Classifier
+
+            // 2. hook up super types
+            const interfaceSuperTypes = eClass.eSuperTypes.filter((eSuperType) => isRef(eSuperType) && eSuperType.interface) as EClass[]
+            const nonInterfaceSuperTypes = eClass.eSuperTypes.filter((eSuperType) => isRef(eSuperType) && !eSuperType.interface) as EClass[]
+            if (eClass.interface) {
+                if (nonInterfaceSuperTypes.length > 0) {
+                    log(LogLevel.warning, ` interface EClass "${name}" has super types that are not interfaces: ${nonInterfaceSuperTypes.map(nameOf).join(" ")} — didn’t add the transformed versions of those to Interface.extends`)
+                }
+                (classifier as Interface).extending(
+                    ...(interfaceSuperTypes.map(entityFor) as Interface[])
+                )
+            } else {
+                const concept = classifier as Concept
+                if (nonInterfaceSuperTypes.length > 0) {
+                    const extendSuperType = entityFor(nonInterfaceSuperTypes[0])
+                    if (extendSuperType !== undefined) {
+                        concept.extends = extendSuperType as Concept
+                    }
+                }
+                concept.implementing(
+                    ...(interfaceSuperTypes.map(entityFor) as Interface[])
+                )
+            }
+
+            // 3. TODO  instantiate and hook up features
+        })
+
+
     // TODO  what to do with ePackage.eAnnotations?
 
     return factory.language

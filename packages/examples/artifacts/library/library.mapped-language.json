@@ -52,11 +52,11 @@
                         "key": "Language-entities"
                     },
                     "children": [
+                        "library-Book",
+                        "library-BookCategory",
                         "library-Employee",
                         "library-Library",
-                        "library-Writer",
-                        "library-Book",
-                        "library-BookCategory"
+                        "library-Writer"
                     ]
                 }
             ],
@@ -72,6 +72,211 @@
             ],
             "annotations": [],
             "parent": null
+        },
+        {
+            "id": "library-Book",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Concept"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Concept-abstract"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Concept-partition"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "library-Book"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "Book"
+                }
+            ],
+            "containments": [
+                {
+                    "containment": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Classifier-features"
+                    },
+                    "children": []
+                }
+            ],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Concept-extends"
+                    },
+                    "targets": []
+                },
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Concept-implements"
+                    },
+                    "targets": []
+                }
+            ],
+            "annotations": [],
+            "parent": "library"
+        },
+        {
+            "id": "library-BookCategory",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Enumeration"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "library-BookCategory"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "BookCategory"
+                }
+            ],
+            "containments": [
+                {
+                    "containment": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Enumeration-literals"
+                    },
+                    "children": [
+                        "library-BookCategory-ScienceFiction",
+                        "library-BookCategory-Biographie",
+                        "library-BookCategory-Mistery"
+                    ]
+                }
+            ],
+            "references": [],
+            "annotations": [],
+            "parent": "library"
+        },
+        {
+            "id": "library-BookCategory-ScienceFiction",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "library-BookCategory-ScienceFiction"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "ScienceFiction"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "library-BookCategory"
+        },
+        {
+            "id": "library-BookCategory-Biographie",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "library-BookCategory-Biographie"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "Biographie"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "library-BookCategory"
+        },
+        {
+            "id": "library-BookCategory-Mistery",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "EnumerationLiteral"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "library-BookCategory-Mistery"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "Mistery"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "library-BookCategory"
         },
         {
             "id": "library-Employee",
@@ -288,211 +493,6 @@
             ],
             "annotations": [],
             "parent": "library"
-        },
-        {
-            "id": "library-Book",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "Concept"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Concept-abstract"
-                    },
-                    "value": "false"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Concept-partition"
-                    },
-                    "value": "false"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "library-Book"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "Book"
-                }
-            ],
-            "containments": [
-                {
-                    "containment": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Classifier-features"
-                    },
-                    "children": []
-                }
-            ],
-            "references": [
-                {
-                    "reference": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Concept-extends"
-                    },
-                    "targets": []
-                },
-                {
-                    "reference": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Concept-implements"
-                    },
-                    "targets": []
-                }
-            ],
-            "annotations": [],
-            "parent": "library"
-        },
-        {
-            "id": "library-BookCategory",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "Enumeration"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "library-BookCategory"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "BookCategory"
-                }
-            ],
-            "containments": [
-                {
-                    "containment": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "Enumeration-literals"
-                    },
-                    "children": [
-                        "library-BookCategory-ScienceFiction",
-                        "library-BookCategory-Biographie",
-                        "library-BookCategory-Mistery"
-                    ]
-                }
-            ],
-            "references": [],
-            "annotations": [],
-            "parent": "library"
-        },
-        {
-            "id": "library-BookCategory-ScienceFiction",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "library-BookCategory-ScienceFiction"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "ScienceFiction"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "library-BookCategory"
-        },
-        {
-            "id": "library-BookCategory-Biographie",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "library-BookCategory-Biographie"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "Biographie"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "library-BookCategory"
-        },
-        {
-            "id": "library-BookCategory-Mistery",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "EnumerationLiteral"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "library-BookCategory-Mistery"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "Mistery"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "library-BookCategory"
         }
     ]
 }

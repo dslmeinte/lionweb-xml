@@ -33,6 +33,12 @@ export class typesBase implements ILanguageBase {
         return this._language;
     }
 
+    public readonly _Boolean = new PrimitiveType(this._language, "Boolean", "types-Boolean", "types-Boolean");
+    get Boolean(): PrimitiveType {
+        this.ensureWiredUp();
+        return this._Boolean;
+    }
+
     public readonly _Integer = new PrimitiveType(this._language, "Integer", "types-Integer", "types-Integer");
     get Integer(): PrimitiveType {
         this.ensureWiredUp();
@@ -57,18 +63,12 @@ export class typesBase implements ILanguageBase {
         return this._UnlimitedNatural;
     }
 
-    public readonly _Boolean = new PrimitiveType(this._language, "Boolean", "types-Boolean", "types-Boolean");
-    get Boolean(): PrimitiveType {
-        this.ensureWiredUp();
-        return this._Boolean;
-    }
-
     private _wiredUp: boolean = false;
     private ensureWiredUp() {
         if (this._wiredUp) {
             return;
         }
-        this._language.havingEntities(this._Integer, this._Real, this._String, this._UnlimitedNatural, this._Boolean);
+        this._language.havingEntities(this._Boolean, this._Integer, this._Real, this._String, this._UnlimitedNatural);
         this._wiredUp = true;
     }
 
@@ -89,6 +89,8 @@ export class typesBase implements ILanguageBase {
 }
 
 
+export type Boolean = string;
+
 export type Integer = string;
 
 export type Real = string;
@@ -96,6 +98,4 @@ export type Real = string;
 export type String = string;
 
 export type UnlimitedNatural = string;
-
-export type Boolean = string;
 

@@ -35,40 +35,16 @@ export class ecoreBase implements ILanguageBase {
         return this._language;
     }
 
-    public readonly _EAttribute = new Concept(this._language, "EAttribute", "ecore-EAttribute", "ecore-EAttribute", false);
-    get EAttribute(): Concept {
-        this.ensureWiredUp();
-        return this._EAttribute;
-    }
-
-    public readonly _EStructuralFeature = new Concept(this._language, "EStructuralFeature", "ecore-EStructuralFeature", "ecore-EStructuralFeature", true);
-    get EStructuralFeature(): Concept {
-        this.ensureWiredUp();
-        return this._EStructuralFeature;
-    }
-
-    public readonly _ETypedElement = new Concept(this._language, "ETypedElement", "ecore-ETypedElement", "ecore-ETypedElement", true);
-    get ETypedElement(): Concept {
-        this.ensureWiredUp();
-        return this._ETypedElement;
-    }
-
-    public readonly _ENamedElement = new Concept(this._language, "ENamedElement", "ecore-ENamedElement", "ecore-ENamedElement", true);
-    get ENamedElement(): Concept {
-        this.ensureWiredUp();
-        return this._ENamedElement;
-    }
-
-    public readonly _EModelElement = new Concept(this._language, "EModelElement", "ecore-EModelElement", "ecore-EModelElement", true);
-    get EModelElement(): Concept {
-        this.ensureWiredUp();
-        return this._EModelElement;
-    }
-
     public readonly _EAnnotation = new Concept(this._language, "EAnnotation", "ecore-EAnnotation", "ecore-EAnnotation", false);
     get EAnnotation(): Concept {
         this.ensureWiredUp();
         return this._EAnnotation;
+    }
+
+    public readonly _EAttribute = new Concept(this._language, "EAttribute", "ecore-EAttribute", "ecore-EAttribute", false);
+    get EAttribute(): Concept {
+        this.ensureWiredUp();
+        return this._EAttribute;
     }
 
     public readonly _EClass = new Concept(this._language, "EClass", "ecore-EClass", "ecore-EClass", false);
@@ -107,6 +83,24 @@ export class ecoreBase implements ILanguageBase {
         return this._EFactory;
     }
 
+    public readonly _EGenericType = new Concept(this._language, "EGenericType", "ecore-EGenericType", "ecore-EGenericType", false);
+    get EGenericType(): Concept {
+        this.ensureWiredUp();
+        return this._EGenericType;
+    }
+
+    public readonly _EModelElement = new Concept(this._language, "EModelElement", "ecore-EModelElement", "ecore-EModelElement", true);
+    get EModelElement(): Concept {
+        this.ensureWiredUp();
+        return this._EModelElement;
+    }
+
+    public readonly _ENamedElement = new Concept(this._language, "ENamedElement", "ecore-ENamedElement", "ecore-ENamedElement", true);
+    get ENamedElement(): Concept {
+        this.ensureWiredUp();
+        return this._ENamedElement;
+    }
+
     public readonly _EObject = new Concept(this._language, "EObject", "ecore-EObject", "ecore-EObject", false);
     get EObject(): Concept {
         this.ensureWiredUp();
@@ -143,10 +137,10 @@ export class ecoreBase implements ILanguageBase {
         return this._EStringToStringMapEntry;
     }
 
-    public readonly _EGenericType = new Concept(this._language, "EGenericType", "ecore-EGenericType", "ecore-EGenericType", false);
-    get EGenericType(): Concept {
+    public readonly _EStructuralFeature = new Concept(this._language, "EStructuralFeature", "ecore-EStructuralFeature", "ecore-EStructuralFeature", true);
+    get EStructuralFeature(): Concept {
         this.ensureWiredUp();
-        return this._EGenericType;
+        return this._EStructuralFeature;
     }
 
     public readonly _ETypeParameter = new Concept(this._language, "ETypeParameter", "ecore-ETypeParameter", "ecore-ETypeParameter", false);
@@ -155,48 +149,54 @@ export class ecoreBase implements ILanguageBase {
         return this._ETypeParameter;
     }
 
+    public readonly _ETypedElement = new Concept(this._language, "ETypedElement", "ecore-ETypedElement", "ecore-ETypedElement", true);
+    get ETypedElement(): Concept {
+        this.ensureWiredUp();
+        return this._ETypedElement;
+    }
+
     private _wiredUp: boolean = false;
     private ensureWiredUp() {
         if (this._wiredUp) {
             return;
         }
-        this._language.havingEntities(this._EAttribute, this._EStructuralFeature, this._ETypedElement, this._ENamedElement, this._EModelElement, this._EAnnotation, this._EClass, this._EClassifier, this._EDataType, this._EEnum, this._EEnumLiteral, this._EFactory, this._EObject, this._EOperation, this._EPackage, this._EParameter, this._EReference, this._EStringToStringMapEntry, this._EGenericType, this._ETypeParameter);
-        this._EAttribute.extends = this._EStructuralFeature;
-        this._EStructuralFeature.extends = this._ETypedElement;
-        this._ETypedElement.extends = this._ENamedElement;
-        this._ENamedElement.extends = this._EModelElement;
+        this._language.havingEntities(this._EAnnotation, this._EAttribute, this._EClass, this._EClassifier, this._EDataType, this._EEnum, this._EEnumLiteral, this._EFactory, this._EGenericType, this._EModelElement, this._ENamedElement, this._EObject, this._EOperation, this._EPackage, this._EParameter, this._EReference, this._EStringToStringMapEntry, this._EStructuralFeature, this._ETypeParameter, this._ETypedElement);
         this._EAnnotation.extends = this._EModelElement;
+        this._EAttribute.extends = this._EStructuralFeature;
         this._EClass.extends = this._EClassifier;
         this._EClassifier.extends = this._ENamedElement;
         this._EDataType.extends = this._EClassifier;
         this._EEnum.extends = this._EDataType;
         this._EEnumLiteral.extends = this._ENamedElement;
         this._EFactory.extends = this._EModelElement;
+        this._ENamedElement.extends = this._EModelElement;
         this._EOperation.extends = this._ETypedElement;
         this._EPackage.extends = this._ENamedElement;
         this._EParameter.extends = this._ETypedElement;
         this._EReference.extends = this._EStructuralFeature;
+        this._EStructuralFeature.extends = this._ETypedElement;
         this._ETypeParameter.extends = this._ENamedElement;
+        this._ETypedElement.extends = this._ENamedElement;
         this._wiredUp = true;
     }
 
     factory(receiveDelta?: DeltaReceiver): NodeBaseFactory {
         return (classifier: Classifier, id: LionWebId) => {
             switch (classifier.key) {
-                case this._EAttribute.key: return EAttribute.create(id, receiveDelta);
                 case this._EAnnotation.key: return EAnnotation.create(id, receiveDelta);
+                case this._EAttribute.key: return EAttribute.create(id, receiveDelta);
                 case this._EClass.key: return EClass.create(id, receiveDelta);
                 case this._EDataType.key: return EDataType.create(id, receiveDelta);
                 case this._EEnum.key: return EEnum.create(id, receiveDelta);
                 case this._EEnumLiteral.key: return EEnumLiteral.create(id, receiveDelta);
                 case this._EFactory.key: return EFactory.create(id, receiveDelta);
+                case this._EGenericType.key: return EGenericType.create(id, receiveDelta);
                 case this._EObject.key: return EObject.create(id, receiveDelta);
                 case this._EOperation.key: return EOperation.create(id, receiveDelta);
                 case this._EPackage.key: return EPackage.create(id, receiveDelta);
                 case this._EParameter.key: return EParameter.create(id, receiveDelta);
                 case this._EReference.key: return EReference.create(id, receiveDelta);
                 case this._EStringToStringMapEntry.key: return EStringToStringMapEntry.create(id, receiveDelta);
-                case this._EGenericType.key: return EGenericType.create(id, receiveDelta);
                 case this._ETypeParameter.key: return ETypeParameter.create(id, receiveDelta);
                 default: {
                     const {language} = classifier;
@@ -219,6 +219,12 @@ export class ecoreBase implements ILanguageBase {
 export abstract class EModelElement extends NodeBase {
 }
 
+export class EAnnotation extends EModelElement {
+    static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): EAnnotation {
+        return new EAnnotation(ecoreBase.INSTANCE.EAnnotation, id, receiveDelta, parentInfo);
+    }
+}
+
 export abstract class ENamedElement extends EModelElement {
 }
 
@@ -231,12 +237,6 @@ export abstract class EStructuralFeature extends ETypedElement {
 export class EAttribute extends EStructuralFeature {
     static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): EAttribute {
         return new EAttribute(ecoreBase.INSTANCE.EAttribute, id, receiveDelta, parentInfo);
-    }
-}
-
-export class EAnnotation extends EModelElement {
-    static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): EAnnotation {
-        return new EAnnotation(ecoreBase.INSTANCE.EAnnotation, id, receiveDelta, parentInfo);
     }
 }
 
@@ -273,6 +273,12 @@ export class EFactory extends EModelElement {
     }
 }
 
+export class EGenericType extends NodeBase {
+    static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): EGenericType {
+        return new EGenericType(ecoreBase.INSTANCE.EGenericType, id, receiveDelta, parentInfo);
+    }
+}
+
 export class EObject extends NodeBase {
     static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): EObject {
         return new EObject(ecoreBase.INSTANCE.EObject, id, receiveDelta, parentInfo);
@@ -306,12 +312,6 @@ export class EReference extends EStructuralFeature {
 export class EStringToStringMapEntry extends NodeBase {
     static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): EStringToStringMapEntry {
         return new EStringToStringMapEntry(ecoreBase.INSTANCE.EStringToStringMapEntry, id, receiveDelta, parentInfo);
-    }
-}
-
-export class EGenericType extends NodeBase {
-    static create(id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage): EGenericType {
-        return new EGenericType(ecoreBase.INSTANCE.EGenericType, id, receiveDelta, parentInfo);
     }
 }
 

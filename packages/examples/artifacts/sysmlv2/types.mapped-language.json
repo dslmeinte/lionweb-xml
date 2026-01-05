@@ -52,11 +52,11 @@
                         "key": "Language-entities"
                     },
                     "children": [
+                        "types-Boolean",
                         "types-Integer",
                         "types-Real",
                         "types-String",
-                        "types-UnlimitedNatural",
-                        "types-Boolean"
+                        "types-UnlimitedNatural"
                     ]
                 }
             ],
@@ -72,6 +72,36 @@
             ],
             "annotations": [],
             "parent": null
+        },
+        {
+            "id": "types-Boolean",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "PrimitiveType"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "types-Boolean"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "Boolean"
+                }
+            ],
+            "containments": [],
+            "references": [],
+            "annotations": [],
+            "parent": "types"
         },
         {
             "id": "types-Integer",
@@ -186,36 +216,6 @@
                         "key": "LionCore-builtins-INamed-name"
                     },
                     "value": "UnlimitedNatural"
-                }
-            ],
-            "containments": [],
-            "references": [],
-            "annotations": [],
-            "parent": "types"
-        },
-        {
-            "id": "types-Boolean",
-            "classifier": {
-                "language": "LionCore-M3",
-                "version": "2023.1",
-                "key": "PrimitiveType"
-            },
-            "properties": [
-                {
-                    "property": {
-                        "language": "LionCore-M3",
-                        "version": "2023.1",
-                        "key": "IKeyed-key"
-                    },
-                    "value": "types-Boolean"
-                },
-                {
-                    "property": {
-                        "language": "LionCore-builtins",
-                        "version": "2023.1",
-                        "key": "LionCore-builtins-INamed-name"
-                    },
-                    "value": "Boolean"
                 }
             ],
             "containments": [],
