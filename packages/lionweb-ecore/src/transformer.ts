@@ -96,7 +96,7 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
         }
         const entity = transformEClassifierRecursively(eClassifier)
         if (entity !== undefined) {
-            entitiesBySourceId[sourceId]
+            entitiesBySourceId[sourceId] = entity
         }
         return entity
     }

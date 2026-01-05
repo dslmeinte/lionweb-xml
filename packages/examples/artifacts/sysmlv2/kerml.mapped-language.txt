@@ -4,17 +4,7 @@ language kerml
 
         concept AnnotatingElement extends Element
 
-        concept AnnotatingElement extends Element
-
-        concept AnnotatingElement extends Element
-
-        concept AnnotatingElement extends Element
-
         concept Annotation extends Relationship
-
-        concept Association extends Classifier
-
-        concept Association extends Classifier
 
         concept Association extends Classifier
 
@@ -22,47 +12,11 @@ language kerml
 
         concept Behavior extends Class
 
-        concept Behavior extends Class
-
-        concept Behavior extends Class
-
         concept BindingConnector extends Connector
 
         concept BooleanExpression extends Expression
 
-        concept BooleanExpression extends Expression
-
         concept Class extends Classifier
-
-        concept Class extends Classifier
-
-        concept Class extends Classifier
-
-        concept Class extends Classifier
-
-        concept Class extends Classifier
-
-        concept Class extends Classifier
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
 
         concept Classifier extends Type
 
@@ -70,17 +24,7 @@ language kerml
 
         concept Comment extends AnnotatingElement
 
-        concept Comment extends AnnotatingElement
-
         concept Conjugation extends Relationship
-
-        concept Connector extends Feature
-
-        concept Connector extends Feature
-
-        concept Connector extends Feature
-
-        concept Connector extends Feature
 
         concept Connector extends Feature
 
@@ -100,273 +44,11 @@ language kerml
 
         abstract concept Element
 
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
         concept ElementFilterMembership extends OwningMembership
 
         concept EndFeatureMembership extends FeatureMembership
 
         concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
 
         concept Feature extends Type
 
@@ -384,14 +66,6 @@ language kerml
 
         concept FeatureMembership extends OwningMembership
 
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
         concept FeatureReferenceExpression extends Expression
 
         concept FeatureTyping extends Specialization
@@ -400,35 +74,13 @@ language kerml
 
         concept Flow extends Connector
 
-        concept Flow extends Connector
-
         concept FlowEnd extends Feature
 
         concept Function extends Behavior
 
-        concept Function extends Behavior
-
-        abstract concept Import extends Relationship
-
-        abstract concept Import extends Relationship
-
         abstract concept Import extends Relationship
 
         concept IndexExpression extends OperatorExpression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
 
         abstract concept InstantiationExpression extends Expression
 
@@ -440,29 +92,9 @@ language kerml
 
         concept InvocationExpression extends InstantiationExpression
 
-        concept InvocationExpression extends InstantiationExpression
-
-        concept InvocationExpression extends InstantiationExpression
-
-        concept InvocationExpression extends InstantiationExpression
-
-        concept InvocationExpression extends InstantiationExpression
-
-        concept InvocationExpression extends InstantiationExpression
-
         concept LibraryPackage extends Package
 
         concept LiteralBoolean extends LiteralExpression
-
-        concept LiteralExpression extends Expression
-
-        concept LiteralExpression extends Expression
-
-        concept LiteralExpression extends Expression
-
-        concept LiteralExpression extends Expression
-
-        concept LiteralExpression extends Expression
 
         concept LiteralExpression extends Expression
 
@@ -476,22 +108,6 @@ language kerml
 
         concept Membership extends Relationship
 
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
         concept MembershipImport extends Import
 
         concept Metaclass extends Structure
@@ -502,101 +118,7 @@ language kerml
 
         concept Multiplicity extends Feature
 
-        concept Multiplicity extends Feature
-
         concept MultiplicityRange extends Multiplicity
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
 
         concept Namespace extends Element
 
@@ -606,35 +128,9 @@ language kerml
 
         concept OperatorExpression extends InvocationExpression
 
-        concept OperatorExpression extends InvocationExpression
-
-        concept OperatorExpression extends InvocationExpression
-
-        concept OperatorExpression extends InvocationExpression
-
-        concept OperatorExpression extends InvocationExpression
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
         concept OwningMembership extends Membership
 
         concept Package extends Namespace
-
-        concept Package extends Namespace
-
-        concept ParameterMembership extends FeatureMembership
 
         concept ParameterMembership extends FeatureMembership
 
@@ -648,64 +144,6 @@ language kerml
 
         abstract concept Relationship extends Element
 
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
         concept ResultExpressionMembership extends FeatureMembership
 
         concept ReturnParameterMembership extends ParameterMembership
@@ -714,71 +152,11 @@ language kerml
 
         concept Specialization extends Relationship
 
-        concept Specialization extends Relationship
-
-        concept Specialization extends Relationship
-
-        concept Specialization extends Relationship
-
-        concept Specialization extends Relationship
-
-        concept Specialization extends Relationship
-
-        concept Specialization extends Relationship
-
         concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Structure extends Class
 
         concept Structure extends Class
 
         concept Subclassification extends Specialization
-
-        concept Subsetting extends Specialization
-
-        concept Subsetting extends Specialization
-
-        concept Subsetting extends Specialization
 
         concept Subsetting extends Specialization
 
@@ -787,92 +165,6 @@ language kerml
         concept SuccessionFlow extends Flow
 
         concept TextualRepresentation extends AnnotatingElement
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
 
         concept Type extends Namespace
 

@@ -10,14 +10,6 @@ language ecore
 
         abstract concept EClassifier extends ENamedElement
 
-        abstract concept EClassifier extends ENamedElement
-
-        abstract concept EClassifier extends ENamedElement
-
-        abstract concept EClassifier extends ENamedElement
-
-        concept EDataType extends EClassifier
-
         concept EDataType extends EClassifier
 
         concept EEnum extends EDataType
@@ -29,64 +21,6 @@ language ecore
         concept EGenericType
 
         abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept EModelElement
-
-        abstract concept ENamedElement extends EModelElement
-
-        abstract concept ENamedElement extends EModelElement
-
-        abstract concept ENamedElement extends EModelElement
-
-        abstract concept ENamedElement extends EModelElement
-
-        abstract concept ENamedElement extends EModelElement
-
-        abstract concept ENamedElement extends EModelElement
-
-        abstract concept ENamedElement extends EModelElement
-
-        abstract concept ENamedElement extends EModelElement
-
-        abstract concept ENamedElement extends EModelElement
-
-        abstract concept ENamedElement extends EModelElement
-
-        abstract concept ENamedElement extends EModelElement
-
-        abstract concept ENamedElement extends EModelElement
-
-        abstract concept ENamedElement extends EModelElement
 
         abstract concept ENamedElement extends EModelElement
 
@@ -104,21 +38,7 @@ language ecore
 
         abstract concept EStructuralFeature extends ETypedElement
 
-        abstract concept EStructuralFeature extends ETypedElement
-
-        abstract concept EStructuralFeature extends ETypedElement
-
         concept ETypeParameter extends ENamedElement
-
-        abstract concept ETypedElement extends ENamedElement
-
-        abstract concept ETypedElement extends ENamedElement
-
-        abstract concept ETypedElement extends ENamedElement
-
-        abstract concept ETypedElement extends ENamedElement
-
-        abstract concept ETypedElement extends ENamedElement
 
         abstract concept ETypedElement extends ENamedElement
 

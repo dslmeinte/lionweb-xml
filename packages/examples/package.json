@@ -16,13 +16,14 @@
     "scripts": {
         "clean": "npx rimraf dist node_modules",
         "build": "tsc",
-        "pregenerate": "npm run build",
+        "pregenerate": "npx rimraf src/gen/* && npm run build",
         "generate": "node dist/run.js",
         "lint": "eslint src"
     },
     "dependencies": {
         "@lionweb-xml/lionweb-ecore": "*",
         "@lionweb/class-core": "0.7.2",
+        "@lionweb/class-core-generator": "0.7.2",
         "@lionweb/core": "0.7.2",
         "@lionweb/ts-utils": "0.7.2",
         "@lionweb/utilities": "0.7.2",

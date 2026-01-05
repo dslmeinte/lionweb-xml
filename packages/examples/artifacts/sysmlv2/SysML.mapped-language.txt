@@ -6,66 +6,6 @@ language sysml
 
         concept ActionDefinition extends OccurrenceDefinition
 
-        concept ActionDefinition extends OccurrenceDefinition
-
-        concept ActionDefinition extends OccurrenceDefinition
-
-        concept ActionDefinition extends OccurrenceDefinition
-
-        concept ActionDefinition extends OccurrenceDefinition
-
-        concept ActionDefinition extends OccurrenceDefinition
-
-        concept ActionDefinition extends OccurrenceDefinition
-
-        concept ActionDefinition extends OccurrenceDefinition
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
-        concept ActionUsage extends OccurrenceUsage
-
         concept ActionUsage extends OccurrenceUsage
 
         concept ActorMembership extends ParameterMembership
@@ -80,12 +20,6 @@ language sysml
 
         concept AnnotatingElement extends Element
 
-        concept AnnotatingElement extends Element
-
-        concept AnnotatingElement extends Element
-
-        concept AnnotatingElement extends Element
-
         concept Annotation extends Relationship
 
         concept AssertConstraintUsage extends ConstraintUsage
@@ -94,23 +28,11 @@ language sysml
 
         concept Association extends Classifier
 
-        concept Association extends Classifier
-
-        concept Association extends Classifier
-
         concept AssociationStructure extends Association
 
         concept AttributeDefinition extends Definition
 
-        concept AttributeDefinition extends Definition
-
         concept AttributeUsage extends Usage
-
-        concept AttributeUsage extends Usage
-
-        concept Behavior extends Class
-
-        concept Behavior extends Class
 
         concept Behavior extends Class
 
@@ -120,137 +42,19 @@ language sysml
 
         concept BooleanExpression extends Expression
 
-        concept BooleanExpression extends Expression
-
         concept CalculationDefinition extends ActionDefinition
-
-        concept CalculationDefinition extends ActionDefinition
-
-        concept CalculationDefinition extends ActionDefinition
-
-        concept CalculationDefinition extends ActionDefinition
-
-        concept CalculationDefinition extends ActionDefinition
-
-        concept CalculationUsage extends ActionUsage
-
-        concept CalculationUsage extends ActionUsage
-
-        concept CalculationUsage extends ActionUsage
-
-        concept CalculationUsage extends ActionUsage
-
-        concept CalculationUsage extends ActionUsage
 
         concept CalculationUsage extends ActionUsage
 
         concept CaseDefinition extends CalculationDefinition
 
-        concept CaseDefinition extends CalculationDefinition
-
-        concept CaseDefinition extends CalculationDefinition
-
-        concept CaseDefinition extends CalculationDefinition
-
-        concept CaseUsage extends CalculationUsage
-
-        concept CaseUsage extends CalculationUsage
-
-        concept CaseUsage extends CalculationUsage
-
-        concept CaseUsage extends CalculationUsage
-
         concept CaseUsage extends CalculationUsage
 
         concept Class extends Classifier
-
-        concept Class extends Classifier
-
-        concept Class extends Classifier
-
-        concept Class extends Classifier
-
-        concept Class extends Classifier
-
-        concept Class extends Classifier
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
-
-        concept Classifier extends Type
 
         concept Classifier extends Type
 
         concept CollectExpression extends OperatorExpression
-
-        concept Comment extends AnnotatingElement
 
         concept Comment extends AnnotatingElement
 
@@ -264,75 +68,19 @@ language sysml
 
         concept Conjugation extends Relationship
 
-        concept Conjugation extends Relationship
-
-        concept ConnectionDefinition extends PartDefinition
-
-        concept ConnectionDefinition extends PartDefinition
-
         concept ConnectionDefinition extends PartDefinition
 
         concept ConnectionUsage extends ConnectorAsUsage
 
-        concept ConnectionUsage extends ConnectorAsUsage
-
-        concept ConnectionUsage extends ConnectorAsUsage
-
         concept Connector extends Feature
-
-        concept Connector extends Feature
-
-        concept Connector extends Feature
-
-        concept Connector extends Feature
-
-        concept Connector extends Feature
-
-        abstract concept ConnectorAsUsage extends Usage
-
-        abstract concept ConnectorAsUsage extends Usage
-
-        abstract concept ConnectorAsUsage extends Usage
-
-        abstract concept ConnectorAsUsage extends Usage
-
-        abstract concept ConnectorAsUsage extends Usage
-
-        abstract concept ConnectorAsUsage extends Usage
-
-        abstract concept ConnectorAsUsage extends Usage
 
         abstract concept ConnectorAsUsage extends Usage
 
         concept ConstraintDefinition extends OccurrenceDefinition
-
-        concept ConstraintDefinition extends OccurrenceDefinition
-
-        concept ConstraintDefinition extends OccurrenceDefinition
-
-        concept ConstraintDefinition extends OccurrenceDefinition
-
-        concept ConstraintUsage extends OccurrenceUsage
-
-        concept ConstraintUsage extends OccurrenceUsage
-
-        concept ConstraintUsage extends OccurrenceUsage
-
-        concept ConstraintUsage extends OccurrenceUsage
-
-        concept ConstraintUsage extends OccurrenceUsage
 
         concept ConstraintUsage extends OccurrenceUsage
 
         concept ConstructorExpression extends InstantiationExpression
-
-        abstract concept ControlNode extends ActionUsage
-
-        abstract concept ControlNode extends ActionUsage
-
-        abstract concept ControlNode extends ActionUsage
-
-        abstract concept ControlNode extends ActionUsage
 
         abstract concept ControlNode extends ActionUsage
 
@@ -344,56 +92,6 @@ language sysml
 
         concept Definition extends Classifier
 
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
-        concept Definition extends Classifier
-
         concept Dependency extends Relationship
 
         concept Differencing extends Relationship
@@ -401,354 +99,6 @@ language sysml
         concept Disjoining extends Relationship
 
         concept Documentation extends Comment
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
-
-        abstract concept Element
 
         abstract concept Element
 
@@ -768,210 +118,6 @@ language sysml
 
         concept Expression extends Step
 
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Expression extends Step
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
-        concept Feature extends Type
-
         concept Feature extends Type
 
         concept FeatureChainExpression extends OperatorExpression
@@ -988,37 +134,7 @@ language sysml
 
         concept FeatureMembership extends OwningMembership
 
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
-        concept FeatureMembership extends OwningMembership
-
         concept FeatureReferenceExpression extends Expression
-
-        concept FeatureTyping extends Specialization
 
         concept FeatureTyping extends Specialization
 
@@ -1026,13 +142,9 @@ language sysml
 
         concept Flow extends Connector
 
-        concept Flow extends Connector
-
         concept FlowDefinition extends ActionDefinition
 
         concept FlowEnd extends Feature
-
-        concept FlowUsage extends ConnectorAsUsage
 
         concept FlowUsage extends ConnectorAsUsage
 
@@ -1044,41 +156,13 @@ language sysml
 
         concept Function extends Behavior
 
-        concept Function extends Behavior
-
         concept IfActionUsage extends ActionUsage
-
-        abstract concept Import extends Relationship
-
-        abstract concept Import extends Relationship
-
-        abstract concept Import extends Relationship
-
-        abstract concept Import extends Relationship
-
-        abstract concept Import extends Relationship
 
         abstract concept Import extends Relationship
 
         concept IncludeUseCaseUsage extends UseCaseUsage
 
         concept IndexExpression extends OperatorExpression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
-
-        abstract concept InstantiationExpression extends Expression
 
         abstract concept InstantiationExpression extends Expression
 
@@ -1094,41 +178,7 @@ language sysml
 
         concept InvocationExpression extends InstantiationExpression
 
-        concept InvocationExpression extends InstantiationExpression
-
-        concept InvocationExpression extends InstantiationExpression
-
-        concept InvocationExpression extends InstantiationExpression
-
-        concept InvocationExpression extends InstantiationExpression
-
-        concept InvocationExpression extends InstantiationExpression
-
-        concept InvocationExpression extends InstantiationExpression
-
         concept ItemDefinition extends OccurrenceDefinition
-
-        concept ItemDefinition extends OccurrenceDefinition
-
-        concept ItemDefinition extends OccurrenceDefinition
-
-        concept ItemDefinition extends OccurrenceDefinition
-
-        concept ItemDefinition extends OccurrenceDefinition
-
-        concept ItemDefinition extends OccurrenceDefinition
-
-        concept ItemDefinition extends OccurrenceDefinition
-
-        concept ItemDefinition extends OccurrenceDefinition
-
-        concept ItemUsage extends OccurrenceUsage
-
-        concept ItemUsage extends OccurrenceUsage
-
-        concept ItemUsage extends OccurrenceUsage
-
-        concept ItemUsage extends OccurrenceUsage
 
         concept ItemUsage extends OccurrenceUsage
 
@@ -1137,16 +187,6 @@ language sysml
         concept LibraryPackage extends Package
 
         concept LiteralBoolean extends LiteralExpression
-
-        concept LiteralExpression extends Expression
-
-        concept LiteralExpression extends Expression
-
-        concept LiteralExpression extends Expression
-
-        concept LiteralExpression extends Expression
-
-        concept LiteralExpression extends Expression
 
         concept LiteralExpression extends Expression
 
@@ -1160,53 +200,9 @@ language sysml
 
         abstract concept LoopActionUsage extends ActionUsage
 
-        abstract concept LoopActionUsage extends ActionUsage
-
-        abstract concept LoopActionUsage extends ActionUsage
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
-        concept Membership extends Relationship
-
         concept Membership extends Relationship
 
         concept MembershipExpose extends MembershipImport
-
-        concept MembershipImport extends Import
 
         concept MembershipImport extends Import
 
@@ -1224,261 +220,11 @@ language sysml
 
         concept Multiplicity extends Feature
 
-        concept Multiplicity extends Feature
-
         concept MultiplicityRange extends Multiplicity
 
         concept Namespace extends Element
 
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
-        concept Namespace extends Element
-
         concept NamespaceExpose extends NamespaceImport
-
-        concept NamespaceImport extends Import
 
         concept NamespaceImport extends Import
 
@@ -1488,203 +234,17 @@ language sysml
 
         concept OccurrenceDefinition extends Definition
 
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceDefinition extends Definition
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
-        concept OccurrenceUsage extends Usage
-
         concept OccurrenceUsage extends Usage
 
         concept OperatorExpression extends InvocationExpression
-
-        concept OperatorExpression extends InvocationExpression
-
-        concept OperatorExpression extends InvocationExpression
-
-        concept OperatorExpression extends InvocationExpression
-
-        concept OperatorExpression extends InvocationExpression
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
-
-        concept OwningMembership extends Membership
 
         concept OwningMembership extends Membership
 
         concept Package extends Namespace
 
-        concept Package extends Namespace
-
-        concept ParameterMembership extends FeatureMembership
-
-        concept ParameterMembership extends FeatureMembership
-
-        concept ParameterMembership extends FeatureMembership
-
-        concept ParameterMembership extends FeatureMembership
-
         concept ParameterMembership extends FeatureMembership
 
         concept PartDefinition extends ItemDefinition
-
-        concept PartDefinition extends ItemDefinition
-
-        concept PartDefinition extends ItemDefinition
-
-        concept PartDefinition extends ItemDefinition
-
-        concept PartDefinition extends ItemDefinition
-
-        concept PartDefinition extends ItemDefinition
-
-        concept PartUsage extends ItemUsage
-
-        concept PartUsage extends ItemUsage
 
         concept PartUsage extends ItemUsage
 
@@ -1693,8 +253,6 @@ language sysml
         concept PerformActionUsage extends ActionUsage
 
         concept PortConjugation extends Conjugation
-
-        concept PortDefinition extends OccurrenceDefinition
 
         concept PortDefinition extends OccurrenceDefinition
 
@@ -1715,96 +273,6 @@ language sysml
 
         abstract concept Relationship extends Element
 
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
-        abstract concept Relationship extends Element
-
         concept RenderingDefinition extends PartDefinition
 
         concept RenderingUsage extends PartUsage
@@ -1816,21 +284,7 @@ language sysml
 
         concept RequirementConstraintMembership extends FeatureMembership
 
-        concept RequirementConstraintMembership extends FeatureMembership
-
-        concept RequirementConstraintMembership extends FeatureMembership
-
         concept RequirementDefinition extends ConstraintDefinition
-
-        concept RequirementDefinition extends ConstraintDefinition
-
-        concept RequirementDefinition extends ConstraintDefinition
-
-        concept RequirementUsage extends ConstraintUsage
-
-        concept RequirementUsage extends ConstraintUsage
-
-        concept RequirementUsage extends ConstraintUsage
 
         concept RequirementUsage extends ConstraintUsage
 
@@ -1848,20 +302,6 @@ language sysml
 
         concept Specialization extends Relationship
 
-        concept Specialization extends Relationship
-
-        concept Specialization extends Relationship
-
-        concept Specialization extends Relationship
-
-        concept Specialization extends Relationship
-
-        concept Specialization extends Relationship
-
-        concept Specialization extends Relationship
-
-        concept Specialization extends Relationship
-
         concept StakeholderMembership extends ParameterMembership
 
         concept StateDefinition extends ActionDefinition
@@ -1876,65 +316,13 @@ language sysml
 
         concept StateUsage extends ActionUsage
 
-        concept StateUsage extends ActionUsage
-
         concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Step extends Feature
-
-        concept Structure extends Class
 
         concept Structure extends Class
 
         concept Subclassification extends Specialization
 
         concept SubjectMembership extends ParameterMembership
-
-        concept Subsetting extends Specialization
-
-        concept Subsetting extends Specialization
-
-        concept Subsetting extends Specialization
 
         concept Subsetting extends Specialization
 
@@ -1970,353 +358,13 @@ language sysml
 
         concept Type extends Namespace
 
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
-        concept Type extends Namespace
-
         concept TypeFeaturing extends Relationship
 
         concept Unioning extends Relationship
 
         concept Usage extends Feature
 
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
-        concept Usage extends Feature
-
         concept UseCaseDefinition extends CaseDefinition
-
-        concept UseCaseUsage extends CaseUsage
 
         concept UseCaseUsage extends CaseUsage
 

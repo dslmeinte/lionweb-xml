@@ -1,4 +1,5 @@
 import { asTreeTextWith } from "@lionweb/class-core"
+import { generateLanguage } from "@lionweb/class-core-generator"
 import { isINamed, nameOf, serializeLanguages } from "@lionweb/core"
 import { mapFrom } from "@lionweb/ts-utils"
 import { languageAsText, writeJsonAsFile } from "@lionweb/utilities"
@@ -26,6 +27,8 @@ const runOnce = async (filePath: string, options?: Partial<{ reader: ReaderOptio
     const language = asLionWebLanguage(ePackage, "1", options?.transformation)
     writeJsonAsFile(join(path, `${fileName}.mapped-language.json`), serializeLanguages(language))
     await writeFile(join(path, `${fileName}.mapped-language.txt`), languageAsText(language))
+
+    generateLanguage(language, "src/gen")
 
     console.log(`...done generating artifacts for Ecore file: ${fileName}`)
     console.log()
