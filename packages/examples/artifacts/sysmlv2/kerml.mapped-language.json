@@ -5046,8 +5046,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -5098,8 +5098,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -5567,8 +5567,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -5782,8 +5782,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -5834,8 +5834,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -6066,8 +6066,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -6118,8 +6118,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -6410,8 +6410,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -6642,8 +6642,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -6694,8 +6694,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -6746,8 +6746,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -8685,8 +8685,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -8737,8 +8737,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -9511,8 +9511,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -9698,8 +9698,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -9750,8 +9750,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -10555,8 +10555,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -10763,8 +10763,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -10894,8 +10894,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -11179,8 +11179,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Integer",
+                            "reference": "LionCore-builtins-Integer"
                         }
                     ]
                 }
@@ -15042,8 +15042,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -17308,8 +17308,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -17480,8 +17480,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }
@@ -17592,8 +17592,8 @@
                     },
                     "targets": [
                         {
-                            "resolveInfo": "String",
-                            "reference": "LionCore-builtins-String"
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
                         }
                     ]
                 }

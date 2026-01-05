@@ -2,6 +2,7 @@ import {
     builtinPrimitives,
     Classifier,
     Concept,
+    DataType,
     Interface,
     isRef,
     Language,
@@ -30,8 +31,9 @@ import { log, LogLevel } from "./logging.js"
 /**
  * Optional configuration for the {@link asLionWebLanguage `asLionWebLanguage`} function.
  */
-export type TransformationOptions = Partial<{
-    eDataTypesAsPrimitiveTypes: boolean
+export type TransformerOptions = Partial<{
+    eDataTypesToPrimitiveTypes: boolean
+    eDataTypeToLionWebPrimitiveType: (eDataType: EDataType) => PrimitiveType | undefined
 }>
 
 
@@ -58,7 +60,7 @@ const eDataTypeToPrimitiveType: Record<string, PrimitiveType> = {
  * 3. Features are not transformed.
  * 4. Multiple inheritance is not dealt with.
  */
-export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, options?: TransformationOptions): Language => {
+export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, options?: TransformerOptions): Language => {
     const factory = new LanguageFactory(ePackage.name, languageVersion, concatenator("-"), concatenator("-"))
 
     const entitiesBySourceId: Record<LionWebId, LanguageEntity> = {}
@@ -93,7 +95,7 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
             return enum_
         }
         if (eClassifier instanceof EDataType) {
-            if (options?.eDataTypesAsPrimitiveTypes) {
+            if (options?.eDataTypesToPrimitiveTypes) {
                 log(LogLevel.info, ` transformed EDataType "${name}" to a LionWeb PrimitiveType`)
                 return factory.primitiveType(name)
             } // else:
@@ -112,101 +114,113 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
         }
     })
 
+    const populateEClass = (eClass: EClass) => {
+        const {name} = eClass
+        const classifier = entityFor(eClass) as Classifier
+
+        // 2. hook up super types
+        const referencedSuperTypes = eClass.eSuperTypes.filter(isRef)
+        const interfaceSuperTypes = referencedSuperTypes.filter((eSuperType) => eSuperType.interface) as EClass[]
+        const nonInterfaceSuperTypes = referencedSuperTypes.filter((eSuperType) => !eSuperType.interface) as EClass[]
+        if (eClass.interface) {
+            if (nonInterfaceSuperTypes.length > 0) {
+                log(LogLevel.warning, `interface-EClass "${name}" has super types that are not interfaces: ${nonInterfaceSuperTypes.map(nameOf).join(" ")} — didn’t add the transformed versions of those to Interface.extends`)
+            }
+            (classifier as Interface).extending(
+                ...(interfaceSuperTypes.map(entityFor) as Interface[])
+            )
+        } else {
+            const concept = classifier as Concept
+            if (nonInterfaceSuperTypes.length > 0) {
+                const mappedSuperTypes = nonInterfaceSuperTypes.map(entityFor)
+                const mappedSuperConcept = mappedSuperTypes[0] as Concept
+                concept.extends = mappedSuperConcept
+                if (mappedSuperTypes.length > 1) {
+                    log(LogLevel.warning, `non-interface-EClass "${name}" exhibits multiple inheritance — set Concept.extends to first super concept "${mappedSuperConcept.name}", and ignored the remaining ${mappedSuperTypes.length - 1}`)
+                }
+            }
+            concept.implementing(
+                ...(interfaceSuperTypes.map(entityFor) as Interface[])
+            )
+        }
+
+        const dataTypeFor = ({id: sourceId, eType}: EAttribute): DataType => {
+            if (isRef(eType)) {
+                if (eType instanceof EEnum) {
+                    return entityFor(eType)
+                }
+                if (eType instanceof EDataType) {
+                    if (options?.eDataTypeToLionWebPrimitiveType !== undefined) {
+                        const primitiveType = options!.eDataTypeToLionWebPrimitiveType!(eType)
+                        if (primitiveType !== undefined) {
+                            return primitiveType
+                        }
+                    }
+                    const type = eDataTypeToPrimitiveType[eType.name]
+                    if (type !== undefined) {
+                        return type
+                    }
+                    log(LogLevel.error, `can’t map Ecore data type ${eType.name} (as eType of the EAttribute with source ID "${sourceId}") to a LionWeb primitive type — substituting string type to avoid problems downstream`)
+                    return builtinPrimitives.stringDataType
+                }
+            }
+            log(LogLevel.error, `eType reference of EAttribute with source ID "${sourceId}" is not resolved — substituting string type to avoid problems downstream`)
+            return builtinPrimitives.stringDataType
+        }
+
+        // 3. instantiate and hook up features
+        const transformEStructuralFeature = (eStructuralFeature: EStructuralFeature) => {   // (separate function to have non-clashing local names)
+
+            const lowerBound = (): number => {
+                try {
+                    return eStructuralFeature.lowerBound
+                } catch (_) {
+                    return 1
+                }
+            }
+
+            const upperBound = (): number =>
+                eStructuralFeature.upperBound ?? 1
+
+            const {name, eType} = eStructuralFeature
+            const genName = (["containment"].indexOf(name) === -1
+                ? ""
+                : ePackage.name) + name
+
+            if (eStructuralFeature instanceof EAttribute) {
+                const property = factory.property(classifier, genName).ofType(dataTypeFor(eStructuralFeature))
+                if (lowerBound() === 0) {
+                    property.isOptional()
+                }
+                return
+            }
+
+            if (eStructuralFeature instanceof EReference) {
+                const link = eStructuralFeature.containment ? factory.containment(classifier, genName) : factory.reference(classifier, genName)
+                if (lowerBound() === 0) {
+                    link.isOptional()
+                }
+                if (upperBound() !== 0) {
+                    link.isMultiple()
+                    // TODO  probably put an annotation on this if upperBound !== -1
+                }
+                if (isRef(eType)) {
+                    link.ofType(entityFor(eType) as Classifier)
+                }
+                return
+            }
+
+            throw new Error(`can’t transform an EStructuralFeature of class ${eStructuralFeature.constructor.name}`)
+        }
+
+        eClass.eStructuralFeatures.forEach((eStructuralFeature) => {
+            transformEStructuralFeature(eStructuralFeature)
+        })
+    }
 
     ePackage.eClassifiers
         .filter((eClassifier) => eClassifier instanceof EClass)
-        .forEach((eClass) => {
-            const {name} = eClass
-            const classifier = entityFor(eClass) as Classifier
-
-            // 2. hook up super types
-            const interfaceSuperTypes = eClass.eSuperTypes.filter((eSuperType) => isRef(eSuperType) && eSuperType.interface) as EClass[]
-            const nonInterfaceSuperTypes = eClass.eSuperTypes.filter((eSuperType) => isRef(eSuperType) && !eSuperType.interface) as EClass[]
-            if (eClass.interface) {
-                if (nonInterfaceSuperTypes.length > 0) {
-                    log(LogLevel.warning, ` interface EClass "${name}" has super types that are not interfaces: ${nonInterfaceSuperTypes.map(nameOf).join(" ")} — didn’t add the transformed versions of those to Interface.extends`)
-                }
-                (classifier as Interface).extending(
-                    ...(interfaceSuperTypes.map(entityFor) as Interface[])
-                )
-            } else {
-                const concept = classifier as Concept
-                if (nonInterfaceSuperTypes.length > 0) {
-                    const extendSuperType = entityFor(nonInterfaceSuperTypes[0])
-                    if (extendSuperType !== undefined) {
-                        concept.extends = extendSuperType as Concept
-                    }
-                }
-                concept.implementing(
-                    ...(interfaceSuperTypes.map(entityFor) as Interface[])
-                )
-            }
-
-            // 3. instantiate and hook up features
-            const transformEStructuralFeature = (eStructuralFeature: EStructuralFeature) => {   // (separate function to have non-clashing local names)
-
-                const lowerBound = (): number => {
-                    try {
-                        return eStructuralFeature.lowerBound
-                    } catch (_) {
-                        return 1
-                    }
-                }
-
-                const upperBound = (): number =>
-                    eStructuralFeature.upperBound ?? 1
-
-                const {name, eType} = eStructuralFeature
-                const genName = (["containment"].indexOf(name) === -1
-                    ? ""
-                    : ePackage.name) + name
-
-                if (eStructuralFeature instanceof EAttribute) {
-                    const property = factory.property(classifier, genName)
-                    if (lowerBound() === 0) {
-                        property.isOptional()
-                    }
-                    if (isRef(eType)) {
-                        if (eType instanceof EEnum) {
-                            property.ofType(entityFor(eType))
-                        } else if (eType instanceof EDataType) {
-                            const type = eDataTypeToPrimitiveType[eType.name]
-                            if (type !== undefined) {
-                                property.ofType(type)
-                            } else {
-                                log(LogLevel.error, `can’t map Ecore data type ${eType.name} (as eType of the EAttribute with source ID "${eStructuralFeature.id}") to a LionWeb primitive type — substituting string type to avoid problems downstream`)
-                                property.ofType(builtinPrimitives.stringDataType)
-                            }
-                        }
-                    } else {
-                        log(LogLevel.error, `eType reference of EAttribute with source ID "${eStructuralFeature.id}" is not resolved — substituting string type to avoid problems downstream`)
-                        property.ofType(builtinPrimitives.stringDataType)
-                    }
-                    return
-                }
-
-                if (eStructuralFeature instanceof EReference) {
-                    const link = eStructuralFeature.containment ? factory.containment(classifier, genName) : factory.reference(classifier, genName)
-                    if (lowerBound() === 0) {
-                        link.isOptional()
-                    }
-                    if (upperBound() !== 0) {
-                        link.isMultiple()
-                        // TODO  probably put an annotation on this if upperBound !== -1
-                    }
-                    if (isRef(eType)) {
-                        link.ofType(entityFor(eType) as Classifier)
-                    }
-                    return
-                }
-
-                throw new Error(`can’t transform an EStructuralFeature of class ${eStructuralFeature.constructor.name}`)
-            }
-
-            eClass.eStructuralFeatures.forEach((eStructuralFeature) => {
-                transformEStructuralFeature(eStructuralFeature)
-            })
-        })
+        .forEach(populateEClass)
 
 
     // TODO  what to do with ePackage.eAnnotations?

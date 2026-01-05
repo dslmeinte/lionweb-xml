@@ -97,8 +97,8 @@ language kerml
                 declaredShortName: String
                 documentation: Documentation[1..*]
                 elementId: String
-                isImpliedIncluded: String
-                isLibraryElement: String
+                isImpliedIncluded: Boolean
+                isLibraryElement: Boolean
                 name: String
                 ownedAnnotation: Annotation[1..*]
                 ownedElement: Element[1..*]
@@ -120,7 +120,7 @@ language kerml
         concept Expression extends Step
             features (↓name):
                 function: Function[1..*]
-                isModelLevelEvaluable: String
+                isModelLevelEvaluable: Boolean
                 result: Feature[1..*]
 
         concept Feature extends Type
@@ -131,14 +131,14 @@ language kerml
                 endOwningType: Type[1..*]
                 featureTarget: Feature[1..*]
                 featuringType: Type[1..*]
-                isComposite: String
-                isConstant: String
-                isDerived: String
-                isEnd: String
-                isOrdered: String
-                isPortion: String
-                isUnique: String
-                isVariable: String
+                isComposite: Boolean
+                isConstant: Boolean
+                isDerived: Boolean
+                isEnd: Boolean
+                isOrdered: Boolean
+                isPortion: Boolean
+                isUnique: Boolean
+                isVariable: Boolean
                 ownedCrossSubsetting: CrossSubsetting[1..*]
                 ownedFeatureChaining: FeatureChaining[1..*]
                 ownedFeatureInverting: FeatureInverting[1..*]
@@ -190,8 +190,8 @@ language kerml
         concept FeatureValue extends OwningMembership
             features (↓name):
                 featureWithValue: Feature[1..*]
-                isDefault: String
-                isInitial: String
+                isDefault: Boolean
+                isInitial: Boolean
                 value: Expression[1..*]
 
         concept Flow extends Connector
@@ -208,15 +208,15 @@ language kerml
         concept Function extends Behavior
             features (↓name):
                 expression: Expression[1..*]
-                isModelLevelEvaluable: String
+                isModelLevelEvaluable: Boolean
                 result: Feature[1..*]
 
         abstract concept Import extends Relationship
             features (↓name):
                 importOwningNamespace: Namespace[1..*]
                 importedElement: Element[1..*]
-                isImportAll: String
-                isRecursive: String
+                isImportAll: Boolean
+                isRecursive: Boolean
                 visibility: VisibilityKind
 
         concept IndexExpression extends OperatorExpression
@@ -235,17 +235,17 @@ language kerml
 
         concept Invariant extends BooleanExpression
             features (↓name):
-                isNegated: String
+                isNegated: Boolean
 
         concept InvocationExpression extends InstantiationExpression
 
         concept LibraryPackage extends Package
             features (↓name):
-                isStandard: String
+                isStandard: Boolean
 
         concept LiteralBoolean extends LiteralExpression
             features (↓name):
-                value: String
+                value: Boolean
 
         concept LiteralExpression extends Expression
 
@@ -253,7 +253,7 @@ language kerml
 
         concept LiteralInteger extends LiteralExpression
             features (↓name):
-                value: String
+                value: Integer
 
         concept LiteralRational extends LiteralExpression
             features (↓name):
@@ -344,7 +344,7 @@ language kerml
 
         abstract concept Relationship extends Element
             features (↓name):
-                isImplied: String
+                isImplied: Boolean
                 ownedRelatedElement: Element[1..*]
                 owningRelatedElement: Element[1..*]
                 relatedElement: Element[1..*]
@@ -405,9 +405,9 @@ language kerml
                 inheritedMembership: Membership[1..*]
                 input: Feature[1..*]
                 intersectingType: Type[1..*]
-                isAbstract: String
-                isConjugated: String
-                isSufficient: String
+                isAbstract: Boolean
+                isConjugated: Boolean
+                isSufficient: Boolean
                 multiplicity: Multiplicity[1..*]
                 output: Feature[1..*]
                 ownedConjugator: Conjugation[1..*]

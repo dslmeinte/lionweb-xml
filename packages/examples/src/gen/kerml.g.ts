@@ -1698,8 +1698,8 @@ export class kermlBase implements ILanguageBase {
         this._Element_shortName.ofType(LionCore_builtinsBase.INSTANCE._String);
         this._Element_name.ofType(LionCore_builtinsBase.INSTANCE._String);
         this._Element_qualifiedName.ofType(LionCore_builtinsBase.INSTANCE._String);
-        this._Element_isImpliedIncluded.ofType(LionCore_builtinsBase.INSTANCE._String);
-        this._Element_isLibraryElement.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Element_isImpliedIncluded.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
+        this._Element_isLibraryElement.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._ElementFilterMembership.extends = this._OwningMembership;
         this._ElementFilterMembership.havingFeatures(this._ElementFilterMembership_condition);
         this._ElementFilterMembership_condition.ofType(this._Expression);
@@ -1708,28 +1708,28 @@ export class kermlBase implements ILanguageBase {
         this._Expression.havingFeatures(this._Expression_function, this._Expression_result, this._Expression_isModelLevelEvaluable);
         this._Expression_function.ofType(this._Function);
         this._Expression_result.ofType(this._Feature);
-        this._Expression_isModelLevelEvaluable.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Expression_isModelLevelEvaluable.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._Feature.extends = this._Type;
         this._Feature.havingFeatures(this._Feature_owningType, this._Feature_isUnique, this._Feature_isOrdered, this._Feature_type, this._Feature_ownedRedefinition, this._Feature_ownedSubsetting, this._Feature_isComposite, this._Feature_isEnd, this._Feature_endOwningType, this._Feature_ownedTyping, this._Feature_featuringType, this._Feature_ownedTypeFeaturing, this._Feature_isDerived, this._Feature_chainingFeature, this._Feature_ownedFeatureInverting, this._Feature_ownedFeatureChaining, this._Feature_isPortion, this._Feature_isVariable, this._Feature_isConstant, this._Feature_ownedReferenceSubsetting, this._Feature_featureTarget, this._Feature_crossFeature, this._Feature_direction, this._Feature_ownedCrossSubsetting, this._Feature_owningFeatureMembership);
         this._Feature_owningType.ofType(this._Type);
-        this._Feature_isUnique.ofType(LionCore_builtinsBase.INSTANCE._String);
-        this._Feature_isOrdered.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Feature_isUnique.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
+        this._Feature_isOrdered.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._Feature_type.ofType(this._Type);
         this._Feature_ownedRedefinition.ofType(this._Redefinition);
         this._Feature_ownedSubsetting.ofType(this._Subsetting);
-        this._Feature_isComposite.ofType(LionCore_builtinsBase.INSTANCE._String);
-        this._Feature_isEnd.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Feature_isComposite.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
+        this._Feature_isEnd.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._Feature_endOwningType.ofType(this._Type);
         this._Feature_ownedTyping.ofType(this._FeatureTyping);
         this._Feature_featuringType.ofType(this._Type);
         this._Feature_ownedTypeFeaturing.ofType(this._TypeFeaturing);
-        this._Feature_isDerived.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Feature_isDerived.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._Feature_chainingFeature.ofType(this._Feature);
         this._Feature_ownedFeatureInverting.ofType(this._FeatureInverting);
         this._Feature_ownedFeatureChaining.ofType(this._FeatureChaining);
-        this._Feature_isPortion.ofType(LionCore_builtinsBase.INSTANCE._String);
-        this._Feature_isVariable.ofType(LionCore_builtinsBase.INSTANCE._String);
-        this._Feature_isConstant.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Feature_isPortion.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
+        this._Feature_isVariable.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
+        this._Feature_isConstant.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._Feature_ownedReferenceSubsetting.ofType(this._ReferenceSubsetting);
         this._Feature_featureTarget.ofType(this._Feature);
         this._Feature_crossFeature.ofType(this._Feature);
@@ -1765,8 +1765,8 @@ export class kermlBase implements ILanguageBase {
         this._FeatureValue.havingFeatures(this._FeatureValue_featureWithValue, this._FeatureValue_value, this._FeatureValue_isInitial, this._FeatureValue_isDefault);
         this._FeatureValue_featureWithValue.ofType(this._Feature);
         this._FeatureValue_value.ofType(this._Expression);
-        this._FeatureValue_isInitial.ofType(LionCore_builtinsBase.INSTANCE._String);
-        this._FeatureValue_isDefault.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._FeatureValue_isInitial.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
+        this._FeatureValue_isDefault.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._Flow.extends = this._Connector;
         this._Flow.havingFeatures(this._Flow_payloadType, this._Flow_targetInputFeature, this._Flow_sourceOutputFeature, this._Flow_flowEnd, this._Flow_payloadFeature, this._Flow_interaction);
         this._Flow_payloadType.ofType(this._kermlClassifier);
@@ -1780,12 +1780,12 @@ export class kermlBase implements ILanguageBase {
         this._Function.havingFeatures(this._Function_expression, this._Function_result, this._Function_isModelLevelEvaluable);
         this._Function_expression.ofType(this._Expression);
         this._Function_result.ofType(this._Feature);
-        this._Function_isModelLevelEvaluable.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Function_isModelLevelEvaluable.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._Import.extends = this._Relationship;
         this._Import.havingFeatures(this._Import_visibility, this._Import_isRecursive, this._Import_isImportAll, this._Import_importedElement, this._Import_importOwningNamespace);
         this._Import_visibility.ofType(this._VisibilityKind);
-        this._Import_isRecursive.ofType(LionCore_builtinsBase.INSTANCE._String);
-        this._Import_isImportAll.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Import_isRecursive.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
+        this._Import_isImportAll.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._Import_importedElement.ofType(this._Element);
         this._Import_importOwningNamespace.ofType(this._Namespace);
         this._IndexExpression.extends = this._OperatorExpression;
@@ -1800,19 +1800,19 @@ export class kermlBase implements ILanguageBase {
         this._Intersecting_typeIntersected.ofType(this._Type);
         this._Invariant.extends = this._BooleanExpression;
         this._Invariant.havingFeatures(this._Invariant_isNegated);
-        this._Invariant_isNegated.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Invariant_isNegated.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._InvocationExpression.extends = this._InstantiationExpression;
         this._LibraryPackage.extends = this._Package;
         this._LibraryPackage.havingFeatures(this._LibraryPackage_isStandard);
-        this._LibraryPackage_isStandard.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._LibraryPackage_isStandard.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._LiteralBoolean.extends = this._LiteralExpression;
         this._LiteralBoolean.havingFeatures(this._LiteralBoolean_value);
-        this._LiteralBoolean_value.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._LiteralBoolean_value.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._LiteralExpression.extends = this._Expression;
         this._LiteralInfinity.extends = this._LiteralExpression;
         this._LiteralInteger.extends = this._LiteralExpression;
         this._LiteralInteger.havingFeatures(this._LiteralInteger_value);
-        this._LiteralInteger_value.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._LiteralInteger_value.ofType(LionCore_builtinsBase.INSTANCE._Integer);
         this._LiteralRational.extends = this._LiteralExpression;
         this._LiteralRational.havingFeatures(this._LiteralRational_value);
         this._LiteralRational_value.ofType(LionCore_builtinsBase.INSTANCE._String);
@@ -1887,7 +1887,7 @@ export class kermlBase implements ILanguageBase {
         this._Relationship_source.ofType(this._Element);
         this._Relationship_owningRelatedElement.ofType(this._Element);
         this._Relationship_ownedRelatedElement.ofType(this._Element);
-        this._Relationship_isImplied.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Relationship_isImplied.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._ResultExpressionMembership.extends = this._FeatureMembership;
         this._ResultExpressionMembership.havingFeatures(this._ResultExpressionMembership_ownedResultExpression);
         this._ResultExpressionMembership_ownedResultExpression.ofType(this._Expression);
@@ -1928,12 +1928,12 @@ export class kermlBase implements ILanguageBase {
         this._Type_feature.ofType(this._Feature);
         this._Type_input.ofType(this._Feature);
         this._Type_output.ofType(this._Feature);
-        this._Type_isAbstract.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Type_isAbstract.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._Type_inheritedMembership.ofType(this._Membership);
         this._Type_endFeature.ofType(this._Feature);
-        this._Type_isSufficient.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Type_isSufficient.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._Type_ownedConjugator.ofType(this._Conjugation);
-        this._Type_isConjugated.ofType(LionCore_builtinsBase.INSTANCE._String);
+        this._Type_isConjugated.ofType(LionCore_builtinsBase.INSTANCE._Boolean);
         this._Type_inheritedFeature.ofType(this._Feature);
         this._Type_multiplicity.ofType(this._Multiplicity);
         this._Type_unioningType.ofType(this._Type);
@@ -2302,19 +2302,19 @@ export abstract class Element extends NodeBase {
         this._qualifiedName.set(newValue);
     }
 
-    private readonly _isImpliedIncluded: RequiredPropertyValueManager<string>;
-    get isImpliedIncluded(): string {
+    private readonly _isImpliedIncluded: RequiredPropertyValueManager<boolean>;
+    get isImpliedIncluded(): boolean {
         return this._isImpliedIncluded.get();
     }
-    set isImpliedIncluded(newValue: string) {
+    set isImpliedIncluded(newValue: boolean) {
         this._isImpliedIncluded.set(newValue);
     }
 
-    private readonly _isLibraryElement: RequiredPropertyValueManager<string>;
-    get isLibraryElement(): string {
+    private readonly _isLibraryElement: RequiredPropertyValueManager<boolean>;
+    get isLibraryElement(): boolean {
         return this._isLibraryElement.get();
     }
-    set isLibraryElement(newValue: string) {
+    set isLibraryElement(newValue: boolean) {
         this._isLibraryElement.set(newValue);
     }
 
@@ -2336,8 +2336,8 @@ export abstract class Element extends NodeBase {
         this._shortName = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Element_shortName, this);
         this._name = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Element_name, this);
         this._qualifiedName = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Element_qualifiedName, this);
-        this._isImpliedIncluded = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Element_isImpliedIncluded, this);
-        this._isLibraryElement = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Element_isLibraryElement, this);
+        this._isImpliedIncluded = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Element_isImpliedIncluded, this);
+        this._isLibraryElement = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Element_isLibraryElement, this);
     }
 
     getPropertyValueManager(property: Property): PropertyValueManager<unknown> {
@@ -2577,11 +2577,11 @@ export abstract class Relationship extends Element {
         this._ownedRelatedElement.replaceAtIndex(movedChild, newIndex);
     }
 
-    private readonly _isImplied: RequiredPropertyValueManager<string>;
-    get isImplied(): string {
+    private readonly _isImplied: RequiredPropertyValueManager<boolean>;
+    get isImplied(): boolean {
         return this._isImplied.get();
     }
-    set isImplied(newValue: string) {
+    set isImplied(newValue: boolean) {
         this._isImplied.set(newValue);
     }
 
@@ -2592,7 +2592,7 @@ export abstract class Relationship extends Element {
         this._source = new RequiredMultiContainmentValueManager<Element>(kermlBase.INSTANCE.Relationship_source, this);
         this._owningRelatedElement = new RequiredMultiContainmentValueManager<Element>(kermlBase.INSTANCE.Relationship_owningRelatedElement, this);
         this._ownedRelatedElement = new RequiredMultiContainmentValueManager<Element>(kermlBase.INSTANCE.Relationship_ownedRelatedElement, this);
-        this._isImplied = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Relationship_isImplied, this);
+        this._isImplied = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Relationship_isImplied, this);
     }
 
     getPropertyValueManager(property: Property): PropertyValueManager<unknown> {
@@ -3013,11 +3013,11 @@ export class Type extends Namespace {
         this._output.replaceAtIndex(movedChild, newIndex);
     }
 
-    private readonly _isAbstract: RequiredPropertyValueManager<string>;
-    get isAbstract(): string {
+    private readonly _isAbstract: RequiredPropertyValueManager<boolean>;
+    get isAbstract(): boolean {
         return this._isAbstract.get();
     }
-    set isAbstract(newValue: string) {
+    set isAbstract(newValue: boolean) {
         this._isAbstract.set(newValue);
     }
 
@@ -3061,11 +3061,11 @@ export class Type extends Namespace {
         this._endFeature.replaceAtIndex(movedChild, newIndex);
     }
 
-    private readonly _isSufficient: RequiredPropertyValueManager<string>;
-    get isSufficient(): string {
+    private readonly _isSufficient: RequiredPropertyValueManager<boolean>;
+    get isSufficient(): boolean {
         return this._isSufficient.get();
     }
-    set isSufficient(newValue: string) {
+    set isSufficient(newValue: boolean) {
         this._isSufficient.set(newValue);
     }
 
@@ -3089,11 +3089,11 @@ export class Type extends Namespace {
         this._ownedConjugator.replaceAtIndex(movedChild, newIndex);
     }
 
-    private readonly _isConjugated: RequiredPropertyValueManager<string>;
-    get isConjugated(): string {
+    private readonly _isConjugated: RequiredPropertyValueManager<boolean>;
+    get isConjugated(): boolean {
         return this._isConjugated.get();
     }
-    set isConjugated(newValue: string) {
+    set isConjugated(newValue: boolean) {
         this._isConjugated.set(newValue);
     }
 
@@ -3345,12 +3345,12 @@ export class Type extends Namespace {
         this._feature = new RequiredMultiContainmentValueManager<Feature>(kermlBase.INSTANCE.Type_feature, this);
         this._input = new RequiredMultiContainmentValueManager<Feature>(kermlBase.INSTANCE.Type_input, this);
         this._output = new RequiredMultiContainmentValueManager<Feature>(kermlBase.INSTANCE.Type_output, this);
-        this._isAbstract = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Type_isAbstract, this);
+        this._isAbstract = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Type_isAbstract, this);
         this._inheritedMembership = new RequiredMultiContainmentValueManager<Membership>(kermlBase.INSTANCE.Type_inheritedMembership, this);
         this._endFeature = new RequiredMultiContainmentValueManager<Feature>(kermlBase.INSTANCE.Type_endFeature, this);
-        this._isSufficient = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Type_isSufficient, this);
+        this._isSufficient = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Type_isSufficient, this);
         this._ownedConjugator = new RequiredMultiContainmentValueManager<Conjugation>(kermlBase.INSTANCE.Type_ownedConjugator, this);
-        this._isConjugated = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Type_isConjugated, this);
+        this._isConjugated = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Type_isConjugated, this);
         this._inheritedFeature = new RequiredMultiContainmentValueManager<Feature>(kermlBase.INSTANCE.Type_inheritedFeature, this);
         this._multiplicity = new RequiredMultiContainmentValueManager<Multiplicity>(kermlBase.INSTANCE.Type_multiplicity, this);
         this._unioningType = new RequiredMultiContainmentValueManager<Type>(kermlBase.INSTANCE.Type_unioningType, this);
@@ -3641,19 +3641,19 @@ export class Feature extends Type {
         this._owningType.replaceAtIndex(movedChild, newIndex);
     }
 
-    private readonly _isUnique: RequiredPropertyValueManager<string>;
-    get isUnique(): string {
+    private readonly _isUnique: RequiredPropertyValueManager<boolean>;
+    get isUnique(): boolean {
         return this._isUnique.get();
     }
-    set isUnique(newValue: string) {
+    set isUnique(newValue: boolean) {
         this._isUnique.set(newValue);
     }
 
-    private readonly _isOrdered: RequiredPropertyValueManager<string>;
-    get isOrdered(): string {
+    private readonly _isOrdered: RequiredPropertyValueManager<boolean>;
+    get isOrdered(): boolean {
         return this._isOrdered.get();
     }
-    set isOrdered(newValue: string) {
+    set isOrdered(newValue: boolean) {
         this._isOrdered.set(newValue);
     }
 
@@ -3717,19 +3717,19 @@ export class Feature extends Type {
         this._ownedSubsetting.replaceAtIndex(movedChild, newIndex);
     }
 
-    private readonly _isComposite: RequiredPropertyValueManager<string>;
-    get isComposite(): string {
+    private readonly _isComposite: RequiredPropertyValueManager<boolean>;
+    get isComposite(): boolean {
         return this._isComposite.get();
     }
-    set isComposite(newValue: string) {
+    set isComposite(newValue: boolean) {
         this._isComposite.set(newValue);
     }
 
-    private readonly _isEnd: RequiredPropertyValueManager<string>;
-    get isEnd(): string {
+    private readonly _isEnd: RequiredPropertyValueManager<boolean>;
+    get isEnd(): boolean {
         return this._isEnd.get();
     }
-    set isEnd(newValue: string) {
+    set isEnd(newValue: boolean) {
         this._isEnd.set(newValue);
     }
 
@@ -3813,11 +3813,11 @@ export class Feature extends Type {
         this._ownedTypeFeaturing.replaceAtIndex(movedChild, newIndex);
     }
 
-    private readonly _isDerived: RequiredPropertyValueManager<string>;
-    get isDerived(): string {
+    private readonly _isDerived: RequiredPropertyValueManager<boolean>;
+    get isDerived(): boolean {
         return this._isDerived.get();
     }
-    set isDerived(newValue: string) {
+    set isDerived(newValue: boolean) {
         this._isDerived.set(newValue);
     }
 
@@ -3881,27 +3881,27 @@ export class Feature extends Type {
         this._ownedFeatureChaining.replaceAtIndex(movedChild, newIndex);
     }
 
-    private readonly _isPortion: RequiredPropertyValueManager<string>;
-    get isPortion(): string {
+    private readonly _isPortion: RequiredPropertyValueManager<boolean>;
+    get isPortion(): boolean {
         return this._isPortion.get();
     }
-    set isPortion(newValue: string) {
+    set isPortion(newValue: boolean) {
         this._isPortion.set(newValue);
     }
 
-    private readonly _isVariable: RequiredPropertyValueManager<string>;
-    get isVariable(): string {
+    private readonly _isVariable: RequiredPropertyValueManager<boolean>;
+    get isVariable(): boolean {
         return this._isVariable.get();
     }
-    set isVariable(newValue: string) {
+    set isVariable(newValue: boolean) {
         this._isVariable.set(newValue);
     }
 
-    private readonly _isConstant: RequiredPropertyValueManager<string>;
-    get isConstant(): string {
+    private readonly _isConstant: RequiredPropertyValueManager<boolean>;
+    get isConstant(): boolean {
         return this._isConstant.get();
     }
-    set isConstant(newValue: string) {
+    set isConstant(newValue: boolean) {
         this._isConstant.set(newValue);
     }
 
@@ -4016,24 +4016,24 @@ export class Feature extends Type {
     public constructor(classifier: Classifier, id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage) {
         super(classifier, id, receiveDelta, parentInfo);
         this._owningType = new RequiredMultiContainmentValueManager<Type>(kermlBase.INSTANCE.Feature_owningType, this);
-        this._isUnique = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Feature_isUnique, this);
-        this._isOrdered = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Feature_isOrdered, this);
+        this._isUnique = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Feature_isUnique, this);
+        this._isOrdered = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Feature_isOrdered, this);
         this._type = new RequiredMultiContainmentValueManager<Type>(kermlBase.INSTANCE.Feature_type, this);
         this._ownedRedefinition = new RequiredMultiContainmentValueManager<Redefinition>(kermlBase.INSTANCE.Feature_ownedRedefinition, this);
         this._ownedSubsetting = new RequiredMultiContainmentValueManager<Subsetting>(kermlBase.INSTANCE.Feature_ownedSubsetting, this);
-        this._isComposite = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Feature_isComposite, this);
-        this._isEnd = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Feature_isEnd, this);
+        this._isComposite = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Feature_isComposite, this);
+        this._isEnd = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Feature_isEnd, this);
         this._endOwningType = new RequiredMultiContainmentValueManager<Type>(kermlBase.INSTANCE.Feature_endOwningType, this);
         this._ownedTyping = new RequiredMultiContainmentValueManager<FeatureTyping>(kermlBase.INSTANCE.Feature_ownedTyping, this);
         this._featuringType = new RequiredMultiContainmentValueManager<Type>(kermlBase.INSTANCE.Feature_featuringType, this);
         this._ownedTypeFeaturing = new RequiredMultiContainmentValueManager<TypeFeaturing>(kermlBase.INSTANCE.Feature_ownedTypeFeaturing, this);
-        this._isDerived = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Feature_isDerived, this);
+        this._isDerived = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Feature_isDerived, this);
         this._chainingFeature = new RequiredMultiContainmentValueManager<Feature>(kermlBase.INSTANCE.Feature_chainingFeature, this);
         this._ownedFeatureInverting = new RequiredMultiContainmentValueManager<FeatureInverting>(kermlBase.INSTANCE.Feature_ownedFeatureInverting, this);
         this._ownedFeatureChaining = new RequiredMultiContainmentValueManager<FeatureChaining>(kermlBase.INSTANCE.Feature_ownedFeatureChaining, this);
-        this._isPortion = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Feature_isPortion, this);
-        this._isVariable = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Feature_isVariable, this);
-        this._isConstant = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Feature_isConstant, this);
+        this._isPortion = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Feature_isPortion, this);
+        this._isVariable = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Feature_isVariable, this);
+        this._isConstant = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Feature_isConstant, this);
         this._ownedReferenceSubsetting = new RequiredMultiContainmentValueManager<ReferenceSubsetting>(kermlBase.INSTANCE.Feature_ownedReferenceSubsetting, this);
         this._featureTarget = new RequiredMultiContainmentValueManager<Feature>(kermlBase.INSTANCE.Feature_featureTarget, this);
         this._crossFeature = new RequiredMultiContainmentValueManager<Feature>(kermlBase.INSTANCE.Feature_crossFeature, this);
@@ -4339,11 +4339,11 @@ export class Expression extends Step {
         this._result.replaceAtIndex(movedChild, newIndex);
     }
 
-    private readonly _isModelLevelEvaluable: RequiredPropertyValueManager<string>;
-    get isModelLevelEvaluable(): string {
+    private readonly _isModelLevelEvaluable: RequiredPropertyValueManager<boolean>;
+    get isModelLevelEvaluable(): boolean {
         return this._isModelLevelEvaluable.get();
     }
-    set isModelLevelEvaluable(newValue: string) {
+    set isModelLevelEvaluable(newValue: boolean) {
         this._isModelLevelEvaluable.set(newValue);
     }
 
@@ -4351,7 +4351,7 @@ export class Expression extends Step {
         super(classifier, id, receiveDelta, parentInfo);
         this._function = new RequiredMultiContainmentValueManager<Function>(kermlBase.INSTANCE.Expression_function, this);
         this._result = new RequiredMultiContainmentValueManager<Feature>(kermlBase.INSTANCE.Expression_result, this);
-        this._isModelLevelEvaluable = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Expression_isModelLevelEvaluable, this);
+        this._isModelLevelEvaluable = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Expression_isModelLevelEvaluable, this);
     }
 
     getPropertyValueManager(property: Property): PropertyValueManager<unknown> {
@@ -5732,19 +5732,19 @@ export class FeatureValue extends OwningMembership {
         this._value.replaceAtIndex(movedChild, newIndex);
     }
 
-    private readonly _isInitial: RequiredPropertyValueManager<string>;
-    get isInitial(): string {
+    private readonly _isInitial: RequiredPropertyValueManager<boolean>;
+    get isInitial(): boolean {
         return this._isInitial.get();
     }
-    set isInitial(newValue: string) {
+    set isInitial(newValue: boolean) {
         this._isInitial.set(newValue);
     }
 
-    private readonly _isDefault: RequiredPropertyValueManager<string>;
-    get isDefault(): string {
+    private readonly _isDefault: RequiredPropertyValueManager<boolean>;
+    get isDefault(): boolean {
         return this._isDefault.get();
     }
-    set isDefault(newValue: string) {
+    set isDefault(newValue: boolean) {
         this._isDefault.set(newValue);
     }
 
@@ -5752,8 +5752,8 @@ export class FeatureValue extends OwningMembership {
         super(classifier, id, receiveDelta, parentInfo);
         this._featureWithValue = new RequiredMultiContainmentValueManager<Feature>(kermlBase.INSTANCE.FeatureValue_featureWithValue, this);
         this._value = new RequiredMultiContainmentValueManager<Expression>(kermlBase.INSTANCE.FeatureValue_value, this);
-        this._isInitial = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.FeatureValue_isInitial, this);
-        this._isDefault = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.FeatureValue_isDefault, this);
+        this._isInitial = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.FeatureValue_isInitial, this);
+        this._isDefault = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.FeatureValue_isDefault, this);
     }
 
     getPropertyValueManager(property: Property): PropertyValueManager<unknown> {
@@ -5972,11 +5972,11 @@ export class Function extends Behavior {
         this._result.replaceAtIndex(movedChild, newIndex);
     }
 
-    private readonly _isModelLevelEvaluable: RequiredPropertyValueManager<string>;
-    get isModelLevelEvaluable(): string {
+    private readonly _isModelLevelEvaluable: RequiredPropertyValueManager<boolean>;
+    get isModelLevelEvaluable(): boolean {
         return this._isModelLevelEvaluable.get();
     }
-    set isModelLevelEvaluable(newValue: string) {
+    set isModelLevelEvaluable(newValue: boolean) {
         this._isModelLevelEvaluable.set(newValue);
     }
 
@@ -5984,7 +5984,7 @@ export class Function extends Behavior {
         super(classifier, id, receiveDelta, parentInfo);
         this._expression = new RequiredMultiContainmentValueManager<Expression>(kermlBase.INSTANCE.Function_expression, this);
         this._result = new RequiredMultiContainmentValueManager<Feature>(kermlBase.INSTANCE.Function_result, this);
-        this._isModelLevelEvaluable = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Function_isModelLevelEvaluable, this);
+        this._isModelLevelEvaluable = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Function_isModelLevelEvaluable, this);
     }
 
     getPropertyValueManager(property: Property): PropertyValueManager<unknown> {
@@ -6013,19 +6013,19 @@ export abstract class Import extends Relationship {
         this._visibility.set(newValue);
     }
 
-    private readonly _isRecursive: RequiredPropertyValueManager<string>;
-    get isRecursive(): string {
+    private readonly _isRecursive: RequiredPropertyValueManager<boolean>;
+    get isRecursive(): boolean {
         return this._isRecursive.get();
     }
-    set isRecursive(newValue: string) {
+    set isRecursive(newValue: boolean) {
         this._isRecursive.set(newValue);
     }
 
-    private readonly _isImportAll: RequiredPropertyValueManager<string>;
-    get isImportAll(): string {
+    private readonly _isImportAll: RequiredPropertyValueManager<boolean>;
+    get isImportAll(): boolean {
         return this._isImportAll.get();
     }
-    set isImportAll(newValue: string) {
+    set isImportAll(newValue: boolean) {
         this._isImportAll.set(newValue);
     }
 
@@ -6072,8 +6072,8 @@ export abstract class Import extends Relationship {
     protected constructor(classifier: Classifier, id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage) {
         super(classifier, id, receiveDelta, parentInfo);
         this._visibility = new RequiredPropertyValueManager<VisibilityKind>(kermlBase.INSTANCE.Import_visibility, this);
-        this._isRecursive = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Import_isRecursive, this);
-        this._isImportAll = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Import_isImportAll, this);
+        this._isRecursive = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Import_isRecursive, this);
+        this._isImportAll = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Import_isImportAll, this);
         this._importedElement = new RequiredMultiContainmentValueManager<Element>(kermlBase.INSTANCE.Import_importedElement, this);
         this._importOwningNamespace = new RequiredMultiContainmentValueManager<Namespace>(kermlBase.INSTANCE.Import_importOwningNamespace, this);
     }
@@ -6173,17 +6173,17 @@ export class Invariant extends BooleanExpression {
         return new Invariant(kermlBase.INSTANCE.Invariant, id, receiveDelta, parentInfo);
     }
 
-    private readonly _isNegated: RequiredPropertyValueManager<string>;
-    get isNegated(): string {
+    private readonly _isNegated: RequiredPropertyValueManager<boolean>;
+    get isNegated(): boolean {
         return this._isNegated.get();
     }
-    set isNegated(newValue: string) {
+    set isNegated(newValue: boolean) {
         this._isNegated.set(newValue);
     }
 
     public constructor(classifier: Classifier, id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage) {
         super(classifier, id, receiveDelta, parentInfo);
-        this._isNegated = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.Invariant_isNegated, this);
+        this._isNegated = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.Invariant_isNegated, this);
     }
 
     getPropertyValueManager(property: Property): PropertyValueManager<unknown> {
@@ -6237,17 +6237,17 @@ export class LibraryPackage extends Package {
         return new LibraryPackage(kermlBase.INSTANCE.LibraryPackage, id, receiveDelta, parentInfo);
     }
 
-    private readonly _isStandard: RequiredPropertyValueManager<string>;
-    get isStandard(): string {
+    private readonly _isStandard: RequiredPropertyValueManager<boolean>;
+    get isStandard(): boolean {
         return this._isStandard.get();
     }
-    set isStandard(newValue: string) {
+    set isStandard(newValue: boolean) {
         this._isStandard.set(newValue);
     }
 
     public constructor(classifier: Classifier, id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage) {
         super(classifier, id, receiveDelta, parentInfo);
-        this._isStandard = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.LibraryPackage_isStandard, this);
+        this._isStandard = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.LibraryPackage_isStandard, this);
     }
 
     getPropertyValueManager(property: Property): PropertyValueManager<unknown> {
@@ -6269,17 +6269,17 @@ export class LiteralBoolean extends LiteralExpression {
         return new LiteralBoolean(kermlBase.INSTANCE.LiteralBoolean, id, receiveDelta, parentInfo);
     }
 
-    private readonly _value: RequiredPropertyValueManager<string>;
-    get value(): string {
+    private readonly _value: RequiredPropertyValueManager<boolean>;
+    get value(): boolean {
         return this._value.get();
     }
-    set value(newValue: string) {
+    set value(newValue: boolean) {
         this._value.set(newValue);
     }
 
     public constructor(classifier: Classifier, id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage) {
         super(classifier, id, receiveDelta, parentInfo);
-        this._value = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.LiteralBoolean_value, this);
+        this._value = new RequiredPropertyValueManager<boolean>(kermlBase.INSTANCE.LiteralBoolean_value, this);
     }
 
     getPropertyValueManager(property: Property): PropertyValueManager<unknown> {
@@ -6301,17 +6301,17 @@ export class LiteralInteger extends LiteralExpression {
         return new LiteralInteger(kermlBase.INSTANCE.LiteralInteger, id, receiveDelta, parentInfo);
     }
 
-    private readonly _value: RequiredPropertyValueManager<string>;
-    get value(): string {
+    private readonly _value: RequiredPropertyValueManager<number>;
+    get value(): number {
         return this._value.get();
     }
-    set value(newValue: string) {
+    set value(newValue: number) {
         this._value.set(newValue);
     }
 
     public constructor(classifier: Classifier, id: LionWebId, receiveDelta?: DeltaReceiver, parentInfo?: Parentage) {
         super(classifier, id, receiveDelta, parentInfo);
-        this._value = new RequiredPropertyValueManager<string>(kermlBase.INSTANCE.LiteralInteger_value, this);
+        this._value = new RequiredPropertyValueManager<number>(kermlBase.INSTANCE.LiteralInteger_value, this);
     }
 
     getPropertyValueManager(property: Property): PropertyValueManager<unknown> {
