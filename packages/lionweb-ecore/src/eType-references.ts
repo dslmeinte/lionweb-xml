@@ -17,7 +17,7 @@ export type ETypeRefToInstall = {
 const internalNamePrefix = "#//"
 const ecoreDataTypeHrefPrefix = "http://www.eclipse.org/emf/2002/Ecore#//"
 
-export const refFor = (container: ETypedElement, ref: string): ETypeRefToInstall => {
+export const refToInstallFor = (container: ETypedElement, ref: string): ETypeRefToInstall => {
     if (ref.startsWith(internalNamePrefix)) {
         return { container, targetRef: ref.substring(internalNamePrefix.length), refKind: RefKind.internalPath }
     }

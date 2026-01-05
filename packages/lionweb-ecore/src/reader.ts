@@ -15,7 +15,7 @@ import {
     EReferenceFromXml,
     EStructuralFeatureFromXml
 } from "./xmi-types.js"
-import { ETypeRefToInstall, refFor, RefKind, verbalizationOf } from "./eType-references.js"
+import { ETypeRefToInstall, refToInstallFor, RefKind, verbalizationOf } from "./eType-references.js"
 import { ecoreStdlib } from "./stdlib.js"
 import {
     EAnnotation,
@@ -37,8 +37,15 @@ import { ESuperTypeRefToInstall } from "./eSuperType-references.js"
 import { log, LogLevel } from "./logging.js"
 
 
+/**
+ * Type def. for a function that attempts to resolve a reference originating from `ETypedElement.eType`,
+ * represented by the given string.
+ */
 export type ExternalETypeResolver = (eTypeRef: string) => EClassifier | undefined
 
+/**
+ * Optional configuration for the {@link readEcoreFile `readEcoreFile`} function.
+ */
 export type ReaderOptions = Partial<{
     externalETypeResolver: ExternalETypeResolver
 }>
@@ -106,7 +113,7 @@ const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml, options?: ReaderOpt
                     } else {
                         const href = eTypes[0].$.href
                         log(LogLevel.info, `will install eType on EAttribute with id "${id}" from first href in its original eTypes node: ${href}`)
-                        eTypeRefsToInstall.push(refFor(eAttribute, href))
+                        eTypeRefsToInstall.push(refToInstallFor(eAttribute, href))
                         if (eTypes.length > 1) {
                             log(LogLevel.warning, `EAttribute with id "${id}" references more than one type under its original eTypes node`)
                         }
@@ -120,7 +127,7 @@ const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml, options?: ReaderOpt
                             return eAttribute
                         }
                     }
-                    eTypeRefsToInstall.push(refFor(eAttribute, eType))
+                    eTypeRefsToInstall.push(refToInstallFor(eAttribute, eType))
                 }
                 return eAttribute
             }
@@ -129,7 +136,7 @@ const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml, options?: ReaderOpt
                 const {containment, eType} = (eStructuralFeatureFromXml as EReferenceFromXml).$
                 eReference.containmentXsi = (containment === "true")
                 if (eType !== undefined) {
-                    eTypeRefsToInstall.push(refFor(eReference, eType))
+                    eTypeRefsToInstall.push(refToInstallFor(eReference, eType))
                 }
                 return eReference
             }
@@ -228,7 +235,7 @@ const deserializeFromEcoreXml = (ecoreFromXml: EcoreFromXml, options?: ReaderOpt
 
 
 /**
- * @return a {@link EPackage} deserialized (asynchronously) from the file at the given path
+ * @return a {@link EPackage} deserialized (asynchronously) from the file at the given path.
  */
 export const readEcoreFile = async (path: string, options?: ReaderOptions): Promise<EPackage> => {
     const xmlAsString = await readFile(path, { encoding: "utf8" })

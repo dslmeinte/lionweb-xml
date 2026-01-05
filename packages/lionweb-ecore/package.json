@@ -17,8 +17,6 @@
     "scripts": {
         "clean": "npx rimraf dist node_modules",
         "build": "tsc",
-        "prerun-dev": "npm run build",
-        "run-dev": "node dist/run-dev.js",
         "lint": "eslint src"
     },
     "dependencies": {

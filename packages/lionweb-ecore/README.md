@@ -1,18 +1,24 @@
-# lionweb-ecore
+# @lionweb-xml/lionweb-ecore
+
+This package contains the following:
+
+1. An **implementation of the EMF Ecore language**, as a LionWeb language (based on `@lionweb/class-core`).
+   Note that not all information present in an Ecore file is deserialized into an instance of `EPackage`.
+   Only information in an Ecore file that’s useful for mapping to a LionWeb language is preserved.
+
+2. An **Ecore file reader** that deserializes an Ecore file as an instance of the LionWeb language (of 1).
+  The `readEcoreFile` function reads the Ecore file at the given path, and deserializes it as an instance of the `EPackage` concept of the `Ecore` LionWeb language.
+
+3. A `asLionWebLanguage` transformer function that transforms an Ecore `EPackage` into a LionWeb language.
+
+The eventual purpose of this package is to be able to read in an XMI file that conforms to a given Ecore file, as an instance of the mapped LionWeb language.
 
 
-### Note
+## Development
 
-1. Not all information present in an Ecore file is deserialized into an instance of `EPackage`.
-    Only information in an Ecore file that’s useful for mapping to a LionWeb language is preserved.
-    The purpose of this package is to be able to read in an XMI file that conforms to a given Ecore file, as an instance of the mapped LionWeb language.
+Run the following on the command line to build this package:
 
-
-### Assumptions:
-
-1. The following namespace prefixes are currently hard-coded:
-    * `http://www.eclipse.org/emf/2002/Ecore` &rarr; `ecore`
-    * `http://www.w3.org/2001/XMLSchema-instance` &rarr; `xsi`
-    * `http://www.omg.org/XMI` &rarr; `xmi`
-2. Sub packages are not processed.
+```shell
+$ npm run build
+```
 

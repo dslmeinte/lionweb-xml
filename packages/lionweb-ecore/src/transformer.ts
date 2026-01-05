@@ -6,10 +6,30 @@ import { EClass, EClassifier, EDataType, EEnum, EPackage } from "./gen/ecore.g.j
 import { log, LogLevel } from "./logging.js"
 
 
+/**
+ * Optional configuration for the {@link asLionWebLanguage `asLionWebLanguage`} function.
+ */
 export type TransformationOptions = Partial<{
     eDataTypesAsPrimitiveTypes: boolean
 }>
 
+
+/**
+ * @return a LionWeb {@link Language language} that is a transformation of the given {@link EPackage `EPackage`} Ecore meta-model.
+ * @param ePackage An Ecore meta-model.
+ * @param languageVersion The version of the LionWeb language.
+ * @param options Optional configuration for this function.
+ *
+ * **Note** the following assumptions and limitations:
+ *
+ * 1. The following namespace prefixes are currently hard-coded:
+ *     * `http://www.eclipse.org/emf/2002/Ecore` &rarr; `ecore`
+ *     * `http://www.w3.org/2001/XMLSchema-instance` &rarr; `xsi`
+ *     * `http://www.omg.org/XMI` &rarr; `xmi`
+ * 2. Sub packages are not transformed.
+ * 3. Features are not transformed.
+ * 4. Multiple inheritance is not dealt with.
+ */
 export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, options?: TransformationOptions): Language => {
     const factory = new LanguageFactory(ePackage.name, languageVersion, concatenator("-"), concatenator("-"))
 

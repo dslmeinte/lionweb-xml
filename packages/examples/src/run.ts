@@ -2,11 +2,10 @@ import { asTreeTextWith } from "@lionweb/class-core"
 import { isINamed, nameOf, serializeLanguages } from "@lionweb/core"
 import { mapFrom } from "@lionweb/ts-utils"
 import { languageAsText, writeJsonAsFile } from "@lionweb/utilities"
-import { asLionWebLanguage, readEcoreFile, TransformationOptions } from "@lionweb-xml/lionweb-ecore"
+import { asLionWebLanguage, readEcoreFile, ReaderOptions, TransformationOptions } from "@lionweb-xml/lionweb-ecore"
 import { readFile, writeFile } from "fs/promises"
 import { join } from "path"
 import { parseStringPromise } from "xml2js"
-import { ReaderOptions } from "@lionweb-xml/lionweb-ecore/dist/reader.js"
 
 
 const runOnce = async (filePath: string, options?: Partial<{ reader: ReaderOptions, transformation: TransformationOptions }>) => {

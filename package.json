@@ -19,9 +19,8 @@
         "typescript": "5.9.3"
     },
     "scripts": {
-        "clean": "npm run clean -w packages --if-present && npx rimraf node_modules",
-        "setup": "npm run setup -w packages --if-present",
-        "initialize": "npm run clean && npm install && npm run setup",
+        "clean": "npm run clean -w packages --if-present && npx --yes rimraf node_modules",
+        "initialize": "npm run clean && npm install",
         "build": "npm run build -w packages --if-present",
         "test": "npm run test -w packages --if-present",
         "lint": "npm run lint -w packages --if-present"

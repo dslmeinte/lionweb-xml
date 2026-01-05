@@ -16,14 +16,14 @@ const createEClassAsPair = (name: string): [name: string, eClass: EClass] => {
 
 /**
  * “Stand-in” model elements from the Ecore meta(-meta)-model.
- * Eventually, an actual reading of `Ecore.ecore` should be used.
+ * TODO  use an actual reading of `Ecore.ecore`
  */
 export const ecoreStdlib = {
     ...Object.fromEntries([
         "EBoolean",
         "EInt",
         "EString",
-        // for KerML and SysML v2:
+        // used by KerML and SysML v2:
         "EInteger",
         "EReal"
     ].map(createEDataTypeAsPair)),

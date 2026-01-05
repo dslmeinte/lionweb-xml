@@ -1,3 +1,6 @@
+// Representation of the contents of an XMI file parsed by xml2js as TypeScript types.
+
+
 export type HasOptionalXmiId = {
     "xmi:id"?: string
 }
