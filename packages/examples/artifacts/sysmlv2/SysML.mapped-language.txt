@@ -3,126 +3,326 @@ language sysml
     entities (↓name):
 
         concept AcceptActionUsage extends ActionUsage
+            features (↓name):
+                payloadArgument: Expression[1..*]
+                payloadParameter: ReferenceUsage[1..*]
+                receiverArgument: Expression[1..*]
 
         concept ActionDefinition extends OccurrenceDefinition
+            features (↓name):
+                action: ActionUsage[1..*]
 
         concept ActionUsage extends OccurrenceUsage
+            features (↓name):
+                actionDefinition: Behavior[1..*]
 
         concept ActorMembership extends ParameterMembership
+            features (↓name):
+                ownedActorParameter: PartUsage[1..*]
 
         concept AllocationDefinition extends ConnectionDefinition
+            features (↓name):
+                allocation: AllocationUsage[1..*]
 
         concept AllocationUsage extends ConnectionUsage
+            features (↓name):
+                allocationDefinition: AllocationDefinition[1..*]
 
         concept AnalysisCaseDefinition extends CaseDefinition
+            features (↓name):
+                resultExpression: Expression[1..*]
 
         concept AnalysisCaseUsage extends CaseUsage
+            features (↓name):
+                analysisCaseDefinition: AnalysisCaseDefinition[1..*]
+                resultExpression: Expression[1..*]
 
         concept AnnotatingElement extends Element
+            features (↓name):
+                annotatedElement: Element[1..*]
+                annotation: Annotation[1..*]
+                ownedAnnotatingRelationship: Annotation[1..*]
+                owningAnnotatingRelationship: Annotation[1..*]
 
         concept Annotation extends Relationship
+            features (↓name):
+                annotatedElement: Element[1..*]
+                annotatingElement: AnnotatingElement[1..*]
+                ownedAnnotatingElement: AnnotatingElement[1..*]
+                owningAnnotatedElement: Element[1..*]
+                owningAnnotatingElement: AnnotatingElement[1..*]
 
         concept AssertConstraintUsage extends ConstraintUsage
+            features (↓name):
+                assertedConstraint: ConstraintUsage[1..*]
 
         concept AssignmentActionUsage extends ActionUsage
+            features (↓name):
+                referent: Feature[1..*]
+                targetArgument: Expression[1..*]
+                valueExpression: Expression[1..*]
 
-        concept Association extends Classifier
+        concept Association extends sysmlClassifier
+            features (↓name):
+                associationEnd: Feature[1..*]
+                relatedType: Type[1..*]
+                sourceType: Type[1..*]
+                targetType: Type[1..*]
 
         concept AssociationStructure extends Association
 
         concept AttributeDefinition extends Definition
 
         concept AttributeUsage extends Usage
+            features (↓name):
+                attributeDefinition: DataType[1..*]
 
         concept Behavior extends Class
+            features (↓name):
+                parameter: Feature[1..*]
+                step: Step[1..*]
 
         concept BindingConnector extends Connector
 
         concept BindingConnectorAsUsage extends ConnectorAsUsage
 
         concept BooleanExpression extends Expression
+            features (↓name):
+                predicate: Predicate[1..*]
 
         concept CalculationDefinition extends ActionDefinition
+            features (↓name):
+                calculation: CalculationUsage[1..*]
 
         concept CalculationUsage extends ActionUsage
+            features (↓name):
+                calculationDefinition: Function[1..*]
 
         concept CaseDefinition extends CalculationDefinition
+            features (↓name):
+                actorParameter: PartUsage[1..*]
+                objectiveRequirement: RequirementUsage[1..*]
+                subjectParameter: Usage[1..*]
 
         concept CaseUsage extends CalculationUsage
+            features (↓name):
+                actorParameter: PartUsage[1..*]
+                caseDefinition: CaseDefinition[1..*]
+                objectiveRequirement: RequirementUsage[1..*]
+                subjectParameter: Usage[1..*]
 
-        concept Class extends Classifier
-
-        concept Classifier extends Type
+        concept Class extends sysmlClassifier
 
         concept CollectExpression extends OperatorExpression
 
         concept Comment extends AnnotatingElement
+            features (↓name):
+                body: String
+                locale: String
 
         concept ConcernDefinition extends RequirementDefinition
 
         concept ConcernUsage extends RequirementUsage
+            features (↓name):
+                concernDefinition: ConcernDefinition[1..*]
 
         concept ConjugatedPortDefinition extends PortDefinition
+            features (↓name):
+                originalPortDefinition: PortDefinition[1..*]
+                ownedPortConjugator: PortConjugation[1..*]
 
         concept ConjugatedPortTyping extends FeatureTyping
+            features (↓name):
+                conjugatedPortDefinition: ConjugatedPortDefinition[1..*]
+                portDefinition: PortDefinition[1..*]
 
         concept Conjugation extends Relationship
+            features (↓name):
+                conjugatedType: Type[1..*]
+                originalType: Type[1..*]
+                owningType: Type[1..*]
 
         concept ConnectionDefinition extends PartDefinition
+            features (↓name):
+                connectionEnd: Usage[1..*]
 
         concept ConnectionUsage extends ConnectorAsUsage
+            features (↓name):
+                connectionDefinition: AssociationStructure[1..*]
 
         concept Connector extends Feature
+            features (↓name):
+                association: Association[1..*]
+                connectorEnd: Feature[1..*]
+                defaultFeaturingType: Type[1..*]
+                relatedFeature: Feature[1..*]
+                sourceFeature: Feature[1..*]
+                targetFeature: Feature[1..*]
 
         abstract concept ConnectorAsUsage extends Usage
 
         concept ConstraintDefinition extends OccurrenceDefinition
 
         concept ConstraintUsage extends OccurrenceUsage
+            features (↓name):
+                constraintDefinition: Predicate[1..*]
 
         concept ConstructorExpression extends InstantiationExpression
 
         abstract concept ControlNode extends ActionUsage
 
         concept CrossSubsetting extends Subsetting
+            features (↓name):
+                crossedFeature: Feature[1..*]
+                crossingFeature: Feature[1..*]
 
-        concept DataType extends Classifier
+        concept DataType extends sysmlClassifier
 
         concept DecisionNode extends ControlNode
 
-        concept Definition extends Classifier
+        concept Definition extends sysmlClassifier
+            features (↓name):
+                directedUsage: Usage[1..*]
+                isVariation: Boolean
+                ownedAction: ActionUsage[1..*]
+                ownedAllocation: AllocationUsage[1..*]
+                ownedAnalysisCase: AnalysisCaseUsage[1..*]
+                ownedAttribute: AttributeUsage[1..*]
+                ownedCalculation: CalculationUsage[1..*]
+                ownedCase: CaseUsage[1..*]
+                ownedConcern: ConcernUsage[1..*]
+                ownedConnection: ConnectorAsUsage[1..*]
+                ownedConstraint: ConstraintUsage[1..*]
+                ownedEnumeration: EnumerationUsage[1..*]
+                ownedFlow: FlowUsage[1..*]
+                ownedInterface: InterfaceUsage[1..*]
+                ownedItem: ItemUsage[1..*]
+                ownedMetadata: MetadataUsage[1..*]
+                ownedOccurrence: OccurrenceUsage[1..*]
+                ownedPart: PartUsage[1..*]
+                ownedPort: PortUsage[1..*]
+                ownedReference: ReferenceUsage[1..*]
+                ownedRendering: RenderingUsage[1..*]
+                ownedRequirement: RequirementUsage[1..*]
+                ownedState: StateUsage[1..*]
+                ownedTransition: TransitionUsage[1..*]
+                ownedUsage: Usage[1..*]
+                ownedUseCase: UseCaseUsage[1..*]
+                ownedVerificationCase: VerificationCaseUsage[1..*]
+                ownedView: ViewUsage[1..*]
+                ownedViewpoint: ViewpointUsage[1..*]
+                usage: Usage[1..*]
+                variant: Usage[1..*]
+                variantMembership: VariantMembership[1..*]
 
         concept Dependency extends Relationship
+            features (↓name):
+                client: Element[1..*]
+                supplier: Element[1..*]
 
         concept Differencing extends Relationship
+            features (↓name):
+                differencingType: Type[1..*]
+                typeDifferenced: Type[1..*]
 
         concept Disjoining extends Relationship
+            features (↓name):
+                disjoiningType: Type[1..*]
+                owningType: Type[1..*]
+                typeDisjoined: Type[1..*]
 
         concept Documentation extends Comment
+            features (↓name):
+                documentedElement: Element[1..*]
 
         abstract concept Element
+            features (↓name):
+                aliasIds: String
+                declaredName: String
+                declaredShortName: String
+                documentation: Documentation[1..*]
+                elementId: String
+                isImpliedIncluded: Boolean
+                isLibraryElement: Boolean
+                name: String
+                ownedAnnotation: Annotation[1..*]
+                ownedElement: Element[1..*]
+                ownedRelationship: Relationship[1..*]
+                owner: Element[1..*]
+                owningMembership: OwningMembership[1..*]
+                owningNamespace: Namespace[1..*]
+                owningRelationship: Relationship[1..*]
+                qualifiedName: String
+                shortName: String
+                textualRepresentation: TextualRepresentation[1..*]
 
         concept ElementFilterMembership extends OwningMembership
+            features (↓name):
+                condition: Expression[1..*]
 
         concept EndFeatureMembership extends FeatureMembership
 
         concept EnumerationDefinition extends AttributeDefinition
+            features (↓name):
+                enumeratedValue: EnumerationUsage[1..*]
 
         concept EnumerationUsage extends AttributeUsage
+            features (↓name):
+                enumerationDefinition: EnumerationDefinition[1..*]
 
         concept EventOccurrenceUsage extends OccurrenceUsage
+            features (↓name):
+                eventOccurrence: OccurrenceUsage[1..*]
 
         concept ExhibitStateUsage extends StateUsage
+            features (↓name):
+                exhibitedState: StateUsage[1..*]
 
         abstract concept Expose extends Import
 
         concept Expression extends Step
+            features (↓name):
+                function: Function[1..*]
+                isModelLevelEvaluable: Boolean
+                result: Feature[1..*]
 
         concept Feature extends Type
+            features (↓name):
+                chainingFeature: Feature[1..*]
+                crossFeature: Feature[1..*]
+                direction: FeatureDirectionKind
+                endOwningType: Type[1..*]
+                featureTarget: Feature[1..*]
+                featuringType: Type[1..*]
+                isComposite: Boolean
+                isConstant: Boolean
+                isDerived: Boolean
+                isEnd: Boolean
+                isNonunique: Boolean
+                isOrdered: Boolean
+                isPortion: Boolean
+                isUnique: Boolean
+                isVariable: Boolean
+                ownedCrossSubsetting: CrossSubsetting[1..*]
+                ownedFeatureChaining: FeatureChaining[1..*]
+                ownedFeatureInverting: FeatureInverting[1..*]
+                ownedRedefinition: Redefinition[1..*]
+                ownedReferenceSubsetting: ReferenceSubsetting[1..*]
+                ownedSubsetting: Subsetting[1..*]
+                ownedTypeFeaturing: TypeFeaturing[1..*]
+                ownedTyping: FeatureTyping[1..*]
+                owningFeatureMembership: FeatureMembership[1..*]
+                owningType: Type[1..*]
+                type: Type[1..*]
 
         concept FeatureChainExpression extends OperatorExpression
+            features (↓name):
+                targetFeature: Feature[1..*]
 
         concept FeatureChaining extends Relationship
+            features (↓name):
+                chainingFeature: Feature[1..*]
+                featureChained: Feature[1..*]
 
         enumeration FeatureDirectionKind
             literals:
@@ -131,132 +331,270 @@ language sysml
                 out
 
         concept FeatureInverting extends Relationship
+            features (↓name):
+                featureInverted: Feature[1..*]
+                invertingFeature: Feature[1..*]
+                owningFeature: Feature[1..*]
 
         concept FeatureMembership extends OwningMembership
+            features (↓name):
+                ownedMemberFeature: Feature[1..*]
+                owningType: Type[1..*]
 
         concept FeatureReferenceExpression extends Expression
+            features (↓name):
+                referent: Feature[1..*]
 
         concept FeatureTyping extends Specialization
+            features (↓name):
+                owningFeature: Feature[1..*]
+                type: Type[1..*]
+                typedFeature: Feature[1..*]
 
         concept FeatureValue extends OwningMembership
+            features (↓name):
+                featureWithValue: Feature[1..*]
+                isDefault: Boolean
+                isInitial: Boolean
+                value: Expression[1..*]
 
         concept Flow extends Connector
+            features (↓name):
+                flowEnd: FlowEnd[1..*]
+                interaction: Interaction[1..*]
+                payloadFeature: PayloadFeature[1..*]
+                payloadType: sysmlClassifier[1..*]
+                sourceOutputFeature: Feature[1..*]
+                targetInputFeature: Feature[1..*]
 
         concept FlowDefinition extends ActionDefinition
+            features (↓name):
+                flowEnd: Usage[1..*]
 
         concept FlowEnd extends Feature
 
         concept FlowUsage extends ConnectorAsUsage
+            features (↓name):
+                flowDefinition: Interaction[1..*]
 
         concept ForLoopActionUsage extends LoopActionUsage
+            features (↓name):
+                loopVariable: ReferenceUsage[1..*]
+                seqArgument: Expression[1..*]
 
         concept ForkNode extends ControlNode
 
         concept FramedConcernMembership extends RequirementConstraintMembership
+            features (↓name):
+                ownedConcern: ConcernUsage[1..*]
+                referencedConcern: ConcernUsage[1..*]
 
         concept Function extends Behavior
+            features (↓name):
+                expression: Expression[1..*]
+                isModelLevelEvaluable: Boolean
+                result: Feature[1..*]
 
         concept IfActionUsage extends ActionUsage
+            features (↓name):
+                elseAction: ActionUsage[1..*]
+                ifArgument: Expression[1..*]
+                thenAction: ActionUsage[1..*]
 
         abstract concept Import extends Relationship
+            features (↓name):
+                importOwningNamespace: Namespace[1..*]
+                importedElement: Element[1..*]
+                isImportAll: Boolean
+                isRecursive: Boolean
+                visibility: VisibilityKind
 
         concept IncludeUseCaseUsage extends UseCaseUsage
+            features (↓name):
+                useCaseIncluded: UseCaseUsage[1..*]
 
         concept IndexExpression extends OperatorExpression
 
         abstract concept InstantiationExpression extends Expression
+            features (↓name):
+                argument: Expression[1..*]
+                instantiatedType: Type[1..*]
 
         concept Interaction extends Association
 
         concept InterfaceDefinition extends ConnectionDefinition
+            features (↓name):
+                interfaceEnd: PortUsage[1..*]
 
         concept InterfaceUsage extends ConnectionUsage
+            features (↓name):
+                interfaceDefinition: InterfaceDefinition[1..*]
 
         concept Intersecting extends Relationship
+            features (↓name):
+                intersectingType: Type[1..*]
+                typeIntersected: Type[1..*]
 
         concept Invariant extends BooleanExpression
+            features (↓name):
+                isNegated: Boolean
 
         concept InvocationExpression extends InstantiationExpression
+            features (↓name):
+                operand: Expression[1..*]
 
         concept ItemDefinition extends OccurrenceDefinition
 
         concept ItemUsage extends OccurrenceUsage
+            features (↓name):
+                itemDefinition: Structure[1..*]
 
         concept JoinNode extends ControlNode
 
         concept LibraryPackage extends Package
+            features (↓name):
+                isStandard: Boolean
 
         concept LiteralBoolean extends LiteralExpression
+            features (↓name):
+                value: Boolean
 
         concept LiteralExpression extends Expression
 
         concept LiteralInfinity extends LiteralExpression
 
         concept LiteralInteger extends LiteralExpression
+            features (↓name):
+                value: String
 
         concept LiteralRational extends LiteralExpression
+            features (↓name):
+                value: String
 
         concept LiteralString extends LiteralExpression
+            features (↓name):
+                value: String
 
         abstract concept LoopActionUsage extends ActionUsage
+            features (↓name):
+                bodyAction: ActionUsage[1..*]
 
         concept Membership extends Relationship
+            features (↓name):
+                memberElement: Element[1..*]
+                memberElementId: String
+                memberName: String
+                memberShortName: String
+                membershipOwningNamespace: Namespace[1..*]
+                visibility: VisibilityKind
 
         concept MembershipExpose extends MembershipImport
 
         concept MembershipImport extends Import
+            features (↓name):
+                importedMembership: Membership[1..*]
 
         concept MergeNode extends ControlNode
 
         concept Metaclass extends Structure
 
         concept MetadataAccessExpression extends Expression
+            features (↓name):
+                referencedElement: Element[1..*]
 
         concept MetadataDefinition extends ItemDefinition
 
         concept MetadataFeature extends Feature
+            features (↓name):
+                metaclass: Metaclass[1..*]
 
         concept MetadataUsage extends ItemUsage
+            features (↓name):
+                metadataDefinition: Metaclass[1..*]
 
         concept Multiplicity extends Feature
 
         concept MultiplicityRange extends Multiplicity
+            features (↓name):
+                bound: Expression[1..*]
+                lowerBound: Expression[1..*]
+                upperBound: Expression[1..*]
 
         concept Namespace extends Element
+            features (↓name):
+                importedMembership: Membership[1..*]
+                member: Element[1..*]
+                membership: Membership[1..*]
+                ownedImport: Import[1..*]
+                ownedMember: Element[1..*]
+                ownedMembership: Membership[1..*]
 
         concept NamespaceExpose extends NamespaceImport
 
         concept NamespaceImport extends Import
+            features (↓name):
+                importedNamespace: Namespace[1..*]
 
         concept NullExpression extends Expression
 
         concept ObjectiveMembership extends FeatureMembership
+            features (↓name):
+                ownedObjectiveRequirement: RequirementUsage[1..*]
 
         concept OccurrenceDefinition extends Definition
+            features (↓name):
+                isIndividual: Boolean
 
         concept OccurrenceUsage extends Usage
+            features (↓name):
+                individualDefinition: OccurrenceDefinition[1..*]
+                isIndividual: Boolean
+                occurrenceDefinition: Class[1..*]
+                portionKind: PortionKind
 
         concept OperatorExpression extends InvocationExpression
+            features (↓name):
+                operator: String
 
         concept OwningMembership extends Membership
+            features (↓name):
+                ownedMemberElement: Element[1..*]
+                ownedMemberElementId: String
+                ownedMemberName: String
+                ownedMemberShortName: String
 
         concept Package extends Namespace
+            features (↓name):
+                filterCondition: Expression[1..*]
 
         concept ParameterMembership extends FeatureMembership
+            features (↓name):
+                ownedMemberParameter: Feature[1..*]
 
         concept PartDefinition extends ItemDefinition
 
         concept PartUsage extends ItemUsage
+            features (↓name):
+                partDefinition: PartDefinition[1..*]
 
         concept PayloadFeature extends Feature
 
         concept PerformActionUsage extends ActionUsage
+            features (↓name):
+                performedAction: ActionUsage[1..*]
 
         concept PortConjugation extends Conjugation
+            features (↓name):
+                conjugatedPortDefinition: ConjugatedPortDefinition[1..*]
+                originalPortDefinition: PortDefinition[1..*]
 
         concept PortDefinition extends OccurrenceDefinition
+            features (↓name):
+                conjugatedPortDefinition: ConjugatedPortDefinition[1..*]
 
         concept PortUsage extends OccurrenceUsage
+            features (↓name):
+                portDefinition: PortDefinition[1..*]
 
         enumeration PortionKind
             literals:
@@ -266,16 +604,33 @@ language sysml
         concept Predicate extends Function
 
         concept Redefinition extends Subsetting
+            features (↓name):
+                redefinedFeature: Feature[1..*]
+                redefiningFeature: Feature[1..*]
 
         concept ReferenceSubsetting extends Subsetting
+            features (↓name):
+                referencedFeature: Feature[1..*]
+                referencingFeature: Feature[1..*]
 
         concept ReferenceUsage extends Usage
 
         abstract concept Relationship extends Element
+            features (↓name):
+                isImplied: Boolean
+                ownedRelatedElement: Element[1..*]
+                owningRelatedElement: Element[1..*]
+                relatedElement: Element[1..*]
+                source: Element[1..*]
+                target: Element[1..*]
 
         concept RenderingDefinition extends PartDefinition
+            features (↓name):
+                rendering: RenderingUsage[1..*]
 
         concept RenderingUsage extends PartUsage
+            features (↓name):
+                renderingDefinition: RenderingDefinition[1..*]
 
         enumeration RequirementConstraintKind
             literals:
@@ -283,28 +638,75 @@ language sysml
                 requirement
 
         concept RequirementConstraintMembership extends FeatureMembership
+            features (↓name):
+                kind: RequirementConstraintKind
+                ownedConstraint: ConstraintUsage[1..*]
+                referencedConstraint: ConstraintUsage[1..*]
 
         concept RequirementDefinition extends ConstraintDefinition
+            features (↓name):
+                actorParameter: PartUsage[1..*]
+                assumedConstraint: ConstraintUsage[1..*]
+                framedConcern: ConcernUsage[1..*]
+                reqId: String
+                requiredConstraint: ConstraintUsage[1..*]
+                stakeholderParameter: PartUsage[1..*]
+                subjectParameter: Usage[1..*]
+                text: String
 
         concept RequirementUsage extends ConstraintUsage
+            features (↓name):
+                actorParameter: PartUsage[1..*]
+                assumedConstraint: ConstraintUsage[1..*]
+                framedConcern: ConcernUsage[1..*]
+                reqId: String
+                requiredConstraint: ConstraintUsage[1..*]
+                requirementDefinition: RequirementDefinition[1..*]
+                stakeholderParameter: PartUsage[1..*]
+                subjectParameter: Usage[1..*]
+                text: String
 
         concept RequirementVerificationMembership extends RequirementConstraintMembership
+            features (↓name):
+                ownedRequirement: RequirementUsage[1..*]
+                verifiedRequirement: RequirementUsage[1..*]
 
         concept ResultExpressionMembership extends FeatureMembership
+            features (↓name):
+                ownedResultExpression: Expression[1..*]
 
         concept ReturnParameterMembership extends ParameterMembership
 
         concept SatisfyRequirementUsage extends RequirementUsage
+            features (↓name):
+                satisfiedRequirement: RequirementUsage[1..*]
+                satisfyingFeature: Feature[1..*]
 
         concept SelectExpression extends OperatorExpression
 
         concept SendActionUsage extends ActionUsage
+            features (↓name):
+                payloadArgument: Expression[1..*]
+                receiverArgument: Expression[1..*]
+                senderArgument: Expression[1..*]
 
         concept Specialization extends Relationship
+            features (↓name):
+                general: Type[1..*]
+                owningType: Type[1..*]
+                specific: Type[1..*]
 
         concept StakeholderMembership extends ParameterMembership
+            features (↓name):
+                ownedStakeholderParameter: PartUsage[1..*]
 
         concept StateDefinition extends ActionDefinition
+            features (↓name):
+                doAction: ActionUsage[1..*]
+                entryAction: ActionUsage[1..*]
+                exitAction: ActionUsage[1..*]
+                isParallel: Boolean
+                state: StateUsage[1..*]
 
         enumeration StateSubactionKind
             literals:
@@ -313,18 +715,40 @@ language sysml
                 exit
 
         concept StateSubactionMembership extends FeatureMembership
+            features (↓name):
+                action: ActionUsage[1..*]
+                kind: StateSubactionKind
 
         concept StateUsage extends ActionUsage
+            features (↓name):
+                doAction: ActionUsage[1..*]
+                entryAction: ActionUsage[1..*]
+                exitAction: ActionUsage[1..*]
+                isParallel: Boolean
+                stateDefinition: Behavior[1..*]
 
         concept Step extends Feature
+            features (↓name):
+                behavior: Behavior[1..*]
+                parameter: Feature[1..*]
 
         concept Structure extends Class
 
         concept Subclassification extends Specialization
+            features (↓name):
+                owningClassifier: sysmlClassifier[1..*]
+                subclassifier: sysmlClassifier[1..*]
+                superclassifier: sysmlClassifier[1..*]
 
         concept SubjectMembership extends ParameterMembership
+            features (↓name):
+                ownedSubjectParameter: Usage[1..*]
 
         concept Subsetting extends Specialization
+            features (↓name):
+                owningFeature: Feature[1..*]
+                subsettedFeature: Feature[1..*]
+                subsettingFeature: Feature[1..*]
 
         concept Succession extends Connector
 
@@ -335,8 +759,14 @@ language sysml
         concept SuccessionFlowUsage extends FlowUsage
 
         concept TerminateActionUsage extends ActionUsage
+            features (↓name):
+                terminatedOccurrenceArgument: Expression[1..*]
 
         concept TextualRepresentation extends AnnotatingElement
+            features (↓name):
+                body: String
+                language: String
+                representedElement: Element[1..*]
 
         enumeration TransitionFeatureKind
             literals:
@@ -345,10 +775,22 @@ language sysml
                 effect
 
         concept TransitionFeatureMembership extends FeatureMembership
+            features (↓name):
+                kind: TransitionFeatureKind
+                transitionFeature: Step[1..*]
 
         concept TransitionUsage extends ActionUsage
+            features (↓name):
+                effectAction: ActionUsage[1..*]
+                guardExpression: Expression[1..*]
+                source: ActionUsage[1..*]
+                succession: Succession[1..*]
+                target: ActionUsage[1..*]
+                triggerAction: AcceptActionUsage[1..*]
 
         concept TriggerInvocationExpression extends InvocationExpression
+            features (↓name):
+                kind: TriggerKind
 
         enumeration TriggerKind
             literals:
@@ -357,32 +799,133 @@ language sysml
                 after
 
         concept Type extends Namespace
+            features (↓name):
+                differencingType: Type[1..*]
+                directedFeature: Feature[1..*]
+                endFeature: Feature[1..*]
+                feature: Feature[1..*]
+                featureMembership: FeatureMembership[1..*]
+                inheritedFeature: Feature[1..*]
+                inheritedMembership: Membership[1..*]
+                input: Feature[1..*]
+                intersectingType: Type[1..*]
+                isAbstract: Boolean
+                isConjugated: Boolean
+                isSufficient: Boolean
+                multiplicity: Multiplicity[1..*]
+                output: Feature[1..*]
+                ownedConjugator: Conjugation[1..*]
+                ownedDifferencing: Differencing[1..*]
+                ownedDisjoining: Disjoining[1..*]
+                ownedEndFeature: Feature[1..*]
+                ownedFeature: Feature[1..*]
+                ownedFeatureMembership: FeatureMembership[1..*]
+                ownedIntersecting: Intersecting[1..*]
+                ownedSpecialization: Specialization[1..*]
+                ownedUnioning: Unioning[1..*]
+                unioningType: Type[1..*]
 
         concept TypeFeaturing extends Relationship
+            features (↓name):
+                featureOfType: Feature[1..*]
+                featuringType: Type[1..*]
+                owningFeatureOfType: Feature[1..*]
 
         concept Unioning extends Relationship
+            features (↓name):
+                typeUnioned: Type[1..*]
+                unioningType: Type[1..*]
 
         concept Usage extends Feature
+            features (↓name):
+                definition: sysmlClassifier[1..*]
+                directedUsage: Usage[1..*]
+                isReference: Boolean
+                isVariation: Boolean
+                mayTimeVary: Boolean
+                nestedAction: ActionUsage[1..*]
+                nestedAllocation: AllocationUsage[1..*]
+                nestedAnalysisCase: AnalysisCaseUsage[1..*]
+                nestedAttribute: AttributeUsage[1..*]
+                nestedCalculation: CalculationUsage[1..*]
+                nestedCase: CaseUsage[1..*]
+                nestedConcern: ConcernUsage[1..*]
+                nestedConnection: ConnectorAsUsage[1..*]
+                nestedConstraint: ConstraintUsage[1..*]
+                nestedEnumeration: EnumerationUsage[1..*]
+                nestedFlow: FlowUsage[1..*]
+                nestedInterface: InterfaceUsage[1..*]
+                nestedItem: ItemUsage[1..*]
+                nestedMetadata: MetadataUsage[1..*]
+                nestedOccurrence: OccurrenceUsage[1..*]
+                nestedPart: PartUsage[1..*]
+                nestedPort: PortUsage[1..*]
+                nestedReference: ReferenceUsage[1..*]
+                nestedRendering: RenderingUsage[1..*]
+                nestedRequirement: RequirementUsage[1..*]
+                nestedState: StateUsage[1..*]
+                nestedTransition: TransitionUsage[1..*]
+                nestedUsage: Usage[1..*]
+                nestedUseCase: UseCaseUsage[1..*]
+                nestedVerificationCase: VerificationCaseUsage[1..*]
+                nestedView: ViewUsage[1..*]
+                nestedViewpoint: ViewpointUsage[1..*]
+                owningDefinition: Definition[1..*]
+                owningUsage: Usage[1..*]
+                usage: Usage[1..*]
+                variant: Usage[1..*]
+                variantMembership: VariantMembership[1..*]
 
         concept UseCaseDefinition extends CaseDefinition
+            features (↓name):
+                includedUseCase: UseCaseUsage[1..*]
 
         concept UseCaseUsage extends CaseUsage
+            features (↓name):
+                includedUseCase: UseCaseUsage[1..*]
+                useCaseDefinition: UseCaseDefinition[1..*]
 
         concept VariantMembership extends OwningMembership
+            features (↓name):
+                ownedVariantUsage: Usage[1..*]
 
         concept VerificationCaseDefinition extends CaseDefinition
+            features (↓name):
+                verifiedRequirement: RequirementUsage[1..*]
 
         concept VerificationCaseUsage extends CaseUsage
+            features (↓name):
+                verificationCaseDefinition: VerificationCaseDefinition[1..*]
+                verifiedRequirement: RequirementUsage[1..*]
 
         concept ViewDefinition extends PartDefinition
+            features (↓name):
+                satisfiedViewpoint: ViewpointUsage[1..*]
+                view: ViewUsage[1..*]
+                viewCondition: Expression[1..*]
+                viewRendering: RenderingUsage[1..*]
 
         concept ViewRenderingMembership extends FeatureMembership
+            features (↓name):
+                ownedRendering: RenderingUsage[1..*]
+                referencedRendering: RenderingUsage[1..*]
 
         concept ViewUsage extends PartUsage
+            features (↓name):
+                exposedElement: Element[1..*]
+                satisfiedViewpoint: ViewpointUsage[1..*]
+                viewCondition: Expression[1..*]
+                viewDefinition: ViewDefinition[1..*]
+                viewRendering: RenderingUsage[1..*]
 
         concept ViewpointDefinition extends RequirementDefinition
+            features (↓name):
+                viewpointStakeholder: PartUsage[1..*]
 
         concept ViewpointUsage extends RequirementUsage
+            features (↓name):
+                viewpointDefinition: ViewpointDefinition[1..*]
+                viewpointStakeholder: PartUsage[1..*]
 
         enumeration VisibilityKind
             literals:
@@ -391,5 +934,12 @@ language sysml
                 public
 
         concept WhileLoopActionUsage extends LoopActionUsage
+            features (↓name):
+                untilArgument: Expression[1..*]
+                whileArgument: Expression[1..*]
+
+        concept sysmlClassifier extends Type
+            features (↓name):
+                ownedSubclassification: Subclassification[1..*]
 
 

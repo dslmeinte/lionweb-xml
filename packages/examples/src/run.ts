@@ -3,13 +3,19 @@ import { generateLanguage } from "@lionweb/class-core-generator"
 import { isINamed, nameOf, serializeLanguages } from "@lionweb/core"
 import { mapFrom } from "@lionweb/ts-utils"
 import { languageAsText, writeJsonAsFile } from "@lionweb/utilities"
-import { asLionWebLanguage, readEcoreFile, ReaderOptions, TransformationOptions } from "@lionweb-xml/lionweb-ecore"
+import {
+    asLionWebLanguage,
+    EPackage,
+    readEcoreFile,
+    ReaderOptions,
+    TransformationOptions
+} from "@lionweb-xml/lionweb-ecore"
 import { readFile, writeFile } from "fs/promises"
 import { join } from "path"
 import { parseStringPromise } from "xml2js"
 
 
-const runOnce = async (filePath: string, options?: Partial<{ reader: ReaderOptions, transformation: TransformationOptions }>) => {
+const runOnce = async (filePath: string, options?: Partial<{ reader: ReaderOptions, transformation: TransformationOptions, postReadAdjustment?: (ePackage: EPackage) => void }>) => {
     const path = filePath.substring(0, filePath.lastIndexOf("/"))
     const fileNameWithExtension = filePath.substring(filePath.lastIndexOf("/") + 1)
     const [fileName] = fileNameWithExtension.split(".")
@@ -21,6 +27,9 @@ const runOnce = async (filePath: string, options?: Partial<{ reader: ReaderOptio
     writeJsonAsFile(join(path, `${fileName}-parsed-as-.json`), xmlAsJson)
 
     const ePackage = await readEcoreFile(join(path, `${fileName}.ecore`), options?.reader)
+    if (options?.postReadAdjustment !== undefined) {
+        options.postReadAdjustment(ePackage)
+    }
 
     await writeFile(join(path, `${fileName}.read.txt`), asTreeTextWith((node) => isINamed(node) ? node.name : node.id)([ePackage]))
 

@@ -3,12 +3,24 @@ language kerml
     entities (↓name):
 
         concept AliasIdsContainer
+            features (↓name):
+                aliasIds: String
 
         concept AnnotatingElement implements IAnnotatingElement
 
         concept Annotation implements IRelationship
+            features (↓name):
+                annotatedElement: IElement[1..*]
+                annotatingElement: IAnnotatingElement[1..*]
+                owningAnnotatedElement: IElement[1..*]
+                owningAnnotatingElement: IAnnotatingElement[1..*]
 
         concept Association implements IClassifier, IRelationship
+            features (↓name):
+                associationEnd: IFeature[1..*]
+                relatedType: IType[1..*]
+                sourceType: IType[1..*]
+                targetType: IType[1..*]
 
         concept AssociationStructure extends Association implements IStructure
 
@@ -17,42 +29,72 @@ language kerml
         concept BindingConnector implements IConnector
 
         concept BooleanExpression extends Expression
+            features (↓name):
+                predicate: Predicate[1..*]
 
         concept Class implements IClass
-
-        concept Classifier implements IClassifier
 
         concept CollectExpression extends OperatorExpression
 
         concept Comment implements IAnnotatingElement
+            features (↓name):
+                body: String
+                locale: String
 
         concept Conjugation implements IRelationship
+            features (↓name):
+                conjugatedType: IType[1..*]
+                originalType: IType[1..*]
+                owningType: IType[1..*]
 
         concept Connector implements IConnector
 
         concept DataType implements IClassifier
 
         concept Dependency implements IRelationship
+            features (↓name):
+                client: IElement[1..*]
+                supplier: IElement[1..*]
 
         concept Differencing implements IRelationship
+            features (↓name):
+                differencingType: IType[1..*]
+                typeDifferenced: IType[1..*]
 
         concept Disjoining implements IRelationship
+            features (↓name):
+                disjoiningType: IType[1..*]
+                owningType: IType[1..*]
+                typeDisjoined: IType[1..*]
 
         concept Documentation extends Comment
+            features (↓name):
+                documentedElement: IElement[1..*]
 
         concept Element implements IElement
 
         concept ElementFilterMembership extends OwningMembership
+            features (↓name):
+                condition: Expression[1..*]
 
         concept EndFeatureMembership extends FeatureMembership
 
         concept Expression implements IStep
+            features (↓name):
+                function: Function[1..*]
+                isModelLevelEvaluable: Boolean
+                result: IFeature[1..*]
 
         concept Feature implements IFeature
 
         concept FeatureChainExpression extends OperatorExpression
+            features (↓name):
+                targetFeature: IFeature[1..*]
 
         concept FeatureChaining implements IRelationship
+            features (↓name):
+                chainingFeature: IFeature[1..*]
+                featureChained: IFeature[1..*]
 
         enumeration FeatureDirectionKind
             literals:
@@ -61,145 +103,369 @@ language kerml
                 out
 
         concept FeatureInverting implements IRelationship
+            features (↓name):
+                featureInverted: IFeature[1..*]
+                invertingFeature: IFeature[1..*]
+                owningFeature: IFeature[1..*]
 
         concept FeatureMembership extends OwningMembership implements IFeaturing
+            features (↓name):
+                ownedMemberFeature: IFeature[1..*]
+                owningType: IType[1..*]
 
         concept FeatureReferenceExpression extends Expression
+            features (↓name):
+                referent: IFeature[1..*]
 
         concept FeatureTyping extends Specialization
+            features (↓name):
+                owningFeature: IFeature[1..*]
+                type: IType[1..*]
+                typedFeature: IFeature[1..*]
 
         concept FeatureValue extends OwningMembership
+            features (↓name):
+                featureWithValue: IFeature[1..*]
+                isDefault: Boolean
+                isInitial: Boolean
+                value: Expression[1..*]
 
         concept Featuring implements IFeaturing
 
         concept Function implements IBehavior
+            features (↓name):
+                expression: Expression[1..*]
+                isModelLevelEvaluable: Boolean
+                result: IFeature[1..*]
 
         interface IAnnotatingElement extends IElement
+            features (↓name):
+                annotatedElement: IElement[1..*]
+                annotation: Annotation[1..*]
+                ownedAnnotatingRelationship: Annotation[1..*]
 
         interface IBehavior extends IClass
+            features (↓name):
+                parameter: IFeature[1..*]
+                step: IStep[1..*]
 
         interface IClass extends IClassifier
 
         interface IClassifier extends IType
+            features (↓name):
+                ownedSubclassification: Subclassification[1..*]
 
         interface IConnector extends IFeature, IRelationship
+            features (↓name):
+                association: Association[1..*]
+                connectorEnd: IFeature[1..*]
+                relatedFeature: IFeature[1..*]
+                sourceFeature: IFeature[1..*]
+                targetFeature: IFeature[1..*]
 
         interface IElement
+            features (↓name):
+                aliasIdsContainer: AliasIdsContainer[1..*]
+                declaredName: String
+                declaredShortName: String
+                documentation: Documentation[1..*]
+                elementId: String
+                isImpliedIncluded: Boolean
+                isLibraryElement: Boolean
+                name: String
+                ownedAnnotation: Annotation[1..*]
+                ownedElement: IElement[1..*]
+                ownedRelationship: IRelationship[1..*]
+                owner: IElement[1..*]
+                owningMembership: OwningMembership[1..*]
+                owningNamespace: INamespace[1..*]
+                owningRelationship: IRelationship[1..*]
+                qualifiedName: String
+                shortName: String
+                textualRepresentation: TextualRepresentation[1..*]
 
         interface IFeature extends IType
+            features (↓name):
+                chainingFeature: IFeature[1..*]
+                direction: FeatureDirectionKind
+                endOwningType: IType[1..*]
+                featureTarget: IFeature[1..*]
+                featuringType: IType[1..*]
+                isComposite: Boolean
+                isDerived: Boolean
+                isEnd: Boolean
+                isNonunique: Boolean
+                isOrdered: Boolean
+                isPortion: Boolean
+                isReadOnly: Boolean
+                isUnique: Boolean
+                ownedFeatureChaining: FeatureChaining[1..*]
+                ownedFeatureInverting: FeatureInverting[1..*]
+                ownedRedefinition: Redefinition[1..*]
+                ownedReferenceSubsetting: ReferenceSubsetting[1..*]
+                ownedSubsetting: Subsetting[1..*]
+                ownedTypeFeaturing: TypeFeaturing[1..*]
+                ownedTyping: FeatureTyping[1..*]
+                owningFeatureMembership: FeatureMembership[1..*]
+                owningType: IType[1..*]
+                type: IType[1..*]
 
         interface IFeaturing extends IRelationship
+            features (↓name):
+                feature: IFeature[1..*]
+                type: IType[1..*]
 
         interface INamespace extends IElement
+            features (↓name):
+                importedMembership: Membership[1..*]
+                member: IElement[1..*]
+                membership: Membership[1..*]
+                ownedImport: Import[1..*]
+                ownedMember: IElement[1..*]
+                ownedMembership: Membership[1..*]
 
         interface IRelationship extends IElement
+            features (↓name):
+                isImplied: Boolean
+                ownedRelatedElement: IElement[1..*]
+                owningRelatedElement: IElement[1..*]
+                relatedElement: IElement[1..*]
+                source: IElement[1..*]
+                target: IElement[1..*]
 
         interface IStep extends IFeature
+            features (↓name):
+                behavior: IBehavior[1..*]
+                parameter: IFeature[1..*]
 
         interface IStructure extends IClass
 
         interface ISuccession extends IConnector
+            features (↓name):
+                effectStep: IStep[1..*]
+                guardExpression: Expression[1..*]
+                transitionStep: IStep[1..*]
+                triggerStep: IStep[1..*]
 
         interface IType extends INamespace
+            features (↓name):
+                differencingType: IType[1..*]
+                directedFeature: IFeature[1..*]
+                endFeature: IFeature[1..*]
+                feature: IFeature[1..*]
+                featureMembership: FeatureMembership[1..*]
+                inheritedFeature: IFeature[1..*]
+                inheritedMembership: Membership[1..*]
+                input: IFeature[1..*]
+                intersectingType: IType[1..*]
+                isAbstract: Boolean
+                isConjugated: Boolean
+                isSufficient: Boolean
+                multiplicity: Multiplicity[1..*]
+                output: IFeature[1..*]
+                ownedConjugator: Conjugation[1..*]
+                ownedDifferencing: Differencing[1..*]
+                ownedDisjoining: Disjoining[1..*]
+                ownedEndFeature: IFeature[1..*]
+                ownedFeature: IFeature[1..*]
+                ownedFeatureMembership: FeatureMembership[1..*]
+                ownedIntersecting: Intersecting[1..*]
+                ownedSpecialization: Specialization[1..*]
+                ownedUnioning: Unioning[1..*]
+                unioningType: IType[1..*]
 
         abstract concept Import implements IRelationship
+            features (↓name):
+                importOwningNamespace: INamespace[1..*]
+                importedElement: IElement[1..*]
+                isImportAll: Boolean
+                isRecursive: Boolean
+                visibility: VisibilityKind
 
         concept Interaction extends Association implements IBehavior
 
         concept Intersecting implements IRelationship
+            features (↓name):
+                intersectingType: IType[1..*]
+                typeIntersected: IType[1..*]
 
         concept Invariant extends BooleanExpression
+            features (↓name):
+                isNegated: Boolean
 
         concept InvocationExpression extends Expression
+            features (↓name):
+                argument: Expression[1..*]
+                operand: Expression[1..*]
 
         concept ItemFeature implements IFeature
 
         concept ItemFlow implements IConnector, IStep
+            features (↓name):
+                interaction: Interaction[1..*]
+                itemFeature: ItemFeature[1..*]
+                itemFlowEnd: ItemFlowEnd[1..*]
+                itemType: IClassifier[1..*]
+                sourceOutputFeature: IFeature[1..*]
+                targetInputFeature: IFeature[1..*]
 
         concept ItemFlowEnd implements IFeature
 
         concept LibraryPackage extends Package
+            features (↓name):
+                isStandard: Boolean
 
         concept LiteralBoolean extends LiteralExpression
+            features (↓name):
+                value: Boolean
 
         concept LiteralExpression extends Expression
 
         concept LiteralInfinity extends LiteralExpression
 
         concept LiteralInteger extends LiteralExpression
+            features (↓name):
+                value: String
 
         concept LiteralRational extends LiteralExpression
+            features (↓name):
+                value: String
 
         concept LiteralString extends LiteralExpression
+            features (↓name):
+                value: String
 
         concept Membership implements IRelationship
+            features (↓name):
+                memberElement: IElement[1..*]
+                memberElementId: String
+                memberName: String
+                memberShortName: String
+                membershipOwningNamespace: INamespace[1..*]
+                visibility: VisibilityKind
 
         concept MembershipImport extends Import
+            features (↓name):
+                importedMembership: Membership[1..*]
 
         concept Metaclass implements IStructure
 
         concept MetadataAccessExpression extends Expression
+            features (↓name):
+                referencedElement: IElement[1..*]
 
         concept MetadataFeature implements IAnnotatingElement, IFeature
+            features (↓name):
+                metaclass: Metaclass[1..*]
 
         concept Multiplicity implements IFeature
 
         concept MultiplicityRange extends Multiplicity
+            features (↓name):
+                bound: Expression[1..*]
+                lowerBound: Expression[1..*]
+                upperBound: Expression[1..*]
 
         concept Namespace implements INamespace
 
         concept NamespaceImport extends Import
+            features (↓name):
+                importedNamespace: INamespace[1..*]
 
         concept NullExpression extends Expression
 
         concept OperatorExpression extends InvocationExpression
+            features (↓name):
+                operator: String
 
         concept OwningMembership extends Membership
+            features (↓name):
+                ownedMemberElement: IElement[1..*]
+                ownedMemberElementId: String
+                ownedMemberName: String
+                ownedMemberShortName: String
 
         concept Package implements INamespace
+            features (↓name):
+                filterCondition: Expression[1..*]
 
         concept ParameterMembership extends FeatureMembership
+            features (↓name):
+                ownedMemberParameter: IFeature[1..*]
 
         concept Predicate extends Function
 
         concept Redefinition extends Subsetting
+            features (↓name):
+                redefinedFeature: IFeature[1..*]
+                redefiningFeature: IFeature[1..*]
 
         concept ReferenceSubsetting extends Subsetting
+            features (↓name):
+                referencedFeature: IFeature[1..*]
+                referencingFeature: IFeature[1..*]
 
         concept Relationship implements IRelationship
 
         concept ResultExpressionMembership extends FeatureMembership
+            features (↓name):
+                ownedResultExpression: Expression[1..*]
 
         concept ReturnParameterMembership extends ParameterMembership
 
         concept SelectExpression extends OperatorExpression
 
         concept Specialization implements IRelationship
+            features (↓name):
+                general: IType[1..*]
+                owningType: IType[1..*]
+                specific: IType[1..*]
 
         concept Step implements IStep
 
         concept Structure implements IStructure
 
         concept Subclassification extends Specialization
+            features (↓name):
+                owningClassifier: IClassifier[1..*]
+                subclassifier: IClassifier[1..*]
+                superclassifier: IClassifier[1..*]
 
         concept Subsetting extends Specialization
+            features (↓name):
+                owningFeature: IFeature[1..*]
+                subsettedFeature: IFeature[1..*]
+                subsettingFeature: IFeature[1..*]
 
         concept Succession implements ISuccession
 
         concept SuccessionItemFlow extends ItemFlow implements ISuccession
 
         concept TextualRepresentation implements IAnnotatingElement
+            features (↓name):
+                body: String
+                language: String
+                representedElement: IElement[1..*]
 
         concept Type implements IType
 
         concept TypeFeaturing implements IFeaturing
+            features (↓name):
+                featureOfType: IFeature[1..*]
+                featuringType: IType[1..*]
+                owningFeatureOfType: IFeature[1..*]
 
         concept Unioning implements IRelationship
+            features (↓name):
+                typeUnioned: IType[1..*]
+                unioningType: IType[1..*]
 
         enumeration VisibilityKind
             literals:
                 private
                 protected
                 public
+
+        concept kermlClassifier implements IClassifier
 
 

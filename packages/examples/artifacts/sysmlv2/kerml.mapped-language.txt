@@ -3,58 +3,162 @@ language kerml
     entities (↓name):
 
         concept AnnotatingElement extends Element
+            features (↓name):
+                annotatedElement: Element[1..*]
+                annotation: Annotation[1..*]
+                ownedAnnotatingRelationship: Annotation[1..*]
+                owningAnnotatingRelationship: Annotation[1..*]
 
         concept Annotation extends Relationship
+            features (↓name):
+                annotatedElement: Element[1..*]
+                annotatingElement: AnnotatingElement[1..*]
+                ownedAnnotatingElement: AnnotatingElement[1..*]
+                owningAnnotatedElement: Element[1..*]
+                owningAnnotatingElement: AnnotatingElement[1..*]
 
-        concept Association extends Classifier
+        concept Association extends kermlClassifier
+            features (↓name):
+                associationEnd: Feature[1..*]
+                relatedType: Type[1..*]
+                sourceType: Type[1..*]
+                targetType: Type[1..*]
 
         concept AssociationStructure extends Association
 
         concept Behavior extends Class
+            features (↓name):
+                parameter: Feature[1..*]
+                step: Step[1..*]
 
         concept BindingConnector extends Connector
 
         concept BooleanExpression extends Expression
+            features (↓name):
+                predicate: Predicate[1..*]
 
-        concept Class extends Classifier
-
-        concept Classifier extends Type
+        concept Class extends kermlClassifier
 
         concept CollectExpression extends OperatorExpression
 
         concept Comment extends AnnotatingElement
+            features (↓name):
+                body: String
+                locale: String
 
         concept Conjugation extends Relationship
+            features (↓name):
+                conjugatedType: Type[1..*]
+                originalType: Type[1..*]
+                owningType: Type[1..*]
 
         concept Connector extends Feature
+            features (↓name):
+                association: Association[1..*]
+                connectorEnd: Feature[1..*]
+                defaultFeaturingType: Type[1..*]
+                relatedFeature: Feature[1..*]
+                sourceFeature: Feature[1..*]
+                targetFeature: Feature[1..*]
 
         concept ConstructorExpression extends InstantiationExpression
 
         concept CrossSubsetting extends Subsetting
+            features (↓name):
+                crossedFeature: Feature[1..*]
+                crossingFeature: Feature[1..*]
 
-        concept DataType extends Classifier
+        concept DataType extends kermlClassifier
 
         concept Dependency extends Relationship
+            features (↓name):
+                client: Element[1..*]
+                supplier: Element[1..*]
 
         concept Differencing extends Relationship
+            features (↓name):
+                differencingType: Type[1..*]
+                typeDifferenced: Type[1..*]
 
         concept Disjoining extends Relationship
+            features (↓name):
+                disjoiningType: Type[1..*]
+                owningType: Type[1..*]
+                typeDisjoined: Type[1..*]
 
         concept Documentation extends Comment
+            features (↓name):
+                documentedElement: Element[1..*]
 
         abstract concept Element
+            features (↓name):
+                aliasIds: String
+                declaredName: String
+                declaredShortName: String
+                documentation: Documentation[1..*]
+                elementId: String
+                isImpliedIncluded: String
+                isLibraryElement: String
+                name: String
+                ownedAnnotation: Annotation[1..*]
+                ownedElement: Element[1..*]
+                ownedRelationship: Relationship[1..*]
+                owner: Element[1..*]
+                owningMembership: OwningMembership[1..*]
+                owningNamespace: Namespace[1..*]
+                owningRelationship: Relationship[1..*]
+                qualifiedName: String
+                shortName: String
+                textualRepresentation: TextualRepresentation[1..*]
 
         concept ElementFilterMembership extends OwningMembership
+            features (↓name):
+                condition: Expression[1..*]
 
         concept EndFeatureMembership extends FeatureMembership
 
         concept Expression extends Step
+            features (↓name):
+                function: Function[1..*]
+                isModelLevelEvaluable: String
+                result: Feature[1..*]
 
         concept Feature extends Type
+            features (↓name):
+                chainingFeature: Feature[1..*]
+                crossFeature: Feature[1..*]
+                direction: FeatureDirectionKind
+                endOwningType: Type[1..*]
+                featureTarget: Feature[1..*]
+                featuringType: Type[1..*]
+                isComposite: String
+                isConstant: String
+                isDerived: String
+                isEnd: String
+                isOrdered: String
+                isPortion: String
+                isUnique: String
+                isVariable: String
+                ownedCrossSubsetting: CrossSubsetting[1..*]
+                ownedFeatureChaining: FeatureChaining[1..*]
+                ownedFeatureInverting: FeatureInverting[1..*]
+                ownedRedefinition: Redefinition[1..*]
+                ownedReferenceSubsetting: ReferenceSubsetting[1..*]
+                ownedSubsetting: Subsetting[1..*]
+                ownedTypeFeaturing: TypeFeaturing[1..*]
+                ownedTyping: FeatureTyping[1..*]
+                owningFeatureMembership: FeatureMembership[1..*]
+                owningType: Type[1..*]
+                type: Type[1..*]
 
         concept FeatureChainExpression extends OperatorExpression
+            features (↓name):
+                targetFeature: Feature[1..*]
 
         concept FeatureChaining extends Relationship
+            features (↓name):
+                chainingFeature: Feature[1..*]
+                featureChained: Feature[1..*]
 
         enumeration FeatureDirectionKind
             literals:
@@ -63,119 +167,279 @@ language kerml
                 out
 
         concept FeatureInverting extends Relationship
+            features (↓name):
+                featureInverted: Feature[1..*]
+                invertingFeature: Feature[1..*]
+                owningFeature: Feature[1..*]
 
         concept FeatureMembership extends OwningMembership
+            features (↓name):
+                ownedMemberFeature: Feature[1..*]
+                owningType: Type[1..*]
 
         concept FeatureReferenceExpression extends Expression
+            features (↓name):
+                referent: Feature[1..*]
 
         concept FeatureTyping extends Specialization
+            features (↓name):
+                owningFeature: Feature[1..*]
+                type: Type[1..*]
+                typedFeature: Feature[1..*]
 
         concept FeatureValue extends OwningMembership
+            features (↓name):
+                featureWithValue: Feature[1..*]
+                isDefault: String
+                isInitial: String
+                value: Expression[1..*]
 
         concept Flow extends Connector
+            features (↓name):
+                flowEnd: FlowEnd[1..*]
+                interaction: Interaction[1..*]
+                payloadFeature: PayloadFeature[1..*]
+                payloadType: kermlClassifier[1..*]
+                sourceOutputFeature: Feature[1..*]
+                targetInputFeature: Feature[1..*]
 
         concept FlowEnd extends Feature
 
         concept Function extends Behavior
+            features (↓name):
+                expression: Expression[1..*]
+                isModelLevelEvaluable: String
+                result: Feature[1..*]
 
         abstract concept Import extends Relationship
+            features (↓name):
+                importOwningNamespace: Namespace[1..*]
+                importedElement: Element[1..*]
+                isImportAll: String
+                isRecursive: String
+                visibility: VisibilityKind
 
         concept IndexExpression extends OperatorExpression
 
         abstract concept InstantiationExpression extends Expression
+            features (↓name):
+                argument: Expression[1..*]
+                instantiatedType: Type[1..*]
 
         concept Interaction extends Association
 
         concept Intersecting extends Relationship
+            features (↓name):
+                intersectingType: Type[1..*]
+                typeIntersected: Type[1..*]
 
         concept Invariant extends BooleanExpression
+            features (↓name):
+                isNegated: String
 
         concept InvocationExpression extends InstantiationExpression
 
         concept LibraryPackage extends Package
+            features (↓name):
+                isStandard: String
 
         concept LiteralBoolean extends LiteralExpression
+            features (↓name):
+                value: String
 
         concept LiteralExpression extends Expression
 
         concept LiteralInfinity extends LiteralExpression
 
         concept LiteralInteger extends LiteralExpression
+            features (↓name):
+                value: String
 
         concept LiteralRational extends LiteralExpression
+            features (↓name):
+                value: String
 
         concept LiteralString extends LiteralExpression
+            features (↓name):
+                value: String
 
         concept Membership extends Relationship
+            features (↓name):
+                memberElement: Element[1..*]
+                memberElementId: String
+                memberName: String
+                memberShortName: String
+                membershipOwningNamespace: Namespace[1..*]
+                visibility: VisibilityKind
 
         concept MembershipImport extends Import
+            features (↓name):
+                importedMembership: Membership[1..*]
 
         concept Metaclass extends Structure
 
         concept MetadataAccessExpression extends Expression
+            features (↓name):
+                referencedElement: Element[1..*]
 
         concept MetadataFeature extends Feature
+            features (↓name):
+                metaclass: Metaclass[1..*]
 
         concept Multiplicity extends Feature
 
         concept MultiplicityRange extends Multiplicity
+            features (↓name):
+                bound: Expression[1..*]
+                lowerBound: Expression[1..*]
+                upperBound: Expression[1..*]
 
         concept Namespace extends Element
+            features (↓name):
+                importedMembership: Membership[1..*]
+                member: Element[1..*]
+                membership: Membership[1..*]
+                ownedImport: Import[1..*]
+                ownedMember: Element[1..*]
+                ownedMembership: Membership[1..*]
 
         concept NamespaceImport extends Import
+            features (↓name):
+                importedNamespace: Namespace[1..*]
 
         concept NullExpression extends Expression
 
         concept OperatorExpression extends InvocationExpression
+            features (↓name):
+                operator: String
 
         concept OwningMembership extends Membership
+            features (↓name):
+                ownedMemberElement: Element[1..*]
+                ownedMemberElementId: String
+                ownedMemberName: String
+                ownedMemberShortName: String
 
         concept Package extends Namespace
+            features (↓name):
+                filterCondition: Expression[1..*]
 
         concept ParameterMembership extends FeatureMembership
+            features (↓name):
+                ownedMemberParameter: Feature[1..*]
 
         concept PayloadFeature extends Feature
 
         concept Predicate extends Function
 
         concept Redefinition extends Subsetting
+            features (↓name):
+                redefinedFeature: Feature[1..*]
+                redefiningFeature: Feature[1..*]
 
         concept ReferenceSubsetting extends Subsetting
+            features (↓name):
+                referencedFeature: Feature[1..*]
+                referencingFeature: Feature[1..*]
 
         abstract concept Relationship extends Element
+            features (↓name):
+                isImplied: String
+                ownedRelatedElement: Element[1..*]
+                owningRelatedElement: Element[1..*]
+                relatedElement: Element[1..*]
+                source: Element[1..*]
+                target: Element[1..*]
 
         concept ResultExpressionMembership extends FeatureMembership
+            features (↓name):
+                ownedResultExpression: Expression[1..*]
 
         concept ReturnParameterMembership extends ParameterMembership
 
         concept SelectExpression extends OperatorExpression
 
         concept Specialization extends Relationship
+            features (↓name):
+                general: Type[1..*]
+                owningType: Type[1..*]
+                specific: Type[1..*]
 
         concept Step extends Feature
+            features (↓name):
+                behavior: Behavior[1..*]
+                parameter: Feature[1..*]
 
         concept Structure extends Class
 
         concept Subclassification extends Specialization
+            features (↓name):
+                owningClassifier: kermlClassifier[1..*]
+                subclassifier: kermlClassifier[1..*]
+                superclassifier: kermlClassifier[1..*]
 
         concept Subsetting extends Specialization
+            features (↓name):
+                owningFeature: Feature[1..*]
+                subsettedFeature: Feature[1..*]
+                subsettingFeature: Feature[1..*]
 
         concept Succession extends Connector
 
         concept SuccessionFlow extends Flow
 
         concept TextualRepresentation extends AnnotatingElement
+            features (↓name):
+                body: String
+                language: String
+                representedElement: Element[1..*]
 
         concept Type extends Namespace
+            features (↓name):
+                differencingType: Type[1..*]
+                directedFeature: Feature[1..*]
+                endFeature: Feature[1..*]
+                feature: Feature[1..*]
+                featureMembership: FeatureMembership[1..*]
+                inheritedFeature: Feature[1..*]
+                inheritedMembership: Membership[1..*]
+                input: Feature[1..*]
+                intersectingType: Type[1..*]
+                isAbstract: String
+                isConjugated: String
+                isSufficient: String
+                multiplicity: Multiplicity[1..*]
+                output: Feature[1..*]
+                ownedConjugator: Conjugation[1..*]
+                ownedDifferencing: Differencing[1..*]
+                ownedDisjoining: Disjoining[1..*]
+                ownedEndFeature: Feature[1..*]
+                ownedFeature: Feature[1..*]
+                ownedFeatureMembership: FeatureMembership[1..*]
+                ownedIntersecting: Intersecting[1..*]
+                ownedSpecialization: Specialization[1..*]
+                ownedUnioning: Unioning[1..*]
+                unioningType: Type[1..*]
 
         concept TypeFeaturing extends Relationship
+            features (↓name):
+                featureOfType: Feature[1..*]
+                featuringType: Type[1..*]
+                owningFeatureOfType: Feature[1..*]
 
         concept Unioning extends Relationship
+            features (↓name):
+                typeUnioned: Type[1..*]
+                unioningType: Type[1..*]
 
         enumeration VisibilityKind
             literals:
                 private
                 protected
                 public
+
+        concept kermlClassifier extends Type
+            features (↓name):
+                ownedSubclassification: Subclassification[1..*]
 
 

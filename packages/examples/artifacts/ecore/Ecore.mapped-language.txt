@@ -3,43 +3,143 @@ language ecore
     entities (↓name):
 
         concept EAnnotation extends EModelElement
+            features (↓name):
+                contents: EObject[1..*]
+                details: EStringToStringMapEntry[1..*]
+                eModelElement: EModelElement[1..*]
+                references: EObject[1..*]
+                source: String
 
         concept EAttribute extends EStructuralFeature
+            features (↓name):
+                eAttributeType: EDataType[1..*]
+                iD: Boolean
 
         concept EClass extends EClassifier
+            features (↓name):
+                abstract: Boolean
+                eAllAttributes: EAttribute[1..*]
+                eAllContainments: EReference[1..*]
+                eAllGenericSuperTypes: EGenericType[1..*]
+                eAllOperations: EOperation[1..*]
+                eAllReferences: EReference[1..*]
+                eAllStructuralFeatures: EStructuralFeature[1..*]
+                eAllSuperTypes: EClass[1..*]
+                eAttributes: EAttribute[1..*]
+                eGenericSuperTypes: EGenericType[1..*]
+                eIDAttribute: EAttribute[1..*]
+                eOperations: EOperation[1..*]
+                eReferences: EReference[1..*]
+                eStructuralFeatures: EStructuralFeature[1..*]
+                eSuperTypes: EClass[1..*]
+                interface: Boolean
 
         abstract concept EClassifier extends ENamedElement
+            features (↓name):
+                defaultValue: String
+                ePackage: EPackage[1..*]
+                eTypeParameters: ETypeParameter[1..*]
+                instanceClass: String
+                instanceClassName: String
+                instanceTypeName: String
 
         concept EDataType extends EClassifier
+            features (↓name):
+                serializable: Boolean
 
         concept EEnum extends EDataType
+            features (↓name):
+                eLiterals: EEnumLiteral[1..*]
 
         concept EEnumLiteral extends ENamedElement
+            features (↓name):
+                eEnum: EEnum[1..*]
+                instance: String
+                literal: String
+                value: Integer
 
         concept EFactory extends EModelElement
+            features (↓name):
+                ePackage: EPackage[1..*]
 
         concept EGenericType
+            features (↓name):
+                eClassifier: EClassifier[1..*]
+                eLowerBound: EGenericType[1..*]
+                eRawType: EClassifier[1..*]
+                eTypeArguments: EGenericType[1..*]
+                eTypeParameter: ETypeParameter[1..*]
+                eUpperBound: EGenericType[1..*]
 
         abstract concept EModelElement
+            features (↓name):
+                eAnnotations: EAnnotation[1..*]
 
         abstract concept ENamedElement extends EModelElement
+            features (↓name):
+                name: String
 
         concept EObject
 
         concept EOperation extends ETypedElement
+            features (↓name):
+                eContainingClass: EClass[1..*]
+                eExceptions: EClassifier[1..*]
+                eGenericExceptions: EGenericType[1..*]
+                eParameters: EParameter[1..*]
+                eTypeParameters: ETypeParameter[1..*]
 
         concept EPackage extends ENamedElement
+            features (↓name):
+                eClassifiers: EClassifier[1..*]
+                eFactoryInstance: EFactory[1..*]
+                eSubpackages: EPackage[1..*]
+                eSuperPackage: EPackage[1..*]
+                nsPrefix: String
+                nsURI: String
 
         concept EParameter extends ETypedElement
+            features (↓name):
+                eOperation: EOperation[1..*]
 
         concept EReference extends EStructuralFeature
+            features (↓name):
+                container: Boolean
+                eKeys: EAttribute[1..*]
+                eOpposite: EReference[1..*]
+                eReferenceType: EClass[1..*]
+                ecorecontainment: Boolean
+                resolveProxies: Boolean
 
         concept EStringToStringMapEntry
+            features (↓name):
+                key: String
+                value: String
 
         abstract concept EStructuralFeature extends ETypedElement
+            features (↓name):
+                changeable: Boolean
+                defaultValue: String
+                defaultValueLiteral: String
+                derived: Boolean
+                eContainingClass: EClass[1..*]
+                transient: Boolean
+                unsettable: Boolean
+                volatile: Boolean
 
         concept ETypeParameter extends ENamedElement
+            features (↓name):
+                eBounds: EGenericType[1..*]
 
         abstract concept ETypedElement extends ENamedElement
+            features (↓name):
+                eGenericType: EGenericType[1..*]
+                eType: EClassifier[1..*]
+                lowerBound: Integer
+                many: Boolean
+                ordered: Boolean
+                required: Boolean
+                unique: Boolean
+                upperBound: Integer
 
 

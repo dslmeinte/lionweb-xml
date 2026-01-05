@@ -3,6 +3,11 @@ language library
     entities (↓name):
 
         concept Book
+            features (↓name):
+                authors: Writer[1..*]
+                category: BookCategory
+                pages: Integer
+                title: String
 
         enumeration BookCategory
             literals:
@@ -11,9 +16,21 @@ language library
                 Mistery
 
         concept Employee
+            features (↓name):
+                age: Integer
+                name: String
 
         concept Library
+            features (↓name):
+                address: String
+                books: Book[1..*]
+                employees: Employee[1..*]
+                name: String
+                writers: Writer[1..*]
 
         concept Writer
+            features (↓name):
+                books: Book[1..*]
+                name: String
 
 

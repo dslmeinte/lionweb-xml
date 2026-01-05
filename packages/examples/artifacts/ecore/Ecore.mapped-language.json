@@ -136,7 +136,13 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EAnnotation-source",
+                        "ecore-EAnnotation-details",
+                        "ecore-EAnnotation-eModelElement",
+                        "ecore-EAnnotation-contents",
+                        "ecore-EAnnotation-references"
+                    ]
                 }
             ],
             "references": [
@@ -164,6 +170,298 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EAnnotation-source",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EAnnotation-source"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "source"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EAnnotation"
+        },
+        {
+            "id": "ecore-EAnnotation-details",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EAnnotation-details"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "details"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EStringToStringMapEntry",
+                            "reference": "ecore-EStringToStringMapEntry"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EAnnotation"
+        },
+        {
+            "id": "ecore-EAnnotation-eModelElement",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EAnnotation-eModelElement"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eModelElement"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EModelElement",
+                            "reference": "ecore-EModelElement"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EAnnotation"
+        },
+        {
+            "id": "ecore-EAnnotation-contents",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EAnnotation-contents"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "contents"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EObject",
+                            "reference": "ecore-EObject"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EAnnotation"
+        },
+        {
+            "id": "ecore-EAnnotation-references",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EAnnotation-references"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "references"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EObject",
+                            "reference": "ecore-EObject"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EAnnotation"
         },
         {
             "id": "ecore-EAttribute",
@@ -213,7 +511,10 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EAttribute-iD",
+                        "ecore-EAttribute-eAttributeType"
+                    ]
                 }
             ],
             "references": [
@@ -241,6 +542,118 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EAttribute-iD",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EAttribute-iD"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "iD"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EAttribute"
+        },
+        {
+            "id": "ecore-EAttribute-eAttributeType",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EAttribute-eAttributeType"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eAttributeType"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EDataType",
+                            "reference": "ecore-EDataType"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EAttribute"
         },
         {
             "id": "ecore-EClass",
@@ -290,7 +703,24 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EClass-abstract",
+                        "ecore-EClass-interface",
+                        "ecore-EClass-eSuperTypes",
+                        "ecore-EClass-eOperations",
+                        "ecore-EClass-eAllAttributes",
+                        "ecore-EClass-eAllReferences",
+                        "ecore-EClass-eReferences",
+                        "ecore-EClass-eAttributes",
+                        "ecore-EClass-eAllContainments",
+                        "ecore-EClass-eAllOperations",
+                        "ecore-EClass-eAllStructuralFeatures",
+                        "ecore-EClass-eAllSuperTypes",
+                        "ecore-EClass-eIDAttribute",
+                        "ecore-EClass-eStructuralFeatures",
+                        "ecore-EClass-eGenericSuperTypes",
+                        "ecore-EClass-eAllGenericSuperTypes"
+                    ]
                 }
             ],
             "references": [
@@ -318,6 +748,950 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EClass-abstract",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-abstract"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "abstract"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-interface",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-interface"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "interface"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eSuperTypes",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eSuperTypes"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eSuperTypes"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EClass",
+                            "reference": "ecore-EClass"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eOperations",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eOperations"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eOperations"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EOperation",
+                            "reference": "ecore-EOperation"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eAllAttributes",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eAllAttributes"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eAllAttributes"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EAttribute",
+                            "reference": "ecore-EAttribute"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eAllReferences",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eAllReferences"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eAllReferences"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EReference",
+                            "reference": "ecore-EReference"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eReferences",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eReferences"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eReferences"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EReference",
+                            "reference": "ecore-EReference"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eAttributes",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eAttributes"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eAttributes"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EAttribute",
+                            "reference": "ecore-EAttribute"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eAllContainments",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eAllContainments"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eAllContainments"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EReference",
+                            "reference": "ecore-EReference"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eAllOperations",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eAllOperations"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eAllOperations"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EOperation",
+                            "reference": "ecore-EOperation"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eAllStructuralFeatures",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eAllStructuralFeatures"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eAllStructuralFeatures"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EStructuralFeature",
+                            "reference": "ecore-EStructuralFeature"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eAllSuperTypes",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eAllSuperTypes"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eAllSuperTypes"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EClass",
+                            "reference": "ecore-EClass"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eIDAttribute",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eIDAttribute"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eIDAttribute"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EAttribute",
+                            "reference": "ecore-EAttribute"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eStructuralFeatures",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eStructuralFeatures"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eStructuralFeatures"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EStructuralFeature",
+                            "reference": "ecore-EStructuralFeature"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eGenericSuperTypes",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eGenericSuperTypes"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eGenericSuperTypes"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EGenericType",
+                            "reference": "ecore-EGenericType"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
+        },
+        {
+            "id": "ecore-EClass-eAllGenericSuperTypes",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClass-eAllGenericSuperTypes"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eAllGenericSuperTypes"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EGenericType",
+                            "reference": "ecore-EGenericType"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClass"
         },
         {
             "id": "ecore-EClassifier",
@@ -367,7 +1741,14 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EClassifier-instanceClassName",
+                        "ecore-EClassifier-instanceClass",
+                        "ecore-EClassifier-defaultValue",
+                        "ecore-EClassifier-instanceTypeName",
+                        "ecore-EClassifier-ePackage",
+                        "ecore-EClassifier-eTypeParameters"
+                    ]
                 }
             ],
             "references": [
@@ -395,6 +1776,334 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EClassifier-instanceClassName",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClassifier-instanceClassName"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "instanceClassName"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClassifier"
+        },
+        {
+            "id": "ecore-EClassifier-instanceClass",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClassifier-instanceClass"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "instanceClass"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClassifier"
+        },
+        {
+            "id": "ecore-EClassifier-defaultValue",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClassifier-defaultValue"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "defaultValue"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClassifier"
+        },
+        {
+            "id": "ecore-EClassifier-instanceTypeName",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClassifier-instanceTypeName"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "instanceTypeName"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClassifier"
+        },
+        {
+            "id": "ecore-EClassifier-ePackage",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClassifier-ePackage"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "ePackage"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EPackage",
+                            "reference": "ecore-EPackage"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClassifier"
+        },
+        {
+            "id": "ecore-EClassifier-eTypeParameters",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EClassifier-eTypeParameters"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eTypeParameters"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "ETypeParameter",
+                            "reference": "ecore-ETypeParameter"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EClassifier"
         },
         {
             "id": "ecore-EDataType",
@@ -444,7 +2153,9 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EDataType-serializable"
+                    ]
                 }
             ],
             "references": [
@@ -472,6 +2183,58 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EDataType-serializable",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EDataType-serializable"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "serializable"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EDataType"
         },
         {
             "id": "ecore-EEnum",
@@ -521,7 +2284,9 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EEnum-eLiterals"
+                    ]
                 }
             ],
             "references": [
@@ -549,6 +2314,66 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EEnum-eLiterals",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EEnum-eLiterals"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eLiterals"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EEnumLiteral",
+                            "reference": "ecore-EEnumLiteral"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EEnum"
         },
         {
             "id": "ecore-EEnumLiteral",
@@ -598,7 +2423,12 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EEnumLiteral-value",
+                        "ecore-EEnumLiteral-instance",
+                        "ecore-EEnumLiteral-literal",
+                        "ecore-EEnumLiteral-eEnum"
+                    ]
                 }
             ],
             "references": [
@@ -626,6 +2456,222 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EEnumLiteral-value",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EEnumLiteral-value"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "value"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Integer",
+                            "reference": "LionCore-builtins-Integer"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EEnumLiteral"
+        },
+        {
+            "id": "ecore-EEnumLiteral-instance",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EEnumLiteral-instance"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "instance"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EEnumLiteral"
+        },
+        {
+            "id": "ecore-EEnumLiteral-literal",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EEnumLiteral-literal"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "literal"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EEnumLiteral"
+        },
+        {
+            "id": "ecore-EEnumLiteral-eEnum",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EEnumLiteral-eEnum"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eEnum"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EEnum",
+                            "reference": "ecore-EEnum"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EEnumLiteral"
         },
         {
             "id": "ecore-EFactory",
@@ -675,7 +2721,9 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EFactory-ePackage"
+                    ]
                 }
             ],
             "references": [
@@ -703,6 +2751,66 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EFactory-ePackage",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EFactory-ePackage"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "ePackage"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EPackage",
+                            "reference": "ecore-EPackage"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EFactory"
         },
         {
             "id": "ecore-EGenericType",
@@ -752,7 +2860,14 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EGenericType-eUpperBound",
+                        "ecore-EGenericType-eTypeArguments",
+                        "ecore-EGenericType-eRawType",
+                        "ecore-EGenericType-eLowerBound",
+                        "ecore-EGenericType-eTypeParameter",
+                        "ecore-EGenericType-eClassifier"
+                    ]
                 }
             ],
             "references": [
@@ -775,6 +2890,366 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EGenericType-eUpperBound",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EGenericType-eUpperBound"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eUpperBound"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EGenericType",
+                            "reference": "ecore-EGenericType"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EGenericType"
+        },
+        {
+            "id": "ecore-EGenericType-eTypeArguments",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EGenericType-eTypeArguments"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eTypeArguments"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EGenericType",
+                            "reference": "ecore-EGenericType"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EGenericType"
+        },
+        {
+            "id": "ecore-EGenericType-eRawType",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EGenericType-eRawType"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eRawType"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EClassifier",
+                            "reference": "ecore-EClassifier"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EGenericType"
+        },
+        {
+            "id": "ecore-EGenericType-eLowerBound",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EGenericType-eLowerBound"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eLowerBound"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EGenericType",
+                            "reference": "ecore-EGenericType"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EGenericType"
+        },
+        {
+            "id": "ecore-EGenericType-eTypeParameter",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EGenericType-eTypeParameter"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eTypeParameter"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "ETypeParameter",
+                            "reference": "ecore-ETypeParameter"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EGenericType"
+        },
+        {
+            "id": "ecore-EGenericType-eClassifier",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EGenericType-eClassifier"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eClassifier"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EClassifier",
+                            "reference": "ecore-EClassifier"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EGenericType"
         },
         {
             "id": "ecore-EModelElement",
@@ -824,7 +3299,9 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EModelElement-eAnnotations"
+                    ]
                 }
             ],
             "references": [
@@ -847,6 +3324,66 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EModelElement-eAnnotations",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EModelElement-eAnnotations"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eAnnotations"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EAnnotation",
+                            "reference": "ecore-EAnnotation"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EModelElement"
         },
         {
             "id": "ecore-ENamedElement",
@@ -896,7 +3433,9 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-ENamedElement-name"
+                    ]
                 }
             ],
             "references": [
@@ -924,6 +3463,58 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-ENamedElement-name",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-ENamedElement-name"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "name"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-ENamedElement"
         },
         {
             "id": "ecore-EObject",
@@ -1045,7 +3636,13 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EOperation-eContainingClass",
+                        "ecore-EOperation-eTypeParameters",
+                        "ecore-EOperation-eParameters",
+                        "ecore-EOperation-eExceptions",
+                        "ecore-EOperation-eGenericExceptions"
+                    ]
                 }
             ],
             "references": [
@@ -1073,6 +3670,306 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EOperation-eContainingClass",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EOperation-eContainingClass"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eContainingClass"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EClass",
+                            "reference": "ecore-EClass"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EOperation"
+        },
+        {
+            "id": "ecore-EOperation-eTypeParameters",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EOperation-eTypeParameters"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eTypeParameters"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "ETypeParameter",
+                            "reference": "ecore-ETypeParameter"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EOperation"
+        },
+        {
+            "id": "ecore-EOperation-eParameters",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EOperation-eParameters"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eParameters"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EParameter",
+                            "reference": "ecore-EParameter"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EOperation"
+        },
+        {
+            "id": "ecore-EOperation-eExceptions",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EOperation-eExceptions"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eExceptions"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EClassifier",
+                            "reference": "ecore-EClassifier"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EOperation"
+        },
+        {
+            "id": "ecore-EOperation-eGenericExceptions",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EOperation-eGenericExceptions"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eGenericExceptions"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EGenericType",
+                            "reference": "ecore-EGenericType"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EOperation"
         },
         {
             "id": "ecore-EPackage",
@@ -1122,7 +4019,14 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EPackage-nsURI",
+                        "ecore-EPackage-nsPrefix",
+                        "ecore-EPackage-eFactoryInstance",
+                        "ecore-EPackage-eClassifiers",
+                        "ecore-EPackage-eSubpackages",
+                        "ecore-EPackage-eSuperPackage"
+                    ]
                 }
             ],
             "references": [
@@ -1150,6 +4054,350 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EPackage-nsURI",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EPackage-nsURI"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "nsURI"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EPackage"
+        },
+        {
+            "id": "ecore-EPackage-nsPrefix",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EPackage-nsPrefix"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "nsPrefix"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EPackage"
+        },
+        {
+            "id": "ecore-EPackage-eFactoryInstance",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EPackage-eFactoryInstance"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eFactoryInstance"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EFactory",
+                            "reference": "ecore-EFactory"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EPackage"
+        },
+        {
+            "id": "ecore-EPackage-eClassifiers",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EPackage-eClassifiers"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eClassifiers"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EClassifier",
+                            "reference": "ecore-EClassifier"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EPackage"
+        },
+        {
+            "id": "ecore-EPackage-eSubpackages",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EPackage-eSubpackages"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eSubpackages"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EPackage",
+                            "reference": "ecore-EPackage"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EPackage"
+        },
+        {
+            "id": "ecore-EPackage-eSuperPackage",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EPackage-eSuperPackage"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eSuperPackage"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EPackage",
+                            "reference": "ecore-EPackage"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EPackage"
         },
         {
             "id": "ecore-EParameter",
@@ -1199,7 +4447,9 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EParameter-eOperation"
+                    ]
                 }
             ],
             "references": [
@@ -1227,6 +4477,66 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EParameter-eOperation",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EParameter-eOperation"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eOperation"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EOperation",
+                            "reference": "ecore-EOperation"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EParameter"
         },
         {
             "id": "ecore-EReference",
@@ -1276,7 +4586,14 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EReference-ecorecontainment",
+                        "ecore-EReference-container",
+                        "ecore-EReference-resolveProxies",
+                        "ecore-EReference-eOpposite",
+                        "ecore-EReference-eReferenceType",
+                        "ecore-EReference-eKeys"
+                    ]
                 }
             ],
             "references": [
@@ -1304,6 +4621,342 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EReference-ecorecontainment",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EReference-ecorecontainment"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "ecorecontainment"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EReference"
+        },
+        {
+            "id": "ecore-EReference-container",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EReference-container"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "container"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EReference"
+        },
+        {
+            "id": "ecore-EReference-resolveProxies",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EReference-resolveProxies"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "resolveProxies"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EReference"
+        },
+        {
+            "id": "ecore-EReference-eOpposite",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EReference-eOpposite"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eOpposite"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EReference",
+                            "reference": "ecore-EReference"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EReference"
+        },
+        {
+            "id": "ecore-EReference-eReferenceType",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EReference-eReferenceType"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eReferenceType"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EClass",
+                            "reference": "ecore-EClass"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EReference"
+        },
+        {
+            "id": "ecore-EReference-eKeys",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EReference-eKeys"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eKeys"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EAttribute",
+                            "reference": "ecore-EAttribute"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EReference"
         },
         {
             "id": "ecore-EStringToStringMapEntry",
@@ -1353,7 +5006,10 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EStringToStringMapEntry-key",
+                        "ecore-EStringToStringMapEntry-value"
+                    ]
                 }
             ],
             "references": [
@@ -1376,6 +5032,110 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EStringToStringMapEntry-key",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EStringToStringMapEntry-key"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "key"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EStringToStringMapEntry"
+        },
+        {
+            "id": "ecore-EStringToStringMapEntry-value",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EStringToStringMapEntry-value"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "value"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EStringToStringMapEntry"
         },
         {
             "id": "ecore-EStructuralFeature",
@@ -1425,7 +5185,16 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-EStructuralFeature-changeable",
+                        "ecore-EStructuralFeature-volatile",
+                        "ecore-EStructuralFeature-transient",
+                        "ecore-EStructuralFeature-defaultValueLiteral",
+                        "ecore-EStructuralFeature-defaultValue",
+                        "ecore-EStructuralFeature-unsettable",
+                        "ecore-EStructuralFeature-derived",
+                        "ecore-EStructuralFeature-eContainingClass"
+                    ]
                 }
             ],
             "references": [
@@ -1453,6 +5222,430 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-EStructuralFeature-changeable",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EStructuralFeature-changeable"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "changeable"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EStructuralFeature"
+        },
+        {
+            "id": "ecore-EStructuralFeature-volatile",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EStructuralFeature-volatile"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "volatile"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EStructuralFeature"
+        },
+        {
+            "id": "ecore-EStructuralFeature-transient",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EStructuralFeature-transient"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "transient"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EStructuralFeature"
+        },
+        {
+            "id": "ecore-EStructuralFeature-defaultValueLiteral",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EStructuralFeature-defaultValueLiteral"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "defaultValueLiteral"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EStructuralFeature"
+        },
+        {
+            "id": "ecore-EStructuralFeature-defaultValue",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EStructuralFeature-defaultValue"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "defaultValue"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "String",
+                            "reference": "LionCore-builtins-String"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EStructuralFeature"
+        },
+        {
+            "id": "ecore-EStructuralFeature-unsettable",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EStructuralFeature-unsettable"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "unsettable"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EStructuralFeature"
+        },
+        {
+            "id": "ecore-EStructuralFeature-derived",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EStructuralFeature-derived"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "derived"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EStructuralFeature"
+        },
+        {
+            "id": "ecore-EStructuralFeature-eContainingClass",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-EStructuralFeature-eContainingClass"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eContainingClass"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EClass",
+                            "reference": "ecore-EClass"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-EStructuralFeature"
         },
         {
             "id": "ecore-ETypeParameter",
@@ -1502,7 +5695,9 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-ETypeParameter-eBounds"
+                    ]
                 }
             ],
             "references": [
@@ -1530,6 +5725,66 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-ETypeParameter-eBounds",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-ETypeParameter-eBounds"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eBounds"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EGenericType",
+                            "reference": "ecore-EGenericType"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-ETypeParameter"
         },
         {
             "id": "ecore-ETypedElement",
@@ -1579,7 +5834,16 @@
                         "version": "2023.1",
                         "key": "Classifier-features"
                     },
-                    "children": []
+                    "children": [
+                        "ecore-ETypedElement-ordered",
+                        "ecore-ETypedElement-unique",
+                        "ecore-ETypedElement-lowerBound",
+                        "ecore-ETypedElement-upperBound",
+                        "ecore-ETypedElement-many",
+                        "ecore-ETypedElement-required",
+                        "ecore-ETypedElement-eType",
+                        "ecore-ETypedElement-eGenericType"
+                    ]
                 }
             ],
             "references": [
@@ -1607,6 +5871,438 @@
             ],
             "annotations": [],
             "parent": "ecore"
+        },
+        {
+            "id": "ecore-ETypedElement-ordered",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-ETypedElement-ordered"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "ordered"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-ETypedElement"
+        },
+        {
+            "id": "ecore-ETypedElement-unique",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-ETypedElement-unique"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "unique"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-ETypedElement"
+        },
+        {
+            "id": "ecore-ETypedElement-lowerBound",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-ETypedElement-lowerBound"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "lowerBound"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Integer",
+                            "reference": "LionCore-builtins-Integer"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-ETypedElement"
+        },
+        {
+            "id": "ecore-ETypedElement-upperBound",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-ETypedElement-upperBound"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "upperBound"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Integer",
+                            "reference": "LionCore-builtins-Integer"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-ETypedElement"
+        },
+        {
+            "id": "ecore-ETypedElement-many",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-ETypedElement-many"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "many"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-ETypedElement"
+        },
+        {
+            "id": "ecore-ETypedElement-required",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Property"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-ETypedElement-required"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "required"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Property-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "Boolean",
+                            "reference": "LionCore-builtins-Boolean"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-ETypedElement"
+        },
+        {
+            "id": "ecore-ETypedElement-eType",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-ETypedElement-eType"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eType"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EClassifier",
+                            "reference": "ecore-EClassifier"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-ETypedElement"
+        },
+        {
+            "id": "ecore-ETypedElement-eGenericType",
+            "classifier": {
+                "language": "LionCore-M3",
+                "version": "2023.1",
+                "key": "Containment"
+            },
+            "properties": [
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-multiple"
+                    },
+                    "value": "true"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Feature-optional"
+                    },
+                    "value": "false"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "IKeyed-key"
+                    },
+                    "value": "ecore-ETypedElement-eGenericType"
+                },
+                {
+                    "property": {
+                        "language": "LionCore-builtins",
+                        "version": "2023.1",
+                        "key": "LionCore-builtins-INamed-name"
+                    },
+                    "value": "eGenericType"
+                }
+            ],
+            "containments": [],
+            "references": [
+                {
+                    "reference": {
+                        "language": "LionCore-M3",
+                        "version": "2023.1",
+                        "key": "Link-type"
+                    },
+                    "targets": [
+                        {
+                            "resolveInfo": "EGenericType",
+                            "reference": "ecore-EGenericType"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [],
+            "parent": "ecore-ETypedElement"
         }
     ]
 }

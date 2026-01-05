@@ -1,4 +1,5 @@
 import {
+    builtinPrimitives,
     Classifier,
     Concept,
     Interface,
@@ -7,12 +8,22 @@ import {
     LanguageEntity,
     LanguageFactory,
     nameOf,
-    nameSorted
+    nameSorted,
+    PrimitiveType
 } from "@lionweb/core"
 import { LionWebId } from "@lionweb/json"
 import { concatenator } from "@lionweb/ts-utils"
 
-import { EClass, EClassifier, EDataType, EEnum, EPackage } from "./gen/ecore.g.js"
+import {
+    EAttribute,
+    EClass,
+    EClassifier,
+    EDataType,
+    EEnum,
+    EPackage,
+    EReference,
+    EStructuralFeature
+} from "./gen/ecore.g.js"
 import { log, LogLevel } from "./logging.js"
 
 
@@ -22,6 +33,13 @@ import { log, LogLevel } from "./logging.js"
 export type TransformationOptions = Partial<{
     eDataTypesAsPrimitiveTypes: boolean
 }>
+
+
+const eDataTypeToPrimitiveType: Record<string, PrimitiveType> = {
+    "EBoolean": builtinPrimitives.booleanDataType,
+    "EInt": builtinPrimitives.integerDataType,
+    "EString": builtinPrimitives.stringDataType
+}
 
 
 /**
@@ -59,10 +77,13 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
     const transformedEClassifier = (eClassifier: EClassifier): LanguageEntity | undefined => {
         const {name} = eClassifier
         if (eClassifier instanceof EClass) {
-            const {name, abstract} = eClassifier
+            const {abstract} = eClassifier
+            const genName = (["Classifier"].indexOf(name) === -1
+                ? ""
+                : ePackage.name) + name
             return eClassifier.interface
-                ? factory.interface(name)
-                : factory.concept(name, abstract)
+                ? factory.interface(genName)
+                : factory.concept(genName, abstract)
         }
         if (eClassifier instanceof EEnum) {
             const enum_ = factory.enumeration(name)
@@ -121,7 +142,70 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
                 )
             }
 
-            // 3. TODO  instantiate and hook up features
+            // 3. instantiate and hook up features
+            const transformEStructuralFeature = (eStructuralFeature: EStructuralFeature) => {   // (separate function to have non-clashing local names)
+
+                const lowerBound = (): number => {
+                    try {
+                        return eStructuralFeature.lowerBound
+                    } catch (_) {
+                        return 1
+                    }
+                }
+
+                const upperBound = (): number =>
+                    eStructuralFeature.upperBound ?? 1
+
+                const {name, eType} = eStructuralFeature
+                const genName = (["containment"].indexOf(name) === -1
+                    ? ""
+                    : ePackage.name) + name
+
+                if (eStructuralFeature instanceof EAttribute) {
+                    const property = factory.property(classifier, genName)
+                    if (lowerBound() === 0) {
+                        property.isOptional()
+                    }
+                    if (isRef(eType)) {
+                        if (eType instanceof EEnum) {
+                            property.ofType(entityFor(eType))
+                        } else if (eType instanceof EDataType) {
+                            const type = eDataTypeToPrimitiveType[eType.name]
+                            if (type !== undefined) {
+                                property.ofType(type)
+                            } else {
+                                log(LogLevel.error, `can’t map Ecore data type ${eType.name} (as eType of the EAttribute with source ID "${eStructuralFeature.id}") to a LionWeb primitive type — substituting string type to avoid problems downstream`)
+                                property.ofType(builtinPrimitives.stringDataType)
+                            }
+                        }
+                    } else {
+                        log(LogLevel.error, `eType reference of EAttribute with source ID "${eStructuralFeature.id}" is not resolved — substituting string type to avoid problems downstream`)
+                        property.ofType(builtinPrimitives.stringDataType)
+                    }
+                    return
+                }
+
+                if (eStructuralFeature instanceof EReference) {
+                    const link = eStructuralFeature.containment ? factory.containment(classifier, genName) : factory.reference(classifier, genName)
+                    if (lowerBound() === 0) {
+                        link.isOptional()
+                    }
+                    if (upperBound() !== 0) {
+                        link.isMultiple()
+                        // TODO  probably put an annotation on this if upperBound !== -1
+                    }
+                    if (isRef(eType)) {
+                        link.ofType(entityFor(eType) as Classifier)
+                    }
+                    return
+                }
+
+                throw new Error(`can’t transform an EStructuralFeature of class ${eStructuralFeature.constructor.name}`)
+            }
+
+            eClass.eStructuralFeatures.forEach((eStructuralFeature) => {
+                transformEStructuralFeature(eStructuralFeature)
+            })
         })
 
 

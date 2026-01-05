@@ -25,3 +25,8 @@ cd .. # (/<root>)
 # (doesn't bother with dependency order:)
 npm run lint
 
+cd packages/examples
+# re-run compilation for generated code:
+npm run build
+cd ../..
+
