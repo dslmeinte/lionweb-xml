@@ -76,8 +76,13 @@ await runOnce("artifacts/sysmlv2/kerml.ecore", {
                 case "String": return builtinPrimitives.stringDataType
                 default: return undefined
             }
-        }
+        },
+        rectifyMultipleInheritance: true
     }
 })
-await runOnce("artifacts/sysmlv2/SysML.ecore")
+await runOnce("artifacts/sysmlv2/SysML.ecore", {
+    transformer: {
+        rectifyMultipleInheritance: true
+    }
+})
 

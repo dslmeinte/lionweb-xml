@@ -2,49 +2,201 @@ language sysml
     version: 1
     entities (↓name):
 
-        concept AcceptActionUsage extends ActionUsage
+        concept AcceptActionUsage implements IAcceptActionUsage
+
+        concept ActionDefinition implements IActionDefinition
+
+        concept ActionUsage implements IActionUsage
+
+        concept ActorMembership implements IActorMembership
+
+        concept AllocationDefinition implements IAllocationDefinition
+
+        concept AllocationUsage implements IAllocationUsage
+
+        concept AnalysisCaseDefinition implements IAnalysisCaseDefinition
+
+        concept AnalysisCaseUsage implements IAnalysisCaseUsage
+
+        concept AnnotatingElement implements IAnnotatingElement
+
+        concept Annotation implements IAnnotation
+
+        concept AssertConstraintUsage implements IAssertConstraintUsage
+
+        concept AssignmentActionUsage implements IAssignmentActionUsage
+
+        concept Association implements IAssociation
+
+        concept AssociationStructure implements IAssociationStructure
+
+        concept AttributeDefinition implements IAttributeDefinition
+
+        concept AttributeUsage implements IAttributeUsage
+
+        concept Behavior implements IBehavior
+
+        concept BindingConnector implements IBindingConnector
+
+        concept BindingConnectorAsUsage implements IBindingConnectorAsUsage
+
+        concept BooleanExpression implements IBooleanExpression
+
+        concept CalculationDefinition implements ICalculationDefinition
+
+        concept CalculationUsage implements ICalculationUsage
+
+        concept CaseDefinition implements ICaseDefinition
+
+        concept CaseUsage implements ICaseUsage
+
+        concept Class implements IClass
+
+        concept CollectExpression implements ICollectExpression
+
+        concept Comment implements IComment
+
+        concept ConcernDefinition implements IConcernDefinition
+
+        concept ConcernUsage implements IConcernUsage
+
+        concept ConjugatedPortDefinition implements IConjugatedPortDefinition
+
+        concept ConjugatedPortTyping implements IConjugatedPortTyping
+
+        concept Conjugation implements IConjugation
+
+        concept ConnectionDefinition implements IConnectionDefinition
+
+        concept ConnectionUsage implements IConnectionUsage
+
+        concept Connector implements IConnector
+
+        abstract concept ConnectorAsUsage implements IConnectorAsUsage
+
+        concept ConstraintDefinition implements IConstraintDefinition
+
+        concept ConstraintUsage implements IConstraintUsage
+
+        concept ConstructorExpression implements IConstructorExpression
+
+        abstract concept ControlNode implements IControlNode
+
+        concept CrossSubsetting implements ICrossSubsetting
+
+        concept DataType implements IDataType
+
+        concept DecisionNode implements IDecisionNode
+
+        concept Definition implements IDefinition
+
+        concept Dependency implements IDependency
+
+        concept Differencing implements IDifferencing
+
+        concept Disjoining implements IDisjoining
+
+        concept Documentation implements IDocumentation
+
+        abstract concept Element implements IElement
+
+        concept ElementFilterMembership implements IElementFilterMembership
+
+        concept EndFeatureMembership implements IEndFeatureMembership
+
+        concept EnumerationDefinition implements IEnumerationDefinition
+
+        concept EnumerationUsage implements IEnumerationUsage
+
+        concept EventOccurrenceUsage implements IEventOccurrenceUsage
+
+        concept ExhibitStateUsage implements IExhibitStateUsage
+
+        abstract concept Expose implements IExpose
+
+        concept Expression implements IExpression
+
+        concept Feature implements IFeature
+
+        concept FeatureChainExpression implements IFeatureChainExpression
+
+        concept FeatureChaining implements IFeatureChaining
+
+        enumeration FeatureDirectionKind
+            literals:
+                in
+                inout
+                out
+
+        concept FeatureInverting implements IFeatureInverting
+
+        concept FeatureMembership implements IFeatureMembership
+
+        concept FeatureReferenceExpression implements IFeatureReferenceExpression
+
+        concept FeatureTyping implements IFeatureTyping
+
+        concept FeatureValue implements IFeatureValue
+
+        concept Flow implements IFlow
+
+        concept FlowDefinition implements IFlowDefinition
+
+        concept FlowEnd implements IFlowEnd
+
+        concept FlowUsage implements IFlowUsage
+
+        concept ForLoopActionUsage implements IForLoopActionUsage
+
+        concept ForkNode implements IForkNode
+
+        concept FramedConcernMembership implements IFramedConcernMembership
+
+        concept Function implements IFunction
+
+        interface IAcceptActionUsage extends IActionUsage
             features (↓name):
                 payloadArgument: Expression[1..*]
                 payloadParameter: ReferenceUsage[1..*]
                 receiverArgument: Expression[1..*]
 
-        concept ActionDefinition extends OccurrenceDefinition
+        interface IActionDefinition extends IBehavior, IOccurrenceDefinition
             features (↓name):
                 action: ActionUsage[1..*]
 
-        concept ActionUsage extends OccurrenceUsage
+        interface IActionUsage extends IOccurrenceUsage, IStep
             features (↓name):
                 actionDefinition: Behavior[1..*]
 
-        concept ActorMembership extends ParameterMembership
+        interface IActorMembership extends IParameterMembership
             features (↓name):
                 ownedActorParameter: PartUsage[1..*]
 
-        concept AllocationDefinition extends ConnectionDefinition
+        interface IAllocationDefinition extends IConnectionDefinition
             features (↓name):
                 allocation: AllocationUsage[1..*]
 
-        concept AllocationUsage extends ConnectionUsage
+        interface IAllocationUsage extends IConnectionUsage
             features (↓name):
                 allocationDefinition: AllocationDefinition[1..*]
 
-        concept AnalysisCaseDefinition extends CaseDefinition
+        interface IAnalysisCaseDefinition extends ICaseDefinition
             features (↓name):
                 resultExpression: Expression[1..*]
 
-        concept AnalysisCaseUsage extends CaseUsage
+        interface IAnalysisCaseUsage extends ICaseUsage
             features (↓name):
                 analysisCaseDefinition: AnalysisCaseDefinition[1..*]
                 resultExpression: Expression[1..*]
 
-        concept AnnotatingElement extends Element
+        interface IAnnotatingElement extends IElement
             features (↓name):
                 annotatedElement: Element[1..*]
                 annotation: Annotation[1..*]
                 ownedAnnotatingRelationship: Annotation[1..*]
                 owningAnnotatingRelationship: Annotation[1..*]
 
-        concept Annotation extends Relationship
+        interface IAnnotation extends IRelationship
             features (↓name):
                 annotatedElement: Element[1..*]
                 annotatingElement: AnnotatingElement[1..*]
@@ -52,105 +204,109 @@ language sysml
                 owningAnnotatedElement: Element[1..*]
                 owningAnnotatingElement: AnnotatingElement[1..*]
 
-        concept AssertConstraintUsage extends ConstraintUsage
+        interface IAssertConstraintUsage extends IConstraintUsage, IInvariant
             features (↓name):
                 assertedConstraint: ConstraintUsage[1..*]
 
-        concept AssignmentActionUsage extends ActionUsage
+        interface IAssignmentActionUsage extends IActionUsage
             features (↓name):
                 referent: Feature[1..*]
                 targetArgument: Expression[1..*]
                 valueExpression: Expression[1..*]
 
-        concept Association extends sysmlClassifier
+        interface IAssociation extends IClassifier, IRelationship
             features (↓name):
                 associationEnd: Feature[1..*]
                 relatedType: Type[1..*]
                 sourceType: Type[1..*]
                 targetType: Type[1..*]
 
-        concept AssociationStructure extends Association
+        interface IAssociationStructure extends IAssociation, IStructure
 
-        concept AttributeDefinition extends Definition
+        interface IAttributeDefinition extends IDataType, IDefinition
 
-        concept AttributeUsage extends Usage
+        interface IAttributeUsage extends IUsage
             features (↓name):
                 attributeDefinition: DataType[1..*]
 
-        concept Behavior extends Class
+        interface IBehavior extends IClass
             features (↓name):
                 parameter: Feature[1..*]
                 step: Step[1..*]
 
-        concept BindingConnector extends Connector
+        interface IBindingConnector extends IConnector
 
-        concept BindingConnectorAsUsage extends ConnectorAsUsage
+        interface IBindingConnectorAsUsage extends IBindingConnector, IConnectorAsUsage
 
-        concept BooleanExpression extends Expression
+        interface IBooleanExpression extends IExpression
             features (↓name):
                 predicate: Predicate[1..*]
 
-        concept CalculationDefinition extends ActionDefinition
+        interface ICalculationDefinition extends IActionDefinition, IFunction
             features (↓name):
                 calculation: CalculationUsage[1..*]
 
-        concept CalculationUsage extends ActionUsage
+        interface ICalculationUsage extends IActionUsage, IExpression
             features (↓name):
                 calculationDefinition: Function[1..*]
 
-        concept CaseDefinition extends CalculationDefinition
+        interface ICaseDefinition extends ICalculationDefinition
             features (↓name):
                 actorParameter: PartUsage[1..*]
                 objectiveRequirement: RequirementUsage[1..*]
                 subjectParameter: Usage[1..*]
 
-        concept CaseUsage extends CalculationUsage
+        interface ICaseUsage extends ICalculationUsage
             features (↓name):
                 actorParameter: PartUsage[1..*]
                 caseDefinition: CaseDefinition[1..*]
                 objectiveRequirement: RequirementUsage[1..*]
                 subjectParameter: Usage[1..*]
 
-        concept Class extends sysmlClassifier
+        interface IClass extends IClassifier
 
-        concept CollectExpression extends OperatorExpression
+        interface IClassifier extends IType
+            features (↓name):
+                ownedSubclassification: Subclassification[1..*]
 
-        concept Comment extends AnnotatingElement
+        interface ICollectExpression extends IOperatorExpression
+
+        interface IComment extends IAnnotatingElement
             features (↓name):
                 body: String
                 locale: String
 
-        concept ConcernDefinition extends RequirementDefinition
+        interface IConcernDefinition extends IRequirementDefinition
 
-        concept ConcernUsage extends RequirementUsage
+        interface IConcernUsage extends IRequirementUsage
             features (↓name):
                 concernDefinition: ConcernDefinition[1..*]
 
-        concept ConjugatedPortDefinition extends PortDefinition
+        interface IConjugatedPortDefinition extends IPortDefinition
             features (↓name):
                 originalPortDefinition: PortDefinition[1..*]
                 ownedPortConjugator: PortConjugation[1..*]
 
-        concept ConjugatedPortTyping extends FeatureTyping
+        interface IConjugatedPortTyping extends IFeatureTyping
             features (↓name):
                 conjugatedPortDefinition: ConjugatedPortDefinition[1..*]
                 portDefinition: PortDefinition[1..*]
 
-        concept Conjugation extends Relationship
+        interface IConjugation extends IRelationship
             features (↓name):
                 conjugatedType: Type[1..*]
                 originalType: Type[1..*]
                 owningType: Type[1..*]
 
-        concept ConnectionDefinition extends PartDefinition
+        interface IConnectionDefinition extends IAssociationStructure, IPartDefinition
             features (↓name):
                 connectionEnd: Usage[1..*]
 
-        concept ConnectionUsage extends ConnectorAsUsage
+        interface IConnectionUsage extends IConnectorAsUsage, IPartUsage
             features (↓name):
                 connectionDefinition: AssociationStructure[1..*]
 
-        concept Connector extends Feature
+        interface IConnector extends IFeature, IRelationship
             features (↓name):
                 association: Association[1..*]
                 connectorEnd: Feature[1..*]
@@ -159,28 +315,28 @@ language sysml
                 sourceFeature: Feature[1..*]
                 targetFeature: Feature[1..*]
 
-        abstract concept ConnectorAsUsage extends Usage
+        interface IConnectorAsUsage extends IConnector, IUsage
 
-        concept ConstraintDefinition extends OccurrenceDefinition
+        interface IConstraintDefinition extends IOccurrenceDefinition, IPredicate
 
-        concept ConstraintUsage extends OccurrenceUsage
+        interface IConstraintUsage extends IBooleanExpression, IOccurrenceUsage
             features (↓name):
                 constraintDefinition: Predicate[1..*]
 
-        concept ConstructorExpression extends InstantiationExpression
+        interface IConstructorExpression extends IInstantiationExpression
 
-        abstract concept ControlNode extends ActionUsage
+        interface IControlNode extends IActionUsage
 
-        concept CrossSubsetting extends Subsetting
+        interface ICrossSubsetting extends ISubsetting
             features (↓name):
                 crossedFeature: Feature[1..*]
                 crossingFeature: Feature[1..*]
 
-        concept DataType extends sysmlClassifier
+        interface IDataType extends IClassifier
 
-        concept DecisionNode extends ControlNode
+        interface IDecisionNode extends IControlNode
 
-        concept Definition extends sysmlClassifier
+        interface IDefinition extends IClassifier
             features (↓name):
                 directedUsage: Usage[1..*]
                 isVariation: Boolean
@@ -215,27 +371,27 @@ language sysml
                 variant: Usage[1..*]
                 variantMembership: VariantMembership[1..*]
 
-        concept Dependency extends Relationship
+        interface IDependency extends IRelationship
             features (↓name):
                 client: Element[1..*]
                 supplier: Element[1..*]
 
-        concept Differencing extends Relationship
+        interface IDifferencing extends IRelationship
             features (↓name):
                 differencingType: Type[1..*]
                 typeDifferenced: Type[1..*]
 
-        concept Disjoining extends Relationship
+        interface IDisjoining extends IRelationship
             features (↓name):
                 disjoiningType: Type[1..*]
                 owningType: Type[1..*]
                 typeDisjoined: Type[1..*]
 
-        concept Documentation extends Comment
+        interface IDocumentation extends IComment
             features (↓name):
                 documentedElement: Element[1..*]
 
-        abstract concept Element
+        interface IElement
             features (↓name):
                 aliasIds: String
                 declaredName: String
@@ -256,37 +412,37 @@ language sysml
                 shortName: String
                 textualRepresentation: TextualRepresentation[1..*]
 
-        concept ElementFilterMembership extends OwningMembership
+        interface IElementFilterMembership extends IOwningMembership
             features (↓name):
                 condition: Expression[1..*]
 
-        concept EndFeatureMembership extends FeatureMembership
+        interface IEndFeatureMembership extends IFeatureMembership
 
-        concept EnumerationDefinition extends AttributeDefinition
+        interface IEnumerationDefinition extends IAttributeDefinition
             features (↓name):
                 enumeratedValue: EnumerationUsage[1..*]
 
-        concept EnumerationUsage extends AttributeUsage
+        interface IEnumerationUsage extends IAttributeUsage
             features (↓name):
                 enumerationDefinition: EnumerationDefinition[1..*]
 
-        concept EventOccurrenceUsage extends OccurrenceUsage
+        interface IEventOccurrenceUsage extends IOccurrenceUsage
             features (↓name):
                 eventOccurrence: OccurrenceUsage[1..*]
 
-        concept ExhibitStateUsage extends StateUsage
+        interface IExhibitStateUsage extends IPerformActionUsage, IStateUsage
             features (↓name):
                 exhibitedState: StateUsage[1..*]
 
-        abstract concept Expose extends Import
+        interface IExpose extends IImport
 
-        concept Expression extends Step
+        interface IExpression extends IStep
             features (↓name):
                 function: Function[1..*]
                 isModelLevelEvaluable: Boolean
                 result: Feature[1..*]
 
-        concept Feature extends Type
+        interface IFeature extends IType
             features (↓name):
                 chainingFeature: Feature[1..*]
                 crossFeature: Feature[1..*]
@@ -315,50 +471,44 @@ language sysml
                 owningType: Type[1..*]
                 type: Type[1..*]
 
-        concept FeatureChainExpression extends OperatorExpression
+        interface IFeatureChainExpression extends IOperatorExpression
             features (↓name):
                 targetFeature: Feature[1..*]
 
-        concept FeatureChaining extends Relationship
+        interface IFeatureChaining extends IRelationship
             features (↓name):
                 chainingFeature: Feature[1..*]
                 featureChained: Feature[1..*]
 
-        enumeration FeatureDirectionKind
-            literals:
-                in
-                inout
-                out
-
-        concept FeatureInverting extends Relationship
+        interface IFeatureInverting extends IRelationship
             features (↓name):
                 featureInverted: Feature[1..*]
                 invertingFeature: Feature[1..*]
                 owningFeature: Feature[1..*]
 
-        concept FeatureMembership extends OwningMembership
+        interface IFeatureMembership extends IOwningMembership
             features (↓name):
                 ownedMemberFeature: Feature[1..*]
                 owningType: Type[1..*]
 
-        concept FeatureReferenceExpression extends Expression
+        interface IFeatureReferenceExpression extends IExpression
             features (↓name):
                 referent: Feature[1..*]
 
-        concept FeatureTyping extends Specialization
+        interface IFeatureTyping extends ISpecialization
             features (↓name):
                 owningFeature: Feature[1..*]
                 type: Type[1..*]
                 typedFeature: Feature[1..*]
 
-        concept FeatureValue extends OwningMembership
+        interface IFeatureValue extends IOwningMembership
             features (↓name):
                 featureWithValue: Feature[1..*]
                 isDefault: Boolean
                 isInitial: Boolean
                 value: Expression[1..*]
 
-        concept Flow extends Connector
+        interface IFlow extends IConnector, IStep
             features (↓name):
                 flowEnd: FlowEnd[1..*]
                 interaction: Interaction[1..*]
@@ -367,41 +517,41 @@ language sysml
                 sourceOutputFeature: Feature[1..*]
                 targetInputFeature: Feature[1..*]
 
-        concept FlowDefinition extends ActionDefinition
+        interface IFlowDefinition extends IActionDefinition, IInteraction
             features (↓name):
                 flowEnd: Usage[1..*]
 
-        concept FlowEnd extends Feature
+        interface IFlowEnd extends IFeature
 
-        concept FlowUsage extends ConnectorAsUsage
+        interface IFlowUsage extends IActionUsage, IConnectorAsUsage, IFlow
             features (↓name):
                 flowDefinition: Interaction[1..*]
 
-        concept ForLoopActionUsage extends LoopActionUsage
+        interface IForLoopActionUsage extends ILoopActionUsage
             features (↓name):
                 loopVariable: ReferenceUsage[1..*]
                 seqArgument: Expression[1..*]
 
-        concept ForkNode extends ControlNode
+        interface IForkNode extends IControlNode
 
-        concept FramedConcernMembership extends RequirementConstraintMembership
+        interface IFramedConcernMembership extends IRequirementConstraintMembership
             features (↓name):
                 ownedConcern: ConcernUsage[1..*]
                 referencedConcern: ConcernUsage[1..*]
 
-        concept Function extends Behavior
+        interface IFunction extends IBehavior
             features (↓name):
                 expression: Expression[1..*]
                 isModelLevelEvaluable: Boolean
                 result: Feature[1..*]
 
-        concept IfActionUsage extends ActionUsage
+        interface IIfActionUsage extends IActionUsage
             features (↓name):
                 elseAction: ActionUsage[1..*]
                 ifArgument: Expression[1..*]
                 thenAction: ActionUsage[1..*]
 
-        abstract concept Import extends Relationship
+        interface IImport extends IRelationship
             features (↓name):
                 importOwningNamespace: Namespace[1..*]
                 importedElement: Element[1..*]
@@ -409,77 +559,77 @@ language sysml
                 isRecursive: Boolean
                 visibility: VisibilityKind
 
-        concept IncludeUseCaseUsage extends UseCaseUsage
+        interface IIncludeUseCaseUsage extends IPerformActionUsage, IUseCaseUsage
             features (↓name):
                 useCaseIncluded: UseCaseUsage[1..*]
 
-        concept IndexExpression extends OperatorExpression
+        interface IIndexExpression extends IOperatorExpression
 
-        abstract concept InstantiationExpression extends Expression
+        interface IInstantiationExpression extends IExpression
             features (↓name):
                 argument: Expression[1..*]
                 instantiatedType: Type[1..*]
 
-        concept Interaction extends Association
+        interface IInteraction extends IAssociation, IBehavior
 
-        concept InterfaceDefinition extends ConnectionDefinition
+        interface IInterfaceDefinition extends IConnectionDefinition
             features (↓name):
                 interfaceEnd: PortUsage[1..*]
 
-        concept InterfaceUsage extends ConnectionUsage
+        interface IInterfaceUsage extends IConnectionUsage
             features (↓name):
                 interfaceDefinition: InterfaceDefinition[1..*]
 
-        concept Intersecting extends Relationship
+        interface IIntersecting extends IRelationship
             features (↓name):
                 intersectingType: Type[1..*]
                 typeIntersected: Type[1..*]
 
-        concept Invariant extends BooleanExpression
+        interface IInvariant extends IBooleanExpression
             features (↓name):
                 isNegated: Boolean
 
-        concept InvocationExpression extends InstantiationExpression
+        interface IInvocationExpression extends IInstantiationExpression
             features (↓name):
                 operand: Expression[1..*]
 
-        concept ItemDefinition extends OccurrenceDefinition
+        interface IItemDefinition extends IOccurrenceDefinition, IStructure
 
-        concept ItemUsage extends OccurrenceUsage
+        interface IItemUsage extends IOccurrenceUsage
             features (↓name):
                 itemDefinition: Structure[1..*]
 
-        concept JoinNode extends ControlNode
+        interface IJoinNode extends IControlNode
 
-        concept LibraryPackage extends Package
+        interface ILibraryPackage extends IPackage
             features (↓name):
                 isStandard: Boolean
 
-        concept LiteralBoolean extends LiteralExpression
+        interface ILiteralBoolean extends ILiteralExpression
             features (↓name):
                 value: Boolean
 
-        concept LiteralExpression extends Expression
+        interface ILiteralExpression extends IExpression
 
-        concept LiteralInfinity extends LiteralExpression
+        interface ILiteralInfinity extends ILiteralExpression
 
-        concept LiteralInteger extends LiteralExpression
+        interface ILiteralInteger extends ILiteralExpression
             features (↓name):
                 value: String
 
-        concept LiteralRational extends LiteralExpression
+        interface ILiteralRational extends ILiteralExpression
             features (↓name):
                 value: String
 
-        concept LiteralString extends LiteralExpression
+        interface ILiteralString extends ILiteralExpression
             features (↓name):
                 value: String
 
-        abstract concept LoopActionUsage extends ActionUsage
+        interface ILoopActionUsage extends IActionUsage
             features (↓name):
                 bodyAction: ActionUsage[1..*]
 
-        concept Membership extends Relationship
+        interface IMembership extends IRelationship
             features (↓name):
                 memberElement: Element[1..*]
                 memberElementId: String
@@ -488,39 +638,39 @@ language sysml
                 membershipOwningNamespace: Namespace[1..*]
                 visibility: VisibilityKind
 
-        concept MembershipExpose extends MembershipImport
+        interface IMembershipExpose extends IExpose, IMembershipImport
 
-        concept MembershipImport extends Import
+        interface IMembershipImport extends IImport
             features (↓name):
                 importedMembership: Membership[1..*]
 
-        concept MergeNode extends ControlNode
+        interface IMergeNode extends IControlNode
 
-        concept Metaclass extends Structure
+        interface IMetaclass extends IStructure
 
-        concept MetadataAccessExpression extends Expression
+        interface IMetadataAccessExpression extends IExpression
             features (↓name):
                 referencedElement: Element[1..*]
 
-        concept MetadataDefinition extends ItemDefinition
+        interface IMetadataDefinition extends IItemDefinition, IMetaclass
 
-        concept MetadataFeature extends Feature
+        interface IMetadataFeature extends IAnnotatingElement, IFeature
             features (↓name):
                 metaclass: Metaclass[1..*]
 
-        concept MetadataUsage extends ItemUsage
+        interface IMetadataUsage extends IItemUsage, IMetadataFeature
             features (↓name):
                 metadataDefinition: Metaclass[1..*]
 
-        concept Multiplicity extends Feature
+        interface IMultiplicity extends IFeature
 
-        concept MultiplicityRange extends Multiplicity
+        interface IMultiplicityRange extends IMultiplicity
             features (↓name):
                 bound: Expression[1..*]
                 lowerBound: Expression[1..*]
                 upperBound: Expression[1..*]
 
-        concept Namespace extends Element
+        interface INamespace extends IElement
             features (↓name):
                 importedMembership: Membership[1..*]
                 member: Element[1..*]
@@ -529,93 +679,88 @@ language sysml
                 ownedMember: Element[1..*]
                 ownedMembership: Membership[1..*]
 
-        concept NamespaceExpose extends NamespaceImport
+        interface INamespaceExpose extends IExpose, INamespaceImport
 
-        concept NamespaceImport extends Import
+        interface INamespaceImport extends IImport
             features (↓name):
                 importedNamespace: Namespace[1..*]
 
-        concept NullExpression extends Expression
+        interface INullExpression extends IExpression
 
-        concept ObjectiveMembership extends FeatureMembership
+        interface IObjectiveMembership extends IFeatureMembership
             features (↓name):
                 ownedObjectiveRequirement: RequirementUsage[1..*]
 
-        concept OccurrenceDefinition extends Definition
+        interface IOccurrenceDefinition extends IClass, IDefinition
             features (↓name):
                 isIndividual: Boolean
 
-        concept OccurrenceUsage extends Usage
+        interface IOccurrenceUsage extends IUsage
             features (↓name):
                 individualDefinition: OccurrenceDefinition[1..*]
                 isIndividual: Boolean
                 occurrenceDefinition: Class[1..*]
                 portionKind: PortionKind
 
-        concept OperatorExpression extends InvocationExpression
+        interface IOperatorExpression extends IInvocationExpression
             features (↓name):
                 operator: String
 
-        concept OwningMembership extends Membership
+        interface IOwningMembership extends IMembership
             features (↓name):
                 ownedMemberElement: Element[1..*]
                 ownedMemberElementId: String
                 ownedMemberName: String
                 ownedMemberShortName: String
 
-        concept Package extends Namespace
+        interface IPackage extends INamespace
             features (↓name):
                 filterCondition: Expression[1..*]
 
-        concept ParameterMembership extends FeatureMembership
+        interface IParameterMembership extends IFeatureMembership
             features (↓name):
                 ownedMemberParameter: Feature[1..*]
 
-        concept PartDefinition extends ItemDefinition
+        interface IPartDefinition extends IItemDefinition
 
-        concept PartUsage extends ItemUsage
+        interface IPartUsage extends IItemUsage
             features (↓name):
                 partDefinition: PartDefinition[1..*]
 
-        concept PayloadFeature extends Feature
+        interface IPayloadFeature extends IFeature
 
-        concept PerformActionUsage extends ActionUsage
+        interface IPerformActionUsage extends IActionUsage, IEventOccurrenceUsage
             features (↓name):
                 performedAction: ActionUsage[1..*]
 
-        concept PortConjugation extends Conjugation
+        interface IPortConjugation extends IConjugation
             features (↓name):
                 conjugatedPortDefinition: ConjugatedPortDefinition[1..*]
                 originalPortDefinition: PortDefinition[1..*]
 
-        concept PortDefinition extends OccurrenceDefinition
+        interface IPortDefinition extends IOccurrenceDefinition, IStructure
             features (↓name):
                 conjugatedPortDefinition: ConjugatedPortDefinition[1..*]
 
-        concept PortUsage extends OccurrenceUsage
+        interface IPortUsage extends IOccurrenceUsage
             features (↓name):
                 portDefinition: PortDefinition[1..*]
 
-        enumeration PortionKind
-            literals:
-                timeslice
-                snapshot
+        interface IPredicate extends IFunction
 
-        concept Predicate extends Function
-
-        concept Redefinition extends Subsetting
+        interface IRedefinition extends ISubsetting
             features (↓name):
                 redefinedFeature: Feature[1..*]
                 redefiningFeature: Feature[1..*]
 
-        concept ReferenceSubsetting extends Subsetting
+        interface IReferenceSubsetting extends ISubsetting
             features (↓name):
                 referencedFeature: Feature[1..*]
                 referencingFeature: Feature[1..*]
 
-        concept ReferenceUsage extends Usage
+        interface IReferenceUsage extends IUsage
 
-        abstract concept Relationship extends Element
+        interface IRelationship extends IElement
             features (↓name):
                 isImplied: Boolean
                 ownedRelatedElement: Element[1..*]
@@ -624,26 +769,21 @@ language sysml
                 source: Element[1..*]
                 target: Element[1..*]
 
-        concept RenderingDefinition extends PartDefinition
+        interface IRenderingDefinition extends IPartDefinition
             features (↓name):
                 rendering: RenderingUsage[1..*]
 
-        concept RenderingUsage extends PartUsage
+        interface IRenderingUsage extends IPartUsage
             features (↓name):
                 renderingDefinition: RenderingDefinition[1..*]
 
-        enumeration RequirementConstraintKind
-            literals:
-                assumption
-                requirement
-
-        concept RequirementConstraintMembership extends FeatureMembership
+        interface IRequirementConstraintMembership extends IFeatureMembership
             features (↓name):
                 kind: RequirementConstraintKind
                 ownedConstraint: ConstraintUsage[1..*]
                 referencedConstraint: ConstraintUsage[1..*]
 
-        concept RequirementDefinition extends ConstraintDefinition
+        interface IRequirementDefinition extends IConstraintDefinition
             features (↓name):
                 actorParameter: PartUsage[1..*]
                 assumedConstraint: ConstraintUsage[1..*]
@@ -654,7 +794,7 @@ language sysml
                 subjectParameter: Usage[1..*]
                 text: String
 
-        concept RequirementUsage extends ConstraintUsage
+        interface IRequirementUsage extends IConstraintUsage
             features (↓name):
                 actorParameter: PartUsage[1..*]
                 assumedConstraint: ConstraintUsage[1..*]
@@ -666,41 +806,41 @@ language sysml
                 subjectParameter: Usage[1..*]
                 text: String
 
-        concept RequirementVerificationMembership extends RequirementConstraintMembership
+        interface IRequirementVerificationMembership extends IRequirementConstraintMembership
             features (↓name):
                 ownedRequirement: RequirementUsage[1..*]
                 verifiedRequirement: RequirementUsage[1..*]
 
-        concept ResultExpressionMembership extends FeatureMembership
+        interface IResultExpressionMembership extends IFeatureMembership
             features (↓name):
                 ownedResultExpression: Expression[1..*]
 
-        concept ReturnParameterMembership extends ParameterMembership
+        interface IReturnParameterMembership extends IParameterMembership
 
-        concept SatisfyRequirementUsage extends RequirementUsage
+        interface ISatisfyRequirementUsage extends IAssertConstraintUsage, IRequirementUsage
             features (↓name):
                 satisfiedRequirement: RequirementUsage[1..*]
                 satisfyingFeature: Feature[1..*]
 
-        concept SelectExpression extends OperatorExpression
+        interface ISelectExpression extends IOperatorExpression
 
-        concept SendActionUsage extends ActionUsage
+        interface ISendActionUsage extends IActionUsage
             features (↓name):
                 payloadArgument: Expression[1..*]
                 receiverArgument: Expression[1..*]
                 senderArgument: Expression[1..*]
 
-        concept Specialization extends Relationship
+        interface ISpecialization extends IRelationship
             features (↓name):
                 general: Type[1..*]
                 owningType: Type[1..*]
                 specific: Type[1..*]
 
-        concept StakeholderMembership extends ParameterMembership
+        interface IStakeholderMembership extends IParameterMembership
             features (↓name):
                 ownedStakeholderParameter: PartUsage[1..*]
 
-        concept StateDefinition extends ActionDefinition
+        interface IStateDefinition extends IActionDefinition
             features (↓name):
                 doAction: ActionUsage[1..*]
                 entryAction: ActionUsage[1..*]
@@ -708,18 +848,12 @@ language sysml
                 isParallel: Boolean
                 state: StateUsage[1..*]
 
-        enumeration StateSubactionKind
-            literals:
-                entry
-                do
-                exit
-
-        concept StateSubactionMembership extends FeatureMembership
+        interface IStateSubactionMembership extends IFeatureMembership
             features (↓name):
                 action: ActionUsage[1..*]
                 kind: StateSubactionKind
 
-        concept StateUsage extends ActionUsage
+        interface IStateUsage extends IActionUsage
             features (↓name):
                 doAction: ActionUsage[1..*]
                 entryAction: ActionUsage[1..*]
@@ -727,59 +861,53 @@ language sysml
                 isParallel: Boolean
                 stateDefinition: Behavior[1..*]
 
-        concept Step extends Feature
+        interface IStep extends IFeature
             features (↓name):
                 behavior: Behavior[1..*]
                 parameter: Feature[1..*]
 
-        concept Structure extends Class
+        interface IStructure extends IClass
 
-        concept Subclassification extends Specialization
+        interface ISubclassification extends ISpecialization
             features (↓name):
                 owningClassifier: sysmlClassifier[1..*]
                 subclassifier: sysmlClassifier[1..*]
                 superclassifier: sysmlClassifier[1..*]
 
-        concept SubjectMembership extends ParameterMembership
+        interface ISubjectMembership extends IParameterMembership
             features (↓name):
                 ownedSubjectParameter: Usage[1..*]
 
-        concept Subsetting extends Specialization
+        interface ISubsetting extends ISpecialization
             features (↓name):
                 owningFeature: Feature[1..*]
                 subsettedFeature: Feature[1..*]
                 subsettingFeature: Feature[1..*]
 
-        concept Succession extends Connector
+        interface ISuccession extends IConnector
 
-        concept SuccessionAsUsage extends ConnectorAsUsage
+        interface ISuccessionAsUsage extends IConnectorAsUsage, ISuccession
 
-        concept SuccessionFlow extends Flow
+        interface ISuccessionFlow extends IFlow, ISuccession
 
-        concept SuccessionFlowUsage extends FlowUsage
+        interface ISuccessionFlowUsage extends IFlowUsage, ISuccessionFlow
 
-        concept TerminateActionUsage extends ActionUsage
+        interface ITerminateActionUsage extends IActionUsage
             features (↓name):
                 terminatedOccurrenceArgument: Expression[1..*]
 
-        concept TextualRepresentation extends AnnotatingElement
+        interface ITextualRepresentation extends IAnnotatingElement
             features (↓name):
                 body: String
                 language: String
                 representedElement: Element[1..*]
 
-        enumeration TransitionFeatureKind
-            literals:
-                trigger
-                guard
-                effect
-
-        concept TransitionFeatureMembership extends FeatureMembership
+        interface ITransitionFeatureMembership extends IFeatureMembership
             features (↓name):
                 kind: TransitionFeatureKind
                 transitionFeature: Step[1..*]
 
-        concept TransitionUsage extends ActionUsage
+        interface ITransitionUsage extends IActionUsage
             features (↓name):
                 effectAction: ActionUsage[1..*]
                 guardExpression: Expression[1..*]
@@ -788,17 +916,11 @@ language sysml
                 target: ActionUsage[1..*]
                 triggerAction: AcceptActionUsage[1..*]
 
-        concept TriggerInvocationExpression extends InvocationExpression
+        interface ITriggerInvocationExpression extends IInvocationExpression
             features (↓name):
                 kind: TriggerKind
 
-        enumeration TriggerKind
-            literals:
-                when
-                at
-                after
-
-        concept Type extends Namespace
+        interface IType extends INamespace
             features (↓name):
                 differencingType: Type[1..*]
                 directedFeature: Feature[1..*]
@@ -825,18 +947,18 @@ language sysml
                 ownedUnioning: Unioning[1..*]
                 unioningType: Type[1..*]
 
-        concept TypeFeaturing extends Relationship
+        interface ITypeFeaturing extends IRelationship
             features (↓name):
                 featureOfType: Feature[1..*]
                 featuringType: Type[1..*]
                 owningFeatureOfType: Feature[1..*]
 
-        concept Unioning extends Relationship
+        interface IUnioning extends IRelationship
             features (↓name):
                 typeUnioned: Type[1..*]
                 unioningType: Type[1..*]
 
-        concept Usage extends Feature
+        interface IUsage extends IFeature
             features (↓name):
                 definition: sysmlClassifier[1..*]
                 directedUsage: Usage[1..*]
@@ -876,41 +998,41 @@ language sysml
                 variant: Usage[1..*]
                 variantMembership: VariantMembership[1..*]
 
-        concept UseCaseDefinition extends CaseDefinition
+        interface IUseCaseDefinition extends ICaseDefinition
             features (↓name):
                 includedUseCase: UseCaseUsage[1..*]
 
-        concept UseCaseUsage extends CaseUsage
+        interface IUseCaseUsage extends ICaseUsage
             features (↓name):
                 includedUseCase: UseCaseUsage[1..*]
                 useCaseDefinition: UseCaseDefinition[1..*]
 
-        concept VariantMembership extends OwningMembership
+        interface IVariantMembership extends IOwningMembership
             features (↓name):
                 ownedVariantUsage: Usage[1..*]
 
-        concept VerificationCaseDefinition extends CaseDefinition
+        interface IVerificationCaseDefinition extends ICaseDefinition
             features (↓name):
                 verifiedRequirement: RequirementUsage[1..*]
 
-        concept VerificationCaseUsage extends CaseUsage
+        interface IVerificationCaseUsage extends ICaseUsage
             features (↓name):
                 verificationCaseDefinition: VerificationCaseDefinition[1..*]
                 verifiedRequirement: RequirementUsage[1..*]
 
-        concept ViewDefinition extends PartDefinition
+        interface IViewDefinition extends IPartDefinition
             features (↓name):
                 satisfiedViewpoint: ViewpointUsage[1..*]
                 view: ViewUsage[1..*]
                 viewCondition: Expression[1..*]
                 viewRendering: RenderingUsage[1..*]
 
-        concept ViewRenderingMembership extends FeatureMembership
+        interface IViewRenderingMembership extends IFeatureMembership
             features (↓name):
                 ownedRendering: RenderingUsage[1..*]
                 referencedRendering: RenderingUsage[1..*]
 
-        concept ViewUsage extends PartUsage
+        interface IViewUsage extends IPartUsage
             features (↓name):
                 exposedElement: Element[1..*]
                 satisfiedViewpoint: ViewpointUsage[1..*]
@@ -918,14 +1040,247 @@ language sysml
                 viewDefinition: ViewDefinition[1..*]
                 viewRendering: RenderingUsage[1..*]
 
-        concept ViewpointDefinition extends RequirementDefinition
+        interface IViewpointDefinition extends IRequirementDefinition
             features (↓name):
                 viewpointStakeholder: PartUsage[1..*]
 
-        concept ViewpointUsage extends RequirementUsage
+        interface IViewpointUsage extends IRequirementUsage
             features (↓name):
                 viewpointDefinition: ViewpointDefinition[1..*]
                 viewpointStakeholder: PartUsage[1..*]
+
+        interface IWhileLoopActionUsage extends ILoopActionUsage
+            features (↓name):
+                untilArgument: Expression[1..*]
+                whileArgument: Expression[1..*]
+
+        concept IfActionUsage implements IIfActionUsage
+
+        abstract concept Import implements IImport
+
+        concept IncludeUseCaseUsage implements IIncludeUseCaseUsage
+
+        concept IndexExpression implements IIndexExpression
+
+        abstract concept InstantiationExpression implements IInstantiationExpression
+
+        concept Interaction implements IInteraction
+
+        concept InterfaceDefinition implements IInterfaceDefinition
+
+        concept InterfaceUsage implements IInterfaceUsage
+
+        concept Intersecting implements IIntersecting
+
+        concept Invariant implements IInvariant
+
+        concept InvocationExpression implements IInvocationExpression
+
+        concept ItemDefinition implements IItemDefinition
+
+        concept ItemUsage implements IItemUsage
+
+        concept JoinNode implements IJoinNode
+
+        concept LibraryPackage implements ILibraryPackage
+
+        concept LiteralBoolean implements ILiteralBoolean
+
+        concept LiteralExpression implements ILiteralExpression
+
+        concept LiteralInfinity implements ILiteralInfinity
+
+        concept LiteralInteger implements ILiteralInteger
+
+        concept LiteralRational implements ILiteralRational
+
+        concept LiteralString implements ILiteralString
+
+        abstract concept LoopActionUsage implements ILoopActionUsage
+
+        concept Membership implements IMembership
+
+        concept MembershipExpose implements IMembershipExpose
+
+        concept MembershipImport implements IMembershipImport
+
+        concept MergeNode implements IMergeNode
+
+        concept Metaclass implements IMetaclass
+
+        concept MetadataAccessExpression implements IMetadataAccessExpression
+
+        concept MetadataDefinition implements IMetadataDefinition
+
+        concept MetadataFeature implements IMetadataFeature
+
+        concept MetadataUsage implements IMetadataUsage
+
+        concept Multiplicity implements IMultiplicity
+
+        concept MultiplicityRange implements IMultiplicityRange
+
+        concept Namespace implements INamespace
+
+        concept NamespaceExpose implements INamespaceExpose
+
+        concept NamespaceImport implements INamespaceImport
+
+        concept NullExpression implements INullExpression
+
+        concept ObjectiveMembership implements IObjectiveMembership
+
+        concept OccurrenceDefinition implements IOccurrenceDefinition
+
+        concept OccurrenceUsage implements IOccurrenceUsage
+
+        concept OperatorExpression implements IOperatorExpression
+
+        concept OwningMembership implements IOwningMembership
+
+        concept Package implements IPackage
+
+        concept ParameterMembership implements IParameterMembership
+
+        concept PartDefinition implements IPartDefinition
+
+        concept PartUsage implements IPartUsage
+
+        concept PayloadFeature implements IPayloadFeature
+
+        concept PerformActionUsage implements IPerformActionUsage
+
+        concept PortConjugation implements IPortConjugation
+
+        concept PortDefinition implements IPortDefinition
+
+        concept PortUsage implements IPortUsage
+
+        enumeration PortionKind
+            literals:
+                timeslice
+                snapshot
+
+        concept Predicate implements IPredicate
+
+        concept Redefinition implements IRedefinition
+
+        concept ReferenceSubsetting implements IReferenceSubsetting
+
+        concept ReferenceUsage implements IReferenceUsage
+
+        abstract concept Relationship implements IRelationship
+
+        concept RenderingDefinition implements IRenderingDefinition
+
+        concept RenderingUsage implements IRenderingUsage
+
+        enumeration RequirementConstraintKind
+            literals:
+                assumption
+                requirement
+
+        concept RequirementConstraintMembership implements IRequirementConstraintMembership
+
+        concept RequirementDefinition implements IRequirementDefinition
+
+        concept RequirementUsage implements IRequirementUsage
+
+        concept RequirementVerificationMembership implements IRequirementVerificationMembership
+
+        concept ResultExpressionMembership implements IResultExpressionMembership
+
+        concept ReturnParameterMembership implements IReturnParameterMembership
+
+        concept SatisfyRequirementUsage implements ISatisfyRequirementUsage
+
+        concept SelectExpression implements ISelectExpression
+
+        concept SendActionUsage implements ISendActionUsage
+
+        concept Specialization implements ISpecialization
+
+        concept StakeholderMembership implements IStakeholderMembership
+
+        concept StateDefinition implements IStateDefinition
+
+        enumeration StateSubactionKind
+            literals:
+                entry
+                do
+                exit
+
+        concept StateSubactionMembership implements IStateSubactionMembership
+
+        concept StateUsage implements IStateUsage
+
+        concept Step implements IStep
+
+        concept Structure implements IStructure
+
+        concept Subclassification implements ISubclassification
+
+        concept SubjectMembership implements ISubjectMembership
+
+        concept Subsetting implements ISubsetting
+
+        concept Succession implements ISuccession
+
+        concept SuccessionAsUsage implements ISuccessionAsUsage
+
+        concept SuccessionFlow implements ISuccessionFlow
+
+        concept SuccessionFlowUsage implements ISuccessionFlowUsage
+
+        concept TerminateActionUsage implements ITerminateActionUsage
+
+        concept TextualRepresentation implements ITextualRepresentation
+
+        enumeration TransitionFeatureKind
+            literals:
+                trigger
+                guard
+                effect
+
+        concept TransitionFeatureMembership implements ITransitionFeatureMembership
+
+        concept TransitionUsage implements ITransitionUsage
+
+        concept TriggerInvocationExpression implements ITriggerInvocationExpression
+
+        enumeration TriggerKind
+            literals:
+                when
+                at
+                after
+
+        concept Type implements IType
+
+        concept TypeFeaturing implements ITypeFeaturing
+
+        concept Unioning implements IUnioning
+
+        concept Usage implements IUsage
+
+        concept UseCaseDefinition implements IUseCaseDefinition
+
+        concept UseCaseUsage implements IUseCaseUsage
+
+        concept VariantMembership implements IVariantMembership
+
+        concept VerificationCaseDefinition implements IVerificationCaseDefinition
+
+        concept VerificationCaseUsage implements IVerificationCaseUsage
+
+        concept ViewDefinition implements IViewDefinition
+
+        concept ViewRenderingMembership implements IViewRenderingMembership
+
+        concept ViewUsage implements IViewUsage
+
+        concept ViewpointDefinition implements IViewpointDefinition
+
+        concept ViewpointUsage implements IViewpointUsage
 
         enumeration VisibilityKind
             literals:
@@ -933,13 +1288,8 @@ language sysml
                 protected
                 public
 
-        concept WhileLoopActionUsage extends LoopActionUsage
-            features (↓name):
-                untilArgument: Expression[1..*]
-                whileArgument: Expression[1..*]
+        concept WhileLoopActionUsage implements IWhileLoopActionUsage
 
-        concept sysmlClassifier extends Type
-            features (↓name):
-                ownedSubclassification: Subclassification[1..*]
+        concept sysmlClassifier implements IClassifier
 
 

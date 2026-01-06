@@ -2,14 +2,88 @@ language kerml
     version: 1
     entities (↓name):
 
-        concept AnnotatingElement extends Element
+        concept AnnotatingElement implements IAnnotatingElement
+
+        concept Annotation implements IAnnotation
+
+        concept Association implements IAssociation
+
+        concept AssociationStructure implements IAssociationStructure
+
+        concept Behavior implements IBehavior
+
+        concept BindingConnector implements IBindingConnector
+
+        concept BooleanExpression implements IBooleanExpression
+
+        concept Class implements IClass
+
+        concept CollectExpression implements ICollectExpression
+
+        concept Comment implements IComment
+
+        concept Conjugation implements IConjugation
+
+        concept Connector implements IConnector
+
+        concept ConstructorExpression implements IConstructorExpression
+
+        concept CrossSubsetting implements ICrossSubsetting
+
+        concept DataType implements IDataType
+
+        concept Dependency implements IDependency
+
+        concept Differencing implements IDifferencing
+
+        concept Disjoining implements IDisjoining
+
+        concept Documentation implements IDocumentation
+
+        abstract concept Element implements IElement
+
+        concept ElementFilterMembership implements IElementFilterMembership
+
+        concept EndFeatureMembership implements IEndFeatureMembership
+
+        concept Expression implements IExpression
+
+        concept Feature implements IFeature
+
+        concept FeatureChainExpression implements IFeatureChainExpression
+
+        concept FeatureChaining implements IFeatureChaining
+
+        enumeration FeatureDirectionKind
+            literals:
+                in
+                inout
+                out
+
+        concept FeatureInverting implements IFeatureInverting
+
+        concept FeatureMembership implements IFeatureMembership
+
+        concept FeatureReferenceExpression implements IFeatureReferenceExpression
+
+        concept FeatureTyping implements IFeatureTyping
+
+        concept FeatureValue implements IFeatureValue
+
+        concept Flow implements IFlow
+
+        concept FlowEnd implements IFlowEnd
+
+        concept Function implements IFunction
+
+        interface IAnnotatingElement extends IElement
             features (↓name):
                 annotatedElement: Element[1..*]
                 annotation: Annotation[1..*]
                 ownedAnnotatingRelationship: Annotation[1..*]
                 owningAnnotatingRelationship: Annotation[1..*]
 
-        concept Annotation extends Relationship
+        interface IAnnotation extends IRelationship
             features (↓name):
                 annotatedElement: Element[1..*]
                 annotatingElement: AnnotatingElement[1..*]
@@ -17,42 +91,46 @@ language kerml
                 owningAnnotatedElement: Element[1..*]
                 owningAnnotatingElement: AnnotatingElement[1..*]
 
-        concept Association extends kermlClassifier
+        interface IAssociation extends IClassifier, IRelationship
             features (↓name):
                 associationEnd: Feature[1..*]
                 relatedType: Type[1..*]
                 sourceType: Type[1..*]
                 targetType: Type[1..*]
 
-        concept AssociationStructure extends Association
+        interface IAssociationStructure extends IAssociation, IStructure
 
-        concept Behavior extends Class
+        interface IBehavior extends IClass
             features (↓name):
                 parameter: Feature[1..*]
                 step: Step[1..*]
 
-        concept BindingConnector extends Connector
+        interface IBindingConnector extends IConnector
 
-        concept BooleanExpression extends Expression
+        interface IBooleanExpression extends IExpression
             features (↓name):
                 predicate: Predicate[1..*]
 
-        concept Class extends kermlClassifier
+        interface IClass extends IClassifier
 
-        concept CollectExpression extends OperatorExpression
+        interface IClassifier extends IType
+            features (↓name):
+                ownedSubclassification: Subclassification[1..*]
 
-        concept Comment extends AnnotatingElement
+        interface ICollectExpression extends IOperatorExpression
+
+        interface IComment extends IAnnotatingElement
             features (↓name):
                 body: String
                 locale: String
 
-        concept Conjugation extends Relationship
+        interface IConjugation extends IRelationship
             features (↓name):
                 conjugatedType: Type[1..*]
                 originalType: Type[1..*]
                 owningType: Type[1..*]
 
-        concept Connector extends Feature
+        interface IConnector extends IFeature, IRelationship
             features (↓name):
                 association: Association[1..*]
                 connectorEnd: Feature[1..*]
@@ -61,36 +139,36 @@ language kerml
                 sourceFeature: Feature[1..*]
                 targetFeature: Feature[1..*]
 
-        concept ConstructorExpression extends InstantiationExpression
+        interface IConstructorExpression extends IInstantiationExpression
 
-        concept CrossSubsetting extends Subsetting
+        interface ICrossSubsetting extends ISubsetting
             features (↓name):
                 crossedFeature: Feature[1..*]
                 crossingFeature: Feature[1..*]
 
-        concept DataType extends kermlClassifier
+        interface IDataType extends IClassifier
 
-        concept Dependency extends Relationship
+        interface IDependency extends IRelationship
             features (↓name):
                 client: Element[1..*]
                 supplier: Element[1..*]
 
-        concept Differencing extends Relationship
+        interface IDifferencing extends IRelationship
             features (↓name):
                 differencingType: Type[1..*]
                 typeDifferenced: Type[1..*]
 
-        concept Disjoining extends Relationship
+        interface IDisjoining extends IRelationship
             features (↓name):
                 disjoiningType: Type[1..*]
                 owningType: Type[1..*]
                 typeDisjoined: Type[1..*]
 
-        concept Documentation extends Comment
+        interface IDocumentation extends IComment
             features (↓name):
                 documentedElement: Element[1..*]
 
-        abstract concept Element
+        interface IElement
             features (↓name):
                 aliasIds: String
                 declaredName: String
@@ -111,19 +189,19 @@ language kerml
                 shortName: String
                 textualRepresentation: TextualRepresentation[1..*]
 
-        concept ElementFilterMembership extends OwningMembership
+        interface IElementFilterMembership extends IOwningMembership
             features (↓name):
                 condition: Expression[1..*]
 
-        concept EndFeatureMembership extends FeatureMembership
+        interface IEndFeatureMembership extends IFeatureMembership
 
-        concept Expression extends Step
+        interface IExpression extends IStep
             features (↓name):
                 function: Function[1..*]
                 isModelLevelEvaluable: Boolean
                 result: Feature[1..*]
 
-        concept Feature extends Type
+        interface IFeature extends IType
             features (↓name):
                 chainingFeature: Feature[1..*]
                 crossFeature: Feature[1..*]
@@ -151,50 +229,44 @@ language kerml
                 owningType: Type[1..*]
                 type: Type[1..*]
 
-        concept FeatureChainExpression extends OperatorExpression
+        interface IFeatureChainExpression extends IOperatorExpression
             features (↓name):
                 targetFeature: Feature[1..*]
 
-        concept FeatureChaining extends Relationship
+        interface IFeatureChaining extends IRelationship
             features (↓name):
                 chainingFeature: Feature[1..*]
                 featureChained: Feature[1..*]
 
-        enumeration FeatureDirectionKind
-            literals:
-                in
-                inout
-                out
-
-        concept FeatureInverting extends Relationship
+        interface IFeatureInverting extends IRelationship
             features (↓name):
                 featureInverted: Feature[1..*]
                 invertingFeature: Feature[1..*]
                 owningFeature: Feature[1..*]
 
-        concept FeatureMembership extends OwningMembership
+        interface IFeatureMembership extends IOwningMembership
             features (↓name):
                 ownedMemberFeature: Feature[1..*]
                 owningType: Type[1..*]
 
-        concept FeatureReferenceExpression extends Expression
+        interface IFeatureReferenceExpression extends IExpression
             features (↓name):
                 referent: Feature[1..*]
 
-        concept FeatureTyping extends Specialization
+        interface IFeatureTyping extends ISpecialization
             features (↓name):
                 owningFeature: Feature[1..*]
                 type: Type[1..*]
                 typedFeature: Feature[1..*]
 
-        concept FeatureValue extends OwningMembership
+        interface IFeatureValue extends IOwningMembership
             features (↓name):
                 featureWithValue: Feature[1..*]
                 isDefault: Boolean
                 isInitial: Boolean
                 value: Expression[1..*]
 
-        concept Flow extends Connector
+        interface IFlow extends IConnector, IStep
             features (↓name):
                 flowEnd: FlowEnd[1..*]
                 interaction: Interaction[1..*]
@@ -203,15 +275,15 @@ language kerml
                 sourceOutputFeature: Feature[1..*]
                 targetInputFeature: Feature[1..*]
 
-        concept FlowEnd extends Feature
+        interface IFlowEnd extends IFeature
 
-        concept Function extends Behavior
+        interface IFunction extends IBehavior
             features (↓name):
                 expression: Expression[1..*]
                 isModelLevelEvaluable: Boolean
                 result: Feature[1..*]
 
-        abstract concept Import extends Relationship
+        interface IImport extends IRelationship
             features (↓name):
                 importOwningNamespace: Namespace[1..*]
                 importedElement: Element[1..*]
@@ -219,51 +291,51 @@ language kerml
                 isRecursive: Boolean
                 visibility: VisibilityKind
 
-        concept IndexExpression extends OperatorExpression
+        interface IIndexExpression extends IOperatorExpression
 
-        abstract concept InstantiationExpression extends Expression
+        interface IInstantiationExpression extends IExpression
             features (↓name):
                 argument: Expression[1..*]
                 instantiatedType: Type[1..*]
 
-        concept Interaction extends Association
+        interface IInteraction extends IAssociation, IBehavior
 
-        concept Intersecting extends Relationship
+        interface IIntersecting extends IRelationship
             features (↓name):
                 intersectingType: Type[1..*]
                 typeIntersected: Type[1..*]
 
-        concept Invariant extends BooleanExpression
+        interface IInvariant extends IBooleanExpression
             features (↓name):
                 isNegated: Boolean
 
-        concept InvocationExpression extends InstantiationExpression
+        interface IInvocationExpression extends IInstantiationExpression
 
-        concept LibraryPackage extends Package
+        interface ILibraryPackage extends IPackage
             features (↓name):
                 isStandard: Boolean
 
-        concept LiteralBoolean extends LiteralExpression
+        interface ILiteralBoolean extends ILiteralExpression
             features (↓name):
                 value: Boolean
 
-        concept LiteralExpression extends Expression
+        interface ILiteralExpression extends IExpression
 
-        concept LiteralInfinity extends LiteralExpression
+        interface ILiteralInfinity extends ILiteralExpression
 
-        concept LiteralInteger extends LiteralExpression
+        interface ILiteralInteger extends ILiteralExpression
             features (↓name):
                 value: Integer
 
-        concept LiteralRational extends LiteralExpression
+        interface ILiteralRational extends ILiteralExpression
             features (↓name):
                 value: String
 
-        concept LiteralString extends LiteralExpression
+        interface ILiteralString extends ILiteralExpression
             features (↓name):
                 value: String
 
-        concept Membership extends Relationship
+        interface IMembership extends IRelationship
             features (↓name):
                 memberElement: Element[1..*]
                 memberElementId: String
@@ -272,29 +344,29 @@ language kerml
                 membershipOwningNamespace: Namespace[1..*]
                 visibility: VisibilityKind
 
-        concept MembershipImport extends Import
+        interface IMembershipImport extends IImport
             features (↓name):
                 importedMembership: Membership[1..*]
 
-        concept Metaclass extends Structure
+        interface IMetaclass extends IStructure
 
-        concept MetadataAccessExpression extends Expression
+        interface IMetadataAccessExpression extends IExpression
             features (↓name):
                 referencedElement: Element[1..*]
 
-        concept MetadataFeature extends Feature
+        interface IMetadataFeature extends IAnnotatingElement, IFeature
             features (↓name):
                 metaclass: Metaclass[1..*]
 
-        concept Multiplicity extends Feature
+        interface IMultiplicity extends IFeature
 
-        concept MultiplicityRange extends Multiplicity
+        interface IMultiplicityRange extends IMultiplicity
             features (↓name):
                 bound: Expression[1..*]
                 lowerBound: Expression[1..*]
                 upperBound: Expression[1..*]
 
-        concept Namespace extends Element
+        interface INamespace extends IElement
             features (↓name):
                 importedMembership: Membership[1..*]
                 member: Element[1..*]
@@ -303,46 +375,46 @@ language kerml
                 ownedMember: Element[1..*]
                 ownedMembership: Membership[1..*]
 
-        concept NamespaceImport extends Import
+        interface INamespaceImport extends IImport
             features (↓name):
                 importedNamespace: Namespace[1..*]
 
-        concept NullExpression extends Expression
+        interface INullExpression extends IExpression
 
-        concept OperatorExpression extends InvocationExpression
+        interface IOperatorExpression extends IInvocationExpression
             features (↓name):
                 operator: String
 
-        concept OwningMembership extends Membership
+        interface IOwningMembership extends IMembership
             features (↓name):
                 ownedMemberElement: Element[1..*]
                 ownedMemberElementId: String
                 ownedMemberName: String
                 ownedMemberShortName: String
 
-        concept Package extends Namespace
+        interface IPackage extends INamespace
             features (↓name):
                 filterCondition: Expression[1..*]
 
-        concept ParameterMembership extends FeatureMembership
+        interface IParameterMembership extends IFeatureMembership
             features (↓name):
                 ownedMemberParameter: Feature[1..*]
 
-        concept PayloadFeature extends Feature
+        interface IPayloadFeature extends IFeature
 
-        concept Predicate extends Function
+        interface IPredicate extends IFunction
 
-        concept Redefinition extends Subsetting
+        interface IRedefinition extends ISubsetting
             features (↓name):
                 redefinedFeature: Feature[1..*]
                 redefiningFeature: Feature[1..*]
 
-        concept ReferenceSubsetting extends Subsetting
+        interface IReferenceSubsetting extends ISubsetting
             features (↓name):
                 referencedFeature: Feature[1..*]
                 referencingFeature: Feature[1..*]
 
-        abstract concept Relationship extends Element
+        interface IRelationship extends IElement
             features (↓name):
                 isImplied: Boolean
                 ownedRelatedElement: Element[1..*]
@@ -351,50 +423,50 @@ language kerml
                 source: Element[1..*]
                 target: Element[1..*]
 
-        concept ResultExpressionMembership extends FeatureMembership
+        interface IResultExpressionMembership extends IFeatureMembership
             features (↓name):
                 ownedResultExpression: Expression[1..*]
 
-        concept ReturnParameterMembership extends ParameterMembership
+        interface IReturnParameterMembership extends IParameterMembership
 
-        concept SelectExpression extends OperatorExpression
+        interface ISelectExpression extends IOperatorExpression
 
-        concept Specialization extends Relationship
+        interface ISpecialization extends IRelationship
             features (↓name):
                 general: Type[1..*]
                 owningType: Type[1..*]
                 specific: Type[1..*]
 
-        concept Step extends Feature
+        interface IStep extends IFeature
             features (↓name):
                 behavior: Behavior[1..*]
                 parameter: Feature[1..*]
 
-        concept Structure extends Class
+        interface IStructure extends IClass
 
-        concept Subclassification extends Specialization
+        interface ISubclassification extends ISpecialization
             features (↓name):
                 owningClassifier: kermlClassifier[1..*]
                 subclassifier: kermlClassifier[1..*]
                 superclassifier: kermlClassifier[1..*]
 
-        concept Subsetting extends Specialization
+        interface ISubsetting extends ISpecialization
             features (↓name):
                 owningFeature: Feature[1..*]
                 subsettedFeature: Feature[1..*]
                 subsettingFeature: Feature[1..*]
 
-        concept Succession extends Connector
+        interface ISuccession extends IConnector
 
-        concept SuccessionFlow extends Flow
+        interface ISuccessionFlow extends IFlow, ISuccession
 
-        concept TextualRepresentation extends AnnotatingElement
+        interface ITextualRepresentation extends IAnnotatingElement
             features (↓name):
                 body: String
                 language: String
                 representedElement: Element[1..*]
 
-        concept Type extends Namespace
+        interface IType extends INamespace
             features (↓name):
                 differencingType: Type[1..*]
                 directedFeature: Feature[1..*]
@@ -421,16 +493,110 @@ language kerml
                 ownedUnioning: Unioning[1..*]
                 unioningType: Type[1..*]
 
-        concept TypeFeaturing extends Relationship
+        interface ITypeFeaturing extends IRelationship
             features (↓name):
                 featureOfType: Feature[1..*]
                 featuringType: Type[1..*]
                 owningFeatureOfType: Feature[1..*]
 
-        concept Unioning extends Relationship
+        interface IUnioning extends IRelationship
             features (↓name):
                 typeUnioned: Type[1..*]
                 unioningType: Type[1..*]
+
+        abstract concept Import implements IImport
+
+        concept IndexExpression implements IIndexExpression
+
+        abstract concept InstantiationExpression implements IInstantiationExpression
+
+        concept Interaction implements IInteraction
+
+        concept Intersecting implements IIntersecting
+
+        concept Invariant implements IInvariant
+
+        concept InvocationExpression implements IInvocationExpression
+
+        concept LibraryPackage implements ILibraryPackage
+
+        concept LiteralBoolean implements ILiteralBoolean
+
+        concept LiteralExpression implements ILiteralExpression
+
+        concept LiteralInfinity implements ILiteralInfinity
+
+        concept LiteralInteger implements ILiteralInteger
+
+        concept LiteralRational implements ILiteralRational
+
+        concept LiteralString implements ILiteralString
+
+        concept Membership implements IMembership
+
+        concept MembershipImport implements IMembershipImport
+
+        concept Metaclass implements IMetaclass
+
+        concept MetadataAccessExpression implements IMetadataAccessExpression
+
+        concept MetadataFeature implements IMetadataFeature
+
+        concept Multiplicity implements IMultiplicity
+
+        concept MultiplicityRange implements IMultiplicityRange
+
+        concept Namespace implements INamespace
+
+        concept NamespaceImport implements INamespaceImport
+
+        concept NullExpression implements INullExpression
+
+        concept OperatorExpression implements IOperatorExpression
+
+        concept OwningMembership implements IOwningMembership
+
+        concept Package implements IPackage
+
+        concept ParameterMembership implements IParameterMembership
+
+        concept PayloadFeature implements IPayloadFeature
+
+        concept Predicate implements IPredicate
+
+        concept Redefinition implements IRedefinition
+
+        concept ReferenceSubsetting implements IReferenceSubsetting
+
+        abstract concept Relationship implements IRelationship
+
+        concept ResultExpressionMembership implements IResultExpressionMembership
+
+        concept ReturnParameterMembership implements IReturnParameterMembership
+
+        concept SelectExpression implements ISelectExpression
+
+        concept Specialization implements ISpecialization
+
+        concept Step implements IStep
+
+        concept Structure implements IStructure
+
+        concept Subclassification implements ISubclassification
+
+        concept Subsetting implements ISubsetting
+
+        concept Succession implements ISuccession
+
+        concept SuccessionFlow implements ISuccessionFlow
+
+        concept TextualRepresentation implements ITextualRepresentation
+
+        concept Type implements IType
+
+        concept TypeFeaturing implements ITypeFeaturing
+
+        concept Unioning implements IUnioning
 
         enumeration VisibilityKind
             literals:
@@ -438,8 +604,6 @@ language kerml
                 protected
                 public
 
-        concept kermlClassifier extends Type
-            features (↓name):
-                ownedSubclassification: Subclassification[1..*]
+        concept kermlClassifier implements IClassifier
 
 

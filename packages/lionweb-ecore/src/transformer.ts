@@ -16,6 +16,7 @@ import { LionWebId } from "@lionweb/json"
 import { concatenator } from "@lionweb/ts-utils"
 
 import { EAttribute, EClass, EDataType, EEnum, EPackage, EReference, EStructuralFeature } from "./gen/ecore.g.js"
+import { inheritanceInfosFor, verboseInheritanceInfo } from "./inheritance-info.js"
 import { log, LogLevel } from "./logging.js"
 
 
@@ -25,6 +26,7 @@ import { log, LogLevel } from "./logging.js"
 export type TransformerOptions = Partial<{
     eDataTypesToPrimitiveTypes: boolean
     customEDataTypeToLionWebPrimitiveType: (eDataType: EDataType) => PrimitiveType | undefined
+    rectifyMultipleInheritance: boolean
 }>
 
 
@@ -52,6 +54,15 @@ const eDataTypeToPrimitiveType: Record<string, PrimitiveType> = {
  * 4. Multiple inheritance is not dealt with.
  */
 export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, options?: TransformerOptions): Language => {
+
+    const inheritanceInfos = inheritanceInfosFor(ePackage)
+    verboseInheritanceInfo(inheritanceInfos, LogLevel.info)
+    const inheritanceInfoBySourceId = Object.fromEntries(
+        inheritanceInfos.map((inheritanceInfo) => [
+            inheritanceInfo.eClass.id,
+            inheritanceInfo
+        ])
+    )
 
     const factory = new LanguageFactory(ePackage.name, languageVersion, concatenator("-"), concatenator("-"))
 
@@ -85,62 +96,88 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
             })
     )
 
-    const eClasses = ePackage.eClassifiers
-        .filter((eClassifier) => eClassifier instanceof EClass)
-    const classifiersBySourceId: Record<LionWebId, Classifier> = {}
-    const classifierFor = (eClass: EClass): Classifier => {
+    const interfaceForEClassBySourceId: Record<LionWebId, Interface> = {}
+    const interfaceFor = (eClass: EClass): Interface => {
         const sourceId = eClass.id
-        const classifier = classifiersBySourceId[sourceId]
+        const intface = interfaceForEClassBySourceId[sourceId]
+        if (intface === undefined) {
+            throw new Error(`no interface for EClass with source id "${sourceId}" exists`)
+        }
+        return intface
+    }
+    const directClassifierForEClassBySourceId: Record<LionWebId, Classifier> = {}
+    const directClassifierFor = (eClass: EClass): Classifier => {
+        const sourceId = eClass.id
+        const classifier = directClassifierForEClassBySourceId[sourceId]
         if (classifier === undefined) {
-            throw new Error(`no entity with source id "${sourceId}" exists`)
+            throw new Error(`no direct(ly-transformed) classifier for EClass with source id "${sourceId}" exists`)
         }
         return classifier
     }
+    const eClasses = ePackage.eClassifiers
+        .filter((eClassifier) => eClassifier instanceof EClass)
     nameSorted(eClasses)  // (sort names for some stability)
         .forEach((eClass) => {
-        const {name, abstract} = eClass
+            const {name, abstract, id} = eClass
 
-        const genName = (["Classifier"].indexOf(name) === -1
-            ? ""
-            : ePackage.name) + name
-        // TODO  add annotation to transformed classifier to state its original name (in case the genName is different)
+            const genName = (["Classifier"].indexOf(name) === -1
+                ? ""
+                : ePackage.name) + name
+            // TODO  add annotation to transformed classifier to state its original name (in case the genName is different)
 
-        classifiersBySourceId[eClass.id] = eClass.interface
-            ? factory.interface(genName)
-            : factory.concept(genName, abstract)
-    })
+            if (options?.rectifyMultipleInheritance) {
+                if (eClass.interface) {
+                    const intface = factory.interface(genName)
+                    interfaceForEClassBySourceId[id] = intface
+                    directClassifierForEClassBySourceId[id] = intface
+                } else {
+                    const intface = factory.interface(`I${name}`)
+                    interfaceForEClassBySourceId[id] = intface
+                    directClassifierForEClassBySourceId[id] = factory.concept(genName, abstract).implementing(intface)
+                }
+            } else {
+                const classifier = eClass.interface
+                    ? factory.interface(genName)
+                    : factory.concept(genName, abstract)
+                directClassifierForEClassBySourceId[id] = classifier
+                if (classifier instanceof Interface) {
+                    interfaceForEClassBySourceId[id] = classifier
+                }
+            }
+        })
 
 
     // 2. hook up super types
     const installSuperTypesForEClass = (eClass: EClass) => {
         const {name} = eClass
-        const classifier = classifiersBySourceId[eClass.id]
-
-        const referencedSuperTypes = eClass.eSuperTypes.filter(isRef)
-        const interfaceSuperTypes = referencedSuperTypes.filter((eSuperType) => eSuperType.interface) as EClass[]
-        const nonInterfaceSuperTypes = referencedSuperTypes.filter((eSuperType) => !eSuperType.interface) as EClass[]
-
-        if (classifier instanceof Interface) {
-            classifier.extending(...(interfaceSuperTypes.map(classifierFor) as Interface[]))
-            if (nonInterfaceSuperTypes.length > 0) {
-                log(LogLevel.warning, `interface-EClass "${name}" has super types that are not interfaces: ${nonInterfaceSuperTypes.map(nameOf).join(" ")} — didn’t add the transformed versions of those to Interface.extends`)
+        const {referencedSuperTypes, interfaceSuperTypes, nonInterfaceSuperTypes} = inheritanceInfoBySourceId[eClass.id]
+        if (options?.rectifyMultipleInheritance) {
+            const intface = interfaceFor(eClass)
+            intface.extending(...(referencedSuperTypes.map(interfaceFor)))
+        } else {
+            const classifier = directClassifierFor(eClass)
+            if (classifier instanceof Interface) {
+                classifier.extending(...(interfaceSuperTypes.map(interfaceFor)))
+                if (nonInterfaceSuperTypes.length > 0) {
+                    log(LogLevel.warning, `interface-EClass "${name}" has super types that are not interfaces: ${nonInterfaceSuperTypes.map(nameOf).join(" ")} — didn’t add the transformed versions of those to Interface.extends`)
+                }
             }
-        }
-        if (classifier instanceof Concept) {
-            classifier.implementing(...(interfaceSuperTypes.map(classifierFor) as Interface[]))
-            if (nonInterfaceSuperTypes.length > 0) {
-                const mappedSuperTypes = nonInterfaceSuperTypes.map(classifierFor)
-                const mappedSuperConcept = mappedSuperTypes[0] as Concept
-                classifier.extends = mappedSuperConcept
-                if (nonInterfaceSuperTypes.length > 1) {
-                    log(LogLevel.warning, `non-interface-EClass "${name}" exhibits multiple inheritance — set Concept.extends to first super concept "${mappedSuperConcept.name}", and ignored the remaining ${mappedSuperTypes.length - 1}`)
+            if (classifier instanceof Concept) {
+                classifier.implementing(...(interfaceSuperTypes.map(interfaceFor)))
+                if (nonInterfaceSuperTypes.length > 0) {
+                    const mappedSuperTypes = nonInterfaceSuperTypes.map(directClassifierFor)
+                    const mappedSuperConcept = mappedSuperTypes[0] as Concept
+                    classifier.extends = mappedSuperConcept
+                    if (nonInterfaceSuperTypes.length > 1) {
+                        log(LogLevel.warning, `non-interface-EClass "${name}" exhibits multiple inheritance — set Concept.extends to first super concept "${mappedSuperConcept.name}", and ignored the remaining ${mappedSuperTypes.length - 1}`)
+                    }
                 }
             }
         }
     }
 
     const installFeaturesForEClass = (eClass: EClass) => {
-        const classifier = classifierFor(eClass)
+        const classifier = options?.rectifyMultipleInheritance ? interfaceFor(eClass) : directClassifierFor(eClass)
 
         const dataTypeFor = ({id: sourceId, eType}: EAttribute): DataType => {
             if (isRef(eType)) {
@@ -204,7 +241,7 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
                     // TODO  probably put an annotation on this if upperBound > 1
                 }
                 if (isRef(eType)) {
-                    link.ofType(classifierFor(eType as EClass))
+                    link.ofType(directClassifierFor(eType as EClass))
                 }
                 return
             }
@@ -217,8 +254,7 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
         })
     }
 
-    ePackage.eClassifiers
-        .filter((eClassifier) => eClassifier instanceof EClass)
+    eClasses
         .forEach((eClass) => {
             installSuperTypesForEClass(eClass)
             installFeaturesForEClass(eClass)
