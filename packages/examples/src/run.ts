@@ -8,7 +8,8 @@ import {
     EPackage,
     readEcoreFile,
     ReaderOptions,
-    TransformerOptions
+    TransformerOptions,
+    verbalizationOfStatisticsFor
 } from "@lionweb-xml/lionweb-ecore"
 import { readFile, writeFile } from "fs/promises"
 import { join } from "path"
@@ -47,6 +48,7 @@ const runOnce = async (filePath: string, options?: RunOptions) => {
     generateLanguage(language, "src/gen")
 
     console.log(`...done generating artifacts for Ecore file: ${fileName}`)
+    console.log(verbalizationOfStatisticsFor(ePackage))
     console.log()
 
     return ePackage

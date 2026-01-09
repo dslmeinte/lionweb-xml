@@ -15,7 +15,8 @@ import {
 import { LionWebId } from "@lionweb/json"
 import { concatenator } from "@lionweb/ts-utils"
 
-import { EAttribute, EClass, EDataType, EEnum, EPackage, EReference, EStructuralFeature } from "./gen/ecore.g.js"
+import { EAttribute, EClass, EDataType, EPackage, EReference, EStructuralFeature } from "./gen/ecore.g.js"
+import { isEClass, isEDataType, isEEnum } from "./functions.js"
 import { inheritanceInfosFor, verboseInheritanceInfo } from "./inheritance-info.js"
 import { log, LogLevel } from "./logging.js"
 
@@ -70,7 +71,7 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
     // 1. instantiate LW language entities
 
     const nonEEnumEDataTypes = ePackage.eClassifiers
-        .filter((eClassifier) => eClassifier instanceof EDataType && !(eClassifier instanceof EEnum))   // (note: EEnum instanceof EDataType)
+        .filter((eClassifier) => isEDataType(eClassifier) && !isEEnum(eClassifier))   // (note: EEnum is an EDataType)
     if (options?.eDataTypesToPrimitiveTypes) {
         nameSorted(nonEEnumEDataTypes)  // (sort names for some stability)
             .forEach(({name}) => {
@@ -82,8 +83,7 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
         }
     }
 
-    const eEnums = ePackage.eClassifiers
-        .filter((eClassifier) => eClassifier instanceof EEnum)
+    const eEnums = ePackage.eClassifiers.filter(isEEnum)
     const enumerationsBySourceId: Record<LionWebId, Enumeration> = Object.fromEntries(
         nameSorted(eEnums)  // (sort names for some stability)
             .map((eEnum) => {
@@ -114,8 +114,7 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
         }
         return classifier
     }
-    const eClasses = ePackage.eClassifiers
-        .filter((eClassifier) => eClassifier instanceof EClass)
+    const eClasses = ePackage.eClassifiers.filter(isEClass)
     nameSorted(eClasses)  // (sort names for some stability)
         .forEach((eClass) => {
             const {name, abstract, id} = eClass
@@ -181,10 +180,10 @@ export const asLionWebLanguage = (ePackage: EPackage, languageVersion: string, o
 
         const dataTypeFor = ({id: sourceId, eType}: EAttribute): DataType => {
             if (isRef(eType)) {
-                if (eType instanceof EEnum) {
+                if (isEEnum(eType)) {
                     return enumerationsBySourceId[eType.id]
                 }
-                if (eType instanceof EDataType) {
+                if (isEDataType(eType)) {
                     if (options?.customEDataTypeToLionWebPrimitiveType !== undefined) {
                         const primitiveType = options!.customEDataTypeToLionWebPrimitiveType!(eType)
                         if (primitiveType !== undefined) {

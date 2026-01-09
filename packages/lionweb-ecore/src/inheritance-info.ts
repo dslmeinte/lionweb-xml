@@ -1,5 +1,6 @@
 import { isRef, nameOf, nameSorted } from "@lionweb/core"
 import { EClass, EPackage } from "./gen/ecore.g.js"
+import { isEClass } from "./functions.js"
 import { log, LogLevel } from "./logging.js"
 
 
@@ -19,7 +20,7 @@ export type InheritanceInfo = {
 
 export const inheritanceInfosFor = (ePackage: EPackage): InheritanceInfo[] =>
     ePackage.eClassifiers
-        .filter((eClassifier) => eClassifier instanceof EClass)
+        .filter(isEClass)
         .map((eClass) => {
             const referencedSuperTypes = eClass.eSuperTypes.filter(isRef)
             const interfaceSuperTypes = referencedSuperTypes.filter((eSuperType) => eSuperType.interface) as EClass[]
