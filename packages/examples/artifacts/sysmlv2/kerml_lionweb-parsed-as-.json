@@ -5,7 +5,7 @@
             "xmlns:xmi": "http://www.omg.org/XMI",
             "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
             "xmlns:ecore": "http://www.eclipse.org/emf/2002/Ecore",
-            "name": "kerml",
+            "name": "kerml_lionweb",
             "nsURI": "https://www.omg.org/spec/KerML/20240201",
             "nsPrefix": "kerml"
         },

@@ -1,4 +1,4 @@
-language sysml
+language sysml_lionweb
     version: 1
     entities (↓name):
 
@@ -1028,6 +1028,6 @@ language sysml
                 untilArgument: IExpression[1..*]
                 whileArgument: IExpression[1..*]
 
-        concept sysmlClassifier implements IClassifier
+        concept sysml_lionwebClassifier implements IClassifier
 
 

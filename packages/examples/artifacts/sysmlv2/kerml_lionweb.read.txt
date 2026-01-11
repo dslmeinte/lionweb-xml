@@ -8539,4 +8539,4 @@ EPackage (id: id-1)
             eAnnotations: <nothing>
             idXmi = <not set>
     idXmi = <not set>
-    name = "kerml"
+    name = "kerml_lionweb"

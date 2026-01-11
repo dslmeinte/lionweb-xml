@@ -19556,4 +19556,4 @@ EPackage (id: id-1)
             eAnnotations: <nothing>
             idXmi = <not set>
     idXmi = <not set>
-    name = "sysml"
+    name = "sysml_lionweb"
