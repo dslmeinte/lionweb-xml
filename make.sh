@@ -24,25 +24,26 @@ echo "...done"
 echo ""
 echo ""
 
-echo "Running generation in package: examples"
-cd examples
-npm run generate > generate.out.log 2> generate.err.log
+echo "Running tests in package: test"
+cd test
+npm test
 cd ..
 echo "...done"
 echo ""
 echo ""
 
+echo "Running generation and building generated code in package: examples"
+cd examples
+npm run generate > generate.out.log 2> generate.err.log
+npm run build
+cd ..
+echo "...done"
+echo ""
+echo ""
+
+
 cd .. # (/<root>)
 
 # (doesn't bother with dependency order:)
 npm run lint
-
-echo "Building package: examples"
-cd packages/examples
-# re-run compilation for generated code:
-npm run build
-cd ../..
-echo "...done"
-echo ""
-echo ""
 

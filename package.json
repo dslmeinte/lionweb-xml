@@ -29,6 +29,7 @@
     "workspaces": [
         "./packages/build",
         "./packages/lionweb-ecore",
+        "./packages/test",
         "./packages/examples"
     ]
 }

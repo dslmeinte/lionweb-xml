@@ -1,0 +1,32 @@
+{
+    "name": "@lionweb-xml/test",
+    "version": "0.0.0-dev.0",
+    "description": "Tests for the lionweb-ecore package",
+    "private": true,
+    "main": "dist/run.js",
+    "type": "module",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LionWeb-io/lionweb-xml.git"
+    },
+    "bugs": {
+        "url": "https://github.com/LionWeb-io/lionweb-xml/issues"
+    },
+    "scripts": {
+        "clean": "npx rimraf dist node_modules",
+        "build": "tsc",
+        "pretest": "npm run build",
+        "test": "mocha --recursive dist/",
+        "lint": "eslint src"
+    },
+    "dependencies": {
+        "@lionweb-xml/lionweb-ecore": "*",
+        "chai": "6.2.2",
+        "mocha": "11.7.5"
+    },
+    "devDependencies": {
+        "@types/chai": "5.2.3",
+        "@types/mocha": "10.0.10"
+    }
+}
