@@ -1,0 +1,86 @@
+@startuml
+
+class TextualRepresentation extends AnnotatingElement
+class AnnotatingElement extends Element
+abstract class Element
+class OwningMembership extends Membership
+class Membership extends Relationship
+abstract class Relationship extends Element
+class Namespace extends Element
+abstract class Import extends Relationship
+class Documentation extends Comment
+class Comment extends AnnotatingElement
+class Annotation extends Relationship
+class MembershipImport extends Import
+class NamespaceImport extends Import
+class Dependency extends Relationship
+class CrossSubsetting extends Subsetting
+class Subsetting extends Specialization
+class Specialization extends Relationship
+class Type extends Namespace
+class FeatureMembership extends OwningMembership
+class Feature extends Type
+class Redefinition extends Subsetting
+class FeatureTyping extends Specialization
+class TypeFeaturing extends Relationship
+class FeatureInverting extends Relationship
+class FeatureChaining extends Relationship
+class ReferenceSubsetting extends Subsetting
+class Conjugation extends Relationship
+class Multiplicity extends Feature
+class Intersecting extends Relationship
+class Unioning extends Relationship
+class Disjoining extends Relationship
+class Differencing extends Relationship
+class EndFeatureMembership extends FeatureMembership
+class Classifier extends Type
+class Subclassification extends Specialization
+class Succession extends Connector
+class Connector extends Feature, Relationship
+class Association extends Classifier, Relationship
+class BindingConnector extends Connector
+class MultiplicityRange extends Multiplicity
+class Expression extends Step
+class Step extends Feature
+class Behavior extends Class
+class Class extends Classifier
+class Function extends Behavior
+class Invariant extends BooleanExpression
+class BooleanExpression extends Expression
+class Predicate extends Function
+class ReturnParameterMembership extends ParameterMembership
+class ParameterMembership extends FeatureMembership
+class ResultExpressionMembership extends FeatureMembership
+class FeatureValue extends OwningMembership
+class LibraryPackage extends Package
+class Package extends Namespace
+class ElementFilterMembership extends OwningMembership
+class NullExpression extends Expression
+class LiteralInfinity extends LiteralExpression
+class LiteralExpression extends Expression
+class LiteralInteger extends LiteralExpression
+class LiteralString extends LiteralExpression
+class LiteralBoolean extends LiteralExpression
+class SelectExpression extends OperatorExpression
+class OperatorExpression extends InvocationExpression
+class InvocationExpression extends InstantiationExpression
+abstract class InstantiationExpression extends Expression
+class CollectExpression extends OperatorExpression
+class FeatureReferenceExpression extends Expression
+class IndexExpression extends OperatorExpression
+class MetadataAccessExpression extends Expression
+class MetadataFeature extends Feature, AnnotatingElement
+class Metaclass extends Structure
+class Structure extends Class
+class ConstructorExpression extends InstantiationExpression
+class LiteralRational extends LiteralExpression
+class FeatureChainExpression extends OperatorExpression
+class PayloadFeature extends Feature
+class Interaction extends Association, Behavior
+class FlowEnd extends Feature
+class SuccessionFlow extends Flow, Succession
+class Flow extends Connector, Step
+class AssociationStructure extends Association, Structure
+class DataType extends Classifier
+
+@enduml

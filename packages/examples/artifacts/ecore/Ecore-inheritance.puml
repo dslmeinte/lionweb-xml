@@ -1,0 +1,24 @@
+@startuml
+
+class EAttribute extends EStructuralFeature
+class EAnnotation extends EModelElement
+class EClass extends EClassifier
+abstract class EClassifier extends ENamedElement
+class EDataType extends EClassifier
+class EEnum extends EDataType
+class EEnumLiteral extends ENamedElement
+class EFactory extends EModelElement
+abstract class EModelElement
+abstract class ENamedElement extends EModelElement
+class EObject
+class EOperation extends ETypedElement
+class EPackage extends ENamedElement
+class EParameter extends ETypedElement
+class EReference extends EStructuralFeature
+abstract class EStructuralFeature extends ETypedElement
+abstract class ETypedElement extends ENamedElement
+class EStringToStringMapEntry
+class EGenericType
+class ETypeParameter extends ENamedElement
+
+@enduml

@@ -1,5 +1,6 @@
 export * from "./gen/ecore.g.js"
 export { isEClass, isEDataType, isEEnum, verbalizationOfStatisticsFor } from "./functions.js"
+export { inheritanceAsPlantUMLOf } from "./grapher.js"
 export { readEcoreFile } from "./reader.js"
 export type { ExternalETypeResolver, ReaderOptions } from "./reader.js"
 export { ecoreStdlib } from "./stdlib.js"

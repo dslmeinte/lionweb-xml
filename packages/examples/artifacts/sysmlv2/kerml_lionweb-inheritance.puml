@@ -1,0 +1,98 @@
+@startuml
+
+interface IElement
+class OwningMembership extends Membership
+class Membership extends IRelationship
+interface IRelationship extends IElement
+interface INamespace extends IElement
+abstract class Import extends IRelationship
+class Documentation extends Comment
+class Comment extends IAnnotatingElement
+interface IAnnotatingElement extends IElement
+class Annotation extends IRelationship
+class TextualRepresentation extends IAnnotatingElement
+class Dependency extends IRelationship
+class MembershipImport extends Import
+class NamespaceImport extends Import
+class Subclassification extends Specialization
+class Specialization extends IRelationship
+interface IType extends INamespace
+class FeatureMembership extends OwningMembership, IFeaturing
+interface IFeaturing extends IRelationship
+interface IFeature extends IType
+class Redefinition extends Subsetting
+class Subsetting extends Specialization
+class FeatureTyping extends Specialization
+class TypeFeaturing extends IFeaturing
+class FeatureInverting extends IRelationship
+class FeatureChaining extends IRelationship
+class ReferenceSubsetting extends Subsetting
+class Conjugation extends IRelationship
+class Multiplicity extends IFeature
+class Intersecting extends IRelationship
+class Unioning extends IRelationship
+class Disjoining extends IRelationship
+class Differencing extends IRelationship
+interface IClassifier extends IType
+class EndFeatureMembership extends FeatureMembership
+class ElementFilterMembership extends OwningMembership
+class Expression extends IStep
+interface IStep extends IFeature
+interface IBehavior extends IClass
+interface IClass extends IClassifier
+class Function extends IBehavior
+class Package extends INamespace
+class LibraryPackage extends Package
+class InvocationExpression extends Expression
+class FeatureReferenceExpression extends Expression
+class OperatorExpression extends InvocationExpression
+class LiteralString extends LiteralExpression
+class LiteralExpression extends Expression
+class LiteralBoolean extends LiteralExpression
+class LiteralInteger extends LiteralExpression
+class NullExpression extends Expression
+class MetadataAccessExpression extends Expression
+class MetadataFeature extends IFeature, IAnnotatingElement
+class Metaclass extends IStructure
+interface IStructure extends IClass
+class SelectExpression extends OperatorExpression
+class FeatureChainExpression extends OperatorExpression
+class CollectExpression extends OperatorExpression
+class LiteralInfinity extends LiteralExpression
+class LiteralRational extends LiteralExpression
+class MultiplicityRange extends Multiplicity
+class FeatureValue extends OwningMembership
+class BindingConnector extends IConnector
+interface IConnector extends IFeature, IRelationship
+class Association extends IClassifier, IRelationship
+interface ISuccession extends IConnector
+class Invariant extends BooleanExpression
+class BooleanExpression extends Expression
+class Predicate extends Function
+class ReturnParameterMembership extends ParameterMembership
+class ParameterMembership extends FeatureMembership
+class ResultExpressionMembership extends FeatureMembership
+class DataType extends IClassifier
+class Interaction extends Association, IBehavior
+class ItemFlowEnd extends IFeature
+class ItemFlow extends IConnector, IStep
+class ItemFeature extends IFeature
+class SuccessionItemFlow extends ItemFlow, ISuccession
+class AssociationStructure extends Association, IStructure
+class AliasIdsContainer
+class Featuring extends IFeaturing
+class Relationship extends IRelationship
+class Element extends IElement
+class AnnotatingElement extends IAnnotatingElement
+class Behavior extends IBehavior
+class Class extends IClass
+class Classifier extends IClassifier
+class Type extends IType
+class Namespace extends INamespace
+class Step extends IStep
+class Feature extends IFeature
+class Succession extends ISuccession
+class Connector extends IConnector
+class Structure extends IStructure
+
+@enduml

@@ -24,6 +24,7 @@
         "@lionweb/core": "0.7.2",
         "@lionweb/json": "0.7.2",
         "@lionweb/ts-utils": "0.7.2",
+        "littoral-templates": "0.5.1",
         "xml2js": "0.6.2"
     },
     "devDependencies": {

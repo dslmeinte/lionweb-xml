@@ -1,0 +1,219 @@
+@startuml
+
+class Subclassification extends Specialization
+class Specialization extends IRelationship
+interface IRelationship extends IElement
+interface IElement
+class OwningMembership extends Membership
+class Membership extends IRelationship
+interface INamespace extends IElement
+interface IImport extends IRelationship
+class Documentation extends Comment
+class Comment extends IAnnotatingElement
+interface IAnnotatingElement extends IElement
+class Annotation extends IRelationship
+class TextualRepresentation extends IAnnotatingElement
+interface IType extends INamespace
+class FeatureMembership extends OwningMembership, IFeaturing
+interface IFeaturing extends IRelationship
+interface IFeature extends IType
+class Redefinition extends Subsetting
+class Subsetting extends Specialization
+class FeatureTyping extends Specialization
+class TypeFeaturing extends IFeaturing
+class FeatureInverting extends IRelationship
+class FeatureChaining extends IRelationship
+class ReferenceSubsetting extends Subsetting
+class CrossSubsetting extends Subsetting
+class Conjugation extends IRelationship
+class Multiplicity extends IFeature
+class Intersecting extends IRelationship
+class Unioning extends IRelationship
+class Disjoining extends IRelationship
+class Differencing extends IRelationship
+interface IClassifier extends IType
+class EndFeatureMembership extends FeatureMembership
+interface IExpression extends IStep
+interface IStep extends IFeature
+interface IBehavior extends IClass
+interface IClass extends IClassifier
+interface IFunction extends IBehavior
+class ResultExpressionMembership extends FeatureMembership
+interface IInvariant extends IBooleanExpression
+interface IBooleanExpression extends IExpression
+interface IPredicate extends IFunction
+class ReturnParameterMembership extends ParameterMembership
+class ParameterMembership extends FeatureMembership
+class MultiplicityRange extends Multiplicity
+interface IStructure extends IClass
+class FeatureValue extends OwningMembership
+interface IMetaclass extends IStructure
+class MetadataFeature extends IFeature, IAnnotatingElement
+interface IItemFlow extends IConnector, IStep
+interface IConnector extends IFeature, IRelationship
+interface IAssociation extends IClassifier, IRelationship
+class ItemFlowEnd extends IFeature
+class ItemFeature extends IFeature
+interface IInteraction extends IAssociation, IBehavior
+interface ISuccessionItemFlow extends IItemFlow, ISuccession
+interface ISuccession extends IConnector
+class ElementFilterMembership extends OwningMembership
+class Package extends INamespace
+class LibraryPackage extends Package
+interface IDataType extends IClassifier
+class FeatureReferenceExpression extends IExpression
+class MetadataAccessExpression extends IExpression
+class NullExpression extends IExpression
+class IndexExpression extends OperatorExpression
+class OperatorExpression extends InvocationExpression
+class InvocationExpression extends IExpression
+class CollectExpression extends OperatorExpression
+class LiteralInfinity extends LiteralExpression
+class LiteralExpression extends IExpression
+class LiteralInteger extends LiteralExpression
+class SelectExpression extends OperatorExpression
+class LiteralRational extends LiteralExpression
+class LiteralBoolean extends LiteralExpression
+class LiteralString extends LiteralExpression
+class FeatureChainExpression extends OperatorExpression
+interface IBindingConnector extends IConnector
+interface IAssociationStructure extends IAssociation, IStructure
+class Dependency extends IRelationship
+class NamespaceImport extends IImport
+class MembershipImport extends IImport
+class InterfaceUsage extends ConnectionUsage
+class ConnectionUsage extends ConnectorAsUsage, IPartUsage
+abstract class ConnectorAsUsage extends IUsage, IConnector
+interface IUsage extends IFeature
+class VariantMembership extends OwningMembership
+class Definition extends IClassifier
+class ReferenceUsage extends IUsage
+class AttributeUsage extends IUsage
+class EnumerationUsage extends AttributeUsage
+class EnumerationDefinition extends AttributeDefinition
+class AttributeDefinition extends Definition, IDataType
+interface IOccurrenceUsage extends IUsage
+class OccurrenceDefinition extends Definition, IClass
+class LifeClass extends IClass
+interface IItemUsage extends IOccurrenceUsage
+interface IPartUsage extends IItemUsage
+class PartDefinition extends ItemDefinition
+class ItemDefinition extends OccurrenceDefinition, IStructure
+class PortUsage extends IOccurrenceUsage
+class PortDefinition extends OccurrenceDefinition, IStructure
+class ConjugatedPortDefinition extends PortDefinition
+class PortConjugation extends Conjugation
+class FlowConnectionUsage extends ConnectorAsUsage, IActionUsage, IItemFlow
+interface IActionUsage extends IOccurrenceUsage, IStep
+class AllocationUsage extends ConnectionUsage
+class AllocationDefinition extends ConnectionDefinition
+class ConnectionDefinition extends PartDefinition, IAssociationStructure
+class StateUsage extends IActionUsage
+class TransitionUsage extends IActionUsage
+class AcceptActionUsage extends IActionUsage
+class CalculationUsage extends IActionUsage, IExpression
+interface IConstraintUsage extends IOccurrenceUsage, IBooleanExpression
+class RequirementUsage extends IConstraintUsage
+class RequirementDefinition extends ConstraintDefinition
+class ConstraintDefinition extends OccurrenceDefinition, IPredicate
+class ConcernUsage extends RequirementUsage
+class ConcernDefinition extends RequirementDefinition
+class CaseUsage extends CalculationUsage
+class CaseDefinition extends CalculationDefinition
+class CalculationDefinition extends ActionDefinition, IFunction
+class ActionDefinition extends OccurrenceDefinition, IBehavior
+class AnalysisCaseUsage extends CaseUsage
+class AnalysisCaseDefinition extends CaseDefinition
+class VerificationCaseUsage extends CaseUsage
+class VerificationCaseDefinition extends CaseDefinition
+class UseCaseUsage extends CaseUsage
+class UseCaseDefinition extends CaseDefinition
+class ViewUsage extends IPartUsage
+class ViewDefinition extends PartDefinition
+class ViewpointUsage extends RequirementUsage
+class ViewpointDefinition extends RequirementDefinition
+class RenderingUsage extends IPartUsage
+class RenderingDefinition extends PartDefinition
+class MetadataUsage extends IItemUsage, MetadataFeature
+class InterfaceDefinition extends ConnectionDefinition
+class ConjugatedPortTyping extends FeatureTyping
+class TransitionFeatureMembership extends FeatureMembership
+class ExhibitStateUsage extends StateUsage, IPerformActionUsage
+interface IPerformActionUsage extends IActionUsage, IEventOccurrenceUsage
+interface IEventOccurrenceUsage extends IOccurrenceUsage
+class StateSubactionMembership extends FeatureMembership
+class StateDefinition extends ActionDefinition
+class SuccessionFlowConnectionUsage extends FlowConnectionUsage, ISuccessionItemFlow
+class FlowConnectionDefinition extends ActionDefinition, IInteraction
+class RequirementVerificationMembership extends RequirementConstraintMembership
+class RequirementConstraintMembership extends FeatureMembership
+class IncludeUseCaseUsage extends UseCaseUsage, IPerformActionUsage
+class ObjectiveMembership extends FeatureMembership
+class SatisfyRequirementUsage extends RequirementUsage, IAssertConstraintUsage
+interface IAssertConstraintUsage extends IConstraintUsage, IInvariant
+class SubjectMembership extends ParameterMembership
+class StakeholderMembership extends ParameterMembership
+class FramedConcernMembership extends RequirementConstraintMembership
+class ActorMembership extends ParameterMembership
+class ViewRenderingMembership extends FeatureMembership
+class NamespaceExpose extends NamespaceImport, IExpose
+interface IExpose extends IImport
+class MembershipExpose extends MembershipImport, IExpose
+class BindingConnectorAsUsage extends ConnectorAsUsage, IBindingConnector
+class SuccessionAsUsage extends ConnectorAsUsage, ISuccession
+class ForkNode extends ControlNode
+abstract class ControlNode extends IActionUsage
+class JoinNode extends ControlNode
+class SendActionUsage extends IActionUsage
+class DecisionNode extends ControlNode
+class MergeNode extends ControlNode
+abstract class LoopActionUsage extends IActionUsage
+class TriggerInvocationExpression extends InvocationExpression
+class AssignmentActionUsage extends IActionUsage
+class ForLoopActionUsage extends LoopActionUsage
+class IfActionUsage extends IActionUsage
+class WhileLoopActionUsage extends LoopActionUsage
+class TerminateActionUsage extends IActionUsage
+class MetadataDefinition extends ItemDefinition, IMetaclass
+class AliasIdsContainer
+class TextContainer
+class Featuring extends IFeaturing
+class Relationship extends IRelationship
+class Element extends IElement
+class AnnotatingElement extends IAnnotatingElement
+class Step extends IStep
+class Feature extends IFeature
+class Type extends IType
+class Namespace extends INamespace
+class Behavior extends IBehavior
+class Class extends IClass
+class Classifier extends IClassifier
+class Succession extends ISuccession
+class Connector extends IConnector
+class Structure extends IStructure
+class PartUsage extends IPartUsage
+class ItemUsage extends IItemUsage
+class OccurrenceUsage extends IOccurrenceUsage
+class Usage extends IUsage
+class DataType extends IDataType
+class ActionUsage extends IActionUsage
+class ItemFlow extends IItemFlow
+class AssociationStructure extends IAssociationStructure
+class Association extends IAssociation
+class Predicate extends IPredicate
+class Function extends IFunction
+class PerformActionUsage extends IPerformActionUsage
+class EventOccurrenceUsage extends IEventOccurrenceUsage
+class SuccessionItemFlow extends ISuccessionItemFlow
+class Interaction extends IInteraction
+class AssertConstraintUsage extends IAssertConstraintUsage
+class ConstraintUsage extends IConstraintUsage
+class BooleanExpression extends IBooleanExpression
+class Expression extends IExpression
+class Invariant extends IInvariant
+class Expose extends IExpose
+class Import extends IImport
+class BindingConnector extends IBindingConnector
+class Metaclass extends IMetaclass
+
+@enduml

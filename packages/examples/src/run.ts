@@ -6,6 +6,8 @@ import { languageAsText, writeJsonAsFile } from "@lionweb/utilities"
 import {
     asLionWebLanguage,
     EPackage,
+    inheritanceAsPlantUMLOf,
+    isEClass,
     readEcoreFile,
     ReaderOptions,
     TransformerOptions,
@@ -39,6 +41,9 @@ const runOnce = async (filePath: string, options?: RunOptions) => {
     }
 
     await writeFile(join(path, `${fileName}.read.txt`), asTreeTextWith((node) => isINamed(node) ? node.name : node.id)([ePackage]))
+    if (ePackage.eClassifiers.filter(isEClass).length > 0) {
+        await writeFile(join(path, `${fileName}-inheritance.puml`), inheritanceAsPlantUMLOf(ePackage))
+    }
 
     console.log(`transforming EPackage "${ePackage.name}" to a LionWeb language:`)
     const language = asLionWebLanguage(ePackage, "1", options?.transformer)

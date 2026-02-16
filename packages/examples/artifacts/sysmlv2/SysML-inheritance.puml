@@ -1,0 +1,179 @@
+@startuml
+
+class SelectExpression extends OperatorExpression
+class OperatorExpression extends InvocationExpression
+class InvocationExpression extends InstantiationExpression
+abstract class InstantiationExpression extends Expression
+class Expression extends Step
+class Step extends Feature
+class Feature extends Type
+class Type extends Namespace
+class Namespace extends Element
+abstract class Element
+class OwningMembership extends Membership
+class Membership extends Relationship
+abstract class Relationship extends Element
+class Documentation extends Comment
+class Comment extends AnnotatingElement
+class AnnotatingElement extends Element
+class Annotation extends Relationship
+class TextualRepresentation extends AnnotatingElement
+abstract class Import extends Relationship
+class Specialization extends Relationship
+class FeatureMembership extends OwningMembership
+class Conjugation extends Relationship
+class Multiplicity extends Feature
+class Intersecting extends Relationship
+class Unioning extends Relationship
+class Disjoining extends Relationship
+class Differencing extends Relationship
+class Redefinition extends Subsetting
+class Subsetting extends Specialization
+class FeatureTyping extends Specialization
+class TypeFeaturing extends Relationship
+class FeatureInverting extends Relationship
+class FeatureChaining extends Relationship
+class ReferenceSubsetting extends Subsetting
+class CrossSubsetting extends Subsetting
+class Behavior extends Class
+class Class extends Classifier
+class Classifier extends Type
+class Subclassification extends Specialization
+class Function extends Behavior
+class ConstructorExpression extends InstantiationExpression
+class NullExpression extends Expression
+class IndexExpression extends OperatorExpression
+class CollectExpression extends OperatorExpression
+class LiteralBoolean extends LiteralExpression
+class LiteralExpression extends Expression
+class FeatureReferenceExpression extends Expression
+class MetadataAccessExpression extends Expression
+class MetadataFeature extends Feature, AnnotatingElement
+class Metaclass extends Structure
+class Structure extends Class
+class LiteralRational extends LiteralExpression
+class LiteralInteger extends LiteralExpression
+class LiteralString extends LiteralExpression
+class FeatureChainExpression extends OperatorExpression
+class LiteralInfinity extends LiteralExpression
+class BooleanExpression extends Expression
+class Predicate extends Function
+class ReturnParameterMembership extends ParameterMembership
+class ParameterMembership extends FeatureMembership
+class Invariant extends BooleanExpression
+class ResultExpressionMembership extends FeatureMembership
+class MultiplicityRange extends Multiplicity
+class FeatureValue extends OwningMembership
+class DataType extends Classifier
+class BindingConnector extends Connector
+class Connector extends Feature, Relationship
+class Association extends Classifier, Relationship
+class Succession extends Connector
+class AssociationStructure extends Association, Structure
+class Package extends Namespace
+class LibraryPackage extends Package
+class ElementFilterMembership extends OwningMembership
+class Flow extends Connector, Step
+class FlowEnd extends Feature
+class PayloadFeature extends Feature
+class Interaction extends Association, Behavior
+class SuccessionFlow extends Flow, Succession
+class EndFeatureMembership extends FeatureMembership
+class MembershipImport extends Import
+class NamespaceImport extends Import
+class Dependency extends Relationship
+class VerificationCaseUsage extends CaseUsage
+class CaseUsage extends CalculationUsage
+class CalculationUsage extends ActionUsage, Expression
+class ActionUsage extends OccurrenceUsage, Step
+class OccurrenceUsage extends Usage
+class Usage extends Feature
+class VariantMembership extends OwningMembership
+class Definition extends Classifier
+class ReferenceUsage extends Usage
+class AttributeUsage extends Usage
+class EnumerationUsage extends AttributeUsage
+class EnumerationDefinition extends AttributeDefinition
+class AttributeDefinition extends Definition, DataType
+class ItemUsage extends OccurrenceUsage
+class PartUsage extends ItemUsage
+class PartDefinition extends ItemDefinition
+class ItemDefinition extends OccurrenceDefinition, Structure
+class OccurrenceDefinition extends Definition, Class
+class PortUsage extends OccurrenceUsage
+class PortDefinition extends OccurrenceDefinition, Structure
+class ConjugatedPortDefinition extends PortDefinition
+class PortConjugation extends Conjugation
+abstract class ConnectorAsUsage extends Usage, Connector
+class FlowUsage extends ConnectorAsUsage, ActionUsage, Flow
+class InterfaceUsage extends ConnectionUsage
+class ConnectionUsage extends ConnectorAsUsage, PartUsage
+class InterfaceDefinition extends ConnectionDefinition
+class ConnectionDefinition extends PartDefinition, AssociationStructure
+class AllocationUsage extends ConnectionUsage
+class AllocationDefinition extends ConnectionDefinition
+class StateUsage extends ActionUsage
+class TransitionUsage extends ActionUsage
+class AcceptActionUsage extends ActionUsage
+class ConstraintUsage extends OccurrenceUsage, BooleanExpression
+class RequirementUsage extends ConstraintUsage
+class RequirementDefinition extends ConstraintDefinition
+class ConstraintDefinition extends OccurrenceDefinition, Predicate
+class ConcernUsage extends RequirementUsage
+class ConcernDefinition extends RequirementDefinition
+class AnalysisCaseUsage extends CaseUsage
+class AnalysisCaseDefinition extends CaseDefinition
+class CaseDefinition extends CalculationDefinition
+class CalculationDefinition extends ActionDefinition, Function
+class ActionDefinition extends OccurrenceDefinition, Behavior
+class UseCaseUsage extends CaseUsage
+class UseCaseDefinition extends CaseDefinition
+class ViewUsage extends PartUsage
+class ViewDefinition extends PartDefinition
+class ViewpointUsage extends RequirementUsage
+class ViewpointDefinition extends RequirementDefinition
+class RenderingUsage extends PartUsage
+class RenderingDefinition extends PartDefinition
+class MetadataUsage extends ItemUsage, MetadataFeature
+class VerificationCaseDefinition extends CaseDefinition
+class RequirementVerificationMembership extends RequirementConstraintMembership
+class RequirementConstraintMembership extends FeatureMembership
+class MetadataDefinition extends ItemDefinition, Metaclass
+class EventOccurrenceUsage extends OccurrenceUsage
+class AssignmentActionUsage extends ActionUsage
+class TriggerInvocationExpression extends InvocationExpression
+class SendActionUsage extends ActionUsage
+class WhileLoopActionUsage extends LoopActionUsage
+abstract class LoopActionUsage extends ActionUsage
+class PerformActionUsage extends ActionUsage, EventOccurrenceUsage
+class ForLoopActionUsage extends LoopActionUsage
+class TerminateActionUsage extends ActionUsage
+class DecisionNode extends ControlNode
+abstract class ControlNode extends ActionUsage
+class IfActionUsage extends ActionUsage
+class MergeNode extends ControlNode
+class JoinNode extends ControlNode
+class ForkNode extends ControlNode
+class StateSubactionMembership extends FeatureMembership
+class TransitionFeatureMembership extends FeatureMembership
+class StateDefinition extends ActionDefinition
+class ExhibitStateUsage extends StateUsage, PerformActionUsage
+class ObjectiveMembership extends FeatureMembership
+class ActorMembership extends ParameterMembership
+class SubjectMembership extends ParameterMembership
+class StakeholderMembership extends ParameterMembership
+class FramedConcernMembership extends RequirementConstraintMembership
+class SatisfyRequirementUsage extends RequirementUsage, AssertConstraintUsage
+class AssertConstraintUsage extends ConstraintUsage, Invariant
+class MembershipExpose extends MembershipImport, Expose
+abstract class Expose extends Import
+class NamespaceExpose extends NamespaceImport, Expose
+class ViewRenderingMembership extends FeatureMembership
+class BindingConnectorAsUsage extends ConnectorAsUsage, BindingConnector
+class SuccessionAsUsage extends ConnectorAsUsage, Succession
+class ConjugatedPortTyping extends FeatureTyping
+class SuccessionFlowUsage extends FlowUsage, SuccessionFlow
+class FlowDefinition extends ActionDefinition, Interaction
+class IncludeUseCaseUsage extends UseCaseUsage, PerformActionUsage
+
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+
+class Employee
+class Library
+class Writer
+class Book
+
+@enduml
